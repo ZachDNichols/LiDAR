@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\LiDAR.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\LiDAR.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\LiDAREditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\LiDAR">
+      <UniqueIdentifier>{509A61B7-CC96-3130-A238-C5B1557A5520}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
+      <Filter>Source\LiDAR</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\LiDAR\LiDAR.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LiDAR.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\LiDARGameModeBase.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LiDARGameModeBase.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

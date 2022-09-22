@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "LiDAR",
+			"Path": "C:\\Users\\zach\\Documents\\GitHub\\LiDAR\\LiDAR\\LiDAR\\Source\\LiDAR.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "LiDAREditor",
+			"Path": "C:\\Users\\zach\\Documents\\GitHub\\LiDAR\\LiDAR\\LiDAR\\Source\\LiDAREditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
