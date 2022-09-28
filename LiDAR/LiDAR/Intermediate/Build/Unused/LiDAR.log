@@ -1,0 +1,8 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
+  Invalidating makefile for LiDAREditor (working set of source files changed)
+  Parsing headers for LiDAREditor
+    Running UnrealHeaderTool "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\LiDAREditor\Development\LiDAREditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\zach\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h(14): error : Unknown variable specifier 'BlueprtintReadOnly'
+C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h(16): error : Unrecognized type 'public' - type must be a UCLASS, USTRUCT, UENUM, or global delegate.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: The command ""G:\Program Files\Epic Games\UE_5.0\Engine\Build\BatchFiles\Build.bat" LiDAREditor Win64 Development -Project="C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" -WaitMutex -FromMsBuild" exited with code 6.

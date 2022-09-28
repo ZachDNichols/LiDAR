@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\lidar.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\lidareditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\development\\lidar\\definitions.lidar.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

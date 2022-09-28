@@ -23,9 +23,24 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
     <Filter Include="Source\LiDAR">
       <UniqueIdentifier>{509A61B7-CC96-3130-A238-C5B1557A5520}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\LiDAR\FirstPersonCharacter.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\FirstPersonCharacter.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
       <Filter>Source\LiDAR</Filter>
     </None>
