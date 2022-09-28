@@ -22,6 +22,14 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
 	FirstPersonCamera->SetRelativeLocation(FVector(-39.56f, 1.75f, 64.f));
 	FirstPersonCamera->bUsePawnControlRotation = true;
+
+	//Creates mesh component for use of viewing the gun
+	PlayerMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PlayerMesh"));
+	PlayerMesh->SetupAttachment(FirstPersonCamera);
+	PlayerMesh->bCastDynamicShadow = false;
+	PlayerMesh->CastShadow = false;
+	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
+	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 }
 
 // Called when the game starts or when spawned
@@ -47,7 +55,23 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
 
-
-
+	// Bind movement events
+	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AFirstPersonCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Move Right / Left", this, &AFirstPersonCharacter::MoveRight);
 }
 
+void AFirstPersonCharacter::MoveForward(float Value)
+{
+	if (Value != 0.0f)
+	{
+		AddMovementInput(GetActorForwardVector(), Value);
+	}
+}
+
+void AFirstPersonCharacter::MoveRight(float Value)
+{
+	if (Value != 0.0f)
+	{
+		AddMovementInput(GetActorRightVector(), Value);
+	}
+}

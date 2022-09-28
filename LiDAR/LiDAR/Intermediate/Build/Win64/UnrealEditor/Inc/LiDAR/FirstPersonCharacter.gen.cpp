@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
 	void AFirstPersonCharacter::StaticRegisterNativesAFirstPersonCharacter()
 	{
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FirstPersonCamera_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_FirstPersonCamera;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerMesh_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerMesh;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -59,8 +64,19 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera = { "FirstPersonCamera", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, FirstPersonCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh_MetaData[] = {
+		{ "Category", "Mesh" },
+		{ "Comment", "//Mesh for the first person (i.e. the gun used by the player\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
+		{ "ToolTip", "Mesh for the first person (i.e. the gun used by the player" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh = { "PlayerMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, PlayerMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFirstPersonCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFirstPersonCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFirstPersonCharacter>::IsAbstract,
@@ -98,9 +114,9 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 3858275595U) },
+		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 1428901874U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_1611629525(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_3126273465(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
