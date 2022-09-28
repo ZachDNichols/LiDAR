@@ -7,6 +7,8 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -58,6 +60,16 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	// Bind movement events
 	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AFirstPersonCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &AFirstPersonCharacter::MoveRight);
+
+	//Bind player actions
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFirstPersonCharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFirstPersonCharacter::StopJumping);
+
+	GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFirstPersonCharacter::StartCrouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFirstPersonCharacter::EndCrouch);
+
+	
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -75,3 +87,14 @@ void AFirstPersonCharacter::MoveRight(float Value)
 		AddMovementInput(GetActorRightVector(), Value);
 	}
 }
+
+void AFirstPersonCharacter::StartCrouch()
+{
+	Crouch();
+}
+
+void AFirstPersonCharacter::EndCrouch()
+{
+	UnCrouch();
+}
+

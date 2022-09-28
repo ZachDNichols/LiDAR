@@ -41,6 +41,11 @@ protected:
 	//Handles moving the player left or right
 	void MoveRight(float Value);
 
+	void StartCrouch();
+
+	void EndCrouch();
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
