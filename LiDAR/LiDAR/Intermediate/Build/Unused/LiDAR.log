@@ -3,34 +3,7 @@
   Invalidating makefile for LiDAREditor (working set of source files changed)
   Parsing headers for LiDAREditor
     Running UnrealHeaderTool "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\LiDAREditor\Development\LiDAREditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\zach\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  Reflection code generated for LiDAREditor in 1.9074062 seconds
-  Building LiDAREditor...
-  Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from LiDAR unity file: FirstPersonCharacter.cpp, LiDAR.cpp, LiDARGameModeBase.cpp
-  Distributing 5 actions to XGE
-  --------------------Build System Warning---------------------------------------
-  License is invalid:
-      License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-      This build will run in standalone mode.
-  
-  -------------------------------------------------------------------------------
-  
-  Build ID: {2A521F9F-5275-45A3-A395-D72A3928D849}
-  
-  --------------------Project: Default-------------------------------------------
-  [1/5] FirstPersonCharacter.cpp (0:01.78 at +0:00)
-  [2/5] FirstPersonCharacter.gen.cpp (0:00.78 at +0:01)
-  [3/5] UnrealEditor-LiDAR.dll (0:00.65 at +0:02)
-     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [4/5] UnrealEditor-LiDAR.lib (0:00.09 at +0:03)
-     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [5/5] LiDAREditor.target (0:00.28 at +0:03)
-  ---------------------- Done ----------------------
-  
-      Rebuild All: 1 succeeded, 0 failed, 0 skipped
-  
-  1 build system warning(s):
-     - License is invalid
-  
-  Total time in XGE executor: 3.78 seconds
-  Total execution time: 7.30 seconds
+  Reflection code generated for LiDAREditor in 1.8680603 seconds
+C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Source\LiDAR\FirstPersonCharacter.cpp(1): error : Expected FirstPersonCharacter.h to be first header included.
+UnrealBuildTool : error : Unable to build while Live Coding is active. Exit the editor and game, or press Ctrl+Alt+F11 if iterating on code in the editor or game
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: The command ""G:\Program Files\Epic Games\UE_5.0\Engine\Build\BatchFiles\Build.bat" LiDAREditor Win64 Development -Project="C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" -WaitMutex -FromMsBuild" exited with code 6.

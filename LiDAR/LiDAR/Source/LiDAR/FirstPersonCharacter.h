@@ -41,9 +41,12 @@ protected:
 	//Handles moving the player left or right
 	void MoveRight(float Value);
 
+	//Handles the player crouching and un-crouching
 	void StartCrouch();
-
 	void EndCrouch();
+
+	//Handles the player firing
+	void BeginShoot();
 
 
 public:	
@@ -53,9 +56,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	//Returns the camera component subobject
+	//Returns the camera component sub object
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCamera; };
 
-	//Returns the mesh subobject
+	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
+
+	
+
 };

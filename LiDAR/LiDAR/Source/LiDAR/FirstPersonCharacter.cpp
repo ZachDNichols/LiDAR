@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "FirstPersonCharacter.h"
+#include "GameFramework/Actor.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -9,6 +9,14 @@
 #include "GameFramework/InputSettings.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "HeadMountedDisplayFunctionLibrary.h"
+#include "GameFramework/Controller.h"
+#include "Camera/PlayerCameraManager.h"
+#include "GameFramework/PlayerController.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"
+#include "DrawDebugHelpers.h"
+
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -24,6 +32,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
 	FirstPersonCamera->SetRelativeLocation(FVector(-39.56f, 1.75f, 64.f));
 	FirstPersonCamera->bUsePawnControlRotation = true;
+	UCameraComponent* Camera = GetFirstPersonCameraComponent();
 
 	//Creates mesh component for use of viewing the gun
 	PlayerMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PlayerMesh"));
@@ -69,7 +78,7 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFirstPersonCharacter::StartCrouch);
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFirstPersonCharacter::EndCrouch);
 
-	
+	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AFirstPersonCharacter::BeginShoot);
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -96,5 +105,23 @@ void AFirstPersonCharacter::StartCrouch()
 void AFirstPersonCharacter::EndCrouch()
 {
 	UnCrouch();
+}
+
+void AFirstPersonCharacter::BeginShoot()
+{
+	FVector SpawnLocation = FirstPersonCamera->GetRelativeLocation();
+	FVector DirectionVector = FirstPersonCamera->GetForwardVector() * 10000.f;
+	FHitResult HitResult;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+
+
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, DirectionVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
+	{
+
+	}
+	
+	DrawDebugLine(GetWorld(), SpawnLocation, DirectionVector, FColor::Red, false, 5.0f, 0, 5.f);
+
 }
 
