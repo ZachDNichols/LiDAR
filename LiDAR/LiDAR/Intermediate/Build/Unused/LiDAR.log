@@ -3,7 +3,7 @@
   Building LiDAREditor...
   Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Adaptive Build] Excluded from LiDAR unity file: FirstPersonCharacter.cpp, LiDAR.cpp, LiDARGameModeBase.cpp
-  Distributing 5 actions to XGE
+  Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -11,16 +11,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {478D4390-1C51-443D-B843-9C3EE54D5FD1}
+  Build ID: {43CD05D4-8A2C-4F51-8686-4C4477DBF20E}
   
   --------------------Project: Default-------------------------------------------
-  [1/5] FirstPersonCharacter.cpp (0:09.53 at +0:00)
-  [2/5] FirstPersonCharacter.gen.cpp (0:00.96 at +0:09)
-  [3/5] UnrealEditor-LiDAR.dll (0:00.81 at +0:10)
+  [1/4] FirstPersonCharacter.cpp (0:01.34 at +0:00)
+  [2/4] UnrealEditor-LiDAR.dll (0:00.67 at +0:01)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [4/5] UnrealEditor-LiDAR.lib (0:00.10 at +0:11)
+  [3/4] UnrealEditor-LiDAR.lib (0:00.09 at +0:02)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [5/5] LiDAREditor.target (0:00.34 at +0:11)
+  [4/4] LiDAREditor.target (0:00.28 at +0:02)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -28,5 +27,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 12.27 seconds
-  Total execution time: 13.62 seconds
+  Total time in XGE executor: 2.61 seconds
+  Total execution time: 3.12 seconds

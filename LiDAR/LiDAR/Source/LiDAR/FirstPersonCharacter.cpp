@@ -109,19 +109,20 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
-	FVector SpawnLocation = FirstPersonCamera->GetRelativeLocation();
-	FVector DirectionVector = FirstPersonCamera->GetForwardVector() * 10000.f;
+	FVector SpawnLocation = FirstPersonCamera->GetComponentLocation();
+	FVector ForwardVector = FirstPersonCamera->GetForwardVector() * 10000;
+	FVector EndVector = SpawnLocation + ForwardVector;
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
+	int iDistance;
 
 
-	if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, DirectionVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
 	{
-
+		DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.0f, 0, 5.f);
+		iDistance = HitResult.Distance;
+		UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), iDistance);
 	}
-	
-	DrawDebugLine(GetWorld(), SpawnLocation, DirectionVector, FColor::Red, false, 5.0f, 0, 5.f);
-
 }
 
