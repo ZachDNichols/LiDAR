@@ -91,11 +91,13 @@ void AFirstPersonCharacter::MoveRight(float Value)
 	}
 }
 
+//Handles the player crouching
 void AFirstPersonCharacter::StartCrouch()
 {
 	Crouch();
 }
 
+//Handles the player crouching
 void AFirstPersonCharacter::EndCrouch()
 {
 	UnCrouch();
@@ -103,15 +105,19 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
+    //Gets world location of camera
 	FVector SpawnLocation = FirstPersonCamera->GetComponentLocation();
-	FVector ForwardVector = FirstPersonCamera->GetForwardVector() * 10000;
-	FVector EndVector = SpawnLocation + ForwardVector;
+    //Gets the end Vector beyond the player from a significant distance
+	FVector EndVector = (FirstPersonCamera->GetForwardVector() * 10000) + SpawnLocation;
+    //Contains collision data
 	FHitResult HitResult;
+    //Parameters for the line trace, there are not really any except for ignoring player collision
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
+    //integer representing distance from player to wall
 	int iDistance;
 
-
+    //Checks if there is something that can be collided with in front of the player, if there is, draws a debug line
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
 	{
 		DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.0f, 0, 5.f);
