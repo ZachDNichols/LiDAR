@@ -41,6 +41,12 @@
     <ClInclude Include="..\..\Source\LiDAR\FirstPersonCharacter.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\Laser.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\Laser.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
       <Filter>Source\LiDAR</Filter>
     </None>
@@ -54,6 +60,12 @@
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\LiDAR\LiDARGameModeBase.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\LiDARHUD.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LiDARHUD.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
   </ItemGroup>
