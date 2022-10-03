@@ -1,19 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "FirstPersonCharacter.h"
-#include "GameFramework/Actor.h"
-#include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
-#include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "HeadMountedDisplayFunctionLibrary.h"
 #include "GameFramework/Controller.h"
-#include "Camera/PlayerCameraManager.h"
 #include "GameFramework/PlayerController.h"
-#include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 

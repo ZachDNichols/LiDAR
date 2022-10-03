@@ -1,0 +1,40 @@
+-x
+objective-c++
+-target
+arm64-apple-macos10.15
+-std=c++14
+-fno-rtti
+-fno-sanitize=vptr
+-fpascal-strings
+-Os
+-D__INTELLISENSE__
+-DMONOLITHIC_BUILD=1
+-DOBJC_OLD_DISPATCH_PROTOTYPES=1
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+-g
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Programs/UnrealHeaderTool/Private
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/Core
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/TraceLog/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/TraceLog
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/CoreUObject
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/Json
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/Json/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/Projects
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/Projects/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealHeaderTool/Inc/UnrealHeaderTool
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Programs
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Runtime/Launch/Public
+-iquote/Users/Shared/Epic Games/UE_5.0/Engine/Source/Programs/UnrealHeaderTool/Public
+-I/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/Mac/include
+-I/Users/Shared/Epic Games/UE_5.0/Engine/Source/ThirdParty/mimalloc/include
+-I/Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/ProjectFiles/build/UnrealHeaderTool.build/Development/UnrealHeaderTool_Index.build/DerivedSources-normal/arm64
+-F/Users/Shared/Epic Games/UE_5.0/Engine/Binaries/Mac
+arm64-apple-darwin21.6.0
+"Apple LLVM 13.1.6 (clang-1316.0.21.2.5)"
+SDK_PRODUCT_BUILD_VERSION=21E226
+21E226
