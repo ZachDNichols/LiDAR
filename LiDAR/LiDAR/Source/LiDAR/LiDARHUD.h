@@ -20,7 +20,10 @@ public:
     
     void SetRadius(float CurrentRadius, float MaxRadius);
 
+   /* UPROPERTY(EditAnywhere, meta = (BindWidget))
+    UTextBlock* RadiusText; */
+
     UPROPERTY(EditAnywhere, meta = (BindWidget))
-    UTextBlock* RadiusText;
+    UProgressBar* RadiusProgress;
 	
 };

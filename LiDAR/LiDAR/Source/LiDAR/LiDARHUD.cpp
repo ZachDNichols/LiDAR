@@ -4,7 +4,7 @@
 
 void ULiDARHUD::SetRadius(float CurrentRadius, float MaxRadius)
 {
-    
+   /*
     if (RadiusText)
     {
         if (RadiusText->Visibility == ESlateVisibility::Hidden)
@@ -13,5 +13,12 @@ void ULiDARHUD::SetRadius(float CurrentRadius, float MaxRadius)
         }
         RadiusText->SetText(FText::FromString("Radius: " + FString::SanitizeFloat(CurrentRadius) + "/" + FString::SanitizeFloat(MaxRadius)));
     }
+    */
+
+    float min = CurrentRadius - 500.f;
+    float max = MaxRadius - 500.f;
+
+    RadiusProgress->SetPercent( min / max );
+
 }
 

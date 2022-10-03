@@ -28,9 +28,15 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
     
     UPROPERTY(EditAnywhere)
     TSubclassOf<class ULiDARHUD> PlayerHUDClass;
-    
-    UPROPERTY()
-    class ULiDARHUD* PlayerHUD;
+
+	UPROPERTY()
+	class ULiDARHUD* PlayerHUD;
+
+	UPROPERTY(EditAnywhere)
+	float Radius;
+
+	UPROPERTY(EditAnywhere)
+	float MaxRadius;
 	
 
 public:
@@ -85,8 +91,8 @@ public:
 
 private:
     bool bIsShooting = false;
-    float fRadius = 2500.f;
+    float fRadius = 500.f;
     float fMaxRadius = 5000.f;
-    float fMinRadius = 0.f;
+    float fMinRadius = 500.f;
 
 };

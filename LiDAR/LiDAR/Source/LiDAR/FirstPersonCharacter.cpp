@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
+
+#include "FirstPersonCharacter.h"
 #include "Blueprint/UserWidget.h"
 #include "LiDARHUD.h"
-#include "FirstPersonCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -48,10 +49,11 @@ void AFirstPersonCharacter::BeginPlay()
 	Super::BeginPlay();
 	if (IsLocallyControlled() && PlayerHUDClass)
     {
-        AFirstPersonCharacter* FPC = GetController<AFirstPersonCharacter>;
-        PlayerHUD = CreateWidget<ULiDARHUD>(, PlayerHUDClass);
+        PlayerHUD = CreateWidget<ULiDARHUD>(GetWorld(), PlayerHUDClass);
+        check(PlayerHUD);
         PlayerHUD->AddToPlayerScreen();
     }
+    PlayerHUD->SetRadius(fMinRadius, fMaxRadius);
 }
 
 void AFirstPersonCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -174,18 +176,20 @@ void AFirstPersonCharacter::ShootLaser()
 void AFirstPersonCharacter::IncreaseRadius()
 {
     float increment = 100.f;
-    if (fRadius + increment < fMaxRadius)
+    if (fRadius + increment <= fMaxRadius)
     {
         fRadius += increment;
+		PlayerHUD->SetRadius(fRadius, fMaxRadius);
     }
 }
 
 void AFirstPersonCharacter::DecreaseRadius()
 {
-    float decrement = -100.f;
-    if (fRadius - decrement > fMinRadius)
+    float decrement = 100.f;
+    if (fRadius - decrement >= fMinRadius)
     {
         fRadius -= decrement;
+        PlayerHUD->SetRadius(fRadius, fMaxRadius);
     }
 }
 
