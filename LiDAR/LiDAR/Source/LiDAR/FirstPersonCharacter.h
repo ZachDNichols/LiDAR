@@ -25,6 +25,12 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 	//Mesh for the first person (i.e. the gun used by the player
 	UPROPERTY(VisibleAnywhere, Category=Mesh)
 	USkeletalMeshComponent* PlayerMesh;
+    
+    UPROPERTY(EditAnywhere)
+    TSubclassOf<class ULiDARHUD> PlayerHUDClass;
+    
+    UPROPERTY()
+    class ULiDARHUD* PlayerHUD;
 	
 
 public:
@@ -34,6 +40,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+    virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	//Handles moving forward and backwards
 	void MoveForward(float Value);

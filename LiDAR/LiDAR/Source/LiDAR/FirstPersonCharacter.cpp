@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+#include "Blueprint/UserWidget.h"
+#include "LiDARHUD.h"
 #include "FirstPersonCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -36,13 +37,30 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->CastShadow = false;
 	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
+    
+    PlayerHUDClass = nullptr;
+    PlayerHUD = nullptr;
 }
 
 // Called when the game starts or when spawned
 void AFirstPersonCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (IsLocallyControlled() && PlayerHUDClass)
+    {
+        AFirstPersonCharacter* FPC = GetController<AFirstPersonCharacter>;
+        PlayerHUD = CreateWidget<ULiDARHUD>(, PlayerHUDClass);
+        PlayerHUD->AddToPlayerScreen();
+    }
+}
+
+void AFirstPersonCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+    if (PlayerHUD)
+    {
+        PlayerHUD->RemoveFromParent();
+        PlayerHUD = nullptr;
+    }
 }
 
 // Called every frame
