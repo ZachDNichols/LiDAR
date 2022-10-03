@@ -47,6 +47,20 @@ protected:
 
 	//Handles the player firing
 	void BeginShoot();
+    
+    //Handles the player stop shooting
+    void EndShoot();
+    
+    //Handles shooting the beam
+    void ShootLaser();
+    
+    //Handles increasing the radius
+    void IncreaseRadius();
+    
+    //Handles decreasing the radius
+    void DecreaseRadius();
+    
+    
 
 
 public:	
@@ -62,6 +76,10 @@ public:
 	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
 
-	
+private:
+    bool bIsShooting = false;
+    float fRadius = 2500.f;
+    float fMaxRadius = 5000.f;
+    float fMinRadius = 0.f;
 
 };

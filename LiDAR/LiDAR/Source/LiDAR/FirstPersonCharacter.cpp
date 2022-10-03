@@ -10,6 +10,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
+#include "Math/UnrealMathUtility.h"
 
 
 // Sets default values
@@ -48,7 +49,8 @@ void AFirstPersonCharacter::BeginPlay()
 void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+    if (bIsShooting)
+        ShootLaser();
 }
 
 // Called to bind functionality to input
@@ -65,14 +67,23 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &AFirstPersonCharacter::MoveRight);
 
 	//Bind player actions
+    
+    //Actions for player jumping
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFirstPersonCharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFirstPersonCharacter::StopJumping);
 
+    //Actions for player crouching
 	GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFirstPersonCharacter::StartCrouch);
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFirstPersonCharacter::EndCrouch);
 
+    //Actions for player shooting
 	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AFirstPersonCharacter::BeginShoot);
+    PlayerInputComponent->BindAction("Shoot", IE_Released, this, &AFirstPersonCharacter::EndShoot);
+    
+    //Actions for increasing and decreasing radius
+    PlayerInputComponent->BindAction("Increase Radius", IE_Pressed, this, &AFirstPersonCharacter::IncreaseRadius);
+    PlayerInputComponent->BindAction("Decrease Radius", IE_Pressed, this, &AFirstPersonCharacter::DecreaseRadius);
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -105,24 +116,58 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
-    //Gets world location of camera
-	FVector SpawnLocation = FirstPersonCamera->GetComponentLocation();
-    //Gets the end Vector beyond the player from a significant distance
-	FVector EndVector = (FirstPersonCamera->GetForwardVector() * 10000) + SpawnLocation;
-    //Contains collision data
-	FHitResult HitResult;
-    //Parameters for the line trace, there are not really any except for ignoring player collision
-	FCollisionQueryParams Params;
-	Params.AddIgnoredActor(this);
-    //integer representing distance from player to wall
-	int iDistance;
+    bIsShooting = true;
+    PrimaryActorTick.bCanEverTick = true;
+}
 
-    //Checks if there is something that can be collided with in front of the player, if there is, draws a debug line
-	if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
-	{
-		DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.0f, 0, 5.f);
-		iDistance = HitResult.Distance;
-		UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), iDistance);
-	}
+void AFirstPersonCharacter::EndShoot()
+{
+    bIsShooting = false;
+    PrimaryActorTick.bCanEverTick = false;
+}
+
+void AFirstPersonCharacter::ShootLaser()
+{
+    float x = FMath::RandRange(fRadius * -1, fRadius);
+    float y = FMath::RandRange(fRadius * -1, fRadius);
+    float z = FMath::RandRange(fRadius * -1, fRadius);
+    
+        //Gets world location of camera
+        FVector SpawnLocation = FirstPersonCamera->GetComponentLocation();
+        //Gets the end Vector beyond the player from a significant distance
+        FVector EndVector = (FirstPersonCamera->GetForwardVector() * 10000) + SpawnLocation;
+        EndVector = FVector(EndVector.X + x, EndVector.Y + y, EndVector.Z + z);
+        //Contains collision data
+        FHitResult HitResult;
+        //Parameters for the line trace, there are not really any except for ignoring player collision
+        FCollisionQueryParams Params;
+        Params.AddIgnoredActor(this);
+        //integer representing distance from player to wall
+        int iDistance;
+        //Checks if there is something that can be collided with in front of the player, if there is, draws a debug line
+        if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
+        {
+            DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.f, 0, 5.f);
+            iDistance = HitResult.Distance;
+            UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), iDistance);
+        }
+}
+    
+void AFirstPersonCharacter::IncreaseRadius()
+{
+    float increment = 100.f;
+    if (fRadius + increment < fMaxRadius)
+    {
+        fRadius += increment;
+    }
+}
+
+void AFirstPersonCharacter::DecreaseRadius()
+{
+    float decrement = -100.f;
+    if (fRadius - decrement > fMinRadius)
+    {
+        fRadius -= decrement;
+    }
 }
 
