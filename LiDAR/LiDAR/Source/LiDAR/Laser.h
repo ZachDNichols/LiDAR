@@ -10,6 +10,10 @@ UCLASS()
 class LIDAR_API ALaser : public AActor
 {
 	GENERATED_BODY()
+    
+    UPROPERTY(VisibleAnywhere, Category = mesh)
+    UStaticMeshComponent* LaserMesh;
+    
 	
 public:	
 	// Sets default values for this actor's properties
