@@ -172,8 +172,7 @@ void AFirstPersonCharacter::ShootLaser()
             UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), iDistance);
         }
 }
-
-
+    
 void AFirstPersonCharacter::IncreaseRadius()
 {
     float increment = 100.f;

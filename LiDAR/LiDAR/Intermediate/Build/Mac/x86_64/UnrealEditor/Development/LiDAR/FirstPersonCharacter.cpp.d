@@ -3108,14 +3108,6 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.cpp \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Development/LiDAR/Definitions.LiDAR.h \
-  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/CharacterMovementReplication.generated.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/RootMotionSource.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/RootMotionSource.generated.h \
-  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/Character.generated.h \
-  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/FirstPersonCharacter.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectSaveContext.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Components/SlateWrapperTypes.h \
@@ -3379,6 +3371,12 @@
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/ParticleModuleOrientationBase.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/ParticleModuleOrientationAxisLock.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Public/EngineMinimal.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/CharacterMovementReplication.generated.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/RootMotionSource.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/RootMotionSource.generated.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/Character.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/GameModeBase.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Engine/ServerStatReplicator.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/ServerStatReplicator.generated.h \
@@ -4129,4 +4127,6 @@
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/MovieScene/MovieSceneSequenceTickManager.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/UMG/UMGSequenceTickManager.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/UMG/UMGSequencePlayer.generated.h \
-  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/LiDARHUD.generated.h
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/LiDARHUD.generated.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/FirstPersonCharacter.generated.h
