@@ -13,7 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeLiDARHUD() {}
 	LIDAR_API UClass* Z_Construct_UClass_ULiDARHUD();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
-	UMG_API UClass* Z_Construct_UClass_UProgressBar_NoRegister();
+	UMG_API UClass* Z_Construct_UClass_UTextBlock_NoRegister();
 // End Cross Module References
 	void ULiDARHUD::StaticRegisterNativesULiDARHUD()
 	{
@@ -30,9 +30,9 @@ void EmptyLinkFunctionForGeneratedCodeLiDARHUD() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_RadiusProgress_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_RadiusText_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_RadiusProgress;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_RadiusText;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -49,18 +49,16 @@ void EmptyLinkFunctionForGeneratedCodeLiDARHUD() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusProgress_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusText_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "Category", "LiDARHUD" },
-		{ "Comment", "/* UPROPERTY(EditAnywhere, meta = (BindWidget))\n    UTextBlock* RadiusText; */" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "LiDARHUD.h" },
-		{ "ToolTip", "UPROPERTY(EditAnywhere, meta = (BindWidget))\n   UTextBlock* RadiusText;" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusProgress = { "RadiusProgress", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ULiDARHUD, RadiusProgress), Z_Construct_UClass_UProgressBar_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusProgress_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusProgress_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusText = { "RadiusText", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ULiDARHUD, RadiusText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusText_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ULiDARHUD_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusProgress,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULiDARHUD_Statics::NewProp_RadiusText,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ULiDARHUD_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ULiDARHUD>::IsAbstract,
@@ -98,9 +96,9 @@ void EmptyLinkFunctionForGeneratedCodeLiDARHUD() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LiDARHUD_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ULiDARHUD, ULiDARHUD::StaticClass, TEXT("ULiDARHUD"), &Z_Registration_Info_UClass_ULiDARHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULiDARHUD), 1921415030U) },
+		{ Z_Construct_UClass_ULiDARHUD, ULiDARHUD::StaticClass, TEXT("ULiDARHUD"), &Z_Registration_Info_UClass_ULiDARHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULiDARHUD), 2064540139U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LiDARHUD_h_1474771543(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LiDARHUD_h_2100241777(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LiDARHUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LiDARHUD_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
