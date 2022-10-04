@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Laser.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "FirstPersonCharacter.generated.h"
@@ -32,11 +33,10 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 
 	UPROPERTY()
 	class ULiDARHUD* PlayerHUD;
-    
-    UPROPERTY(VisibleAnywhere, Category=Mesh)
-    UStaticMeshComponent* LaserMesh;
-	
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class ALaser> LaserBP;
+	
 public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();

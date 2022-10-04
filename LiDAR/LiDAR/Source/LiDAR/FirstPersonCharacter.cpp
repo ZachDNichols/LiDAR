@@ -13,7 +13,6 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
-#include "Components/StaticMeshComponent.h"
 
 
 // Sets default values
@@ -39,8 +38,6 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->CastShadow = false;
 	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
-    
-    LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
     
     PlayerHUDClass = nullptr;
     PlayerHUD = nullptr;
@@ -151,28 +148,41 @@ void AFirstPersonCharacter::EndShoot()
 
 void AFirstPersonCharacter::ShootLaser()
 {
-    float x = FMath::RandRange(fRadius * -1, fRadius);
-    float y = FMath::RandRange(fRadius * -1, fRadius);
-    float z = FMath::RandRange(fRadius * -1, fRadius);
-    
-        //Gets world location of camera
-        FVector SpawnLocation = FirstPersonCamera->GetComponentLocation();
-        //Gets the end Vector beyond the player from a significant distance
-        FVector EndVector = (FirstPersonCamera->GetForwardVector() * 10000) + SpawnLocation;
-        EndVector = FVector(EndVector.X + x, EndVector.Y + y, EndVector.Z + z);
-        //Contains collision data
-        FHitResult HitResult;
-        //Parameters for the line trace, there are not really any except for ignoring player collision
-        FCollisionQueryParams Params;
-        Params.AddIgnoredActor(this);
-        //integer representing distance from player to wall
-        //Checks if there is something that can be collided with in front of the player, if there is, draws a debug line
-        if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
-        {
-            DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.f, 0, 5.f);
-            fDistance = HitResult.Distance;
-            UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), fDistance);
-        }
+	float x = FMath::RandRange(fRadius * -1, fRadius);
+	float y = FMath::RandRange(fRadius * -1, fRadius);
+	float z = FMath::RandRange(fRadius * -1, fRadius);
+
+	FHitResult Hit;
+	FRotator Rot;
+	FVector Loc;
+
+
+	GetController()->GetPlayerViewPoint(Loc, Rot);
+
+	FVector Start = Loc;
+	FVector End = Start + (Rot.Vector() * 2000);
+	End = FVector(End.X + x, End.Y + y, End.Z + z);
+	FCollisionQueryParams TraceParams;
+	FRotator HitRotation;
+	
+	
+	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+	{
+		DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 2.0f);
+		DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, 2.0f);
+		UE_LOG(LogTemp, Warning, TEXT("Distance is %d"));
+		
+		HitRotation = Hit.ImpactPoint.Rotation();
+		FQuat LaserRotation = FQuat(HitRotation);
+
+		FTransform SpawnTransform;
+		SpawnTransform.SetLocation(FirstPersonCamera->GetComponentLocation());
+		SpawnTransform.SetRotation(LaserRotation);
+		
+		FActorSpawnParameters SpawnParams;
+
+		GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+	}
 }
     
 void AFirstPersonCharacter::IncreaseRadius()
