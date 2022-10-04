@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 	LIDAR_API UClass* Z_Construct_UClass_ALaser();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ALaser::StaticRegisterNativesALaser()
 	{
@@ -28,6 +29,11 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LaserMesh_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_LaserMesh;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -41,6 +47,17 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 		{ "ModuleRelativePath", "Laser.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh_MetaData[] = {
+		{ "Category", "mesh" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Laser.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh = { "LaserMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALaser, LaserMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALaser_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALaser_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALaser>::IsAbstract,
 	};
@@ -50,11 +67,11 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ALaser_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ALaser_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ALaser_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ALaser_Statics::Class_MetaDataParams))
@@ -77,9 +94,9 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALaser, ALaser::StaticClass, TEXT("ALaser"), &Z_Registration_Info_UClass_ALaser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALaser), 175924456U) },
+		{ Z_Construct_UClass_ALaser, ALaser::StaticClass, TEXT("ALaser"), &Z_Registration_Info_UClass_ALaser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALaser), 2055441026U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_1302573131(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_492388934(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
