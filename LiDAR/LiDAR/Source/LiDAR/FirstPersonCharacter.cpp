@@ -13,6 +13,7 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
+#include "Components/StaticMeshComponent.h"
 
 
 // Sets default values
@@ -38,6 +39,8 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->CastShadow = false;
 	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
+    
+    LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
     
     PlayerHUDClass = nullptr;
     PlayerHUD = nullptr;
@@ -163,13 +166,12 @@ void AFirstPersonCharacter::ShootLaser()
         FCollisionQueryParams Params;
         Params.AddIgnoredActor(this);
         //integer representing distance from player to wall
-        int iDistance;
         //Checks if there is something that can be collided with in front of the player, if there is, draws a debug line
         if (GetWorld()->LineTraceSingleByChannel(HitResult, SpawnLocation, EndVector, ECollisionChannel::ECC_Visibility, Params, FCollisionResponseParams()))
         {
             DrawDebugLine(GetWorld(), SpawnLocation, EndVector, FColor::Red, false, 5.f, 0, 5.f);
-            iDistance = HitResult.Distance;
-            UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), iDistance);
+            fDistance = HitResult.Distance;
+            UE_LOG(LogTemp, Warning, TEXT("Distance is %d"), fDistance);
         }
 }
     

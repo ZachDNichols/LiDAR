@@ -12,6 +12,7 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
+class UStaticMeshComponent;
 
 UCLASS()
 class LIDAR_API AFirstPersonCharacter : public ACharacter
@@ -31,17 +32,19 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 
 	UPROPERTY()
 	class ULiDARHUD* PlayerHUD;
-
-	UPROPERTY(EditAnywhere)
-	float Radius;
-
-	UPROPERTY(EditAnywhere)
-	float MaxRadius;
+    
+    UPROPERTY(VisibleAnywhere, Category=Mesh)
+    UStaticMeshComponent* LaserMesh;
 	
 
 public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();
+    
+    float GetDistance()
+    {
+        return fDistance;
+    }
 
 protected:
 	// Called when the game starts or when spawned
@@ -72,9 +75,6 @@ protected:
     
     //Handles decreasing the radius
     void DecreaseRadius();
-    
-    
-
 
 public:	
 	// Called every frame
@@ -94,5 +94,6 @@ private:
     float fRadius = 500.f;
     float fMaxRadius = 5000.f;
     float fMinRadius = 500.f;
+    float fDistance;
 
 };

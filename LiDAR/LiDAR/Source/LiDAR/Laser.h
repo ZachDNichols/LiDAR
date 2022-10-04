@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Laser.generated.h"
 
+class UStaticMeshComponent;
+
 UCLASS()
 class LIDAR_API ALaser : public AActor
 {
