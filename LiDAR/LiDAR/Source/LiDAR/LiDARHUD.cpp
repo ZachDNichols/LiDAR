@@ -15,10 +15,9 @@ void ULiDARHUD::SetRadius(float CurrentRadius, float MaxRadius)
     }
     */
 
-    float min = CurrentRadius - 500.f;
-    float max = MaxRadius - 500.f;
+    float min = CurrentRadius - 100.f;
+    float max = MaxRadius - 100.f;
 
     RadiusProgress->SetPercent( min / max );
-
 }
 

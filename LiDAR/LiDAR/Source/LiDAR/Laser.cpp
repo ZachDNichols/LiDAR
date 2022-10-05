@@ -3,7 +3,6 @@
 
 #include "Laser.h"
 #include "Components/StaticMeshComponent.h"
-#include "FirstPersonCharacter.h"
 
 // Sets default values
 ALaser::ALaser()
@@ -25,13 +24,13 @@ void ALaser::BeginPlay()
 void ALaser::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    if (FPlatformTime::Seconds() - startTime > 0.2)
+    if (FPlatformTime::Seconds() - startTime > 0.12)
         Destroy();
 }
 
 void ALaser::SetLength(float Value)
 {
-    LaserMesh->SetWorldScale3D(FVector(Value, 0.05, 0.05));
+    LaserMesh->SetWorldScale3D(FVector(LaserMesh->GetComponentScale().X, LaserMesh->GetComponentScale().Y, Value));
 }
 
 void ALaser::SetRotation(FRotator Rotation)
