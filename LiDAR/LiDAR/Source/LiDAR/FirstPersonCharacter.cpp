@@ -13,6 +13,7 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
+#include "Components/StaticMeshComponent.h"
 
 
 // Sets default values
@@ -38,6 +39,13 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->CastShadow = false;
 	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
+    
+	/*
+	LaserGunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserGun"));
+	LaserGunMesh->SetupAttachment(FirstPersonCamera);
+	LaserGunMesh->bCastDynamicShadow = false;
+	LaserGunMesh->CastShadow = false;
+	*/
     
     PlayerHUDClass = nullptr;
     PlayerHUD = nullptr;
@@ -156,32 +164,42 @@ void AFirstPersonCharacter::ShootLaser()
 	FRotator Rot;
 	FVector Loc;
 
-
 	GetController()->GetPlayerViewPoint(Loc, Rot);
 
+	Loc = Loc + (FirstPersonCamera->GetForwardVector() * 60.f) + (FirstPersonCamera->GetRightVector() * 20.f) - (FirstPersonCamera->GetUpVector() * 22.f);
+	
 	FVector Start = Loc;
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
 	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this);
 	FRotator HitRotation;
 	
 	
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
 	{
-		DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 2.0f);
-		DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, 2.0f);
-		UE_LOG(LogTemp, Warning, TEXT("Distance is %d"));
+		//DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, .2f);
+		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
 		
-		HitRotation = Hit.ImpactPoint.Rotation();
+		HitRotation = (((Start - End) * -1).Rotation());
+		HitRotation.Pitch -= 90.f;
 		FQuat LaserRotation = FQuat(HitRotation);
 
 		FTransform SpawnTransform;
-		SpawnTransform.SetLocation(FirstPersonCamera->GetComponentLocation());
-		SpawnTransform.SetRotation(LaserRotation);
+		SpawnTransform.SetLocation(Start);
 		
 		FActorSpawnParameters SpawnParams;
 
-		GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+		LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+        
+        float fDistance = Hit.Distance;
+        
+        LaserBeam->SetLength(fDistance);
+        LaserBeam->SetRotation(HitRotation);
+
+		SpawnTransform.SetLocation(Hit.ImpactPoint);
+
+		Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
 	}
 }
     

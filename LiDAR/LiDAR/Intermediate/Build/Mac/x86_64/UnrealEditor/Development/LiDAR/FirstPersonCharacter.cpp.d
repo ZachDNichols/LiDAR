@@ -3109,6 +3109,8 @@
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.cpp \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Development/LiDAR/Definitions.LiDAR.h \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/Laser.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/Laser.generated.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h \
   /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/CharacterMovementReplication.generated.h \

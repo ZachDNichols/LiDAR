@@ -17,13 +17,25 @@ ALaser::ALaser()
 void ALaser::BeginPlay()
 {
 	Super::BeginPlay();
-	
+    startTime = FPlatformTime::Seconds();
 }
 
 // Called every frame
 void ALaser::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+    if (FPlatformTime::Seconds() - startTime > 0.12)
+        Destroy();
 }
 
+void ALaser::SetLength(float Value)
+{
+    LaserMesh->SetWorldScale3D(FVector(LaserMesh->GetComponentScale().X, LaserMesh->GetComponentScale().Y, Value));
+}
+
+void ALaser::SetRotation(FRotator Rotation)
+{
+    FQuat LaserRotation = FQuat(Rotation);
+    
+    AddActorLocalRotation(LaserRotation, false, 0, ETeleportType::None);
+}

@@ -16,10 +16,15 @@ class LIDAR_API ALaser : public AActor
     UPROPERTY(VisibleAnywhere, Category = mesh)
     UStaticMeshComponent* LaserMesh;
     
+    
 	
 public:	
 	// Sets default values for this actor's properties
 	ALaser();
+    
+    void SetLength(float Value);
+    
+    void SetRotation(FRotator Rotation);
 
 protected:
 	// Called when the game starts or when spawned
@@ -28,5 +33,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+    
+private:
+    double startTime;
 
 };
