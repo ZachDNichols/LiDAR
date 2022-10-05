@@ -28,6 +28,10 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, Category=Mesh)
 	USkeletalMeshComponent* PlayerMesh;
     
+    UPROPERTY(VisibleAnywhere, Category=Mesh)
+    UStaticMeshComponent* LaserGunMesh;
+    
+    
     UPROPERTY(EditAnywhere)
     TSubclassOf<class ULiDARHUD> PlayerHUDClass;
 
@@ -36,15 +40,13 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ALaser> LaserBP;
+    
+    UPROPERTY()
+    class ALaser* LaserBeam;
 	
 public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();
-    
-    float GetDistance()
-    {
-        return fDistance;
-    }
 
 protected:
 	// Called when the game starts or when spawned
@@ -94,6 +96,5 @@ private:
     float fRadius = 500.f;
     float fMaxRadius = 5000.f;
     float fMinRadius = 500.f;
-    float fDistance;
 
 };

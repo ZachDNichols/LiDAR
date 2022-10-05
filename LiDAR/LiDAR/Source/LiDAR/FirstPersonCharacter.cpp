@@ -13,6 +13,7 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
+#include "Components/StaticMeshComponent.h"
 
 
 // Sets default values
@@ -38,6 +39,8 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->CastShadow = false;
 	PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
+    
+    LaserGunMesh = CreateDefaultSubobject<UStaticMeshComponent>(Text("LaserGun"));
     
     PlayerHUDClass = nullptr;
     PlayerHUD = nullptr;
@@ -156,10 +159,10 @@ void AFirstPersonCharacter::ShootLaser()
 	FRotator Rot;
 	FVector Loc;
 
-
-	GetController()->GetPlayerViewPoint(Loc, Rot);
-
-	FVector Start = Loc;
+    Loc = LaserGunMesh->GetComponentLocation();
+    Rot = LaserGun()->GetComponentRotation();
+	
+    FVector Start = Loc;
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
 	FCollisionQueryParams TraceParams;
@@ -172,16 +175,20 @@ void AFirstPersonCharacter::ShootLaser()
 		DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, 2.0f);
 		UE_LOG(LogTemp, Warning, TEXT("Distance is %d"));
 		
-		HitRotation = Hit.ImpactPoint.Rotation();
+		HitRotation = (((Start - End) * -1).Rotation());
 		FQuat LaserRotation = FQuat(HitRotation);
 
 		FTransform SpawnTransform;
-		SpawnTransform.SetLocation(FirstPersonCamera->GetComponentLocation());
-		SpawnTransform.SetRotation(LaserRotation);
+		SpawnTransform.SetLocation(Start);
 		
 		FActorSpawnParameters SpawnParams;
 
-		GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+		LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+        
+        float fDistance = Hit.Distance;
+        
+        LaserBeam->SetLength(fDistance);
+        LaserBeam->SetRotation(HitRotation);
 	}
 }
     
