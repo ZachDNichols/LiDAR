@@ -169,18 +169,19 @@ void AFirstPersonCharacter::ShootLaser()
 	GetController()->GetPlayerViewPoint(Loc, Rot);
 
     //Sets the location to look more like it is coming out of the barrel of the player gun
-	Loc = Loc + (FirstPersonCamera->GetForwardVector() * 60.f) + (FirstPersonCamera->GetRightVector() * 20.f) - (FirstPersonCamera->GetUpVector() * 22.f);
+	Loc = Loc + (((FirstPersonCamera->GetForwardVector() * 60.f) + (FirstPersonCamera->GetRightVector() * 20.f) - (FirstPersonCamera->GetUpVector() * 22.f)) + (GetVelocity() * .09f));
     
     //Sets the vector where the line trace should start
     FVector Start = Loc;
     //Sets the vector where it shoud end. Random numbers added to create offsets.
-	FVector End = Start + (Rot.Vector() * 2000);
+	FVector End = Start + (Rot.Vector() * 50000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
     //Parameters for what should be ignored. We ignore the player collision.
 	FCollisionQueryParams TraceParams;
 	TraceParams.AddIgnoredActor(this);
     //FRotator for getting the rotation of the line
 	FRotator HitRotation;
+    
 	
 	
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
