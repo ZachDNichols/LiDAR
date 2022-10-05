@@ -156,6 +156,7 @@ void AFirstPersonCharacter::EndShoot()
 
 void AFirstPersonCharacter::ShootLaser()
 {
+    //Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(fRadius * -1, fRadius);
 	float y = FMath::RandRange(fRadius * -1, fRadius);
 	float z = FMath::RandRange(fRadius * -1, fRadius);
@@ -164,27 +165,36 @@ void AFirstPersonCharacter::ShootLaser()
 	FRotator Rot;
 	FVector Loc;
 
+    //Sets the location and rotation based on what the player sees
 	GetController()->GetPlayerViewPoint(Loc, Rot);
 
+    //Sets the location to look more like it is coming out of the barrel of the player gun
 	Loc = Loc + (FirstPersonCamera->GetForwardVector() * 60.f) + (FirstPersonCamera->GetRightVector() * 20.f) - (FirstPersonCamera->GetUpVector() * 22.f);
-	
-	FVector Start = Loc;
+    
+    //Sets the vector where the line trace should start
+    FVector Start = Loc;
+    //Sets the vector where it shoud end. Random numbers added to create offsets.
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
+    //Parameters for what should be ignored. We ignore the player collision.
 	FCollisionQueryParams TraceParams;
 	TraceParams.AddIgnoredActor(this);
+    //FRotator for getting the rotation of the line
 	FRotator HitRotation;
 	
 	
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
 	{
+        //Draws debug lines for the traces
 		//DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, .2f);
+        //Draws debug boxes where the collision impact occure
 		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
 		
+        //Finds the hit rotation, then rotates it to align correctly
 		HitRotation = (((Start - End) * -1).Rotation());
 		HitRotation.Pitch -= 90.f;
-		FQuat LaserRotation = FQuat(HitRotation);
-
+        
+        //
 		FTransform SpawnTransform;
 		SpawnTransform.SetLocation(Start);
 		
