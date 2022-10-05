@@ -15,16 +15,27 @@ class LIDAR_API ALaser : public AActor
     
     UPROPERTY(VisibleAnywhere, Category = mesh)
     UStaticMeshComponent* LaserMesh;
-    
+
+    //UPROPERTY(EditAnywhere)
+    //TSubclassOf<class AFirstPersonCharacter> CharacterBP;
+
+    //UPROPERTY()
+    //class AFirstPersonCharacter* Character;
     
 	
 public:	
 	// Sets default values for this actor's properties
 	ALaser();
+
+    void SetStart();
     
-    void SetLength(float Value);
-    
-    void SetRotation(FRotator Rotation);
+    void SetSize();
+
+    void SetRotation();
+
+    void SetEnd(FVector EndLocation);
+
+    void SetDistance();
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,5 +47,12 @@ public:
     
 private:
     double startTime;
+    float length;
+    FVector EndLoc;
+    FVector StartLoc;
+    FRotator Rotation;
+
+    class ACharacter* Character;
+    class UCameraComponent* Camera;
 
 };

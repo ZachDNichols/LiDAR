@@ -14,6 +14,8 @@
 #include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
 #include "Components/StaticMeshComponent.h"
+#include "Dot.h"
+#include "Laser.h"
 
 
 // Sets default values
@@ -205,8 +207,7 @@ void AFirstPersonCharacter::ShootLaser()
         
         float fDistance = Hit.Distance;
         
-        LaserBeam->SetLength(fDistance);
-        LaserBeam->SetRotation(HitRotation);
+		LaserBeam->SetEnd(Hit.ImpactPoint);
 
 		SpawnTransform.SetLocation(Hit.ImpactPoint);
 
@@ -233,4 +234,3 @@ void AFirstPersonCharacter::DecreaseRadius()
         PlayerHUD->SetRadius(fRadius, fMaxRadius);
     }
 }
-

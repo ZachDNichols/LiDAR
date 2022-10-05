@@ -2,8 +2,6 @@
 
 #pragma once
 
-#include "Dot.h"
-#include "Laser.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "FirstPersonCharacter.generated.h"
@@ -54,6 +52,7 @@ public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -99,8 +98,8 @@ public:
 
 private:
     bool bIsShooting = false;
-    float fRadius = 300.f;
-    float fMaxRadius = 900.f;
+    float fRadius = 1000.f;
+    float fMaxRadius = 5000.f;
     float fMinRadius = 100.f;
 
 };
