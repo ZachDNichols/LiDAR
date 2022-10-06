@@ -2,6 +2,6 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"LiDAR": "UnrealEditor-LiDAR-9173.dylib"
+		"LiDAR": "UnrealEditor-LiDAR.dylib"
 	}
 }
