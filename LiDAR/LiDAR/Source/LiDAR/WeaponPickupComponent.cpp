@@ -10,7 +10,7 @@ UWeaponPickupComponent::UWeaponPickupComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+    SphereRadius = 32.f;
 }
 
 
@@ -19,8 +19,18 @@ void UWeaponPickupComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+    OnComponentBeginOverlap.AddDynamic(this, &UWeaponPickupComponent::OnSphereBeginOverlap);
+}
+
+void UWeaponPickupComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+    AFirstPersonCharacter* Character = Cast<AFirstPersonCharacter>(OtherActor);
+    if (Character != nullptr)
+    {
+        OnPickUp.Broadcast(Character);
+        
+        OnComponentBeginOverlap.RemoveAll(this);
+    }
 }
 
 

@@ -14,7 +14,10 @@ class UAnimMontage;
 class USoundBase;
 class UStaticMeshComponent;
 
-UCLASS()
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStopUseItem);
+
+UCLASS(config=Game)
 class LIDAR_API AFirstPersonCharacter : public ACharacter
 {
 	GENERATED_BODY()
@@ -51,6 +54,12 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();
+    
+    UPROPERTY(BlueprintAssignable, Category = "Interaction")
+    FOnUseItem OnUseItem;
+    
+    UPROPERTY(BlueprintAssignable, Category = "Interaction")
+    FOnStopUseItem StopUseItem;
 
 
 protected:

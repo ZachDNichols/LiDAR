@@ -2,6 +2,14 @@
 
 
 #include "LEMON.h"
+#include "FirstPersonCharacter.h"
+#include "Laser.h"
+#include "Dot.h"
+#include "Camera/PlayerCameraManager.h"
+#include "Kimset/GameplayStatistics.h"
+#include "Camera/CameraComponent.h"
+#include "Math/Vector.h"
+#include "Components/StaticMeshComponent.h"
 
 // Sets default values for this component's properties
 ULEMON::ULEMON()
@@ -29,6 +37,34 @@ void ULEMON::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponent
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+	if (firing)
+    {
+        UWorld* const World = GetWorld();
+        APlayerController* PlayerController = Cast<APlayerController(Character->GetController);
+        FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+        FVector SpawnLocation = GetOwner()->GetActorLocation();
+        
+        FActorSpawnParameters SpawnParams;
+        
+        Laser = World->SpawnActor<ALaser>(LaserBeam, SpawnLocation, SpawnRotation, SpawnParams);
+    }
+}
+
+void ULEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+    if(Character != nullptr)
+    {
+        Character->OnUseItem.RemoveDynamic(this, &ULEMON::Fire);
+    }
+}
+
+void ULEMON::Fire()
+{
+    firing = true
+}
+
+void ULEMON::HaltFire()
+{
+    firing = false;
 }
 
