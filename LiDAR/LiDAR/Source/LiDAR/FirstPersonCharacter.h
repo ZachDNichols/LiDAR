@@ -14,7 +14,7 @@ class UAnimMontage;
 class USoundBase;
 class UStaticMeshComponent;
 
-UCLASS()
+UCLASS(config=Game)
 class LIDAR_API AFirstPersonCharacter : public ACharacter
 {
 	GENERATED_BODY()
@@ -52,7 +52,8 @@ public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();
 
-
+	void GetGun();
+    
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -83,6 +84,7 @@ protected:
     //Handles decreasing the radius
     void DecreaseRadius();
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -96,10 +98,13 @@ public:
 	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
 
+	void SetGun() { hasGun = true; }
+
 private:
     bool bIsShooting = false;
+	bool hasGun = false;
     float fRadius = 1000.f;
-    float fMaxRadius = 5000.f;
-    float fMinRadius = 100.f;
-
+    float fMaxRadius = 15000.f;
+    float fMinRadius = 5000.f;
+	
 };

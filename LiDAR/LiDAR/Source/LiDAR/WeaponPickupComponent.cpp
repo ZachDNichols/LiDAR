@@ -8,9 +8,8 @@ UWeaponPickupComponent::UWeaponPickupComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+    SphereRadius = 32.f;
 }
 
 
@@ -19,16 +18,17 @@ void UWeaponPickupComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+    OnComponentBeginOverlap.AddDynamic(this, &UWeaponPickupComponent::OnSphereBeginOverlap);
 }
 
-
-// Called every frame
-void UWeaponPickupComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UWeaponPickupComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
+    AFirstPersonCharacter* Character = Cast<AFirstPersonCharacter>(OtherActor);
+    if (Character != nullptr)
+    {
+        OnPickUp.Broadcast(Character);
+        
+        OnComponentBeginOverlap.RemoveAll(this);
+    }
 }
 

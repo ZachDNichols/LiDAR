@@ -53,6 +53,12 @@
     <ClInclude Include="..\..\Source\LiDAR\Laser.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\LEMON.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LEMON.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
       <Filter>Source\LiDAR</Filter>
     </None>
@@ -72,6 +78,12 @@
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\LiDAR\LiDARHUD.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\WeaponPickupComponent.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\WeaponPickupComponent.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "LEMON.generated.h"
 
+class AFirstPersonCharacter;
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class LIDAR_API ULEMON : public UActorComponent
@@ -16,13 +18,12 @@ public:
 	// Sets default values for this component's properties
 	ULEMON();
 
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
 
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+private:
+
+	AFirstPersonCharacter* Character;
 		
 };

@@ -8,33 +8,58 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AFirstPersonCharacter;
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef LIDAR_WeaponPickupComponent_generated_h
 #error "WeaponPickupComponent.generated.h already included, missing '#pragma once' in WeaponPickupComponent.h"
 #endif
 #define LIDAR_WeaponPickupComponent_generated_h
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_SPARSE_DATA
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_RPC_WRAPPERS
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_10_DELEGATE \
+struct _Script_LiDAR_eventOnPickUp_Parms \
+{ \
+	AFirstPersonCharacter* PickUpCharacter; \
+}; \
+static inline void FOnPickUp_DelegateWrapper(const FMulticastScriptDelegate& OnPickUp, AFirstPersonCharacter* PickUpCharacter) \
+{ \
+	_Script_LiDAR_eventOnPickUp_Parms Parms; \
+	Parms.PickUpCharacter=PickUpCharacter; \
+	OnPickUp.ProcessMulticastDelegate<UObject>(&Parms); \
+}
+
+
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_SPARSE_DATA
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnSphereBeginOverlap);
+
+
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnSphereBeginOverlap);
+
+
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUWeaponPickupComponent(); \
 	friend struct Z_Construct_UClass_UWeaponPickupComponent_Statics; \
 public: \
-	DECLARE_CLASS(UWeaponPickupComponent, USceneComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
+	DECLARE_CLASS(UWeaponPickupComponent, USphereComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
 	DECLARE_SERIALIZER(UWeaponPickupComponent)
 
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_INCLASS \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesUWeaponPickupComponent(); \
 	friend struct Z_Construct_UClass_UWeaponPickupComponent_Statics; \
 public: \
-	DECLARE_CLASS(UWeaponPickupComponent, USceneComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
+	DECLARE_CLASS(UWeaponPickupComponent, USphereComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
 	DECLARE_SERIALIZER(UWeaponPickupComponent)
 
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_STANDARD_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UWeaponPickupComponent(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UWeaponPickupComponent) \
@@ -47,7 +72,7 @@ private: \
 public:
 
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UWeaponPickupComponent(UWeaponPickupComponent&&); \
@@ -58,25 +83,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UWeaponPickupComponent)
 
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_10_PROLOG
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_GENERATED_BODY_LEGACY \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_12_PROLOG
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_RPC_WRAPPERS \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_INCLASS \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_STANDARD_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_RPC_WRAPPERS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_INCLASS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_GENERATED_BODY \
+#define FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_INCLASS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_13_ENHANCED_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_INCLASS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_WeaponPickupComponent_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
