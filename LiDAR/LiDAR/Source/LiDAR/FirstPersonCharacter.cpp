@@ -16,6 +16,8 @@
 #include "Components/StaticMeshComponent.h"
 #include "Dot.h"
 #include "Laser.h"
+#include "Components/SceneComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 
 
 // Sets default values
@@ -43,12 +45,10 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 	PlayerMesh->SetVisibility(false);
     
-	/*
-	LaserGunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserGun"));
-	LaserGunMesh->SetupAttachment(FirstPersonCamera);
-	LaserGunMesh->bCastDynamicShadow = false;
-	LaserGunMesh->CastShadow = false;
-	*/
+    HoldLocation = CreateDefaultSubobject<USceneComponent>(TEXT("HoldLocation"));
+    HoldLocation->SetupAttachment(GetCapsuleComponent());
+    
+    PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
     
     PlayerHUDClass = nullptr;
     PlayerHUD = nullptr;
@@ -250,4 +250,9 @@ void AFirstPersonCharacter::DecreaseRadius()
 	        PlayerHUD->SetRadius(fRadius, fMaxRadius);
 	    }
     }
+}
+
+void AFirstPersonCharacter::PickupPhysicsObject()
+{
+    
 }

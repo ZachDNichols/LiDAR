@@ -3109,4 +3109,12 @@
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/LEMON.cpp \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Development/LiDAR/Definitions.LiDAR.h \
   /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/LEMON.h \
-  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/LEMON.generated.h
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/LEMON.generated.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Source/LiDAR/FirstPersonCharacter.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/CharacterMovementReplication.generated.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework/RootMotionSource.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/RootMotionSource.generated.h \
+  /Users/Shared/Epic\ Games/UE_5.0/Engine/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/Engine/Character.generated.h \
+  /Users/zachnichols/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Build/Mac/x86_64/UnrealEditor/Inc/LiDAR/FirstPersonCharacter.generated.h
