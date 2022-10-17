@@ -114,5 +114,6 @@ private:
     float fRadius = 1000.f;
     float fMaxRadius = 15000.f;
     float fMinRadius = 5000.f;
+    bool holdingObject = false;
 	
 };

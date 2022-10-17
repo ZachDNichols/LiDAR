@@ -46,12 +46,9 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->SetVisibility(false);
     
     HoldLocation = CreateDefaultSubobject<USceneComponent>(TEXT("HoldLocation"));
-    HoldLocation->SetupAttachment(GetCapsuleComponent());
+    HoldLocation->SetupAttachment(FirstPersonCamera);
     
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
-    
-    PlayerHUDClass = nullptr;
-    PlayerHUD = nullptr;
 }
 
 // Called when the game starts or when spawned
@@ -87,8 +84,12 @@ void AFirstPersonCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
 void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    if (bIsShooting && hasGun)
+    if (bIsShooting)
         ShootLaser();
+    if (PhysicsHandle->GrabbedComponent)
+    {
+        PhysicsHandle->SetTargetLocation(HoldLocation->GetComponentLocation());
+    }
 }
 
 // Called to bind functionality to input
@@ -122,6 +123,8 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     //Actions for increasing and decreasing radius
     PlayerInputComponent->BindAction("Increase Radius", IE_Pressed, this, &AFirstPersonCharacter::IncreaseRadius);
     PlayerInputComponent->BindAction("Decrease Radius", IE_Pressed, this, &AFirstPersonCharacter::DecreaseRadius);
+    
+    PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFirstPersonCharacter::PickupPhysicsObject);
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -155,13 +158,11 @@ void AFirstPersonCharacter::EndCrouch()
 void AFirstPersonCharacter::BeginShoot()
 {
     bIsShooting = true;
-    PrimaryActorTick.bCanEverTick = true;
 }
 
 void AFirstPersonCharacter::EndShoot()
 {
     bIsShooting = false;
-    PrimaryActorTick.bCanEverTick = false;
 }
 
 void AFirstPersonCharacter::ShootLaser()
@@ -254,29 +255,37 @@ void AFirstPersonCharacter::DecreaseRadius()
 
 void AFirstPersonCharacter::PickupPhysicsObject()
 {
-    FHitResult Hit;
-    FRotator Rot;
-    FVector Loc;
-    
-    //Sets the location and rotation based on what the player sees
-    GetController()->GetPlayerViewPoint(Loc, Rot);
-    
-    //Sets the vector where the line trace should start
-    FVector Start = Loc;
-    //Sets the vector where it shoud end. Random numbers added to create offsets.
-    FVector End = Start + (Rot.Vector() * 300);
-    //Parameters for what should be ignored. We ignore the player collision.
-    FCollisionQueryParams TraceParams;
-    TraceParams.AddIgnoredActor(this);
-    //FRotator for getting the rotation of the line
-    FRotator HitRotation;
-                           
-    if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+    if (holdingObject)
     {
-        if (Hit.Component->IsSimulatingPhysics())
+        PhysicsHandle->ReleaseComponent();
+        holdingObject = false;
+    }
+    else if (!holdingObject)
+    {
+        FHitResult Hit;
+        FRotator Rot;
+        FVector Loc;
+        
+        //Sets the location and rotation based on what the player sees
+        GetController()->GetPlayerViewPoint(Loc, Rot);
+        
+        //Sets the vector where the line trace should start
+        FVector Start = Loc;
+        //Sets the vector where it shoud end. Random numbers added to create offsets.
+        FVector End = Start + (Rot.Vector() * 5000);
+        //Parameters for what should be ignored. We ignore the player collision.
+        FCollisionQueryParams TraceParams;
+        TraceParams.AddIgnoredActor(this);
+        //FRotator for getting the rotation of the line
+        FRotator HitRotation;
+                               
+        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
         {
-            
+            if (Hit.GetComponent()->IsSimulatingPhysics())
+            {
+                PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, HoldLocation->GetComponentLocation());
+                holdingObject = true;
+            }
         }
     }
-    
 }
