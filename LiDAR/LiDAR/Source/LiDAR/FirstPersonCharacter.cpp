@@ -254,5 +254,29 @@ void AFirstPersonCharacter::DecreaseRadius()
 
 void AFirstPersonCharacter::PickupPhysicsObject()
 {
+    FHitResult Hit;
+    FRotator Rot;
+    FVector Loc;
+    
+    //Sets the location and rotation based on what the player sees
+    GetController()->GetPlayerViewPoint(Loc, Rot);
+    
+    //Sets the vector where the line trace should start
+    FVector Start = Loc;
+    //Sets the vector where it shoud end. Random numbers added to create offsets.
+    FVector End = Start + (Rot.Vector() * 300);
+    //Parameters for what should be ignored. We ignore the player collision.
+    FCollisionQueryParams TraceParams;
+    TraceParams.AddIgnoredActor(this);
+    //FRotator for getting the rotation of the line
+    FRotator HitRotation;
+                           
+    if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+    {
+        if (Hit.Component->IsSimulatingPhysics())
+        {
+            
+        }
+    }
     
 }
