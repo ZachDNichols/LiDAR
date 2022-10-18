@@ -85,11 +85,19 @@ void AFirstPersonCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
 void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
     if (bIsShooting)
         ShootLaser();
     if (PhysicsHandle->GrabbedComponent)
     {
-		PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
+		if (FirstPersonCamera->GetForwardVector().Z < -.7f)
+		{
+			PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + FVector((GetActorForwardVector().X * 250.f), (GetActorForwardVector().Y * 250.f), -.6f * 250.f));
+		}
+		else
+		{
+			PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
+		}
     }
 }
 
@@ -158,6 +166,7 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *FirstPersonCamera->GetForwardVector().ToString());
     bIsShooting = true;
 }
 
@@ -286,8 +295,12 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         {
             if (Hit.GetComponent()->IsSimulatingPhysics())
             {
-                PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
-                holdingObject = true;
+				if (FirstPersonCamera->GetForwardVector().Z > -.6f)
+				{
+					PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
+					holdingObject = true;
+				}
+
             }
         }
     }
