@@ -18,6 +18,7 @@
 #include "Laser.h"
 #include "Components/SceneComponent.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Engine/EngineTypes.h"
 
 
 // Sets default values
@@ -88,7 +89,7 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
         ShootLaser();
     if (PhysicsHandle->GrabbedComponent)
     {
-        PhysicsHandle->SetTargetLocation(HoldLocation->GetComponentLocation());
+		PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
     }
 }
 
@@ -223,6 +224,8 @@ void AFirstPersonCharacter::ShootLaser()
 			SpawnTransform.SetLocation(Hit.ImpactPoint);
 	
 			Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
+
+			Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
 		}
     }
 }
@@ -271,8 +274,8 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         
         //Sets the vector where the line trace should start
         FVector Start = Loc;
-        //Sets the vector where it shoud end. Random numbers added to create offsets.
-        FVector End = Start + (Rot.Vector() * 5000);
+        //Sets the vector where it should end. Random numbers added to create offsets.
+        FVector End = Start + (Rot.Vector() * 300.f);
         //Parameters for what should be ignored. We ignore the player collision.
         FCollisionQueryParams TraceParams;
         TraceParams.AddIgnoredActor(this);
@@ -283,7 +286,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         {
             if (Hit.GetComponent()->IsSimulatingPhysics())
             {
-                PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, HoldLocation->GetComponentLocation());
+                PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
                 holdingObject = true;
             }
         }
