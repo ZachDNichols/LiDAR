@@ -115,5 +115,5 @@ private:
     float fMaxRadius = 15000.f;
     float fMinRadius = 5000.f;
     bool holdingObject = false;
-	
+    AActor* heldObject;
 };

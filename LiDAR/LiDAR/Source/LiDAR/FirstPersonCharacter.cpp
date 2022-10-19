@@ -86,19 +86,44 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-    if (bIsShooting)
-        ShootLaser();
+
     if (PhysicsHandle->GrabbedComponent)
     {
-		if (FirstPersonCamera->GetForwardVector().Z < -.7f)
-		{
-			PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + FVector((GetActorForwardVector().X * 250.f), (GetActorForwardVector().Y * 250.f), -.6f * 250.f));
-		}
-		else
-		{
-			PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
-		}
+        FHitResult Hit;
+        FRotator Rot;
+        FVector Loc;
+        
+        //Sets the location and rotation based on what the player sees
+        GetController()->GetPlayerViewPoint(Loc, Rot);
+        
+        //Sets the vector where the line trace should start
+        FVector Start = Loc;
+        //Sets the vector where it should end. Random numbers added to create offsets.
+        FVector End = Start + (Rot.Vector() * 350.f);
+        //Parameters for what should be ignored. We ignore the player collision.
+        FCollisionQueryParams TraceParams;
+        TraceParams.AddIgnoredActor(this);
+        TraceParams.AddIgnoredActor(PhysicsHandle->GetGrabbedComponent()->GetOwner());
+        //FRotator for getting the rotation of the line
+        FRotator HitRotation;
+        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
+        GrabRotation.Pitch = 0.f;
+        GrabRotation.Roll = 0.f;
+                               
+        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+        {
+            PhysicsHandle->SetTargetLocationAndRotation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * Hit.Distance), GrabRotation);
+        }
+        else
+        {
+            PhysicsHandle->SetTargetLocationAndRotation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 350.f), GrabRotation);
+        }
     }
+    else if (bIsShooting)
+    {
+        ShootLaser();
+    }
+
 }
 
 // Called to bind functionality to input
@@ -269,6 +294,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
 {
     if (holdingObject)
     {
+        PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel2);
         PhysicsHandle->ReleaseComponent();
         holdingObject = false;
     }
@@ -284,12 +310,15 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         //Sets the vector where the line trace should start
         FVector Start = Loc;
         //Sets the vector where it should end. Random numbers added to create offsets.
-        FVector End = Start + (Rot.Vector() * 300.f);
+        FVector End = Start + (Rot.Vector() * 350.f);
         //Parameters for what should be ignored. We ignore the player collision.
         FCollisionQueryParams TraceParams;
         TraceParams.AddIgnoredActor(this);
         //FRotator for getting the rotation of the line
         FRotator HitRotation;
+        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
+        GrabRotation.Pitch = 0.f;
+        GrabRotation.Roll = 0.f;
                                
         if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
         {
@@ -297,8 +326,9 @@ void AFirstPersonCharacter::PickupPhysicsObject()
             {
 				if (FirstPersonCamera->GetForwardVector().Z > -.6f)
 				{
-					PhysicsHandle->GrabComponentAtLocation(Hit.GetComponent(), NAME_None, FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f));
+					PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f), GrabRotation);
 					holdingObject = true;
+                    PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
 				}
 
             }
