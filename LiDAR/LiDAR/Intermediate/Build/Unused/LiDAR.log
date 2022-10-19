@@ -1,12 +1,8 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
-  Invalidating makefile for LiDAREditor (source file removed)
-  Parsing headers for LiDAREditor
-    Running UnrealHeaderTool "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\LiDAREditor\Development\LiDAREditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\zach\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  Reflection code generated for LiDAREditor in 2.0567033 seconds
   Building LiDAREditor...
   Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstPersonCharacter.cpp, Laser.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, LiDARHUD.cpp, WeaponPickupComponent.cpp
+  [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstPersonCharacter.cpp, Laser.cpp, LEMON.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, LiDARHUD.cpp, WeaponPickupComponent.cpp
   Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -15,15 +11,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {B674EC05-556D-4F12-BE7A-92C9DB7620B3}
+  Build ID: {258CA8FD-43FE-4ECE-96CD-00633E42EEB7}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] LiDAR.init.gen.cpp (0:00.53 at +0:00)
-  [2/4] UnrealEditor-LiDAR.dll (0:00.76 at +0:00)
+  [1/4] FirstPersonCharacter.cpp (0:18.34 at +0:00)
+  [2/4] UnrealEditor-LiDAR.dll (0:00.71 at +0:18)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [3/4] UnrealEditor-LiDAR.lib (0:00.10 at +0:01)
+  [3/4] UnrealEditor-LiDAR.lib (0:00.09 at +0:19)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [4/4] LiDAREditor.target (0:00.26 at +0:01)
+  [4/4] LiDAREditor.target (0:00.29 at +0:19)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -31,5 +27,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 1.80 seconds
-  Total execution time: 5.65 seconds
+  Total time in XGE executor: 19.59 seconds
+  Total execution time: 20.17 seconds

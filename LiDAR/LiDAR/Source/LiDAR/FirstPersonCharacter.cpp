@@ -16,6 +16,9 @@
 #include "Components/StaticMeshComponent.h"
 #include "Dot.h"
 #include "Laser.h"
+#include "Components/SceneComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Engine/EngineTypes.h"
 
 
 // Sets default values
@@ -43,15 +46,10 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 	PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 	PlayerMesh->SetVisibility(false);
     
-	/*
-	LaserGunMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserGun"));
-	LaserGunMesh->SetupAttachment(FirstPersonCamera);
-	LaserGunMesh->bCastDynamicShadow = false;
-	LaserGunMesh->CastShadow = false;
-	*/
+    HoldLocation = CreateDefaultSubobject<USceneComponent>(TEXT("HoldLocation"));
+    HoldLocation->SetupAttachment(FirstPersonCamera);
     
-    PlayerHUDClass = nullptr;
-    PlayerHUD = nullptr;
+    PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
 }
 
 // Called when the game starts or when spawned
@@ -87,8 +85,45 @@ void AFirstPersonCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
 void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-    if (bIsShooting && hasGun)
+	
+
+    if (PhysicsHandle->GrabbedComponent)
+    {
+        FHitResult Hit;
+        FRotator Rot;
+        FVector Loc;
+        
+        //Sets the location and rotation based on what the player sees
+        GetController()->GetPlayerViewPoint(Loc, Rot);
+        
+        //Sets the vector where the line trace should start
+        FVector Start = Loc;
+        //Sets the vector where it should end. Random numbers added to create offsets.
+        FVector End = Start + (Rot.Vector() * 350.f);
+        //Parameters for what should be ignored. We ignore the player collision.
+        FCollisionQueryParams TraceParams;
+        TraceParams.AddIgnoredActor(this);
+        TraceParams.AddIgnoredActor(PhysicsHandle->GetGrabbedComponent()->GetOwner());
+        //FRotator for getting the rotation of the line
+        FRotator HitRotation;
+        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
+        GrabRotation.Pitch = 0.f;
+        GrabRotation.Roll = 0.f;
+                               
+        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+        {
+            PhysicsHandle->SetTargetLocationAndRotation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * Hit.Distance), GrabRotation);
+        }
+        else
+        {
+            PhysicsHandle->SetTargetLocationAndRotation(FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 350.f), GrabRotation);
+        }
+    }
+    else if (bIsShooting)
+    {
         ShootLaser();
+    }
+
 }
 
 // Called to bind functionality to input
@@ -122,6 +157,8 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     //Actions for increasing and decreasing radius
     PlayerInputComponent->BindAction("Increase Radius", IE_Pressed, this, &AFirstPersonCharacter::IncreaseRadius);
     PlayerInputComponent->BindAction("Decrease Radius", IE_Pressed, this, &AFirstPersonCharacter::DecreaseRadius);
+    
+    PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFirstPersonCharacter::PickupPhysicsObject);
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -154,14 +191,13 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *FirstPersonCamera->GetForwardVector().ToString());
     bIsShooting = true;
-    PrimaryActorTick.bCanEverTick = true;
 }
 
 void AFirstPersonCharacter::EndShoot()
 {
     bIsShooting = false;
-    PrimaryActorTick.bCanEverTick = false;
 }
 
 void AFirstPersonCharacter::ShootLaser()
@@ -222,6 +258,8 @@ void AFirstPersonCharacter::ShootLaser()
 			SpawnTransform.SetLocation(Hit.ImpactPoint);
 	
 			Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
+
+			Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
 		}
     }
 }
@@ -249,5 +287,51 @@ void AFirstPersonCharacter::DecreaseRadius()
 	        fRadius -= decrement;
 	        PlayerHUD->SetRadius(fRadius, fMaxRadius);
 	    }
+    }
+}
+
+void AFirstPersonCharacter::PickupPhysicsObject()
+{
+    if (holdingObject)
+    {
+        PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel2);
+        PhysicsHandle->ReleaseComponent();
+        holdingObject = false;
+    }
+    else if (!holdingObject)
+    {
+        FHitResult Hit;
+        FRotator Rot;
+        FVector Loc;
+        
+        //Sets the location and rotation based on what the player sees
+        GetController()->GetPlayerViewPoint(Loc, Rot);
+        
+        //Sets the vector where the line trace should start
+        FVector Start = Loc;
+        //Sets the vector where it should end. Random numbers added to create offsets.
+        FVector End = Start + (Rot.Vector() * 350.f);
+        //Parameters for what should be ignored. We ignore the player collision.
+        FCollisionQueryParams TraceParams;
+        TraceParams.AddIgnoredActor(this);
+        //FRotator for getting the rotation of the line
+        FRotator HitRotation;
+        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
+        GrabRotation.Pitch = 0.f;
+        GrabRotation.Roll = 0.f;
+                               
+        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+        {
+            if (Hit.GetComponent()->IsSimulatingPhysics())
+            {
+				if (FirstPersonCamera->GetForwardVector().Z > -.6f)
+				{
+					PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f), GrabRotation);
+					holdingObject = true;
+                    PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
+				}
+
+            }
+        }
     }
 }

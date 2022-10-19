@@ -13,11 +13,16 @@ class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
 class UStaticMeshComponent;
+class USceneComponent;
+class UPhysicsHandleComponent;
 
-UCLASS(config=Game)
+UCLASS()
 class LIDAR_API AFirstPersonCharacter : public ACharacter
 {
 	GENERATED_BODY()
+    
+    UPROPERTY(VisibleAnywhere, Category = "Holding")
+    UPhysicsHandleComponent* PhysicsHandle;
 	
 	//First person camera
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -27,8 +32,8 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, Category=Mesh)
 	USkeletalMeshComponent* PlayerMesh;
     
-    //UPROPERTY(VisibleAnywhere, Category=Mesh)
-    //UStaticMeshComponent* LaserGunMesh;
+    UPROPERTY(VisibleAnywhere, Category = "Holding")
+    USceneComponent* HoldLocation;
     
     UPROPERTY(EditAnywhere)
     TSubclassOf<class ULiDARHUD> PlayerHUDClass;
@@ -83,6 +88,8 @@ protected:
     
     //Handles decreasing the radius
     void DecreaseRadius();
+    
+    void PickupPhysicsObject();
 
 
 public:	
@@ -97,6 +104,7 @@ public:
 
 	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
+    
 
 	void SetGun() { hasGun = true; }
 
@@ -106,5 +114,6 @@ private:
     float fRadius = 1000.f;
     float fMaxRadius = 15000.f;
     float fMinRadius = 5000.f;
-	
+    bool holdingObject = false;
+    AActor* heldObject;
 };

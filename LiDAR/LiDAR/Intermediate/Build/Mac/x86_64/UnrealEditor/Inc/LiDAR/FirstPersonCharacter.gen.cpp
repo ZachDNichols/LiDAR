@@ -9,63 +9,19 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 // Cross Module References
-	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature();
-	UPackage* Z_Construct_UPackage__Script_LiDAR();
-	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature();
 	LIDAR_API UClass* Z_Construct_UClass_AFirstPersonCharacter_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_AFirstPersonCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	UPackage* Z_Construct_UPackage__Script_LiDAR();
+	ENGINE_API UClass* Z_Construct_UClass_UPhysicsHandleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_ULiDARHUD_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	LIDAR_API UClass* Z_Construct_UClass_ALaser_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_ADot_NoRegister();
 // End Cross Module References
-	struct Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_LiDAR, nullptr, "OnUseItem__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_LiDAR, nullptr, "OnStopUseItem__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	void AFirstPersonCharacter::StaticRegisterNativesAFirstPersonCharacter()
 	{
 	}
@@ -81,6 +37,10 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PhysicsHandle_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_PhysicsHandle;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FirstPersonCamera_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_FirstPersonCamera;
@@ -88,6 +48,10 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerMesh;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HoldLocation_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HoldLocation;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerHUDClass_MetaData[];
 #endif
@@ -112,14 +76,6 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Dot_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Dot;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnUseItem_MetaData[];
-#endif
-		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnUseItem;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_StopUseItem_MetaData[];
-#endif
-		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_StopUseItem;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -135,6 +91,14 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PhysicsHandle_MetaData[] = {
+		{ "Category", "Holding" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PhysicsHandle = { "PhysicsHandle", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, PhysicsHandle), Z_Construct_UClass_UPhysicsHandleComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PhysicsHandle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PhysicsHandle_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -157,11 +121,17 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh = { "PlayerMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, PlayerMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation_MetaData[] = {
+		{ "Category", "Holding" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation = { "HoldLocation", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, HoldLocation), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUDClass_MetaData[] = {
 		{ "Category", "FirstPersonCharacter" },
-		{ "Comment", "//UPROPERTY(VisibleAnywhere, Category=Mesh)\n//UStaticMeshComponent* LaserGunMesh;\n" },
 		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
-		{ "ToolTip", "UPROPERTY(VisibleAnywhere, Category=Mesh)\nUStaticMeshComponent* LaserGunMesh;" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUDClass = { "PlayerHUDClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, PlayerHUDClass), Z_Construct_UClass_ULiDARHUD_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUDClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUDClass_MetaData)) };
@@ -198,31 +168,17 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Dot = { "Dot", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, Dot), Z_Construct_UClass_ADot_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Dot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Dot_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem_MetaData[] = {
-		{ "Category", "Interaction" },
-		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem = { "OnUseItem", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, OnUseItem), Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem_MetaData)) }; // 930147442
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_StopUseItem_MetaData[] = {
-		{ "Category", "Interaction" },
-		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_StopUseItem = { "StopUseItem", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, StopUseItem), Z_Construct_UDelegateFunction_LiDAR_OnStopUseItem__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_StopUseItem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_StopUseItem_MetaData)) }; // 3146876223
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFirstPersonCharacter_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PhysicsHandle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FirstPersonCamera,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUDClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_PlayerHUD,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_LaserBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_LaserBeam,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_DotBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Dot,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_StopUseItem,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFirstPersonCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFirstPersonCharacter>::IsAbstract,
@@ -260,9 +216,9 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 2908342040U) },
+		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 2476594082U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_1428397227(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_1282980839(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
