@@ -29,7 +29,7 @@ void ALaser::BeginPlay()
 void ALaser::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-   if (FPlatformTime::Seconds() - startTime > .2f)
+   if (FPlatformTime::Seconds() - startTime > .12f)
        Destroy();
     SetStart();
     SetRotation();
@@ -38,7 +38,7 @@ void ALaser::Tick(float DeltaTime)
 
 void ALaser::SetStart()
 {
-    StartLoc = Camera->GetComponentLocation() + ((Camera->GetForwardVector() * 60.f) + (Camera->GetRightVector() * 20.f) - (Camera->GetUpVector() * 22.f));
+    StartLoc = Camera->GetComponentLocation() + ((Camera->GetForwardVector() * 83.f) + (Camera->GetRightVector() * 24.f) - (Camera->GetUpVector() * 24.f));
 }
 
 void ALaser::SetSize()
