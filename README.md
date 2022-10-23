@@ -11,7 +11,7 @@ We will use Unreal Engine 5 with C++ in combination with Visual Studio to create
 ## Method of Completion
 We will use something similar to the agile/scrum method and meet weekly to discuss what needs to be done next in the project. 
 ## Team Members
-Zach Nichols, Yengchee Lor, Tekena Ogan, 
+Zach Nichols
 
 
 # LiDAR
