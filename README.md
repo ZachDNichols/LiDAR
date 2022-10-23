@@ -17,7 +17,7 @@ Zach Nichols
 # LiDAR
 **Title of game**: LiDAR <br/>
 **Tag line**: See what’s not there.<br/>
-**Team**: Yengchee, Tekana, Zach<br/>
+**Team**: Zach<br/>
 **Date of last update**: Most likely the due date of the project.<br/>
 # Overview<br/>
 **Concept**: The player is equipped with a device, called the “Light Emitting Manual Operation Navigator”, or LEMON. This device shoots out a bunch of lasers which leave little dots on the surrounding area to help the player navigate through dark areas, or to see objects that do not appear to be present at first glance.<br/>
