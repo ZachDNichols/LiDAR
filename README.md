@@ -11,8 +11,8 @@ We will use Unreal Engine 5 with C++ in combination with Visual Studio to create
 ## Method of Completion
 We will use something similar to the agile/scrum method and meet weekly to discuss what needs to be done next in the project. 
 ## Credits
-Zach Nichols - Lead Game Developer
-Marissa Marxhausen - Concept Art 
+Zach Nichols - Lead Game Developer </br>
+Marissa Marxhausen - Concept Art </br>
 
 
 # LiDAR
