@@ -10,14 +10,14 @@ Through the course of the semester, we hope to create a compelling game with int
 We will use Unreal Engine 5 with C++ in combination with Visual Studio to create our project. For source control, we will use GitHub.
 ## Method of Completion
 We will use something similar to the agile/scrum method and meet weekly to discuss what needs to be done next in the project. 
-## Team Members
-Zach Nichols
+## Credits
+Zach Nichols - Lead Game Developer </br>
+Marissa Marxhausen - Concept Art </br>
 
 
 # LiDAR
 **Title of game**: LiDAR <br/>
 **Tag line**: See what’s not there.<br/>
-**Team**: Zach<br/>
 **Date of last update**: Most likely the due date of the project.<br/>
 # Overview<br/>
 **Concept**: The player is equipped with a device, called the “Light Emitting Manual Operation Navigator”, or LEMON. This device shoots out a bunch of lasers which leave little dots on the surrounding area to help the player navigate through dark areas, or to see objects that do not appear to be present at first glance.<br/>
