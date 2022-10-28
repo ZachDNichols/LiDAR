@@ -564,3 +564,197 @@ LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
 [2022.10.28-03.28.03:179][  0]LogUObjectAllocator: 5584256 out of 0 bytes used by permanent object pool.
 [2022.10.28-03.28.03:179][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
 [2022.10.28-03.28.04:803][  0]LogPython: Using Python 3.9.7
+[2022.10.28-03.28.05:806][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: A76F1083473A4703DA057899451E5A8E | Instance: 54230A1A40E5E0D80D6E918696D4BF4F (R-ALPHA-31604).
+[2022.10.28-03.28.05:988][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2022.10.28-03.28.06:014][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2022.10.28-03.28.06:502][  0]SourceControl: Source control is disabled
+[2022.10.28-03.28.06:544][  0]SourceControl: Source control is disabled
+[2022.10.28-03.28.06:567][  0]SourceControl: Source control is disabled
+[2022.10.28-03.28.06:644][  0]LogUProjectInfo: Found projects:
+[2022.10.28-03.28.08:159][  0]LogOpenImageDenoise: OIDN starting up
+[2022.10.28-03.28.08:475][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2022.10.28-03.28.08:583][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.10.28-03.28.08:583][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.10.28-03.28.08:969][  0]LogCollectionManager: Loaded 0 collections in 0.000960 seconds
+[2022.10.28-03.28.09:329][  0]LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Collections/' took 0.00s
+[2022.10.28-03.28.09:329][  0]LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/Developers/zach/Collections/' took 0.00s
+[2022.10.28-03.28.09:329][  0]LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/Collections/' took 0.00s
+[2022.10.28-03.28.09:703][  0]LogEngine: Initializing Engine...
+[2022.10.28-03.28.09:719][  0]LogStylusInput: Initializing StylusInput subsystem.
+[2022.10.28-03.28.09:720][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2022.10.28-03.28.10:157][  0]LogInit: Initializing FReadOnlyCVARCache
+[2022.10.28-03.28.10:157][  0]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2022.10.28-03.28.10:193][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.10.28-03.28.10:251][  0]LogAIModule: Creating AISystem for world Untitled
+[2022.10.28-03.28.10:252][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2022.10.28-03.28.10:309][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2022.10.28-03.28.10:313][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2022.10.28-03.28.10:313][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: Audio Device Manager Initialized
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2022.10.28-03.28.10:314][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.10.28-03.28.10:314][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.10.28-03.28.10:353][  0]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2022.10.28-03.28.10:392][  0]LogAudioMixer: Display: Using Audio Hardware Device Speakers (Razer USB Sound Card)
+[2022.10.28-03.28.10:392][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.10.28-03.28.10:409][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.10.28-03.28.10:409][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.10.28-03.28.10:410][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=1
+[2022.10.28-03.28.10:410][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=1
+[2022.10.28-03.28.10:411][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=1
+[2022.10.28-03.28.10:411][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=1
+[2022.10.28-03.28.10:411][  0]LogInit: FAudioDevice initialized.
+[2022.10.28-03.28.10:411][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2022.10.28-03.28.10:411][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2022.10.28-03.28.10:411][  0]LogInit: Texture streaming: Enabled
+[2022.10.28-03.28.10:493][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 5.0.3-20979098+++UE5+Release-5.0
+[2022.10.28-03.28.10:518][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2022.10.28-03.28.10:565][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2022.10.28-03.28.10:595][  0]LogLiveCoding: Display: Starting LiveCoding
+[2022.10.28-03.28.10:595][  0]LogLiveCoding: Display: LiveCodingConsole Arguments: LiDAREditor Win64 Development
+[2022.10.28-03.28.12:456][  0]LogLiveCoding: Display: First instance in process group "UE_LiDAR_0x6c17477b", spawning console
+[2022.10.28-03.28.12:456][  0]LogLiveCoding: Display: Waiting for server
+[2022.10.28-03.28.12:456][  0]LogLiveCoding: Display: Successfully initialized, removing startup thread
+[2022.10.28-03.28.12:486][  0]LogInit: Transaction tracking system initialized
+[2022.10.28-03.28.12:631][  0]BlueprintLog: New page: Editor Load
+[2022.10.28-03.28.13:097][  0]LocalizationService: Localization service is disabled
+[2022.10.28-03.28.13:187][  0]TimingProfiler: Initialize
+[2022.10.28-03.28.13:187][  0]TimingProfiler: OnSessionChanged
+[2022.10.28-03.28.13:187][  0]LoadingProfiler: Initialize
+[2022.10.28-03.28.13:187][  0]LoadingProfiler: OnSessionChanged
+[2022.10.28-03.28.13:187][  0]NetworkingProfiler: Initialize
+[2022.10.28-03.28.13:187][  0]NetworkingProfiler: OnSessionChanged
+[2022.10.28-03.28.13:187][  0]MemoryProfiler: Initialize
+[2022.10.28-03.28.13:187][  0]MemoryProfiler: OnSessionChanged
+[2022.10.28-03.28.14:793][  0]LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/' took 0.01s
+[2022.10.28-03.28.14:793][  0]LogLevelSequenceEditor: LevelSequenceEditor subsystem initialized.
+[2022.10.28-03.28.15:120][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2022.10.28-03.28.15:123][  0]SourceControl: Source control is disabled
+[2022.10.28-03.28.15:123][  0]LogUnrealEdMisc: Loading editor; pre map load, took 24.123
+[2022.10.28-03.28.15:123][  0]Cmd: MAP LOAD FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2022.10.28-03.28.15:123][  0]LightingResults: New page: Lighting Build
+[2022.10.28-03.28.15:133][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2022.10.28-03.28.15:133][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.10.28-03.28.15:133][  0]MapCheck: New page: Map Check
+[2022.10.28-03.28.15:133][  0]LightingResults: New page: Lighting Build
+[2022.10.28-03.28.15:150][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.10.28-03.28.15:157][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2022.10.28-03.28.15:519][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Test'.
+[2022.10.28-03.28.15:519][  0]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2022.10.28-03.28.15:520][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.10.28-03.28.15:525][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2022.10.28-03.28.15:525][  0]LogAIModule: Creating AISystem for world Test
+[2022.10.28-03.28.15:541][  0]LogUObjectHash: Compacting FUObjectHashTables data took   2.18ms
+[2022.10.28-03.28.15:542][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2022.10.28-03.28.15:542][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.13ms to complete.
+[2022.10.28-03.28.15:542][  0]LogFileHelpers: Loading map 'Level1' took 0.419
+[2022.10.28-03.28.15:591][  0]LogUnrealEdMisc: Total Editor Startup Time, took 24.591
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: ================================================
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: Shaders Compiled: 0
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2022.10.28-03.28.15:591][  0]LogShaderCompilers: Display: ================================================
+[2022.10.28-03.28.15:744][  0]LogSlate: The tab "TopLeftModeTab" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2022.10.28-03.28.15:744][  0]LogSlate: The tab "TopLeftModeTab" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2022.10.28-03.28.15:792][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.10.28-03.28.15:813][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.10.28-03.28.15:828][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.10.28-03.28.15:842][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.10.28-03.28.16:166][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/StarterContent.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:166][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:173][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_FirstPerson.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:173][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:179][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_FirstPersonBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:180][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:185][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_HandheldARBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:185][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:197][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_ThirdPerson.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:197][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:202][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_ThirdPersonBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:203][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:208][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_TopDown.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:208][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:213][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_TopDownBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:214][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:219][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VehicleAdvBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:219][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:224][  0]LogPakFile: Display: Mounted Pak file 'G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack', mount point: 'root:/'
+[2022.10.28-03.28.16:224][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2022.10.28-03.28.16:226][  0]LogFeaturePack: Error: Error in Feature pack G:/Program Files/Epic Games/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack. Failed to parse manifest: Invalid Json Token. Line: 43 Ch: 4
+[2022.10.28-03.28.17:127][  0]LogSlate: Took 0.003661 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.10.28-03.28.17:134][  0]LogSlate: Took 0.003427 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2022.10.28-03.28.17:140][  0]LogSlate: Took 0.004982 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2022.10.28-03.28.17:159][  0]LogViewport: Scene viewport resized to 2038x1254, mode Windowed.
+[2022.10.28-03.28.17:824][  0]LogStall: Startup...
+[2022.10.28-03.28.17:828][  0]LogStall: Startup complete.
+[2022.10.28-03.28.17:865][  0]LogLoad: (Engine Initialization) Total time: 26.87 seconds
+[2022.10.28-03.28.17:865][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2022.10.28-03.28.17:961][  0]LogAssetRegistry: Asset discovery search completed in 17.0317 seconds
+[2022.10.28-03.28.18:008][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000002 seconds (updated 0 objects)
+[2022.10.28-03.28.18:096][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2022.10.28-03.29.33:972][255]LogViewport: Scene viewport resized to 1014x582, mode Windowed.
+[2022.10.28-03.29.39:963][315]LogViewport: Scene viewport resized to 2038x1254, mode Windowed.
+[2022.10.28-03.29.48:022][275]LogSlate: Took 0.002711 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2022.10.28-03.29.48:024][275]LogSlate: Took 0.002657 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2022.10.28-03.29.48:035][275]LogSlate: Took 0.003009 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2022.10.28-03.29.51:146][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.40ms
+[2022.10.28-03.29.51:176][627]LogAssetEditorSubsystem: Opening Asset editor for World /Game/LiDAR/Maps/Level_One.Level_One
+[2022.10.28-03.29.51:176][627]Cmd: MAP LOAD FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level_One.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2022.10.28-03.29.51:176][627]LightingResults: New page: Lighting Build
+[2022.10.28-03.29.51:176][627]LoadErrors: New page: Loading map: Level_One.umap
+[2022.10.28-03.29.51:177][627]LogWorld: UWorld::CleanupWorld for Test, bSessionEnded=true, bCleanupResources=true
+[2022.10.28-03.29.51:177][627]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.10.28-03.29.51:177][627]MapCheck: New page: Map Check
+[2022.10.28-03.29.51:177][627]LightingResults: New page: Lighting Build
+[2022.10.28-03.29.51:181][627]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.10.28-03.29.51:182][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.40ms
+[2022.10.28-03.29.51:183][627]LogWorld: UWorld::CleanupWorld for Level_One, bSessionEnded=true, bCleanupResources=true
+[2022.10.28-03.29.51:183][627]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.10.28-03.29.51:188][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.38ms
+[2022.10.28-03.29.51:194][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.42ms
+[2022.10.28-03.29.51:195][627]LogAudio: Display: Audio Device (ID: 1) registered with world 'Level_One'.
+[2022.10.28-03.29.51:195][627]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2022.10.28-03.29.51:195][627]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.10.28-03.29.51:195][627]LogAIModule: Creating AISystem for world Level_One
+[2022.10.28-03.29.51:206][627]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2022.10.28-03.29.51:211][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.37ms
+[2022.10.28-03.29.51:217][627]Cmd: MAP CHECKDEP NOCLEARLOG
+[2022.10.28-03.29.51:217][627]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.095ms to complete.
+[2022.10.28-03.29.51:217][627]LogFileHelpers: Loading map 'Level_One' took 0.042
+[2022.10.28-03.29.57:499][318]LogDerivedDataCache: C:/Users/zach/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.190 and deleted 0 file(s) with total size 0 MiB.
+[2022.10.28-03.29.57:951][370]LogEditorViewport: Clicking Background
+[2022.10.28-03.30.00:011][595]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Engine/BasicShapes/Cube.Cube
+[2022.10.28-03.30.00:011][595]LogActorFactory: Actor Factory attempting to spawn StaticMesh /Engine/BasicShapes/Cube.Cube
+[2022.10.28-03.30.00:011][595]LogActorFactory: Actor Factory spawned StaticMesh /Engine/BasicShapes/Cube.Cube as actor: StaticMeshActor /Game/LiDAR/Maps/Level_One.Level_One:PersistentLevel.StaticMeshActor_0
+[2022.10.28-03.30.00:024][595]LogActorFactory: Actor Factory spawned StaticMesh /Engine/BasicShapes/Cube.Cube as actor: StaticMeshActor /Game/LiDAR/Maps/Level_One.Level_One:PersistentLevel.StaticMeshActor_0
+[2022.10.28-03.30.06:323][316]Cmd: TRANSACTION UNDO
+[2022.10.28-03.30.06:323][316]LogEditorTransaction: Undo Scale Elements
+[2022.10.28-03.30.06:324][316]LogPhysics: Warning: Scale for /Game/LiDAR/Maps/Level_One.Level_One:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0 has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=1.000 Z=0.000
+[2022.10.28-03.30.06:324][316]LogPhysics: Warning: Scale for /Game/LiDAR/Maps/Level_One.Level_One:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0 has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=1.000 Z=0.000
+[2022.10.28-03.30.10:067][702]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/LiDAR/Maps/Level_One" FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level_One.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2022.10.28-03.30.10:072][702]LogUObjectHash: Compacting FUObjectHashTables data took   0.38ms
+[2022.10.28-03.30.10:077][702]LogPackageLocalizationCache: Processed 30 localized package path(s) for 1 prioritized culture(s) in 0.004431 seconds
+[2022.10.28-03.30.10:079][702]LogSavePackage: Moving output files for package: /Game/LiDAR/Maps/Level_One
+[2022.10.28-03.30.10:080][702]LogSavePackage: Moving 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Level_OneF646052B4744F5EB16BF11BFD3F17F1A.tmp' to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level_One.umap'
+[2022.10.28-03.30.10:094][702]AssetCheck: New page: Asset Save: Level_One
+[2022.10.28-03.30.10:094][702]LogContentValidation: Display: Validating World /Game/LiDAR/Maps/Level_One.Level_One
+[2022.10.28-03.30.10:936][799]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/LiDAR/Maps/Level_One" FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level_One.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2022.10.28-03.30.10:940][799]LogUObjectHash: Compacting FUObjectHashTables data took   0.18ms
+[2022.10.28-03.30.10:942][799]LogSavePackage: Moving output files for package: /Game/LiDAR/Maps/Level_One
+[2022.10.28-03.30.10:943][799]LogSavePackage: Moving 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Level_OneEF0D0BA649A500CAFC9885A081B94869.tmp' to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Level_One.umap'
+[2022.10.28-03.30.10:969][799]AssetCheck: New page: Asset Save: Level_One
+[2022.10.28-03.30.10:969][799]LogContentValidation: Display: Validating World /Game/LiDAR/Maps/Level_One.Level_One
