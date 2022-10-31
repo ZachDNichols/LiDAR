@@ -59,10 +59,7 @@ public:
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
-	float increment = 100.f;
 	float currentRadius = 1000.f;
-	float minRadius = 5000.f;
-	float maxRadius = 15000.f;
 	UCameraComponent* Camera;
 
 protected:
