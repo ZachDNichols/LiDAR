@@ -13,10 +13,38 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define LIDAR_FirstPersonCharacter_generated_h
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_SPARSE_DATA
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_RPC_WRAPPERS
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_INCLASS_NO_PURE_DECLS \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_20_DELEGATE \
+static inline void FOnUseItem_DelegateWrapper(const FMulticastScriptDelegate& OnUseItem) \
+{ \
+	OnUseItem.ProcessMulticastDelegate<UObject>(NULL); \
+}
+
+
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_21_DELEGATE \
+static inline void FOnEndUseItem_DelegateWrapper(const FMulticastScriptDelegate& OnEndUseItem) \
+{ \
+	OnEndUseItem.ProcessMulticastDelegate<UObject>(NULL); \
+}
+
+
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_DELEGATE \
+static inline void FScrollUp_DelegateWrapper(const FMulticastScriptDelegate& ScrollUp) \
+{ \
+	ScrollUp.ProcessMulticastDelegate<UObject>(NULL); \
+}
+
+
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_23_DELEGATE \
+static inline void FScrollDown_DelegateWrapper(const FMulticastScriptDelegate& ScrollDown) \
+{ \
+	ScrollDown.ProcessMulticastDelegate<UObject>(NULL); \
+}
+
+
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_SPARSE_DATA
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_RPC_WRAPPERS
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFirstPersonCharacter(); \
 	friend struct Z_Construct_UClass_AFirstPersonCharacter_Statics; \
@@ -25,7 +53,7 @@ public: \
 	DECLARE_SERIALIZER(AFirstPersonCharacter)
 
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_INCLASS \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_INCLASS \
 private: \
 	static void StaticRegisterNativesAFirstPersonCharacter(); \
 	friend struct Z_Construct_UClass_AFirstPersonCharacter_Statics; \
@@ -34,7 +62,7 @@ public: \
 	DECLARE_SERIALIZER(AFirstPersonCharacter)
 
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_STANDARD_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFirstPersonCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFirstPersonCharacter) \
@@ -47,7 +75,7 @@ private: \
 public:
 
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_ENHANCED_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFirstPersonCharacter(AFirstPersonCharacter&&); \
@@ -58,25 +86,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFirstPersonCharacter)
 
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_19_PROLOG
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_GENERATED_BODY_LEGACY \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_26_PROLOG
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_RPC_WRAPPERS \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_INCLASS \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_STANDARD_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_RPC_WRAPPERS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_INCLASS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_GENERATED_BODY \
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_INCLASS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_22_ENHANCED_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_INCLASS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_29_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

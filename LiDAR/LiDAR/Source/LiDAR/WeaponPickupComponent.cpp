@@ -6,8 +6,8 @@
 // Sets default values for this component's properties
 UWeaponPickupComponent::UWeaponPickupComponent()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
+    // Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
+    // off to improve performance if you don't need them.
 
     SphereRadius = 32.f;
 }
@@ -16,7 +16,7 @@ UWeaponPickupComponent::UWeaponPickupComponent()
 // Called when the game starts
 void UWeaponPickupComponent::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 
     OnComponentBeginOverlap.AddDynamic(this, &UWeaponPickupComponent::OnSphereBeginOverlap);
 }
@@ -27,7 +27,7 @@ void UWeaponPickupComponent::OnSphereBeginOverlap(UPrimitiveComponent* Overlappe
     if (Character != nullptr)
     {
         OnPickUp.Broadcast(Character);
-        
+
         OnComponentBeginOverlap.RemoveAll(this);
     }
 }
