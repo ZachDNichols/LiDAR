@@ -25,5 +25,6 @@ public:
 
     UPROPERTY(EditAnywhere, meta = (BindWidget))
     UProgressBar* RadiusProgress;
-	
+protected:
+    //void NativeOnInitialize() override;
 };

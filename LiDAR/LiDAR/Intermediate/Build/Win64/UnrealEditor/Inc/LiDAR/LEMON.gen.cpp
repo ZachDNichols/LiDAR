@@ -15,7 +15,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
 	LIDAR_API UClass* Z_Construct_UClass_AFirstPersonCharacter_NoRegister();
 	ENGINE_API UEnum* Z_Construct_UEnum_Engine_EEndPlayReason();
-	LIDAR_API UClass* Z_Construct_UClass_ULiDARHUD_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	LIDAR_API UClass* Z_Construct_UClass_ALaser_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_ADot_NoRegister();
@@ -28,18 +27,11 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		P_THIS->EndPlay(EEndPlayReason::Type(Z_Param_EndPlayReason));
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ULEMON::execDecreaseRadius)
+	DEFINE_FUNCTION(ULEMON::execChangeRadius)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->DecreaseRadius();
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(ULEMON::execIncreaseRadius)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->IncreaseRadius();
+		P_THIS->ChangeRadius();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ULEMON::execEndFire)
@@ -69,11 +61,10 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		UClass* Class = ULEMON::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AttachWeapon", &ULEMON::execAttachWeapon },
-			{ "DecreaseRadius", &ULEMON::execDecreaseRadius },
+			{ "ChangeRadius", &ULEMON::execChangeRadius },
 			{ "EndFire", &ULEMON::execEndFire },
 			{ "EndPlay", &ULEMON::execEndPlay },
 			{ "Fire", &ULEMON::execFire },
-			{ "IncreaseRadius", &ULEMON::execIncreaseRadius },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -110,7 +101,7 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics
+	struct Z_Construct_UFunction_ULEMON_ChangeRadius_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -118,18 +109,18 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ULEMON_ChangeRadius_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "LEMON.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ULEMON, nullptr, "DecreaseRadius", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ULEMON_DecreaseRadius()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ULEMON_ChangeRadius_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ULEMON, nullptr, "ChangeRadius", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ULEMON_ChangeRadius_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ULEMON_ChangeRadius_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ULEMON_ChangeRadius()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ULEMON_DecreaseRadius_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ULEMON_ChangeRadius_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -221,29 +212,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Weapon" },
-		{ "ModuleRelativePath", "LEMON.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ULEMON, nullptr, "IncreaseRadius", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ULEMON_IncreaseRadius()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ULEMON_IncreaseRadius_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ULEMON);
 	UClass* Z_Construct_UClass_ULEMON_NoRegister()
 	{
@@ -256,10 +224,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_LEMONHUD_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_LEMONHUD;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_LaserBP_MetaData[];
 #endif
@@ -286,11 +250,10 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ULEMON_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ULEMON_AttachWeapon, "AttachWeapon" }, // 1268239351
-		{ &Z_Construct_UFunction_ULEMON_DecreaseRadius, "DecreaseRadius" }, // 746671604
+		{ &Z_Construct_UFunction_ULEMON_ChangeRadius, "ChangeRadius" }, // 352788382
 		{ &Z_Construct_UFunction_ULEMON_EndFire, "EndFire" }, // 3375551512
 		{ &Z_Construct_UFunction_ULEMON_EndPlay, "EndPlay" }, // 432683696
 		{ &Z_Construct_UFunction_ULEMON_Fire, "Fire" }, // 3732462489
-		{ &Z_Construct_UFunction_ULEMON_IncreaseRadius, "IncreaseRadius" }, // 1800012354
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULEMON_Statics::Class_MetaDataParams[] = {
@@ -302,14 +265,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		{ "ModuleRelativePath", "LEMON.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULEMON_Statics::NewProp_LEMONHUD_MetaData[] = {
-		{ "Category", "LEMON" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "LEMON.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ULEMON_Statics::NewProp_LEMONHUD = { "LEMONHUD", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ULEMON, LEMONHUD), Z_Construct_UClass_ULiDARHUD_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ULEMON_Statics::NewProp_LEMONHUD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ULEMON_Statics::NewProp_LEMONHUD_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ULEMON_Statics::NewProp_LaserBP_MetaData[] = {
 		{ "Category", "LEMON" },
@@ -337,7 +292,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ULEMON_Statics::NewProp_Dot = { "Dot", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ULEMON, Dot), Z_Construct_UClass_ADot_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ULEMON_Statics::NewProp_Dot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ULEMON_Statics::NewProp_Dot_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ULEMON_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULEMON_Statics::NewProp_LEMONHUD,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULEMON_Statics::NewProp_LaserBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULEMON_Statics::NewProp_LaserBeam,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ULEMON_Statics::NewProp_DotBP,
@@ -379,9 +333,9 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ULEMON, ULEMON::StaticClass, TEXT("ULEMON"), &Z_Registration_Info_UClass_ULEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULEMON), 2573528202U) },
+		{ Z_Construct_UClass_ULEMON, ULEMON::StaticClass, TEXT("ULEMON"), &Z_Registration_Info_UClass_ULEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULEMON), 2299303340U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_2511194164(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_214618784(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

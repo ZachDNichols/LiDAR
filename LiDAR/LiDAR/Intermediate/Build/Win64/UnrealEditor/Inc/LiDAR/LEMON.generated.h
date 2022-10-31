@@ -18,8 +18,7 @@ class AFirstPersonCharacter;
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
-	DECLARE_FUNCTION(execDecreaseRadius); \
-	DECLARE_FUNCTION(execIncreaseRadius); \
+	DECLARE_FUNCTION(execChangeRadius); \
 	DECLARE_FUNCTION(execEndFire); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execAttachWeapon);
@@ -28,8 +27,7 @@ class AFirstPersonCharacter;
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
-	DECLARE_FUNCTION(execDecreaseRadius); \
-	DECLARE_FUNCTION(execIncreaseRadius); \
+	DECLARE_FUNCTION(execChangeRadius); \
 	DECLARE_FUNCTION(execEndFire); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execAttachWeapon);

@@ -19,8 +19,7 @@ class UPhysicsHandleComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEndUseItem);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollUp);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollDown);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScroll);
 
 
 UCLASS()
@@ -61,10 +60,10 @@ public:
 		FOnEndUseItem EndUseItem;
 
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
-		FScrollUp ScrollUp;
+		FScroll Scroll;
 
-	UPROPERTY(BlueprintAssignable, Category = "Interaction")
-		FScrollDown ScrollDown;
+	UPROPERTY(BlueprintReadOnly)
+		float currentRadius = 1000.f;
 
 protected:
 	// Called when the game starts or when spawned
@@ -108,8 +107,13 @@ public:
 	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
 
+	float GetRadius() const { return currentRadius; };
+
 private:
 	bool hasGun = false;
 	bool holdingObject = false;
 	AActor* heldObject;
+	float increment = 500.f;
+	float minRadius = 1000.f;
+	float maxRadius = 15000.f;
 };

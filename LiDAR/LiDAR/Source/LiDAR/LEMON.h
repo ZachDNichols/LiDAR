@@ -29,13 +29,7 @@ public:
 		void EndFire();
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void IncreaseRadius();
-
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void DecreaseRadius();
-
-	UPROPERTY(EditAnywhere)
-		class ULiDARHUD* LEMONHUD;
+		void ChangeRadius();
 
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ALaser> LaserBP;
@@ -52,10 +46,7 @@ public:
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
-	float increment = 100.f;
-	float currentRadius = 1000.f;
-	float minRadius = 5000.f;
-	float maxRadius = 15000.f;
+	float currentRadius;
 	UCameraComponent* Camera;
 
 protected:

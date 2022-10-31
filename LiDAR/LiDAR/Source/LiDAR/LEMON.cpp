@@ -26,12 +26,6 @@ void ULEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		Character->OnUseItem.RemoveDynamic(this, &ULEMON::Fire);
 		Character->EndUseItem.RemoveDynamic(this, &ULEMON::EndFire);
 	}
-
-	if (LEMONHUD)
-	{
-		LEMONHUD->RemoveFromParent();
-		LEMONHUD = nullptr;
-	}
 }
 
 void ULEMON::Fire()
@@ -101,23 +95,12 @@ void ULEMON::EndFire()
 	GetWorld()->GetTimerManager().ClearTimer(LaserTimer);
 }
 
-void ULEMON::IncreaseRadius()
+void ULEMON::ChangeRadius()
 {
-	if (currentRadius + increment > maxRadius)
-	{
-		currentRadius += increment;
-		LEMONHUD->SetRadius(currentRadius, maxRadius);
-	}
+	currentRadius = Character->GetRadius();
+	UE_LOG(LogTemp, Warning, TEXT("%f"), currentRadius);
 }
 
-void ULEMON::DecreaseRadius()
-{
-	if (currentRadius - increment < minRadius)
-	{
-		currentRadius -= increment;
-		LEMONHUD->SetRadius(currentRadius, maxRadius);
-	}
-}
 
 void ULEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
@@ -131,8 +114,7 @@ void ULEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		// Register so that Fire is called every time the character tries to use the item being held
 		Character->OnUseItem.AddDynamic(this, &ULEMON::Fire);
 		Character->EndUseItem.AddDynamic(this, &ULEMON::EndFire);
-		Character->ScrollUp.AddDynamic(this, &ULEMON::IncreaseRadius);
-		Character->ScrollUp.AddDynamic(this, &ULEMON::DecreaseRadius);
+		Character->Scroll.AddDynamic(this, &ULEMON::ChangeRadius);
 
 
 	}
