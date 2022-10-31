@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
 #include "LEMON.generated.h"
 
 class AFirstPersonCharacter;
@@ -11,13 +11,13 @@ class TimerManager;
 class UCameraComponent;
 
 UCLASS(Blueprintable, BlueprintType, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class LIDAR_API ULEMON : public UActorComponent
+class LIDAR_API ALEMON : public AActor
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this component's properties
-	ULEMON();
+	ALEMON();
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
@@ -43,10 +43,26 @@ public:
 	UPROPERTY()
 		class ADot* Dot;
 
+	UPROPERTY(EditAnywhere)
+		class UWidgetComponent* WidgetComponent;
+
+	UPROPERTY(VisibleAnywhere, Category = Mesh)
+		class USkeletalMeshComponent* Mesh;
+
+	UPROPERTY(VisibleAnywhere, Category = "PickUp")
+		class UWeaponPickupComponent* PickUp;
+
+	UPROPERTY(VisibleAnywhere, Category = "Widget")
+		class UWidgetComponent* Radius;
+
+
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
-	float currentRadius;
+	float increment = 100.f;
+	float currentRadius = 1000.f;
+	float minRadius = 5000.f;
+	float maxRadius = 15000.f;
 	UCameraComponent* Camera;
 
 protected:

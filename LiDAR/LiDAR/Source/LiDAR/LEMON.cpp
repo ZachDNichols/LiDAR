@@ -11,26 +11,34 @@
 #include "Laser.h"
 #include "Dot.h"
 #include "Blueprint/UserWidget.h"
+#include "WeaponPickupComponent.h"
 
 // Sets default values for this component's properties
-ULEMON::ULEMON()
+ALEMON::ALEMON()
 {
+	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
+	SetRootComponent(PickUp);
 
+	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+	Mesh->SetupAttachment(PickUp);
+
+	Radius = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
+	Radius->SetupAttachment(PickUp);
 }
 
-void ULEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
+void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	if (Character != nullptr)
 	{
 		// Unregister from the OnUseItem Event
-		Character->OnUseItem.RemoveDynamic(this, &ULEMON::Fire);
-		Character->EndUseItem.RemoveDynamic(this, &ULEMON::EndFire);
+		Character->OnUseItem.RemoveDynamic(this, &ALEMON::Fire);
+		Character->EndUseItem.RemoveDynamic(this, &ALEMON::EndFire);
 	}
 }
 
-void ULEMON::Fire()
+void ALEMON::Fire()
 {
-	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ULEMON::Fire, 0.0001f, true, 0.0001f);
+	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.0001f, true, 0.0001f);
 
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -90,33 +98,29 @@ void ULEMON::Fire()
 	}
 }
 
-void ULEMON::EndFire()
+void ALEMON::EndFire()
 {
 	GetWorld()->GetTimerManager().ClearTimer(LaserTimer);
 }
 
-void ULEMON::ChangeRadius()
+void ALEMON::ChangeRadius()
 {
 	currentRadius = Character->GetRadius();
-	UE_LOG(LogTemp, Warning, TEXT("%f"), currentRadius);
 }
 
-
-void ULEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
+void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{
 		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
-		GetOwner()->AttachToComponent(Character->GetMesh(), AttachmentRules, FName(TEXT("GripPoint")));
+		AttachToComponent(Character->GetMesh(), AttachmentRules, FName(TEXT("GripPoint")));
 		Camera = Character->GetFirstPersonCameraComponent();
 
 		// Register so that Fire is called every time the character tries to use the item being held
-		Character->OnUseItem.AddDynamic(this, &ULEMON::Fire);
-		Character->EndUseItem.AddDynamic(this, &ULEMON::EndFire);
-		Character->Scroll.AddDynamic(this, &ULEMON::ChangeRadius);
-
-
+		Character->OnUseItem.AddDynamic(this, &ALEMON::Fire);
+		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
+		Character->Scroll.AddDynamic(this, &ALEMON::ChangeRadius);
 	}
 }
 

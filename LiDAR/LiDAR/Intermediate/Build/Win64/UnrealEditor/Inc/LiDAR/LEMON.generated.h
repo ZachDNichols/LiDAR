@@ -35,44 +35,44 @@ class AFirstPersonCharacter;
 
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_INCLASS_NO_PURE_DECLS \
 private: \
-	static void StaticRegisterNativesULEMON(); \
-	friend struct Z_Construct_UClass_ULEMON_Statics; \
+	static void StaticRegisterNativesALEMON(); \
+	friend struct Z_Construct_UClass_ALEMON_Statics; \
 public: \
-	DECLARE_CLASS(ULEMON, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
-	DECLARE_SERIALIZER(ULEMON)
+	DECLARE_CLASS(ALEMON, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
+	DECLARE_SERIALIZER(ALEMON)
 
 
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_INCLASS \
 private: \
-	static void StaticRegisterNativesULEMON(); \
-	friend struct Z_Construct_UClass_ULEMON_Statics; \
+	static void StaticRegisterNativesALEMON(); \
+	friend struct Z_Construct_UClass_ALEMON_Statics; \
 public: \
-	DECLARE_CLASS(ULEMON, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
-	DECLARE_SERIALIZER(ULEMON)
+	DECLARE_CLASS(ALEMON, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LiDAR"), NO_API) \
+	DECLARE_SERIALIZER(ALEMON)
 
 
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ULEMON(const FObjectInitializer& ObjectInitializer); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULEMON) \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ULEMON); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULEMON); \
+	NO_API ALEMON(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALEMON) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ALEMON); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ALEMON); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	NO_API ULEMON(ULEMON&&); \
-	NO_API ULEMON(const ULEMON&); \
+	NO_API ALEMON(ALEMON&&); \
+	NO_API ALEMON(const ALEMON&); \
 public:
 
 
 #define FID_LiDAR_Source_LiDAR_LEMON_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	NO_API ULEMON(ULEMON&&); \
-	NO_API ULEMON(const ULEMON&); \
+	NO_API ALEMON(ALEMON&&); \
+	NO_API ALEMON(const ALEMON&); \
 public: \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ULEMON); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULEMON); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ULEMON)
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ALEMON); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ALEMON); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ALEMON)
 
 
 #define FID_LiDAR_Source_LiDAR_LEMON_h_13_PROLOG
@@ -98,7 +98,7 @@ private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-template<> LIDAR_API UClass* StaticClass<class ULEMON>();
+template<> LIDAR_API UClass* StaticClass<class ALEMON>();
 
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_LiDAR_Source_LiDAR_LEMON_h

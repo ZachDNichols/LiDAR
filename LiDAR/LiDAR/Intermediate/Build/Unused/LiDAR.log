@@ -1,13 +1,9 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
-  Invalidating makefile for LiDAREditor (working set of source files changed)
-  Parsing headers for LiDAREditor
-    Running UnrealHeaderTool "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject" "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\LiDAREditor\Development\LiDAREditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\zach\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  Reflection code generated for LiDAREditor in 1.8786274 seconds
   Building LiDAREditor...
   Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstPersonCharacter.cpp, Laser.cpp, LEMON.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, LiDARHUD.cpp, WeaponPickupComponent.cpp
-  Distributing 10 actions to XGE
+  Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -15,21 +11,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {EB555882-6AD9-4EC9-966A-A2A7A36461BB}
+  Build ID: {9CBF07F8-C92A-44A4-BAF5-5AC2DA927B57}
   
   --------------------Project: Default-------------------------------------------
-  [1/10] FirstPersonCharacter.cpp (0:05.46 at +0:00)
-  [2/10] LEMON.cpp (0:18.03 at +0:05)
-  [3/10] FirstPersonCharacter.gen.cpp (0:00.76 at +0:23)
-  [4/10] LEMON.gen.cpp (0:00.60 at +0:24)
-  [5/10] LiDAR.init.gen.cpp (0:00.50 at +0:24)
-  [6/10] WeaponPickupComponent.gen.cpp (0:00.79 at +0:25)
-  [7/10] WeaponPickupComponent.cpp (0:00.84 at +0:26)
-  [8/10] UnrealEditor-LiDAR.dll (0:00.70 at +0:27)
+  [1/4] LEMON.cpp (0:17.92 at +0:00)
+  [2/4] UnrealEditor-LiDAR.dll (0:00.71 at +0:17)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [9/10] UnrealEditor-LiDAR.lib (0:00.09 at +0:27)
+  [3/4] UnrealEditor-LiDAR.lib (0:00.09 at +0:18)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [10/10] LiDAREditor.target (0:00.25 at +0:27)
+  [4/4] LiDAREditor.target (0:00.25 at +0:18)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -37,5 +27,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 28.20 seconds
-  Total execution time: 31.80 seconds
+  Total time in XGE executor: 19.20 seconds
+  Total execution time: 19.87 seconds

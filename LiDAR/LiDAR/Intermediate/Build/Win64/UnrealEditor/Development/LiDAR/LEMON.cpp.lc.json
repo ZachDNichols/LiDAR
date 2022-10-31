@@ -1045,7 +1045,9 @@
             "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\laser.h",
             "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\laser.generated.h",
             "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\dot.h",
-            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\dot.generated.h"
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\dot.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\weaponpickupcomponent.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\weaponpickupcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

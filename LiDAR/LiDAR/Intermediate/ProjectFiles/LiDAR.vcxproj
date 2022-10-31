@@ -366,6 +366,7 @@
     <None Include="..\..\LiDAR.uproject"/>
     <None Include="..\..\Source\LiDAR.Target.cs"/>
     <None Include="..\..\Source\LiDAREditor.Target.cs"/>
+    <None Include="..\..\LEMON.ipch"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
