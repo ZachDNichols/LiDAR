@@ -1,0 +1,40 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\lemonaniminstance.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\lidareditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\development\\lidar\\definitions.lidar.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\lemonaniminstance.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\firstpersoncharacter.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementreplication.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\firstpersoncharacter.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\lemonaniminstance.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\kismetsystemlibrary.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\dialoguetypes.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystaticstypes.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystatics.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\weaponpickupcomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spherecomponent.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\weaponpickupcomponent.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\lemon.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\lemon.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

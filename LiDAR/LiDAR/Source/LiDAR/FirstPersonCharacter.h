@@ -41,14 +41,6 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, Category = "Holding")
 		USceneComponent* HoldLocation;
 
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<class ULiDARHUD> PlayerHUDClass;
-
-	UPROPERTY()
-		class ULiDARHUD* PlayerHUD;
-
-
-
 public:
 	// Sets default values for this character's properties
 	AFirstPersonCharacter();

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Animation/AnimSequence.h"
 #include "LEMON.generated.h"
 
 class AFirstPersonCharacter;
@@ -55,13 +56,11 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Widget")
 		class UWidgetComponent* Radius;
 
-
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
 	float currentRadius = 1000.f;
 	UCameraComponent* Camera;
-
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()

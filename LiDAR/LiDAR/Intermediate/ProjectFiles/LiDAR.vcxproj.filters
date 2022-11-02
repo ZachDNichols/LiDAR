@@ -12,6 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\LEMON.ipch" />
+    <None Include="..\..\PRESSUREPLATE.ipch" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -66,6 +67,12 @@
     <ClInclude Include="..\..\Source\LiDAR\LEMON.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\LEMONAnimInstance.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LEMONAnimInstance.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
       <Filter>Source\LiDAR</Filter>
     </None>
@@ -79,12 +86,6 @@
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\LiDAR\LiDARGameModeBase.h">
-      <Filter>Source\LiDAR</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\LiDAR\LiDARHUD.cpp">
-      <Filter>Source\LiDAR</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\LiDAR\LiDARHUD.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\MovableStaticMeshComponent.cpp">

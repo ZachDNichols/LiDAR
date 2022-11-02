@@ -5,7 +5,6 @@
 #include "FirstPersonCharacter.h"
 #include "GameFramework/Actor.h"
 #include "TimerManager.h"
-#include "LiDARHUD.h"
 #include "Components/WidgetComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Laser.h"
