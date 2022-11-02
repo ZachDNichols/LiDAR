@@ -48,6 +48,12 @@
     <ClInclude Include="..\..\Source\LiDAR\FirstPersonCharacter.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\InteractableInterface.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\InteractableInterface.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\Laser.cpp">
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
@@ -79,6 +85,24 @@
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\LiDAR\LiDARHUD.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\MovableStaticMeshComponent.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\MovableStaticMeshComponent.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\MovingStaticMeshActor.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\MovingStaticMeshActor.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\PressurePlate.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\PressurePlate.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\WeaponPickupComponent.cpp">
