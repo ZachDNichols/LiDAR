@@ -31,15 +31,41 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		UpdateAnimProperties();
 	}
+	else 
+	{
+		TArray<AActor*> Guns;
+
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ALEMON::StaticClass(), Guns);
+		if (Guns.Num() > 0)
+		{
+			if (Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass())))
+			{
+				UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
+
+				WeaponPickup->OnPickUp.AddDynamic(this, &ULEMONAnimInstance::AssignCharacter);
+			}
+		}
+	}
 }
 void ULEMONAnimInstance::UpdateAnimProperties()
 {
-
+	speed = Character->GetVelocity().Size();
 }
 
 
 void ULEMONAnimInstance::AssignCharacter(AFirstPersonCharacter* TargetCharacter)
 { 
 	Character = TargetCharacter;
-	Character->OnUseItem.AddDynamic(this, ThisClass::Shoot);
+	Character->OnUseItem.AddDynamic(this, &ThisClass::Shoot);
+	Character->EndUseItem.AddDynamic(this, &ThisClass::EndShoot);
+}
+
+void ULEMONAnimInstance::Shoot()
+{
+	isShooting = true;
+}
+
+void ULEMONAnimInstance::EndShoot()
+{
+	isShooting = false;
 }

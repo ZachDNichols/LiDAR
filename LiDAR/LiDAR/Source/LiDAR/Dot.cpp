@@ -12,6 +12,7 @@ ADot::ADot()
 	PrimaryActorTick.bCanEverTick = true;
 
 	DotMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DotMesh"));
+	SetRootComponent(DotMesh);
 }
 
 // Called when the game starts or when spawned

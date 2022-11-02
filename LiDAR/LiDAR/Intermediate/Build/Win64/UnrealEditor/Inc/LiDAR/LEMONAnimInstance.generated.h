@@ -17,12 +17,18 @@ class AFirstPersonCharacter;
 #define FID_LiDAR_Source_LiDAR_LEMONAnimInstance_h_17_SPARSE_DATA
 #define FID_LiDAR_Source_LiDAR_LEMONAnimInstance_h_17_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execAssignCharacter);
+	DECLARE_FUNCTION(execEndShoot); \
+	DECLARE_FUNCTION(execShoot); \
+	DECLARE_FUNCTION(execAssignCharacter); \
+	DECLARE_FUNCTION(execUpdateAnimProperties);
 
 
 #define FID_LiDAR_Source_LiDAR_LEMONAnimInstance_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execAssignCharacter);
+	DECLARE_FUNCTION(execEndShoot); \
+	DECLARE_FUNCTION(execShoot); \
+	DECLARE_FUNCTION(execAssignCharacter); \
+	DECLARE_FUNCTION(execUpdateAnimProperties);
 
 
 #define FID_LiDAR_Source_LiDAR_LEMONAnimInstance_h_17_INCLASS_NO_PURE_DECLS \

@@ -22,7 +22,7 @@ ALEMON::ALEMON()
 	Mesh->SetupAttachment(PickUp);
 
 	Radius = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
-	Radius->SetupAttachment(PickUp);
+	Radius->SetupAttachment(Mesh, FName("WidgetSpot"));
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)

@@ -27,9 +27,18 @@ protected:
 private:
 	AFirstPersonCharacter* Character;
 public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
+		bool isShooting;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
+		float speed;
+
 	UFUNCTION()
 	void AssignCharacter(AFirstPersonCharacter* TargetCharacter);
 
 	UFUNCTION()
 		void Shoot();
+
+	UFUNCTION()
+		void EndShoot();
 };
