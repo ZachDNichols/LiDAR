@@ -16,24 +16,30 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_LiDAR_Source_LiDAR_InteractableInterface_h_13_SPARSE_DATA
 #define FID_LiDAR_Source_LiDAR_InteractableInterface_h_13_RPC_WRAPPERS \
 	virtual void Interact_Implementation(bool bInteracting) {}; \
-	virtual FName GetInteractTag_Implementation() { return NAME_None; }; \
+	virtual int32 GetObjectID_Implementation() { return 0; }; \
  \
 	DECLARE_FUNCTION(execInteract); \
-	DECLARE_FUNCTION(execGetInteractTag);
+	DECLARE_FUNCTION(execGetObjectID);
 
 
 #define FID_LiDAR_Source_LiDAR_InteractableInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Interact_Implementation(bool bInteracting) {}; \
-	virtual FName GetInteractTag_Implementation() { return NAME_None; }; \
+	virtual int32 GetObjectID_Implementation() { return 0; }; \
  \
 	DECLARE_FUNCTION(execInteract); \
-	DECLARE_FUNCTION(execGetInteractTag);
+	DECLARE_FUNCTION(execGetObjectID);
 
 
 #define FID_LiDAR_Source_LiDAR_InteractableInterface_h_13_EVENT_PARMS \
-	struct InteractableInterface_eventGetInteractTag_Parms \
+	struct InteractableInterface_eventGetObjectID_Parms \
 	{ \
-		FName ReturnValue; \
+		int32 ReturnValue; \
+ \
+		/** Constructor, initializes return property only **/ \
+		InteractableInterface_eventGetObjectID_Parms() \
+			: ReturnValue(0) \
+		{ \
+		} \
 	}; \
 	struct InteractableInterface_eventInteract_Parms \
 	{ \
@@ -98,7 +104,7 @@ protected: \
 public: \
 	typedef UInteractableInterface UClassType; \
 	typedef IInteractableInterface ThisClass; \
-	static FName Execute_GetInteractTag(UObject* O); \
+	static int32 Execute_GetObjectID(UObject* O); \
 	static void Execute_Interact(UObject* O, bool bInteracting); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
@@ -109,7 +115,7 @@ protected: \
 public: \
 	typedef UInteractableInterface UClassType; \
 	typedef IInteractableInterface ThisClass; \
-	static FName Execute_GetInteractTag(UObject* O); \
+	static int32 Execute_GetObjectID(UObject* O); \
 	static void Execute_Interact(UObject* O, bool bInteracting); \
 	virtual UObject* _getUObject() const { return nullptr; }
 

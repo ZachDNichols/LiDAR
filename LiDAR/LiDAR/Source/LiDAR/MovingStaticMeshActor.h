@@ -19,7 +19,7 @@ public:
 	// Sets default values for this actor's properties
 	AMovingStaticMeshActor();
 
-	virtual FName GetInteractTag_Implementation() override;
+	virtual int GetObjectID_Implementation();
 	virtual void Interact_Implementation(bool bInteracting) override;
 
 	bool IsDisabled() const { return bIsDisabled; }
@@ -41,7 +41,7 @@ public:
 		UMovableStaticMeshComponent* MovableMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Moving")
-		FName InteractTag;
+		int ObjectID;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Moving")
 		bool bIsDisabled;

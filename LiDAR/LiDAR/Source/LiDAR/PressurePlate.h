@@ -49,7 +49,7 @@ public:
 		bool bResetTrigger;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
-		TArray<FName> TargetTags;
+		TArray<int> TargetIDs;
 
 private:
 	bool bIsTriggered;

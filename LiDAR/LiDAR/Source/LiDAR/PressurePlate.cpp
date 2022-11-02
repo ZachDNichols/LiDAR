@@ -45,10 +45,10 @@ void APressurePlate::Interact(bool bIsInteracting)
 
 	for (AActor* Actor : InteractableActors)
 	{
-		FName InteractTag = IInteractableInterface::Execute_GetInteractTag(Actor);
-		for (FName Tag : TargetTags)
+		int ObjectID = IInteractableInterface::Execute_GetObjectID(Actor);
+		for (int ID : TargetIDs)
 		{
-			if (InteractTag.IsEqual(Tag, ENameCase::IgnoreCase))
+			if (ID == ObjectID)
 			{
 				IInteractableInterface::Execute_Interact(Actor, bIsInteracting);
 			}

@@ -22,17 +22,17 @@ void EmptyLinkFunctionForGeneratedCodeInteractableInterface() {}
 		P_THIS->Interact_Implementation(Z_Param_bInteracting);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(IInteractableInterface::execGetInteractTag)
+	DEFINE_FUNCTION(IInteractableInterface::execGetObjectID)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(FName*)Z_Param__Result=P_THIS->GetInteractTag_Implementation();
+		*(int32*)Z_Param__Result=P_THIS->GetObjectID_Implementation();
 		P_NATIVE_END;
 	}
-	FName IInteractableInterface::GetInteractTag()
+	int32 IInteractableInterface::GetObjectID()
 	{
-		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetInteractTag instead.");
-		InteractableInterface_eventGetInteractTag_Parms Parms;
+		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_GetObjectID instead.");
+		InteractableInterface_eventGetObjectID_Parms Parms;
 		return Parms.ReturnValue;
 	}
 	void IInteractableInterface::Interact(bool bInteracting)
@@ -43,37 +43,37 @@ void EmptyLinkFunctionForGeneratedCodeInteractableInterface() {}
 	{
 		UClass* Class = UInteractableInterface::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "GetInteractTag", &IInteractableInterface::execGetInteractTag },
+			{ "GetObjectID", &IInteractableInterface::execGetObjectID },
 			{ "Interact", &IInteractableInterface::execInteract },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics
+	struct Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics
 	{
-		static const UECodeGen_Private::FNamePropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractableInterface_eventGetInteractTag_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::NewProp_ReturnValue,
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractableInterface_eventGetObjectID_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::NewProp_ReturnValue,
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Interact" },
 		{ "ModuleRelativePath", "InteractableInterface.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractableInterface, nullptr, "GetInteractTag", nullptr, nullptr, sizeof(InteractableInterface_eventGetInteractTag_Parms), Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UInteractableInterface_GetInteractTag()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractableInterface, nullptr, "GetObjectID", nullptr, nullptr, sizeof(InteractableInterface_eventGetObjectID_Parms), Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInteractableInterface_GetObjectID()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInteractableInterface_GetInteractTag_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInteractableInterface_GetObjectID_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -131,7 +131,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractableInterface() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_LiDAR,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInteractableInterface_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UInteractableInterface_GetInteractTag, "GetInteractTag" }, // 4084847286
+		{ &Z_Construct_UFunction_UInteractableInterface_GetObjectID, "GetObjectID" }, // 2870998177
 		{ &Z_Construct_UFunction_UInteractableInterface_Interact, "Interact" }, // 2300516274
 	};
 #if WITH_METADATA
@@ -170,20 +170,20 @@ void EmptyLinkFunctionForGeneratedCodeInteractableInterface() {}
 		return UInteractableInterface::StaticClass();
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UInteractableInterface);
-	static FName NAME_UInteractableInterface_GetInteractTag = FName(TEXT("GetInteractTag"));
-	FName IInteractableInterface::Execute_GetInteractTag(UObject* O)
+	static FName NAME_UInteractableInterface_GetObjectID = FName(TEXT("GetObjectID"));
+	int32 IInteractableInterface::Execute_GetObjectID(UObject* O)
 	{
 		check(O != NULL);
 		check(O->GetClass()->ImplementsInterface(UInteractableInterface::StaticClass()));
-		InteractableInterface_eventGetInteractTag_Parms Parms;
-		UFunction* const Func = O->FindFunction(NAME_UInteractableInterface_GetInteractTag);
+		InteractableInterface_eventGetObjectID_Parms Parms;
+		UFunction* const Func = O->FindFunction(NAME_UInteractableInterface_GetObjectID);
 		if (Func)
 		{
 			O->ProcessEvent(Func, &Parms);
 		}
 		else if (auto I = (IInteractableInterface*)(O->GetNativeInterfaceAddress(UInteractableInterface::StaticClass())))
 		{
-			Parms.ReturnValue = I->GetInteractTag_Implementation();
+			Parms.ReturnValue = I->GetObjectID_Implementation();
 		}
 		return Parms.ReturnValue;
 	}
@@ -209,9 +209,9 @@ void EmptyLinkFunctionForGeneratedCodeInteractableInterface() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_InteractableInterface_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UInteractableInterface, UInteractableInterface::StaticClass, TEXT("UInteractableInterface"), &Z_Registration_Info_UClass_UInteractableInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInteractableInterface), 3948521902U) },
+		{ Z_Construct_UClass_UInteractableInterface, UInteractableInterface::StaticClass, TEXT("UInteractableInterface"), &Z_Registration_Info_UClass_UInteractableInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInteractableInterface), 954022642U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_InteractableInterface_h_3582984638(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_InteractableInterface_h_1046410050(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_InteractableInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_InteractableInterface_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -40,9 +40,9 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MovableMesh;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractTag_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ObjectID_MetaData[];
 #endif
-		static const UECodeGen_Private::FNamePropertyParams NewProp_InteractTag;
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_ObjectID;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsDisabled_MetaData[];
 #endif
@@ -82,12 +82,12 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MovableMesh = { "MovableMesh", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMovingStaticMeshActor, MovableMesh), Z_Construct_UClass_UMovableStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MovableMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MovableMesh_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_InteractTag_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID_MetaData[] = {
 		{ "Category", "Moving" },
 		{ "ModuleRelativePath", "MovingStaticMeshActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_InteractTag = { "InteractTag", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMovingStaticMeshActor, InteractTag), METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_InteractTag_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_InteractTag_MetaData)) };
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID = { "ObjectID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMovingStaticMeshActor, ObjectID), METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled_MetaData[] = {
 		{ "Category", "Moving" },
@@ -102,11 +102,11 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMovingStaticMeshActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_BaseMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MovableMesh,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_InteractTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UInteractableInterface_NoRegister, (int32)VTABLE_OFFSET(AMovingStaticMeshActor, IInteractableInterface), false },  // 3948521902
+			{ Z_Construct_UClass_UInteractableInterface_NoRegister, (int32)VTABLE_OFFSET(AMovingStaticMeshActor, IInteractableInterface), false },  // 954022642
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMovingStaticMeshActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMovingStaticMeshActor>::IsAbstract,
@@ -144,9 +144,9 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingStaticMeshActor, AMovingStaticMeshActor::StaticClass, TEXT("AMovingStaticMeshActor"), &Z_Registration_Info_UClass_AMovingStaticMeshActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingStaticMeshActor), 722309765U) },
+		{ Z_Construct_UClass_AMovingStaticMeshActor, AMovingStaticMeshActor::StaticClass, TEXT("AMovingStaticMeshActor"), &Z_Registration_Info_UClass_AMovingStaticMeshActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingStaticMeshActor), 1134428815U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_1608339622(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_3534608621(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

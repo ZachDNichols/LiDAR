@@ -31,9 +31,9 @@ void AMovingStaticMeshActor::Tick(float DeltaTime)
 
 }
 
-FName AMovingStaticMeshActor::GetInteractTag_Implementation()
+int AMovingStaticMeshActor::GetObjectID_Implementation()
 {
-	return InteractTag;
+	return ObjectID;
 }
 
 void AMovingStaticMeshActor::Interact_Implementation(bool bInteracting)
