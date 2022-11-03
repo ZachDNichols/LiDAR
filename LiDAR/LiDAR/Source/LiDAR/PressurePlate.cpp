@@ -65,7 +65,6 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 		Interact(true);
 
 		bIsTriggered = true;
-		bResetTrigger = true;
 	}
 }
 
@@ -77,6 +76,5 @@ void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 		Interact(false);
 
 		bIsTriggered = false;
-		bResetTrigger = false;
 	}
 }

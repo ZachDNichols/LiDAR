@@ -81,22 +81,31 @@ void ALEMON::Fire()
 		HitRotation.Pitch -= 90.f;
 
 		//
-		FTransform SpawnTransform;
-		SpawnTransform.SetLocation(Start);
 
-		FActorSpawnParameters SpawnParams;
 
-		LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+		if (LaserBP)
+		{
 
-		float fDistance = Hit.Distance;
+			FTransform SpawnTransform;
+			SpawnTransform.SetLocation(Start);
 
-		LaserBeam->SetEnd(Hit.ImpactPoint);
+			FActorSpawnParameters SpawnParams;
 
-		SpawnTransform.SetLocation(Hit.ImpactPoint);
+			LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
 
-		Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
+			float fDistance = Hit.Distance;
 
-		Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
+			LaserBeam->SetEnd(Hit.ImpactPoint);
+
+			if (DotBP)
+			{
+				SpawnTransform.SetLocation(Hit.ImpactPoint);
+
+				Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
+
+				Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
+			}
+		}
 	}
 }
 
