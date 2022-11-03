@@ -35,8 +35,18 @@ static inline void FScroll_DelegateWrapper(const FMulticastScriptDelegate& Scrol
 
 
 #define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_SPARSE_DATA
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_RPC_WRAPPERS
-#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execResetStep); \
+	DECLARE_FUNCTION(execPlayFootStepSound);
+
+
+#define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execResetStep); \
+	DECLARE_FUNCTION(execPlayFootStepSound);
+
+
 #define FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_32_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFirstPersonCharacter(); \

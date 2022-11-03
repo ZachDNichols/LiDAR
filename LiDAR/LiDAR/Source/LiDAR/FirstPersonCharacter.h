@@ -103,10 +103,18 @@ public:
 
 	float GetRadius() const { return currentRadius; };
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
+		TArray<USoundCue*> FootStepSounds;
 
+	UFUNCTION(BlueprintCallable, Category = "SFX")
+		void PlayFootStepSound();
+
+	UFUNCTION(BlueprintCallable, Category = "SFX")
+		void ResetStep() { step = false; };
 
 private:
-
+	FTimerHandle FootStepTimer;
+	bool step;
 	bool hasGun = false;
 	bool holdingObject = false;
 	AActor* heldObject;

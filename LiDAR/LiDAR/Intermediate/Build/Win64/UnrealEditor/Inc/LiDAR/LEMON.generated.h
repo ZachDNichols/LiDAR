@@ -18,6 +18,7 @@ class AFirstPersonCharacter;
 #define FID_LiDAR_Source_LiDAR_LEMON_h_17_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
+	DECLARE_FUNCTION(execFireSound); \
 	DECLARE_FUNCTION(execChangeRadius); \
 	DECLARE_FUNCTION(execEndFire); \
 	DECLARE_FUNCTION(execFire); \
@@ -27,6 +28,7 @@ class AFirstPersonCharacter;
 #define FID_LiDAR_Source_LiDAR_LEMON_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
+	DECLARE_FUNCTION(execFireSound); \
 	DECLARE_FUNCTION(execChangeRadius); \
 	DECLARE_FUNCTION(execEndFire); \
 	DECLARE_FUNCTION(execFire); \

@@ -54,6 +54,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 void AFirstPersonCharacter::BeginPlay()
 {
     Super::BeginPlay();
+    step = false;
 }
 
 // Called every frame
@@ -137,6 +138,11 @@ void AFirstPersonCharacter::MoveForward(float Value)
     if (Value != 0.0f)
     {
         AddMovementInput(GetActorForwardVector(), Value);
+        if (!step)
+        {
+            step = true;
+            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false, 0);
+        }
     }
 }
 
@@ -145,8 +151,25 @@ void AFirstPersonCharacter::MoveRight(float Value)
     if (Value != 0.0f)
     {
         AddMovementInput(GetActorRightVector(), Value);
+        
+        if (!step)
+        {
+            step = true;
+            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false);
+        }
     }
 }
+
+void AFirstPersonCharacter::PlayFootStepSound()
+{
+    if (GetVelocity().Size() != 0 && GetCharacterMovement()->IsFalling())
+    {
+        UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
+        GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
+    }
+}
+
+
 void AFirstPersonCharacter::StartCrouch()
 {
     Crouch();

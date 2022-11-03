@@ -32,6 +32,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void ChangeRadius();
 
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+		void FireSound();
+
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ALaser> LaserBP;
 
@@ -53,9 +56,13 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
+		UAudioComponent* AudioComponent;
+
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
+	FTimerHandle LaserSFXTimer;
 	float currentRadius = 1000.f;
 	UCameraComponent* Camera;
 protected:
