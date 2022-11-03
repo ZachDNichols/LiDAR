@@ -4,11 +4,29 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MovableStaticMeshComponent.h"
 
 #include "InteractableInterface.h"
-
+#include "Components/StaticMeshComponent.h"
+#include "Components/TimelineComponent.h"
 #include "MovingStaticMeshActor.generated.h"
+
+UENUM(BlueprintType)
+enum class EActorRotationAxis : uint8
+{
+	Yaw, Pitch, Roll
+};
+
+UENUM(BlueprintType)
+enum class EActorLocationAxis : uint8
+{
+	X, Y, Z
+};
+
+UENUM(BlueprintType)
+enum class EActorMovementType : uint8
+{
+	Location, Rotation
+};
 
 UCLASS()
 class LIDAR_API AMovingStaticMeshActor : public AActor, public IInteractableInterface
@@ -32,17 +50,47 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
+		UCurveFloat* MoveCurve;
 
-public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Moving")
-		UStaticMeshComponent* BaseMesh;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
+		EActorMovementType MovementType;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement", meta = (EditCondition = "MovementType == EActorMovementType::Rotation"))
+		EActorRotationAxis RotateAxis;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement", meta = (EditCondition = "MovementType == EActorMovementType::Location"))
+		EActorLocationAxis LocationAxis;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
+		bool bIsReversed;
+
+	UFUNCTION()
+		void OnMove();
+
+	UFUNCTION()
+		void OnMoveFinished();
+
+	UFUNCTION(BlueprintCallable)
+		void Move(bool bTriggered);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Moving")
-		UMovableStaticMeshComponent* MovableMesh;
+		UStaticMeshComponent* Mesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Moving")
 		int ObjectID;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Moving")
 		bool bIsDisabled;
+
+private:
+	void UpdateRotation(float CurveValue);
+	void UpdateLocation(float CurveValue);
+
+	bool bIsMoving;
+	FTimeline MoveTimeline;
+
+	bool bIsTriggered;
+	float PreviousTimelineValue;
 };
+

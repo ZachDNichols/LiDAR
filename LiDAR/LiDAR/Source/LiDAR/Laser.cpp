@@ -13,6 +13,7 @@ ALaser::ALaser()
 	PrimaryActorTick.bCanEverTick = true;
     
     LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
+    SetRootComponent(LaserMesh);
 }
 
 // Called when the game starts or when spawned

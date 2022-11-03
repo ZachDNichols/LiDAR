@@ -53,9 +53,6 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 
-	UPROPERTY(VisibleAnywhere, Category = "Widget")
-		class UWidgetComponent* Radius;
-
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;

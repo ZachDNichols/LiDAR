@@ -27,13 +27,13 @@ void EmptyLinkFunctionForGeneratedCodeLiDAR_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xB1A9C7D8,
-				0xEBA111EA,
+				0x3E799E0E,
+				0xF853D980,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_LiDAR.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_LiDAR.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_LiDAR(Z_Construct_UPackage__Script_LiDAR, TEXT("/Script/LiDAR"), Z_Registration_Info_UPackage__Script_LiDAR, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB1A9C7D8, 0xEBA111EA));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_LiDAR(Z_Construct_UPackage__Script_LiDAR, TEXT("/Script/LiDAR"), Z_Registration_Info_UPackage__Script_LiDAR, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3E799E0E, 0xF853D980));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

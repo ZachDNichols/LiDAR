@@ -255,10 +255,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PickUp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_PickUp;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Radius_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Radius;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -334,14 +330,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp = { "PickUp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALEMON, PickUp), Z_Construct_UClass_UWeaponPickupComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALEMON_Statics::NewProp_Radius_MetaData[] = {
-		{ "Category", "Widget" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "LEMON.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALEMON_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALEMON, Radius), Z_Construct_UClass_UWidgetComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALEMON_Statics::NewProp_Radius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALEMON_Statics::NewProp_Radius_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALEMON_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_LaserBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_LaserBeam,
@@ -350,7 +338,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_WidgetComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_Mesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_Radius,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALEMON_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALEMON>::IsAbstract,
@@ -388,9 +375,9 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALEMON, ALEMON::StaticClass, TEXT("ALEMON"), &Z_Registration_Info_UClass_ALEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALEMON), 4040884983U) },
+		{ Z_Construct_UClass_ALEMON, ALEMON::StaticClass, TEXT("ALEMON"), &Z_Registration_Info_UClass_ALEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALEMON), 1160355711U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_2087282251(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_4187303068(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

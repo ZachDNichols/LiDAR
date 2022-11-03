@@ -9,18 +9,26 @@ AMovingStaticMeshActor::AMovingStaticMeshActor()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Base Mesh"));
-	SetRootComponent(BaseMesh);
-
-	MovableMesh = CreateDefaultSubobject<UMovableStaticMeshComponent>(TEXT("Movable Mesh"));
-	MovableMesh->SetupAttachment(GetRootComponent());
-
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Mesh->SetupAttachment(GetRootComponent());
+	SetRootComponent(Mesh);
 }
 
 // Called when the game starts or when spawned
 void AMovingStaticMeshActor::BeginPlay()
 {
 	Super::BeginPlay();
+	if (MoveCurve)
+	{
+		FOnTimelineFloat TimelineCallback;
+		FOnTimelineEventStatic TimelineFinishCallback;
+
+		TimelineCallback.BindUFunction(this, FName("OnMove"));
+		TimelineFinishCallback.BindUFunction(this, FName("OnMoveFinished"));
+
+		MoveTimeline.AddInterpFloat(MoveCurve, TimelineCallback);
+		MoveTimeline.SetTimelineFinishedFunc(TimelineFinishCallback);
+	}
 
 }
 
@@ -29,6 +37,10 @@ void AMovingStaticMeshActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (bIsMoving)
+	{
+		MoveTimeline.TickTimeline(DeltaTime);
+	}
 }
 
 int AMovingStaticMeshActor::GetObjectID_Implementation()
@@ -40,6 +52,103 @@ void AMovingStaticMeshActor::Interact_Implementation(bool bInteracting)
 {
 	if (!bIsDisabled)
 	{
-		MovableMesh->Move(bInteracting);
+		Move(bInteracting);
 	}
+}
+
+void AMovingStaticMeshActor::Move(bool bTriggered)
+{
+	bIsTriggered = bTriggered;
+
+	if (bTriggered)
+	{
+		if (MoveTimeline.IsReversing())
+		{
+			MoveTimeline.Play();
+		}
+		else
+		{
+			MoveTimeline.PlayFromStart();
+		}
+	}
+	else
+	{
+		MoveTimeline.Reverse();
+	}
+
+	bIsMoving = true;
+}
+
+void AMovingStaticMeshActor::OnMove()
+{
+	const float PlaybackPosition = MoveTimeline.GetPlaybackPosition();
+	float CurveValue = MoveCurve->GetFloatValue(PlaybackPosition);
+
+	if (bIsReversed)
+	{
+		CurveValue = -CurveValue;
+	}
+
+	const float AdjustedValue = CurveValue - PreviousTimelineValue;
+
+	if (MovementType == EActorMovementType::Location)
+	{
+		UpdateLocation(AdjustedValue);
+	}
+	else if (MovementType == EActorMovementType::Rotation)
+	{
+		UpdateRotation(AdjustedValue);
+	}
+
+	PreviousTimelineValue = CurveValue;
+}
+
+void AMovingStaticMeshActor::OnMoveFinished()
+{
+	bIsMoving = false;
+}
+
+void AMovingStaticMeshActor::UpdateRotation(float CurveValue)
+{
+	FRotator NewRotation = GetActorRotation();
+
+	switch (RotateAxis)
+	{
+	case EActorRotationAxis::Pitch:
+		NewRotation.Pitch += CurveValue;
+		break;
+	case EActorRotationAxis::Roll:
+		NewRotation.Roll += CurveValue;
+		break;
+	case EActorRotationAxis::Yaw:
+		NewRotation.Yaw += CurveValue;
+		break;
+	default:
+		break;
+	}
+
+	SetActorRotation(NewRotation);
+}
+
+
+void AMovingStaticMeshActor::UpdateLocation(float CurveValue)
+{
+	FVector NewLocation = GetActorLocation();
+
+	switch (LocationAxis)
+	{
+	case EActorLocationAxis::X:
+		NewLocation.X += CurveValue;
+		break;
+	case EActorLocationAxis::Y:
+		NewLocation.Y += CurveValue;
+		break;
+	case EActorLocationAxis::Z:
+		NewLocation.Z += CurveValue;
+		break;
+	default:
+		break;
+	}
+
+	SetActorLocation(NewLocation);
 }

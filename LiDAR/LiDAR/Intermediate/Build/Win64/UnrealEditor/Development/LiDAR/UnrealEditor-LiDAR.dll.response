@@ -64,6 +64,7 @@
 "..\Intermediate\Build\Win64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"
+"..\Intermediate\Build\Win64\UnrealEditor\Development\PhysicsCore\UnrealEditor-PhysicsCore.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

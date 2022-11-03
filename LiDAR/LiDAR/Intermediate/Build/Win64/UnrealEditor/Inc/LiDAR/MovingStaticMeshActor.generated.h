@@ -13,10 +13,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define LIDAR_MovingStaticMeshActor_generated_h
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_SPARSE_DATA
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_RPC_WRAPPERS
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_SPARSE_DATA
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execMove); \
+	DECLARE_FUNCTION(execOnMoveFinished); \
+	DECLARE_FUNCTION(execOnMove);
+
+
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execMove); \
+	DECLARE_FUNCTION(execOnMoveFinished); \
+	DECLARE_FUNCTION(execOnMove);
+
+
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMovingStaticMeshActor(); \
 	friend struct Z_Construct_UClass_AMovingStaticMeshActor_Statics; \
@@ -26,7 +38,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AMovingStaticMeshActor*>(this); }
 
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_INCLASS \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_INCLASS \
 private: \
 	static void StaticRegisterNativesAMovingStaticMeshActor(); \
 	friend struct Z_Construct_UClass_AMovingStaticMeshActor_Statics; \
@@ -36,7 +48,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AMovingStaticMeshActor*>(this); }
 
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_STANDARD_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMovingStaticMeshActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMovingStaticMeshActor) \
@@ -49,7 +61,7 @@ private: \
 public:
 
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMovingStaticMeshActor(AMovingStaticMeshActor&&); \
@@ -60,25 +72,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMovingStaticMeshActor)
 
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_13_PROLOG
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_GENERATED_BODY_LEGACY \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_31_PROLOG
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_RPC_WRAPPERS \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_INCLASS \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_STANDARD_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_RPC_WRAPPERS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_INCLASS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_GENERATED_BODY \
+#define FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_SPARSE_DATA \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_INCLASS_NO_PURE_DECLS \
-	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_16_ENHANCED_CONSTRUCTORS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_SPARSE_DATA \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_INCLASS_NO_PURE_DECLS \
+	FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -88,5 +100,28 @@ template<> LIDAR_API UClass* StaticClass<class AMovingStaticMeshActor>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h
 
+
+#define FOREACH_ENUM_EACTORROTATIONAXIS(op) \
+	op(EActorRotationAxis::Yaw) \
+	op(EActorRotationAxis::Pitch) \
+	op(EActorRotationAxis::Roll) 
+
+enum class EActorRotationAxis : uint8;
+template<> LIDAR_API UEnum* StaticEnum<EActorRotationAxis>();
+
+#define FOREACH_ENUM_EACTORLOCATIONAXIS(op) \
+	op(EActorLocationAxis::X) \
+	op(EActorLocationAxis::Y) \
+	op(EActorLocationAxis::Z) 
+
+enum class EActorLocationAxis : uint8;
+template<> LIDAR_API UEnum* StaticEnum<EActorLocationAxis>();
+
+#define FOREACH_ENUM_EACTORMOVEMENTTYPE(op) \
+	op(EActorMovementType::Location) \
+	op(EActorMovementType::Rotation) 
+
+enum class EActorMovementType : uint8;
+template<> LIDAR_API UEnum* StaticEnum<EActorMovementType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

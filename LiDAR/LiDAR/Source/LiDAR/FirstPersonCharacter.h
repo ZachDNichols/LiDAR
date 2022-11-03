@@ -2,9 +2,13 @@
 
 #pragma once
 
+#include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Sound/SoundCue.h"
 #include "FirstPersonCharacter.generated.h"
+
+
 
 class UIComponent;
 class USkeletalMesh;
@@ -27,7 +31,7 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-		UPROPERTY(VisibleAnywhere, Category = "Holding")
+	UPROPERTY(VisibleAnywhere, Category = "Holding")
 		UPhysicsHandleComponent* PhysicsHandle;
 
 	//First person camera
@@ -84,8 +88,6 @@ protected:
 	void DecreaseRadius();
 
 	void PickupPhysicsObject();
-
-
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -101,7 +103,10 @@ public:
 
 	float GetRadius() const { return currentRadius; };
 
+
+
 private:
+
 	bool hasGun = false;
 	bool holdingObject = false;
 	AActor* heldObject;

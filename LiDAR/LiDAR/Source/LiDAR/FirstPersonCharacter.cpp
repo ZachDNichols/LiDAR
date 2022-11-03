@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "FirstPersonCharacter.h"
-#include "Blueprint/UserWidget.h"
 #include "Camera/CameraComponent.h"
+#include "TimerManager.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
@@ -10,14 +10,13 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
-#include "DrawDebugHelpers.h"
 #include "Math/UnrealMathUtility.h"
 #include "Components/StaticMeshComponent.h"
-#include "Dot.h"
-#include "Laser.h"
 #include "Components/SceneComponent.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Engine/EngineTypes.h"
+#include "Kismet/GameplayStatics.h"
+
 
 
 // Sets default values
@@ -148,8 +147,6 @@ void AFirstPersonCharacter::MoveRight(float Value)
         AddMovementInput(GetActorRightVector(), Value);
     }
 }
-
-//Handles the player crouching
 void AFirstPersonCharacter::StartCrouch()
 {
     Crouch();
