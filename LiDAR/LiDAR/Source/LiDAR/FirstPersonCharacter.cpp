@@ -162,7 +162,7 @@ void AFirstPersonCharacter::MoveRight(float Value)
 
 void AFirstPersonCharacter::PlayFootStepSound()
 {
-    if (GetVelocity().Size() != 0 && GetCharacterMovement()->IsFalling())
+    if (GetVelocity().Size() != 0 && !GetCharacterMovement()->IsFalling())
     {
         UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
         GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
