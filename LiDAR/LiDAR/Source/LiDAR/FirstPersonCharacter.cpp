@@ -167,6 +167,11 @@ void AFirstPersonCharacter::PlayFootStepSound()
         UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
         GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
     }
+    else
+    {
+        GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
+        ResetStep();
+    }
 }
 
 
