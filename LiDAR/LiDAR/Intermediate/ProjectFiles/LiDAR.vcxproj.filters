@@ -43,6 +43,12 @@
     <ClInclude Include="..\..\Source\LiDAR\Dot.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\FirstDiagloueScriptedSequence.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\FirstDiagloueScriptedSequence.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\FirstPersonCharacter.cpp">
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
@@ -104,6 +110,12 @@
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\LiDAR\PressurePlate.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\VoiceLineTrigger.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\VoiceLineTrigger.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\WeaponPickupComponent.cpp">

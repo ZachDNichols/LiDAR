@@ -141,6 +141,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->OnUseItem.AddDynamic(this, &ALEMON::FireSound);
 		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
 		Character->Scroll.AddDynamic(this, &ALEMON::ChangeRadius);
+		Mesh->bCastDynamicShadow = false;
 	}
 }
 
