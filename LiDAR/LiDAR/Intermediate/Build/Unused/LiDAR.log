@@ -1,31 +1,4 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
-  Building LiDAREditor...
-  Using Visual Studio 2022 14.33.31630 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstDiagloueScriptedSequence.cpp, FirstPersonCharacter.cpp, InteractableInterface.cpp, Laser.cpp, LEMON.cpp, LEMONAnimInstance.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, MovableStaticMeshComponent.cpp, MovingStaticMeshActor.cpp, PressurePlate.cpp, VoiceLineTrigger.cpp, WeaponPickupComponent.cpp
-  Distributing 4 actions to XGE
-  --------------------Build System Warning---------------------------------------
-  License is invalid:
-      License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-      This build will run in standalone mode.
-  
-  -------------------------------------------------------------------------------
-  
-  Build ID: {2C01E4EB-9AD3-4B77-87AA-0B8A580DACD8}
-  
-  --------------------Project: Default-------------------------------------------
-  [1/4] FirstPersonCharacter.cpp (0:02.23 at +0:00)
-  [2/4] UnrealEditor-LiDAR.dll (0:01.06 at +0:02)
-     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [3/4] UnrealEditor-LiDAR.lib (0:00.14 at +0:03)
-     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [4/4] LiDAREditor.target (0:00.42 at +0:03)
-  ---------------------- Done ----------------------
-  
-      Rebuild All: 1 succeeded, 0 failed, 0 skipped
-  
-  1 build system warning(s):
-     - License is invalid
-  
-  Total time in XGE executor: 4.06 seconds
-  Total execution time: 5.26 seconds
+  Target is up to date
+  Total execution time: 1.07 seconds
