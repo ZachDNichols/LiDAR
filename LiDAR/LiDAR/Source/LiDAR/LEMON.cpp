@@ -5,11 +5,10 @@
 #include "FirstPersonCharacter.h"
 #include "GameFramework/Actor.h"
 #include "TimerManager.h"
-#include "Components/WidgetComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Laser.h"
 #include "Dot.h"
-#include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
 #include "WeaponPickupComponent.h"
 #include "Components/AudioComponent.h"
 
@@ -22,8 +21,6 @@ ALEMON::ALEMON()
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(PickUp);
 
-	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
-	AudioComponent->SetupAttachment(Mesh);
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -106,20 +103,19 @@ void ALEMON::Fire()
 				Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
 			}
 		}
+
+		if (Sound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, 1.f);
+		}
 	}
 }
 
-void ALEMON::FireSound()
-{
-	AudioComponent->Play();
-	GetWorld()->GetTimerManager().SetTimer(LaserSFXTimer, this, &ALEMON::FireSound, 11.f, false);
-}
 
 void ALEMON::EndFire()
 {
 	GetWorld()->GetTimerManager().ClearTimer(LaserTimer);
 	GetWorld()->GetTimerManager().ClearTimer(LaserSFXTimer);
-	AudioComponent->Stop();
 }
 
 void ALEMON::ChangeRadius()
@@ -138,7 +134,6 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 
 		// Register so that Fire is called every time the character tries to use the item being held
 		Character->OnUseItem.AddDynamic(this, &ALEMON::Fire);
-		Character->OnUseItem.AddDynamic(this, &ALEMON::FireSound);
 		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
 		Character->Scroll.AddDynamic(this, &ALEMON::ChangeRadius);
 		Mesh->bCastDynamicShadow = false;

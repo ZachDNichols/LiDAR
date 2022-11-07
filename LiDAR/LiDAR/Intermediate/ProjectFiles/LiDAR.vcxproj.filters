@@ -112,10 +112,28 @@
     <ClInclude Include="..\..\Source\LiDAR\PressurePlate.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\LiDAR\VoiceLineTrigger.cpp">
+    <ClCompile Include="..\..\Source\LiDAR\Speaker.cpp">
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\LiDAR\VoiceLineTrigger.h">
+    <ClInclude Include="..\..\Source\LiDAR\Speaker.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\SpeakerInterface.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\SpeakerInterface.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\Trigger.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\Trigger.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\TriggeredAudioActor.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\TriggeredAudioActor.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\WeaponPickupComponent.cpp">

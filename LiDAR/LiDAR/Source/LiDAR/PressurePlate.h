@@ -51,6 +51,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
 		TArray<int> TargetIDs;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
+		TArray<FName> TargetTags;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audio")
+		USoundBase* Sound;
+
 private:
 	bool bIsTriggered;
+	bool playedSound = false;
 };
