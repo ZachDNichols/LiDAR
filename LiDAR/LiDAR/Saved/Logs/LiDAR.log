@@ -1315,3 +1315,43 @@ Script Stack (0 frames):
 [2022.11.07-18.14.38:788][910]LogContentBrowser: Attempting asset rename: NewWorld -> FirstCutscene
 [2022.11.07-18.14.38:789][910]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
 [2022.11.07-18.14.38:790][910]LogContentBrowser: End creating deferred item NewWorld
+[2022.11.07-18.18.10:223][699]LogUObjectHash: Compacting FUObjectHashTables data took   2.19ms
+[2022.11.07-18.18.11:759][699]LogSlate: Window 'Save Content' being destroyed
+[2022.11.07-18.18.11:794][699]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/LiDAR/Maps/FirstCutscene" FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/FirstCutscene.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2022.11.07-18.18.11:828][699]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2022.11.07-18.18.11:831][699]LogSavePackage: Moving output files for package: /Game/LiDAR/Maps/FirstCutscene
+[2022.11.07-18.18.11:831][699]LogSavePackage: Moving 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/FirstCutsceneD4AB562343276A741B6A63ADE723E62B.tmp' to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/FirstCutscene.umap'
+[2022.11.07-18.18.11:842][699]LogFileHelpers: Saving map 'FirstCutscene' took 0.043
+[2022.11.07-18.18.11:842][699]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/LiDAR/Maps/MainMenu" FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/MainMenu.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2022.11.07-18.18.11:879][699]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2022.11.07-18.18.11:882][699]LogSavePackage: Moving output files for package: /Game/LiDAR/Maps/MainMenu
+[2022.11.07-18.18.11:882][699]LogSavePackage: Moving 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/MainMenu4ECD21184ECCFB1F7B900B96216E39C5.tmp' to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/MainMenu.umap'
+[2022.11.07-18.18.11:887][699]LogFileHelpers: Saving map 'MainMenu' took 0.046
+[2022.11.07-18.18.11:895][699]LogAssetEditorSubsystem: Opening Asset editor for World /Game/LiDAR/Maps/Test.Test
+[2022.11.07-18.18.11:895][699]Cmd: MAP LOAD FILE="C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/LiDAR/Maps/Test.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2022.11.07-18.18.11:895][699]LightingResults: New page: Lighting Build
+[2022.11.07-18.18.11:896][699]LoadErrors: New page: Loading map: Test.umap
+[2022.11.07-18.18.11:932][699]LogWorld: UWorld::CleanupWorld for Test, bSessionEnded=true, bCleanupResources=true
+[2022.11.07-18.18.11:932][699]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.07-18.18.11:932][699]MapCheck: New page: Map Check
+[2022.11.07-18.18.11:932][699]LightingResults: New page: Lighting Build
+[2022.11.07-18.18.11:967][699]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.11.07-18.18.11:970][699]LogUObjectHash: Compacting FUObjectHashTables data took   1.97ms
+[2022.11.07-18.18.11:972][699]LogWorld: UWorld::CleanupWorld for FirstCutscene, bSessionEnded=true, bCleanupResources=true
+[2022.11.07-18.18.11:972][699]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.07-18.18.11:972][699]LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+[2022.11.07-18.18.11:972][699]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.07-18.18.12:009][699]LogUObjectHash: Compacting FUObjectHashTables data took   2.01ms
+[2022.11.07-18.18.12:047][699]LogUObjectHash: Compacting FUObjectHashTables data took   2.59ms
+[2022.11.07-18.18.12:053][699]LogAudio: Display: Audio Device (ID: 1) registered with world 'Test'.
+[2022.11.07-18.18.12:053][699]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2022.11.07-18.18.12:053][699]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.07-18.18.12:054][699]LogAIModule: Creating AISystem for world Test
+[2022.11.07-18.18.12:073][699]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2022.11.07-18.18.12:111][699]LogUObjectHash: Compacting FUObjectHashTables data took   1.94ms
+[2022.11.07-18.18.12:125][699]Cmd: MAP CHECKDEP NOCLEARLOG
+[2022.11.07-18.18.12:125][699]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.171ms to complete.
+[2022.11.07-18.18.12:125][699]LogFileHelpers: Loading map 'Test' took 0.231
+[2022.11.07-18.18.12:148][699]AssetCheck: New page: Asset Save: multiple assets
+[2022.11.07-18.18.12:148][699]LogContentValidation: Display: Validating World /Game/LiDAR/Maps/FirstCutscene.FirstCutscene
+[2022.11.07-18.18.12:151][699]LogContentValidation: Display: Validating World /Game/LiDAR/Maps/MainMenu.MainMenu
