@@ -63,7 +63,7 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
 
-    if (PhysicsHandle->GrabbedComponent)
+    if (holdingObject)
     {
         FHitResult Hit;
         FRotator Rot;
@@ -85,6 +85,8 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
         FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
         GrabRotation.Pitch = 0.f;
         GrabRotation.Roll = 0.f;
+
+        PhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
 
         if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
         {

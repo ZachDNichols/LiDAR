@@ -55,16 +55,15 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
 		USoundBase* Sound;
-
+	
+	/** Ends gameplay for this component. */
+	UFUNCTION(BlueprintCallable)
+		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
 	FTimerHandle LaserSFXTimer;
 	float currentRadius = 1000.f;
 	UCameraComponent* Camera;
-protected:
-	/** Ends gameplay for this component. */
-	UFUNCTION()
-		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 };
 
