@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Sound/SoundAttenuation.h"
 #include "FirstDiagloueScriptedSequence.generated.h"
 
 UCLASS()
@@ -37,6 +38,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Voice Function")
 		void PlayVoiceLine();
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadonly, Category = "Audio")
+		USoundAttenuation* SoundAttenuation;
+
 
 private:
 

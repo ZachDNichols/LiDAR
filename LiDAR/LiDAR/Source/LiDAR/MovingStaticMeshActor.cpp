@@ -2,6 +2,8 @@
 
 
 #include "MovingStaticMeshActor.h"
+#include "Kismet/GameplayStatics.h"
+
 
 // Sets default values
 AMovingStaticMeshActor::AMovingStaticMeshActor()
@@ -70,13 +72,40 @@ void AMovingStaticMeshActor::Move(bool bTriggered)
 		{
 			MoveTimeline.PlayFromStart();
 		}
+		if (!soundPlayed)
+		{
+			soundPlayed = true;
+			PlaySoundEffect();
+		}
 	}
 	else
 	{
 		MoveTimeline.Reverse();
+
+		if (soundPlayed)
+		{
+			soundPlayed = false;
+			PlaySoundEffect();
+		}
 	}
 
 	bIsMoving = true;
+}
+
+void AMovingStaticMeshActor::PlaySoundEffect()
+{
+	if (SoundEffect)
+	{
+		if (SoundAttenuation)
+		{
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), SoundEffect, GetActorLocation(), 1.f, 1.f, 0.f, SoundAttenuation);
+		}
+		else
+		{
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), SoundEffect, GetActorLocation(), 1.f, 1.f);
+
+		}
+	}
 }
 
 void AMovingStaticMeshActor::OnMove()

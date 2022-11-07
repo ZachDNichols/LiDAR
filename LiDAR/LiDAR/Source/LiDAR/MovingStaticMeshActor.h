@@ -8,6 +8,8 @@
 #include "InteractableInterface.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/TimelineComponent.h"
+#include "Sound/SoundAttenuation.h"
+#include "Sound/SoundBase.h"
 #include "MovingStaticMeshActor.generated.h"
 
 UENUM(BlueprintType)
@@ -74,6 +76,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void Move(bool bTriggered);
 
+	void PlaySoundEffect();
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Category = "Moving")
 		UStaticMeshComponent* Mesh;
 
@@ -83,14 +87,19 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Moving")
 		bool bIsDisabled;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadonly, Category = "Audio")
+		USoundAttenuation* SoundAttenuation;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadonly, Category = "Audio")
+		USoundBase* SoundEffect;
+
 private:
 	void UpdateRotation(float CurveValue);
 	void UpdateLocation(float CurveValue);
-
 	bool bIsMoving;
 	FTimeline MoveTimeline;
-
 	bool bIsTriggered;
+	bool soundPlayed;
 	float PreviousTimelineValue;
 };
 

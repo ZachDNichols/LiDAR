@@ -18,6 +18,8 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_UCurveFloat_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundAttenuation_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_UInteractableInterface_NoRegister();
 // End Cross Module References
 	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EActorRotationAxis;
@@ -345,6 +347,14 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 #endif
 		static void NewProp_bIsDisabled_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDisabled;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SoundAttenuation_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SoundAttenuation;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SoundEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SoundEffect;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -436,6 +446,20 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 		((AMovingStaticMeshActor*)Obj)->bIsDisabled = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled = { "bIsDisabled", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMovingStaticMeshActor), &Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundAttenuation_MetaData[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "MovingStaticMeshActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundAttenuation = { "SoundAttenuation", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMovingStaticMeshActor, SoundAttenuation), Z_Construct_UClass_USoundAttenuation_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundAttenuation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundAttenuation_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundEffect_MetaData[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "MovingStaticMeshActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundEffect = { "SoundEffect", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMovingStaticMeshActor, SoundEffect), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundEffect_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMovingStaticMeshActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MoveCurve,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_MovementType_Underlying,
@@ -448,6 +472,8 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_Mesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_ObjectID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_bIsDisabled,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundAttenuation,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingStaticMeshActor_Statics::NewProp_SoundEffect,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMovingStaticMeshActor_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UInteractableInterface_NoRegister, (int32)VTABLE_OFFSET(AMovingStaticMeshActor, IInteractableInterface), false },  // 954022642
@@ -494,9 +520,9 @@ void EmptyLinkFunctionForGeneratedCodeMovingStaticMeshActor() {}
 		{ EActorMovementType_StaticEnum, TEXT("EActorMovementType"), &Z_Registration_Info_UEnum_EActorMovementType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2126290303U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingStaticMeshActor, AMovingStaticMeshActor::StaticClass, TEXT("AMovingStaticMeshActor"), &Z_Registration_Info_UClass_AMovingStaticMeshActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingStaticMeshActor), 2208435179U) },
+		{ Z_Construct_UClass_AMovingStaticMeshActor, AMovingStaticMeshActor::StaticClass, TEXT("AMovingStaticMeshActor"), &Z_Registration_Info_UClass_AMovingStaticMeshActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingStaticMeshActor), 154054609U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_3400606109(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_1097853730(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_MovingStaticMeshActor_h_Statics::EnumInfo));

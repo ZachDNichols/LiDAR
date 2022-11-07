@@ -37,7 +37,14 @@ void AFirstDiagloueScriptedSequence::BeginPlay()
 
 void AFirstDiagloueScriptedSequence::PlayVoiceLine()
 {
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f);
+	if (SoundAttenuation)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f, 0.f, SoundAttenuation);
+	}
+	else
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f);
+	}
 	GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstDiagloueScriptedSequence::Interact, 22.591f, false);
 }
 

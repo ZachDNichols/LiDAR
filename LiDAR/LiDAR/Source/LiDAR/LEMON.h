@@ -32,9 +32,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void ChangeRadius();
 
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void FireSound();
-
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ALaser> LaserBP;
 
@@ -57,7 +54,7 @@ public:
 		class UWeaponPickupComponent* PickUp;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
-		UAudioComponent* AudioComponent;
+		USoundBase* Sound;
 
 private:
 	AFirstPersonCharacter* Character;
