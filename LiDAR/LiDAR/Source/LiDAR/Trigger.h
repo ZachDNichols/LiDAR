@@ -16,6 +16,9 @@ class LIDAR_API ATrigger : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ATrigger();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
+		TArray<int> TargetIDs;
 	
 	UPROPERTY(EditAnywhere, Category = "Trigger")
 		UBoxComponent* TriggerBox;
