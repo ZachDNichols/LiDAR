@@ -4,6 +4,7 @@
 #include "Trigger.h"
 #include "Kismet/GameplayStatics.h"
 #include "SpeakerInterface.h"
+#include "InteractableInterface.h"
 
 // Sets default values
 ATrigger::ATrigger()
@@ -31,6 +32,22 @@ void ATrigger::Tick(float DeltaTime)
 
 void ATrigger::Interact(bool isInteracting)
 {
+
+	TArray<AActor*> InteractableActors;
+	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);
+
+	for (AActor* Actor : InteractableActors)
+	{
+		int ObjectID = IInteractableInterface::Execute_GetObjectID(Actor);
+		for (int ID : TargetIDs)
+		{
+			if (ID == ObjectID)
+			{
+				IInteractableInterface::Execute_Interact(Actor, isInteracting);
+			}
+		}
+	}
+
 	if (Sound)
 	{
 		TArray<AActor*> InteractableSpeakers;
