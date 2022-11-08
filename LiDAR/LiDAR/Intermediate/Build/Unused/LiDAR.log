@@ -1,4 +1,5 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
+  Invalidating makefile for LiDAREditor (VisualStudioTools.uplugin has been added)
   Target is up to date
-  Total execution time: 1.02 seconds
+  Total execution time: 3.26 seconds

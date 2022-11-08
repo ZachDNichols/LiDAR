@@ -133,6 +133,11 @@ void EmptyLinkFunctionForGeneratedCodeTrigger() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_TargetIDs_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetIDs_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_TargetIDs;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TriggerBox_MetaData[];
 #endif
@@ -173,6 +178,14 @@ void EmptyLinkFunctionForGeneratedCodeTrigger() {}
 		{ "ModuleRelativePath", "Trigger.h" },
 	};
 #endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs_Inner = { "TargetIDs", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs_MetaData[] = {
+		{ "Category", "Trigger" },
+		{ "ModuleRelativePath", "Trigger.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs = { "TargetIDs", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATrigger, TargetIDs), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATrigger_Statics::NewProp_TriggerBox_MetaData[] = {
 		{ "Category", "Trigger" },
@@ -219,6 +232,8 @@ void EmptyLinkFunctionForGeneratedCodeTrigger() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATrigger_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATrigger, Sound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATrigger_Statics::NewProp_Sound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATrigger_Statics::NewProp_Sound_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATrigger_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrigger_Statics::NewProp_TargetIDs,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrigger_Statics::NewProp_TriggerBox,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrigger_Statics::NewProp_ResetTrigger,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATrigger_Statics::NewProp_bIsDisabled,
@@ -262,9 +277,9 @@ void EmptyLinkFunctionForGeneratedCodeTrigger() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Trigger_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATrigger, ATrigger::StaticClass, TEXT("ATrigger"), &Z_Registration_Info_UClass_ATrigger, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrigger), 2381134630U) },
+		{ Z_Construct_UClass_ATrigger, ATrigger::StaticClass, TEXT("ATrigger"), &Z_Registration_Info_UClass_ATrigger, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATrigger), 2021298645U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Trigger_h_1967198507(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Trigger_h_300233900(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Trigger_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Trigger_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
