@@ -26,7 +26,9 @@
             "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystaticstypes.generated.h",
             "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystatics.generated.h",
             "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\interactableinterface.h",
-            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\interactableinterface.generated.h"
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\interactableinterface.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\speakerinterface.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\speakerinterface.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

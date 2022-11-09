@@ -50,6 +50,7 @@ void ATrigger::Interact(bool isInteracting)
 
 	if (Sound)
 	{
+		
 		TArray<AActor*> InteractableSpeakers;
 		UGameplayStatics::GetAllActorsWithInterface(GetWorld(), USpeakerInterface::StaticClass(), InteractableSpeakers);
 

@@ -67,7 +67,7 @@ void APressurePlate::Interact(bool bIsInteracting)
 			FName ObjectTag = ISpeakerInterface::Execute_GetObjectTag(Actor);
 			for (FName ID : TargetTags)
 			{
-				if (ObjectTag.IsEqual(ID, ENameCase::IgnoreCase))
+				if (ID.IsEqual(ObjectTag, ENameCase::IgnoreCase))
 				{
 					ISpeakerInterface::Execute_PlaySound(Actor, Sound);
 				}

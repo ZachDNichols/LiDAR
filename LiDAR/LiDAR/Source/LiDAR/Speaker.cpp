@@ -43,7 +43,7 @@ void ASpeaker::PlaySound_Implementation(USoundBase* Sound)
 	if (Sound)
 	{
 		AudioComponent->SetSound(Sound);
-		AudioComponent->Play();
+		AudioComponent->Play(0.0f);
 	}
 }
 
