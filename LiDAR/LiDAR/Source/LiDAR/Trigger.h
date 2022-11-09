@@ -24,7 +24,7 @@ public:
 		UBoxComponent* TriggerBox;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
-		bool ResetTrigger;
+		bool TriggerCall;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		bool bIsDisabled;

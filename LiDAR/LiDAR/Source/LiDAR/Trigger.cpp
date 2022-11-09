@@ -70,7 +70,7 @@ void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor 
 {
 	if (!bIsDisabled && !isTriggered)
 	{
-		Interact(true);
+		Interact(TriggerCall);
 		isTriggered = true;
 	}
 }
