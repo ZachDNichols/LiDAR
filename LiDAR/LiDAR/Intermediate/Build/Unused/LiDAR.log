@@ -1,4 +1,36 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\zach\AppData\Local\UnrealBuildTool\Log.txt
-  Target is up to date
-  Total execution time: 1.07 seconds
+  Building LiDAREditor...
+  Using Visual Studio 2022 14.34.31933 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstDiagloueScriptedSequence.cpp, FirstPersonCharacter.cpp, InteractableInterface.cpp, Laser.cpp, LEMON.cpp, LEMONAnimInstance.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, MovableStaticMeshComponent.cpp, MovingStaticMeshActor.cpp, PressurePlate.cpp, Speaker.cpp, SpeakerInterface.cpp, Trigger.cpp, WeaponPickupComponent.cpp
+  Distributing 9 actions to XGE
+  --------------------Build System Warning---------------------------------------
+  License is invalid:
+      License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
+      This build will run in standalone mode.
+  
+  -------------------------------------------------------------------------------
+  
+  Build ID: {F9C8CE9A-C5DB-4542-B846-491BC9177BAF}
+  
+  --------------------Project: Default-------------------------------------------
+  [1/9] Laser.cpp (0:00.87 at +0:00)
+  [2/9] Speaker.cpp (0:01.17 at +0:00)
+  [3/9] LEMON.cpp (0:01.53 at +0:02)
+  [4/9] Trigger.cpp (0:01.07 at +0:03)
+  [5/9] Speaker.gen.cpp (0:01.28 at +0:04)
+  [6/9] PressurePlate.cpp (0:00.96 at +0:05)
+  [7/9] UnrealEditor-LiDAR.dll (0:00.78 at +0:06)
+     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
+  [8/9] UnrealEditor-LiDAR.lib (0:00.10 at +0:07)
+     Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
+  [9/9] LiDAREditor.target (0:00.31 at +0:07)
+  ---------------------- Done ----------------------
+  
+      Rebuild All: 1 succeeded, 0 failed, 0 skipped
+  
+  1 build system warning(s):
+     - License is invalid
+  
+  Total time in XGE executor: 8.30 seconds
+  Total execution time: 9.35 seconds

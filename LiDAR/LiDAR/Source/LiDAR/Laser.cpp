@@ -39,7 +39,7 @@ void ALaser::Tick(float DeltaTime)
 
 void ALaser::SetStart()
 {
-    StartLoc = Camera->GetComponentLocation() + ((Camera->GetForwardVector() * 83.f) + (Camera->GetRightVector() * 24.f) - (Camera->GetUpVector() * 24.f));
+    StartLoc = Camera->GetComponentLocation() + (Camera->GetForwardVector() * 60.f) + (Camera->GetRightVector() * 20.f) - (Camera->GetUpVector() * 22.f);
 }
 
 void ALaser::SetSize()

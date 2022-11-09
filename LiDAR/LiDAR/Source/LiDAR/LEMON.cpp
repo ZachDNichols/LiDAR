@@ -106,7 +106,8 @@ void ALEMON::Fire()
 
 		if (Sound)
 		{
-			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, 1.f);
+			float Pitch = FMath::RandRange(0.1f, 2.f);
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, Pitch);
 		}
 	}
 }
