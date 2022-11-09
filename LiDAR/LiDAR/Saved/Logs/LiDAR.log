@@ -864,3 +864,6 @@ Script Stack (0 frames):
 [2022.11.09-23.27.39:101][251]AssetCheck: New page: Asset Save: multiple assets
 [2022.11.09-23.27.39:101][251]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/LiDAR/Maps/Level_One_BuiltData.Level_One_BuiltData
 [2022.11.09-23.27.39:101][251]LogContentValidation: Display: Validating World /Game/LiDAR/Maps/Level_One.Level_One
+[2022.11.09-23.28.23:558][547]LogDerivedDataCache: C:/Users/zach/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:03.882 and deleted 0 file(s) with total size 0 MiB.
+[2022.11.09-23.28.46:568][621]LogD3D12RHI: Creating RT View Heap with 250000 entries
+[2022.11.09-23.28.46:572][621]LogD3D12RHI: Creating RT Sampler Heap with 2048 entries
