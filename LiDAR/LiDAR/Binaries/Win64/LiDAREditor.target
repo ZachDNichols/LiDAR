@@ -4533,6 +4533,30 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/Win64/UnrealEditor-AvidDNxMedia.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/Win64/UnrealEditor-AvidDNxMedia.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/HAPMedia/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/HAPMedia/Binaries/Win64/UnrealEditor-HAPMedia.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/HAPMedia/Binaries/Win64/UnrealEditor-HAPMedia.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Media/ImgMedia/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
@@ -5466,6 +5490,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/WindowsMoviePlayer/Binaries/Win64/UnrealEditor-WindowsMoviePlayer.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/VirtualProduction/CompositePlane/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/VirtualProduction/CompositePlane/Binaries/Win64/UnrealEditor-CompositePlane.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/VirtualProduction/CompositePlane/Binaries/Win64/UnrealEditor-CompositePlane.pdb",
 			"Type": "SymbolFile"
 		},
 		{
@@ -25811,6 +25847,26 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/AvidDNxMedia.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/ThirdParty/Win64/DNxHR.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/ThirdParty/Win64/DNxMXF-dynamic.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/AvidDNxMedia/Binaries/ThirdParty/Win64/DNxUncompressedSDK.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Media/HAPMedia/HAPMedia.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Media/ImgMedia/ImgMedia.uplugin",
 			"Type": "UFS"
 		},
@@ -26016,6 +26072,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/WindowsMoviePlayer/WindowsMoviePlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/VirtualProduction/CompositePlane/CompositePlane.uplugin",
 			"Type": "UFS"
 		},
 		{

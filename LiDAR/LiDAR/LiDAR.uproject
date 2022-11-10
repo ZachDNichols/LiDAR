@@ -32,6 +32,21 @@
 			"SupportedTargetPlatforms": [
 				"Win64"
 			]
+		},
+		{
+			"Name": "AvidDNxMedia",
+			"Enabled": true
+		},
+		{
+			"Name": "CompositePlane",
+			"Enabled": true
+		},
+		{
+			"Name": "HAPMedia",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
 		}
 	]
 }
