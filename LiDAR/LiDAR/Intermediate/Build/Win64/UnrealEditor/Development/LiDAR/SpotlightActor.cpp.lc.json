@@ -1,0 +1,27 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\spotlightactor.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\lidareditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\development\\lidar\\definitions.lidar.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\spotlightactor.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\spotlightcomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\pointlightcomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\locallightcomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponentbase.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponent.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\locallightcomponent.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\pointlightcomponent.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\spotlightcomponent.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\interactableinterface.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\interactableinterface.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\spotlightactor.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
