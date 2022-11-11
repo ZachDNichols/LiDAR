@@ -201,20 +201,12 @@ void AFirstPersonCharacter::EndShoot()
 
 void AFirstPersonCharacter::IncreaseRadius()
 {
-    if (currentRadius + increment <= maxRadius)
-    {
-        currentRadius += increment;
-        Scroll.Broadcast();
-    }
+    ScrollUp.Broadcast();
 }
 
 void AFirstPersonCharacter::DecreaseRadius()
 {
-    if (currentRadius - increment >= minRadius)
-    {
-        currentRadius -= increment;
-        Scroll.Broadcast();
-    }
+    ScrollDown.Broadcast();
 }
 
 void AFirstPersonCharacter::PickupPhysicsObject()

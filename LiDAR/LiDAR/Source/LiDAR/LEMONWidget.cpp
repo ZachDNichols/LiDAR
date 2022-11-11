@@ -3,3 +3,7 @@
 
 #include "LEMONWidget.h"
 
+void ULEMONWidget::SetRadius(float currentRadius, float maxRadius)
+{
+	RadiusBar->SetPercent(currentRadius / maxRadius);
+}

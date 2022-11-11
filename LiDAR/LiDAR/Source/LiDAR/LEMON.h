@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "LEMONWidget.h"
 #include "GameFramework/Actor.h"
+#include "Components/WidgetComponent.h"
 #include "Animation/AnimSequence.h"
 #include "LEMON.generated.h"
 
@@ -20,7 +22,7 @@ public:
 	// Sets default values for this component's properties
 	ALEMON();
 
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	UFUNCTION(BlueprintCallable)
 		void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
@@ -29,8 +31,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void EndFire();
 
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void ChangeRadius();
+	UFUNCTION()
+		void IncreaseRadius();
+
+	UFUNCTION()
+		void DecreaseRadius();
 
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ALaser> LaserBP;
@@ -44,8 +49,14 @@ public:
 	UPROPERTY()
 		class ADot* Dot;
 
-	UPROPERTY(EditAnywhere)
-		class UWidgetComponent* WidgetComponent;
+	UPROPERTY(EditAnywhere, Category = "Widget")
+		TSubclassOf<class ULEMONWidget> LemonWidget_BP;
+
+	UPROPERTY()
+		ULEMONWidget* LemonWidget;
+
+	UPROPERTY(VisibleAnywhere)
+		UWidgetComponent* WidgetComponent;
 
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
 		class USkeletalMeshComponent* Mesh;
@@ -55,7 +66,7 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
 		USoundBase* Sound;
-	
+
 	/** Ends gameplay for this component. */
 	UFUNCTION(BlueprintCallable)
 		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
@@ -64,6 +75,9 @@ private:
 	FTimerHandle LaserTimer;
 	FTimerHandle LaserSFXTimer;
 	float currentRadius = 1000.f;
+	float increment = 500.f;
+	float minRadius = 1000.f;
+	float maxRadius = 15000.f;
 	UCameraComponent* Camera;
 };
 

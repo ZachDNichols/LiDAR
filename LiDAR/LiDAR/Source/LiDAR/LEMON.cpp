@@ -21,18 +21,31 @@ ALEMON::ALEMON()
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(PickUp);
 
+	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
+	WidgetComponent->SetupAttachment(Mesh, FName("WidgetSpot"));
+
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	if (Character != nullptr)
+	if (Character)
 	{
 		// Unregister from the OnUseItem Event
 		Character->OnUseItem.RemoveDynamic(this, &ALEMON::Fire);
 		Character->EndUseItem.RemoveDynamic(this, &ALEMON::EndFire);		
 		Character->EndUseItem.RemoveDynamic(this, &ALEMON::EndFire);
-		Character->Scroll.RemoveDynamic(this, &ALEMON::ChangeRadius);
+		Character->ScrollUp.RemoveDynamic(this, &ALEMON::IncreaseRadius);
+		Character->ScrollDown.RemoveDynamic(this, &ALEMON::DecreaseRadius);
 	}
+
+	if (LemonWidget)
+	{
+		LemonWidget->RemoveFromParent();
+		WidgetComponent->SetWidget(nullptr);
+		LemonWidget = nullptr;
+	}
+
+	Super::EndPlay(EndPlayReason);
 }
 
 void ALEMON::Fire()
@@ -119,13 +132,28 @@ void ALEMON::EndFire()
 	GetWorld()->GetTimerManager().ClearTimer(LaserSFXTimer);
 }
 
-void ALEMON::ChangeRadius()
+void ALEMON::IncreaseRadius()
 {
-	currentRadius = Character->GetRadius();
+	if (currentRadius + increment <= maxRadius)
+	{
+		currentRadius += increment;
+		LemonWidget->SetRadius(currentRadius, maxRadius);
+	}
+}
+
+void ALEMON::DecreaseRadius()
+{
+	if (currentRadius - increment >= minRadius)
+	{
+		currentRadius -= increment;
+		LemonWidget->SetRadius(currentRadius, maxRadius);
+	}
 }
 
 void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Called"));
+
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{
@@ -136,8 +164,17 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		// Register so that Fire is called every time the character tries to use the item being held
 		Character->OnUseItem.AddDynamic(this, &ALEMON::Fire);
 		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
-		Character->Scroll.AddDynamic(this, &ALEMON::ChangeRadius);
+		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
+		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 		Mesh->bCastDynamicShadow = false;
+
+		if (LemonWidget_BP)
+		{
+			LemonWidget = CreateWidget<ULEMONWidget>(GetWorld(), LemonWidget_BP);
+			//WidgetComponent->SetWidgetClass(LemonWidget_BP);
+			WidgetComponent->SetWidget(LemonWidget);
+			LemonWidget->SetRadius(0.f, 100.f);
+		}
 	}
 }
 

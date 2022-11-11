@@ -138,6 +138,10 @@
             "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\dynamicpropertypath.generated.h",
             "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\widgetblueprintgeneratedclass.generated.h",
             "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\userwidget.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\umg\\public\\components\\progressbar.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\slate\\public\\widgets\\notifications\\sprogressbar.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\slate\\sprogressbar.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\progressbar.generated.h",
             "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealeditor\\inc\\lidar\\lemonwidget.generated.h"
         ],
         "ImportedModules": [],

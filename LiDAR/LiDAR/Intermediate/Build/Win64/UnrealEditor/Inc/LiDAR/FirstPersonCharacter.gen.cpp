@@ -12,7 +12,8 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_OnUseItem__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
 	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_OnEndUseItem__DelegateSignature();
-	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature();
+	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature();
+	LIDAR_API UFunction* Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature();
 	LIDAR_API UClass* Z_Construct_UClass_AFirstPersonCharacter_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_AFirstPersonCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
@@ -66,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics
+	struct Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -74,17 +75,39 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_LiDAR, nullptr, "Scroll__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_LiDAR, nullptr, "ScrollUp__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_LiDAR, nullptr, "ScrollDown__DelegateSignature", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -194,13 +217,13 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 #endif
 		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_EndUseItem;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Scroll_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ScrollUp_MetaData[];
 #endif
-		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_Scroll;
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ScrollUp;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_currentRadius_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ScrollDown_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_currentRadius;
+		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ScrollDown;
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_FootStepSounds_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FootStepSounds_MetaData[];
@@ -277,19 +300,19 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 #endif
 	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_EndUseItem = { "EndUseItem", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, EndUseItem), Z_Construct_UDelegateFunction_LiDAR_OnEndUseItem__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_EndUseItem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_EndUseItem_MetaData)) }; // 4024449935
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Scroll_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollUp_MetaData[] = {
 		{ "Category", "Interaction" },
 		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Scroll = { "Scroll", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, Scroll), Z_Construct_UDelegateFunction_LiDAR_Scroll__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Scroll_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Scroll_MetaData)) }; // 1463694016
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollUp = { "ScrollUp", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, ScrollUp), Z_Construct_UDelegateFunction_LiDAR_ScrollUp__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollUp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollUp_MetaData)) }; // 3152394240
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_currentRadius_MetaData[] = {
-		{ "Category", "FirstPersonCharacter" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollDown_MetaData[] = {
+		{ "Category", "Interaction" },
 		{ "ModuleRelativePath", "FirstPersonCharacter.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_currentRadius = { "currentRadius", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, currentRadius), METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_currentRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_currentRadius_MetaData)) };
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollDown = { "ScrollDown", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFirstPersonCharacter, ScrollDown), Z_Construct_UDelegateFunction_LiDAR_ScrollDown__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollDown_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollDown_MetaData)) }; // 3401357352
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FootStepSounds_Inner = { "FootStepSounds", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FootStepSounds_MetaData[] = {
@@ -305,8 +328,8 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_HoldLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_OnUseItem,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_EndUseItem,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_Scroll,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_currentRadius,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollUp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_ScrollDown,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FootStepSounds_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFirstPersonCharacter_Statics::NewProp_FootStepSounds,
 	};
@@ -346,9 +369,9 @@ void EmptyLinkFunctionForGeneratedCodeFirstPersonCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 1518435656U) },
+		{ Z_Construct_UClass_AFirstPersonCharacter, AFirstPersonCharacter::StaticClass, TEXT("AFirstPersonCharacter"), &Z_Registration_Info_UClass_AFirstPersonCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFirstPersonCharacter), 693552240U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_1947722005(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_4071051156(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_FirstPersonCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

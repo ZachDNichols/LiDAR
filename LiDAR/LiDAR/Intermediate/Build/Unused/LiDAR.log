@@ -3,7 +3,7 @@
   Building LiDAREditor...
   Using Visual Studio 2022 14.34.31933 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Adaptive Build] Excluded from LiDAR unity file: Dot.cpp, FirstDiagloueScriptedSequence.cpp, FirstPersonCharacter.cpp, InteractableInterface.cpp, Laser.cpp, LEMON.cpp, LEMONAnimInstance.cpp, LEMONWidget.cpp, LiDAR.cpp, LiDARGameModeBase.cpp, MovableStaticMeshComponent.cpp, MovingStaticMeshActor.cpp, PressurePlate.cpp, Speaker.cpp, SpeakerInterface.cpp, SpotlightActor.cpp, Trigger.cpp, WeaponPickupComponent.cpp
-  Distributing 6 actions to XGE
+  Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -11,17 +11,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {C7F90EBB-9CE4-44F6-8725-561BDA57590C}
+  Build ID: {27F5C8A2-92FC-46BF-AC0A-9A224B0D857E}
   
   --------------------Project: Default-------------------------------------------
-  [1/6] LiDAR.init.gen.cpp (0:00.42 at +0:00)
-  [2/6] LEMONWidget.gen.cpp (0:05.15 at +0:00)
-  [3/6] LEMONWidget.cpp (0:05.01 at +0:05)
-  [4/6] UnrealEditor-LiDAR.dll (0:00.56 at +0:10)
+  [1/4] LEMON.cpp (0:05.92 at +0:00)
+  [2/4] UnrealEditor-LiDAR.dll (0:00.71 at +0:05)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [5/6] UnrealEditor-LiDAR.lib (0:00.09 at +0:11)
+  [3/4] UnrealEditor-LiDAR.lib (0:00.11 at +0:06)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [6/6] LiDAREditor.target (0:00.26 at +0:11)
+  [4/4] LiDAREditor.target (0:00.25 at +0:06)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -29,5 +27,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 11.71 seconds
-  Total execution time: 12.42 seconds
+  Total time in XGE executor: 7.20 seconds
+  Total execution time: 7.80 seconds
