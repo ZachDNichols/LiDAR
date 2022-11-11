@@ -79,6 +79,12 @@
     <ClInclude Include="..\..\Source\LiDAR\LEMONAnimInstance.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\LiDAR\LEMONWidget.cpp">
+      <Filter>Source\LiDAR</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\LiDAR\LEMONWidget.h">
+      <Filter>Source\LiDAR</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LiDAR\LiDAR.Build.cs">
       <Filter>Source\LiDAR</Filter>
     </None>

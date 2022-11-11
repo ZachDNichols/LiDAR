@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeSpotlightActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
 	ENGINE_API UClass* Z_Construct_UClass_USpotLightComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UPointLightComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_UInteractableInterface_NoRegister();
 // End Cross Module References
@@ -35,6 +36,10 @@ void EmptyLinkFunctionForGeneratedCodeSpotlightActor() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Spotlight_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Spotlight;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MeshLight_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MeshLight;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Mesh_MetaData[];
 #endif
@@ -71,6 +76,14 @@ void EmptyLinkFunctionForGeneratedCodeSpotlightActor() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Spotlight = { "Spotlight", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASpotlightActor, Spotlight), Z_Construct_UClass_USpotLightComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Spotlight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Spotlight_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASpotlightActor_Statics::NewProp_MeshLight_MetaData[] = {
+		{ "Category", "Lighting" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "SpotlightActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpotlightActor_Statics::NewProp_MeshLight = { "MeshLight", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASpotlightActor, MeshLight), Z_Construct_UClass_UPointLightComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_MeshLight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_MeshLight_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Mesh_MetaData[] = {
 		{ "Category", "mesh" },
 		{ "EditInline", "true" },
@@ -94,6 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeSpotlightActor() {}
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Intensity = { "Intensity", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASpotlightActor, Intensity), METADATA_PARAMS(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Intensity_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Intensity_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpotlightActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Spotlight,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpotlightActor_Statics::NewProp_MeshLight,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Mesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpotlightActor_Statics::NewProp_ObjectID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpotlightActor_Statics::NewProp_Intensity,
@@ -137,9 +151,9 @@ void EmptyLinkFunctionForGeneratedCodeSpotlightActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_SpotlightActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASpotlightActor, ASpotlightActor::StaticClass, TEXT("ASpotlightActor"), &Z_Registration_Info_UClass_ASpotlightActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpotlightActor), 388478778U) },
+		{ Z_Construct_UClass_ASpotlightActor, ASpotlightActor::StaticClass, TEXT("ASpotlightActor"), &Z_Registration_Info_UClass_ASpotlightActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpotlightActor), 2276049372U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_SpotlightActor_h_1709046735(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_SpotlightActor_h_1517485345(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_SpotlightActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_SpotlightActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

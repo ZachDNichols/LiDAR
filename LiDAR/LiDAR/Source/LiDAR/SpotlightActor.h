@@ -5,8 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/SpotLightComponent.h"
+#include "Components/PointLightComponent.h"
 #include "InteractableInterface.h"
 #include "SpotlightActor.generated.h"
+
 
 
 UCLASS()
@@ -20,6 +22,10 @@ public:
 
 	UPROPERTY(VisibleAnywhere, Category = "Lighting")
 		USpotLightComponent* Spotlight;
+
+	UPROPERTY(VisibleAnywhere, Category = "Lighting")
+		UPointLightComponent* MeshLight;
+
 
 	UPROPERTY(VisibleAnywhere, Category = mesh)
 		UStaticMeshComponent* Mesh;
