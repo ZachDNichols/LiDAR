@@ -74,10 +74,10 @@ private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
 	FTimerHandle LaserSFXTimer;
-	float currentRadius = 1000.f;
-	float increment = 500.f;
-	float minRadius = 1000.f;
-	float maxRadius = 15000.f;
+	float currentRadius = 200.f;
+	float increment = 200.f;
+	float minRadius = 200.f;
+	float maxRadius = 2000.f;
 	UCameraComponent* Camera;
 };
 

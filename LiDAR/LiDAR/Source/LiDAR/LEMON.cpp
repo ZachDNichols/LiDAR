@@ -50,8 +50,6 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ALEMON::Fire()
 {
-	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.0001f, true, 0.0001f);
-
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
 	float y = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -70,7 +68,7 @@ void ALEMON::Fire()
 	//Sets the vector where the line trace should start
 	FVector Start = Loc;
 	//Sets the vector where it shoud end. Random numbers added to create offsets.
-	FVector End = Start + (Rot.Vector() * 50000);
+	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
 	//Parameters for what should be ignored. We ignore the player collision.
 	FCollisionQueryParams TraceParams;
@@ -95,7 +93,6 @@ void ALEMON::Fire()
 
 		if (LaserBP)
 		{
-
 			FTransform SpawnTransform;
 			SpawnTransform.SetLocation(Start);
 
@@ -120,9 +117,34 @@ void ALEMON::Fire()
 		if (Sound)
 		{
 			float Pitch = FMath::RandRange(0.1f, 2.f);
-			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, Pitch);
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, Pitch);
 		}
 	}
+	else
+	{
+		HitRotation = (((Start - End) * -1).Rotation());
+		HitRotation.Pitch -= 90.f;
+
+		if (LaserBP)
+		{
+			FTransform SpawnTransform;
+			SpawnTransform.SetLocation(Start);
+
+			FActorSpawnParameters SpawnParams;
+
+			LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
+
+			LaserBeam->SetEnd(End);
+
+			if (Sound)
+			{
+				float Pitch = FMath::RandRange(0.1f, 2.f);
+				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, Pitch);
+			}
+		}
+	}
+
+	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.01f, false);
 }
 
 
