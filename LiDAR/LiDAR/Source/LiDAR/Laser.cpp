@@ -3,6 +3,7 @@
 #include "Laser.h"
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
+
 #include "Math/Vector.h"
 #include "Components/StaticMeshComponent.h"
 
@@ -14,6 +15,9 @@ ALaser::ALaser()
     
     LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
     SetRootComponent(LaserMesh);
+
+    Audio = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
+    Audio->SetupAttachment(LaserMesh);
 }
 
 // Called when the game starts or when spawned
@@ -24,14 +28,19 @@ void ALaser::BeginPlay()
     startTime = FPlatformTime::Seconds();
     Character = GetWorld()->GetFirstPlayerController()->GetCharacter();
     Camera = Character->FindComponentByClass<UCameraComponent>();
+    float Pitch = FMath::RandRange(-2.f, 2.f);
+    Audio->SetPitchMultiplier(Pitch);
+    Audio->Play();
 }
 
 // Called every frame
 void ALaser::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-   if (FPlatformTime::Seconds() - startTime > .12f)
-       Destroy();
+    if (FPlatformTime::Seconds() - startTime > .12f)
+    {
+        Destroy();
+    }
     SetStart();
     SetRotation();
     SetSize();

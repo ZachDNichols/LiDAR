@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_LiDAR();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 // End Cross Module References
 	void ALaser::StaticRegisterNativesALaser()
 	{
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_LaserMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LaserMesh;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Audio_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Audio;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -55,8 +60,17 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh = { "LaserMesh", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALaser, LaserMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALaser_Statics::NewProp_Audio_MetaData[] = {
+		{ "Category", "SFX" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Laser.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALaser_Statics::NewProp_Audio = { "Audio", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALaser, Audio), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALaser_Statics::NewProp_Audio_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALaser_Statics::NewProp_Audio_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALaser_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALaser_Statics::NewProp_LaserMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALaser_Statics::NewProp_Audio,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALaser_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALaser>::IsAbstract,
@@ -94,9 +108,9 @@ void EmptyLinkFunctionForGeneratedCodeLaser() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALaser, ALaser::StaticClass, TEXT("ALaser"), &Z_Registration_Info_UClass_ALaser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALaser), 2055441026U) },
+		{ Z_Construct_UClass_ALaser, ALaser::StaticClass, TEXT("ALaser"), &Z_Registration_Info_UClass_ALaser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALaser), 1697011830U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_492388934(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_1636164725(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_Laser_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

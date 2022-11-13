@@ -64,8 +64,6 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
-		USoundBase* Sound;
 
 	/** Ends gameplay for this component. */
 	UFUNCTION(BlueprintCallable)
@@ -74,10 +72,10 @@ private:
 	AFirstPersonCharacter* Character;
 	FTimerHandle LaserTimer;
 	FTimerHandle LaserSFXTimer;
-	float currentRadius = 200.f;
-	float increment = 200.f;
-	float minRadius = 200.f;
-	float maxRadius = 2000.f;
+	float currentRadius = 50.f;
+	float increment = 50.f;
+	float minRadius = 50.f;
+	float maxRadius = 700.f;
 	UCameraComponent* Camera;
 };
 

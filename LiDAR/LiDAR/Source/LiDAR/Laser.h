@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/AudioComponent.h"
 #include "GameFramework/Actor.h"
 #include "Laser.generated.h"
 
@@ -15,6 +16,9 @@ class LIDAR_API ALaser : public AActor
     
     UPROPERTY(VisibleAnywhere, Category = mesh)
     UStaticMeshComponent* LaserMesh;
+
+    UPROPERTY(VisibleAnywhere, Category = "SFX")
+        UAudioComponent* Audio;
 
     //UPROPERTY(EditAnywhere)
     //TSubclassOf<class AFirstPersonCharacter> CharacterBP;

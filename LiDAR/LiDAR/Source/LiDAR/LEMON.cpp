@@ -23,7 +23,6 @@ ALEMON::ALEMON()
 
 	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
 	WidgetComponent->SetupAttachment(Mesh, FName("WidgetSpot"));
-
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -50,6 +49,7 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ALEMON::Fire()
 {
+
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
 	float y = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -113,12 +113,6 @@ void ALEMON::Fire()
 				Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
 			}
 		}
-
-		if (Sound)
-		{
-			float Pitch = FMath::RandRange(0.1f, 2.f);
-			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, Pitch);
-		}
 	}
 	else
 	{
@@ -135,12 +129,6 @@ void ALEMON::Fire()
 			LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
 
 			LaserBeam->SetEnd(End);
-
-			if (Sound)
-			{
-				float Pitch = FMath::RandRange(0.1f, 2.f);
-				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(), 1.f, Pitch);
-			}
 		}
 	}
 
@@ -195,7 +183,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 			LemonWidget = CreateWidget<ULEMONWidget>(GetWorld(), LemonWidget_BP);
 			//WidgetComponent->SetWidgetClass(LemonWidget_BP);
 			WidgetComponent->SetWidget(LemonWidget);
-			LemonWidget->SetRadius(0.f, 100.f);
+			LemonWidget->SetRadius(currentRadius, maxRadius);
 		}
 	}
 }

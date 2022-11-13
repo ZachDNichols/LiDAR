@@ -5,5 +5,7 @@
 
 void ULEMONWidget::SetRadius(float currentRadius, float maxRadius)
 {
+	currentRadius -= 50.f;
+	maxRadius -= 50.f;
 	RadiusBar->SetPercent(currentRadius / maxRadius);
 }

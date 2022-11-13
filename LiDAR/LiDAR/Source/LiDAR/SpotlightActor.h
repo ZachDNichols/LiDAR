@@ -26,7 +26,6 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Lighting")
 		UPointLightComponent* MeshLight;
 
-
 	UPROPERTY(VisibleAnywhere, Category = mesh)
 		UStaticMeshComponent* Mesh;
 

@@ -22,7 +22,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 	UMG_API UClass* Z_Construct_UClass_UWidgetComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_UWeaponPickupComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ALEMON::execEndPlay)
 	{
@@ -293,10 +292,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PickUp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_PickUp;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Sound_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Sound;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -387,13 +382,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp = { "PickUp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALEMON, PickUp), Z_Construct_UClass_UWeaponPickupComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALEMON_Statics::NewProp_Sound_MetaData[] = {
-		{ "Category", "SFX" },
-		{ "ModuleRelativePath", "LEMON.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALEMON_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALEMON, Sound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALEMON_Statics::NewProp_Sound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALEMON_Statics::NewProp_Sound_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALEMON_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_LaserBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_LaserBeam,
@@ -404,7 +392,6 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_WidgetComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_Mesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_PickUp,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALEMON_Statics::NewProp_Sound,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALEMON_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALEMON>::IsAbstract,
@@ -442,9 +429,9 @@ void EmptyLinkFunctionForGeneratedCodeLEMON() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALEMON, ALEMON::StaticClass, TEXT("ALEMON"), &Z_Registration_Info_UClass_ALEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALEMON), 2867680078U) },
+		{ Z_Construct_UClass_ALEMON, ALEMON::StaticClass, TEXT("ALEMON"), &Z_Registration_Info_UClass_ALEMON, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALEMON), 765014489U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_3028173233(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_4233800908(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_LEMON_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
