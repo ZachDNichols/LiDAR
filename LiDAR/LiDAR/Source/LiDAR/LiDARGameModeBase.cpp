@@ -3,3 +3,7 @@
 
 #include "LiDARGameModeBase.h"
 
+ALiDARGameModeBase::ALiDARGameModeBase()
+{
+	
+}

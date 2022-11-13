@@ -63,6 +63,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
 		FScrollDown ScrollDown;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
+		UUserWidget* PauseMenu;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -90,6 +93,9 @@ protected:
 	void DecreaseRadius();
 
 	void PickupPhysicsObject();
+
+	void PauseGame();
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

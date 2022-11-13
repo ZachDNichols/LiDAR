@@ -15,6 +15,7 @@
 #include "Components/SceneComponent.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Engine/EngineTypes.h"
+#include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 
 
@@ -48,6 +49,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     HoldLocation->SetupAttachment(FirstPersonCamera);
 
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
+
 }
 
 // Called when the game starts or when spawned
@@ -133,6 +135,30 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     PlayerInputComponent->BindAction("Decrease Radius", IE_Pressed, this, &AFirstPersonCharacter::DecreaseRadius);
 
     PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFirstPersonCharacter::PickupPhysicsObject);
+
+    PlayerInputComponent->BindAction("Esc", IE_Pressed, this, &AFirstPersonCharacter::PauseGame);
+}
+
+void AFirstPersonCharacter::PauseGame()
+{
+    if (UGameplayStatics::IsGamePaused(GetWorld()))
+    {
+        UGameplayStatics::SetGamePaused(GetWorld(), false);
+        if (PauseMenu)
+        {
+            PauseMenu->RemoveFromParent();
+            PauseMenu->RemoveFromViewport();
+        }
+    }
+    else
+    {
+        UGameplayStatics::SetGamePaused(GetWorld(), true);
+        if (PauseMenu)
+        {
+            PauseMenu->AddToViewport();
+        }
+    }
+
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)
@@ -190,7 +216,10 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::BeginShoot()
 {
-    OnUseItem.Broadcast();
+    if (!holdingObject)
+    {
+        OnUseItem.Broadcast();
+    }
 }
 
 void AFirstPersonCharacter::EndShoot()
@@ -248,6 +277,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                     PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f), GrabRotation);
                     holdingObject = true;
                     PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
+                    EndUseItem.Broadcast();
                 }
 
             }

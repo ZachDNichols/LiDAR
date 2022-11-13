@@ -11,15 +11,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {9B95FC8B-C899-4196-8254-53E23894310D}
+  Build ID: {1ABFFFCB-03C0-4ACA-8BF6-CCD16BBCAF2B}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] Laser.cpp (0:01.14 at +0:00)
-  [2/4] UnrealEditor-LiDAR.dll (0:00.75 at +0:01)
+  [1/4] FirstPersonCharacter.cpp (0:05.92 at +0:00)
+  [2/4] UnrealEditor-LiDAR.dll (0:00.84 at +0:05)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.suppressed.exp
-  [3/4] UnrealEditor-LiDAR.lib (0:00.09 at +0:01)
+  [3/4] UnrealEditor-LiDAR.lib (0:00.12 at +0:06)
      Creating library C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.lib and object C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\UnrealEditor-LiDAR.exp
-  [4/4] LiDAREditor.target (0:00.25 at +0:02)
+  [4/4] LiDAREditor.target (0:00.29 at +0:06)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -27,5 +27,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 2.40 seconds
-  Total execution time: 3.05 seconds
+  Total time in XGE executor: 7.41 seconds
+  Total execution time: 8.04 seconds
