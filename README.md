@@ -11,9 +11,10 @@ We will use Unreal Engine 5 with C++ in combination with Visual Studio to create
 ## Method of Completion
 We will use something similar to the agile/scrum method and meet weekly to discuss what needs to be done next in the project. 
 ## Credits
-Zach Nichols - Lead Game Developer </br>
+Created by **Zach Nichols** </br>
 Marissa Marxhausen - Concept Art </br>
-
+Tayler Emerson - Voice Acting and Writing </br>
+Mathew Stene - Music </br>
 
 # LiDAR
 **Title of game**: LiDAR <br/>
