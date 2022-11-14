@@ -60,8 +60,10 @@
 /DORIGINAL_FILE_NAME="UnrealEditor-LiDAR.dll"
 /DBUILT_FROM_CHANGELIST=20979098
 /DBUILD_VERSION=++UE5+Release-5.0-CL-20979098
-/DBUILD_ICON_FILE_NAME="\"..\\Build\\Windows\\Resources\\Default.ico\""
-/DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
+/DBUILD_ICON_FILE_NAME="\"C:\\Users\\zach\\Documents\\GitHub\\LiDAR\\LiDAR\\LiDAR\\Build\\Windows\\Application.ico\""
+/DPROJECT_COMPANY_NAME="Zach Nichols"
+/DPROJECT_COPYRIGHT_STRING="Copyright Zach Nichols"
+/DPROJECT_PRODUCT_NAME="LiDAR Demo"
 /DPROJECT_PRODUCT_IDENTIFIER=LiDAR
 /fo "C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Intermediate\Build\Win64\UnrealEditor\Development\LiDAR\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

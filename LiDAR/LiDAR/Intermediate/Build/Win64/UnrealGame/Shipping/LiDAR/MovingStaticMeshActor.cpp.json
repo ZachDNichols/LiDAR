@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\movingstaticmeshactor.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\lidar\\shipping\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealgame\\shipping\\lidar\\definitions.lidar.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\movingstaticmeshactor.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\source\\lidar\\interactableinterface.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealgame\\inc\\lidar\\interactableinterface.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\timelinecomponent.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\timelinecomponent.generated.h",
+            "c:\\users\\zach\\documents\\github\\lidar\\lidar\\lidar\\intermediate\\build\\win64\\unrealgame\\inc\\lidar\\movingstaticmeshactor.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\kismetsystemlibrary.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\dialoguetypes.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\gameplaystaticstypes.generated.h",
+            "g:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\gameplaystatics.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
