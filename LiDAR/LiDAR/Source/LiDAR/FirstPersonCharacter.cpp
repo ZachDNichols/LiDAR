@@ -141,24 +141,13 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 
 void AFirstPersonCharacter::PauseGame()
 {
-    if (UGameplayStatics::IsGamePaused(GetWorld()))
-    {
-        UGameplayStatics::SetGamePaused(GetWorld(), false);
+         UGameplayStatics::SetGamePaused(GetWorld(), true);
         if (PauseMenu)
         {
-            PauseMenu->RemoveFromParent();
-            PauseMenu->RemoveFromViewport();
-        }
-    }
-    else
-    {
-        UGameplayStatics::SetGamePaused(GetWorld(), true);
-        if (PauseMenu)
-        {
+            UE_LOG(LogTemp, Warning, TEXT("Paused"));
+            GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
             PauseMenu->AddToViewport();
         }
-    }
-
 }
 
 void AFirstPersonCharacter::MoveForward(float Value)

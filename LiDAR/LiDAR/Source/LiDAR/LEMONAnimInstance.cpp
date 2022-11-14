@@ -19,7 +19,7 @@ void ULEMONAnimInstance::NativeInitializeAnimation()
 		{
 			UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
 
-			WeaponPickup->OnPickUp.AddDynamic(this, &ULEMONAnimInstance::AssignCharacter);
+			WeaponPickup->OnPickUp.AddUniqueDynamic(this, &ULEMONAnimInstance::AssignCharacter);
 		}
 	}
 }
@@ -42,7 +42,7 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			{
 				UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
 
-				WeaponPickup->OnPickUp.AddDynamic(this, &ULEMONAnimInstance::AssignCharacter);
+				WeaponPickup->OnPickUp.AddUniqueDynamic(this, &ULEMONAnimInstance::AssignCharacter);
 			}
 		}
 	}

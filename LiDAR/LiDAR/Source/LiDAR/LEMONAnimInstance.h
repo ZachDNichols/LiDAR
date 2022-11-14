@@ -3,6 +3,7 @@
 #pragma once
 
 #include "FirstPersonCharacter.h"
+#include "LEMON.h"
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
 #include "LEMONAnimInstance.generated.h"
@@ -26,6 +27,7 @@ protected:
 
 private:
 	AFirstPersonCharacter* Character;
+	ALEMON* Gun;
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
 		bool isShooting;
