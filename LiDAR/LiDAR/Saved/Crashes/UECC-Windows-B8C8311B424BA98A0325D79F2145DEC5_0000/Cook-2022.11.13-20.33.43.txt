@@ -1,0 +1,960 @@
+﻿Log file open, 11/13/22 20:33:44
+LogConfig: Display: Loading VulkanPC ini files took 0.04 seconds
+LogConfig: Display: Loading HoloLens ini files took 0.05 seconds
+LogConfig: Display: Loading Android ini files took 0.05 seconds
+LogConfig: Display: Loading Mac ini files took 0.05 seconds
+LogConfig: Display: Loading IOS ini files took 0.05 seconds
+LogConfig: Display: Loading Unix ini files took 0.06 seconds
+LogConfig: Display: Loading Windows ini files took 0.06 seconds
+LogConfig: Display: Loading TVOS ini files took 0.06 seconds
+LogConfig: Display: Loading LinuxArm64 ini files took 0.06 seconds
+LogConfig: Display: Loading Linux ini files took 0.07 seconds
+LogPluginManager: Mounting Engine plugin FastBuildController
+LogPluginManager: Mounting Engine plugin Bridge
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogPluginManager: Mounting Engine plugin XGEController
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin AISupport
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin AnimationModifierLibrary
+LogPluginManager: Mounting Engine plugin BlendSpaceMotionAnalysis
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin OpenColorIO
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin CryptoKeys
+LogPluginManager: Mounting Engine plugin CurveEditorTools
+LogPluginManager: Mounting Engine plugin DataValidation
+LogPluginManager: Mounting Engine plugin EditorDebugTools
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin GameplayTagsEditor
+LogPluginManager: Mounting Engine plugin MacGraphicsSwitching
+LogPluginManager: Mounting Engine plugin MaterialAnalyzer
+LogPluginManager: Mounting Engine plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting Engine plugin ModelingToolsEditorMode
+LogPluginManager: Mounting Engine plugin PluginBrowser
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin StylusInput
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin WorldPartitionHLODUtilities
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosClothEditor
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin GeometryFlow
+LogPluginManager: Mounting Engine plugin GPULightmass
+LogPluginManager: Mounting Engine plugin MeshLODToolset
+LogPluginManager: Mounting Engine plugin MeshModelingToolsetExp
+LogPluginManager: Mounting Engine plugin CLionSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting Engine plugin OpenImageDenoise
+LogPluginManager: Mounting Engine plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PlanarCut
+LogPluginManager: Mounting Engine plugin GitSourceControl
+LogPluginManager: Mounting Engine plugin ProxyLODPlugin
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin NullSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PerforceSourceControl
+LogPluginManager: Mounting Engine plugin SkeletalReduction
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin PlasticSourceControl
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessNode
+LogPluginManager: Mounting Engine plugin TextureFormatOodle
+LogPluginManager: Mounting Engine plugin TraceDataFilters
+LogPluginManager: Mounting Engine plugin SubversionSourceControl
+LogPluginManager: Mounting Engine plugin RiderSourceCodeAccess
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting Engine plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin AndroidMedia
+LogPluginManager: Mounting Engine plugin AppleProResMedia
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin AvidDNxMedia
+LogPluginManager: Mounting Engine plugin HAPMedia
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin MediaPlayerEditor
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin MovieRenderPipeline
+LogPluginManager: Mounting Engine plugin MatineeToLevelSequence
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidMoviePlayer
+LogPluginManager: Mounting Engine plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin AppleMoviePlayer
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin GoogleCloudMessaging
+LogPluginManager: Mounting Engine plugin HairStrands
+LogPluginManager: Mounting Engine plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MeshModelingToolset
+LogPluginManager: Mounting Engine plugin CompositePlane
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin RuntimePhysXCooking
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Engine plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting Engine plugin InterchangeEditor
+LogPluginManager: Mounting Engine plugin Interchange
+LogPluginManager: Mounting Engine plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Engine plugin OnlineSubsystemIOS
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Bridge/Content/' mounted to '/Bridge/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/2D/Paper2D/Content/' mounted to '/Paper2D/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRigSpline/Content/' mounted to '/ControlRigSpline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRig/Content/' mounted to '/ControlRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/IKRig/Content/' mounted to '/IKRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Compositing/OpenColorIO/Content/' mounted to '/OpenColorIO/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Enterprise/DatasmithContent/Content/' mounted to '/DatasmithContent/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/GeometryMode/Content/' mounted to '/GeometryMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/ModelingToolsEditorMode/Content/' mounted to '/ModelingToolsEditorMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/SpeedTreeImporter/Content/' mounted to '/SpeedTreeImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosClothEditor/Content/' mounted to '/ChaosClothEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosSolverPlugin/Content/' mounted to '/ChaosSolverPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosNiagara/Content/' mounted to '/ChaosNiagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Developer/AnimationSharing/Content/' mounted to '/AnimationSharing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/FullBodyIK/Content/' mounted to '/FullBodyIK/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryCollectionPlugin/Content/' mounted to '/GeometryCollectionPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryFlow/Content/' mounted to '/GeometryFlow/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GPULightmass/Content/' mounted to '/GPULightmass/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshLODToolset/Content/' mounted to '/MeshLODToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshModelingToolsetExp/Content/' mounted to '/MeshModelingToolsetExp/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/PythonScriptPlugin/Content/' mounted to '/PythonScriptPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/FX/Niagara/Content/' mounted to '/Niagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Media/MediaCompositing/Content/' mounted to '/MediaCompositing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovieScene/MovieRenderPipeline/Content/' mounted to '/MovieRenderPipeline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovieScene/SequencerScripting/Content/' mounted to '/SequencerScripting/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/AudioSynesthesia/Content/' mounted to '/AudioSynesthesia/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/GeometryProcessing/Content/' mounted to '/GeometryProcessing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/HairStrands/Content/' mounted to '/HairStrands/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/MeshModelingToolset/Content/' mounted to '/MeshModelingToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/VirtualProduction/CompositePlane/Content/' mounted to '/CompositePlane/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/ResonanceAudio/Content/' mounted to '/ResonanceAudio/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/Synthesis/Content/' mounted to '/Synthesis/'
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+LogGPULightmass: GPULightmass module is loaded
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: Created online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE5+Release-5.0-CL-20979098
+LogInit: Engine Version: 5.0.3-20979098+++UE5+Release-5.0
+LogInit: Compatible Engine Version: 5.0.0-19505902+++UE5+Release-5.0
+LogInit: Net CL: 19505902
+LogInit: OS: Windows 11 (22H2) [10.0.22623.891] (), CPU: AMD Ryzen 7 3700X 8-Core Processor             , GPU: NVIDIA GeForce RTX 3070
+LogInit: Compiled (64-bit): Jul  7 2022 02:16:06
+LogInit: Compiled with Visual C++: 19.29.30138.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE5+Release-5.0
+LogInit: Command Line:  C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\LiDAR.uproject -run=Cook -TargetPlatform=Windows -fileopenlog -ddc=InstalledDerivedDataBackendGraph -unversioned -abslog="G:\Program Files\Epic Games\UE_5.0\Engine\Programs\AutomationTool\Saved\Cook-2022.11.13-20.33.43.txt" -stdout -CrashForUAT -unattended -NoLogTimes -UTF8Output
+LogInit: Base Directory: G:/Program Files/Epic Games/UE_5.0/Engine/Binaries/Win64/
+LogInit: Allocator: Mimalloc
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 34
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 20
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 59
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 3
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   UE5-Main (697DD581-E64F-41AB-AA4A-51ECBEB7B628): 59
+LogDevObjectVersion:   UE5-Release (D89B5E42-24BD-4D46-8412-ACA8DF641779): 36
+LogDevObjectVersion:   UE5-PrivateFrosty (59DA5D52-1232-4948-B878-597870B8E98B): 8
+LogDevObjectVersion:   UE5-Dev-Cooker (26075A32-730F-4708-88E9-8C32F1599D05): 0
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogDevObjectVersion:   UE5-Dev-LWCRendering (30D58BE3-95EA-4282-A6E3-B159D8EBB06A): 1
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [Engine]
+LogConfig: CVar [[VisualizeCalibrationColorMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationColor.PPM_DefaultCalibrationColor]] deferred - dummy variable created
+LogConfig: CVar [[VisualizeCalibrationGrayscaleMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale.PPM_DefaultCalibrationGrayscale]] deferred - dummy variable created
+LogConfig: CVar [[MaxSkinBones:(Default=65536,PerPlatform=(("Mobile", 256)))]] deferred - dummy variable created
+LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [Engine]
+LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [Engine]
+LogConfig: CVar [[s.MaxPackageSummarySize:16384]] deferred - dummy variable created
+LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__SoundBase]] deferred - dummy variable created
+LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__MaterialInterface]] deferred - dummy variable created
+LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__DeviceProfileManager]] deferred - dummy variable created
+LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [Engine]
+LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [Engine]
+LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Average",ToolTip="Simulates average internet conditions")]] deferred - dummy variable created
+LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Bad",ToolTip="Simulates laggy internet conditions")]] deferred - dummy variable created
+LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [Engine]
+LogConfig: CVar [[DefaultPVRTCQuality:1]] deferred - dummy variable created
+LogConfig: CVar [[DefaultASTCQualityBySpeed:1]] deferred - dummy variable created
+LogConfig: CVar [[DefaultASTCQualityBySize:3]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:WidgetBlueprint]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GroupActor]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MetaData]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ObjectRedirector]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NavMeshRenderingComponent]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ReflectionCaptureComponent]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:TextRenderComponent]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:Font]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:InterpCurveEdSetup]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MaterialExpression]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MatineeActorCameraAnim]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraEmitter]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraScript]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleEmitter]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleLODLevel]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleModule]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SubUVAnimation]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SoundNode]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GameplayEffectUIData]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:WidgetBlueprint]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:GroupActor]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MetaData]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:ObjectRedirector]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:InterpCurveEdSetup]] deferred - dummy variable created
+LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MatineeActorCameraAnim]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.AllowStaticLighting]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.GBuffer]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.VelocityOutputPass]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.SelectiveBasePassOutputs]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.DBuffer]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.Symbols]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.GenerateSymbols]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.WriteSymbols]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.AllowUniqueSymbols]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.ExtraData]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.Shaders.Optimize]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.CompileShadersForDevelopment]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.MobileHDR]] deferred - dummy variable created
+LogConfig: CVar [[VersionedIntRValues:r.UsePreExposure]] deferred - dummy variable created
+LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [GlobalIlluminationQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [ReflectionQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [TextureQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [Scalability]
+LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [Scalability]
+LogConfig: CVar [[r.HairStrands.Interpolation.UseSingleGuide:0]] deferred - dummy variable created
+LogInit: Selected Device Profile: [WindowsEditor]
+LogDeviceProfileManager: Applying CVar settings loaded from the selected device profile: [WindowsEditor]
+LogHAL: Display: Platform has ~ 32 GB [34281836544 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+LogDeviceProfileManager: Going up to parent DeviceProfile [Windows]
+LogDeviceProfileManager: Going up to parent DeviceProfile []
+LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+LogConfig: Applying CVar settings from Section [ConsoleVariables] File [C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Config/WindowsEditor/Editor.ini]
+LogInit: Computer: R-ALPHA
+LogInit: User: zach
+LogInit: CPU Page size=4096, Cores=8
+LogInit: High frequency timer resolution =10.000000 MHz
+LogMemory: Memory total: Physical=31.9GB (32GB approx)
+LogMemory: Platform Memory Stats for WindowsEditor
+LogMemory: Process Physical Memory: 260.59 MB used, 260.59 MB peak
+LogMemory: Process Virtual Memory: 225.49 MB used, 225.49 MB peak
+LogMemory: Physical Memory: 16462.01 MB used,  16231.70 MB free, 32693.71 MB total
+LogMemory: Virtual Memory: 28291.96 MB used,  12337.75 MB free, 40629.71 MB total
+LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+LogTextureFormatETC2: Display: ETC2 Texture loading DLL: TextureConverter.dll
+LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.5
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.5.dll
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLens'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLensClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Server'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Client'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+LogTargetPlatformManager: Display: Building Assets For Windows
+LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+LogTargetPlatformManager: Unable to find audio format BINKA from hinted modules, loading all potential format modules to find it
+LogTargetPlatformManager: Loaded format module AudioFormatADPCM
+LogTargetPlatformManager:   ADPCM
+LogTargetPlatformManager:   PCM
+LogTargetPlatformManager: Loaded format module AudioFormatBink
+LogTargetPlatformManager:   BINKA
+LogTargetPlatformManager: Loaded format module AudioFormatOgg
+LogTargetPlatformManager:   OGG
+LogTargetPlatformManager: Loaded format module AudioFormatOpus
+LogTargetPlatformManager:   OPUS
+LogTargetPlatformManager: Unable to find shader format SF_METAL from hinted modules, loading all potential format modules to find it
+LogTargetPlatformManager: Loaded format module MetalShaderFormat
+LogTargetPlatformManager:   SF_METAL
+LogTargetPlatformManager:   SF_METAL_MRT
+LogTargetPlatformManager:   SF_METAL_TVOS
+LogTargetPlatformManager:   SF_METAL_MRT_TVOS
+LogTargetPlatformManager:   SF_METAL_SM5
+LogTargetPlatformManager:   SF_METAL_MACES3_1
+LogTargetPlatformManager:   SF_METAL_MRT_MAC
+LogTargetPlatformManager: Loaded format module ShaderFormatD3D
+LogTargetPlatformManager:   PCD3D_SM6
+LogTargetPlatformManager:   PCD3D_SM5
+LogTargetPlatformManager:   PCD3D_ES31
+LogTargetPlatformManager:   D3D_ES3_1_HOLOLENS
+LogTargetPlatformManager: Loaded format module ShaderFormatOpenGL
+LogTargetPlatformManager:   GLSL_150_ES31
+LogTargetPlatformManager:   GLSL_ES3_1_ANDROID
+LogTargetPlatformManager: Loaded format module ShaderFormatVectorVM
+LogTargetPlatformManager:   VVM_1_0
+LogTargetPlatformManager: Loaded format module VulkanShaderFormat
+LogTargetPlatformManager:   SF_VULKAN_SM5
+LogTargetPlatformManager:   SF_VULKAN_ES31_ANDROID
+LogTargetPlatformManager:   SF_VULKAN_ES31
+LogTargetPlatformManager:   SF_VULKAN_SM5_ANDROID
+LogWindows: WindowsPlatformFeatures enabled
+LogInit: Physics initialised using underlying interface: Chaos
+LogInit: Using OS detected language (en-US).
+LogInit: Using OS detected locale (en-US).
+LogTextLocalizationManager: No specific localization for 'en-US' exists, so 'en' will be used for the language.
+LogRendererCore: Ray tracing is disabled. Reason: not supported by current RHI.
+LogShaderCompilers: Display: Compiling shader autogen file: C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/ShaderAutogen/PCD3D_SM5/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogShaderCompilers: Display: Compiling shader autogen file: C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/ShaderAutogen/PCD3D_SM6/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogShaderCompilers: Display: Compiling shader autogen file: C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/ShaderAutogen/SF_VULKAN_SM5/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogShaderCompilers: Display: Compiling shader autogen file: C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/ShaderAutogen/PCD3D_ES31/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+LogDerivedDataCache: Unable to find inner node Pak for hierarchy Hierarchy.
+LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchy Hierarchy.
+LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1230 MiB)
+LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchy Hierarchy.
+LogDerivedDataCache: Speed tests for C:/Users/zach/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.01 seconds
+LogDerivedDataCache: Display: Performance to C:/Users/zach/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.04ms. RandomReadSpeed=303.90MBs, RandomWriteSpeed=180.53MBs. Assigned SpeedClass 'Local'
+LogDerivedDataCache: Using Local data cache path C:/Users/zach/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+LogDerivedDataCache: Unable to find inner node Shared for hierarchy Hierarchy.
+LogVirtualization: VirtualizationSystem name found in ini file: None
+LogVirtualization: FNullVirtualizationSystem mounted, virtualization will be disabled
+LogShaderCompilers: Guid format shader working directory is -4 characters bigger than the processId version (C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Intermediate/Shaders/WorkingDirectory/25084/).
+LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/zach/AppData/Local/Temp/UnrealShaderWorkingDir/DD6A35DE43EF4DC5A8FA87968CA7197B/'.
+LogXGEController: Display: Initialized XGE controller. XGE tasks will be spawned on this machine.
+LogShaderCompilers: Display: Using XGE Controller for Shader Compilation.
+LogAssetRegistry: FAssetRegistry took 0.0168 seconds to start up
+LogEditorDomain: Display: EditorDomain is Disabled
+LogSerialization: UsePackageTrailer: 'false'
+LogInit: Selected Device Profile: [WindowsEditor]
+LogDeviceProfileManager: Active device profile: [0000078AB05F2680][0000078A98A8A000 50] WindowsEditor
+LogDeviceProfileManager: Profiles: [0000078AB05F2140][0000078AA7362800 50] Windows, [0000078AB05F2680][0000078A98A8A000 50] WindowsEditor, [0000078AB05F01C0][0000078AA744C800 50] WindowsServer, [0000078AB05F0A80][0000078AB0540000 50] WindowsClient, [0000078AB05F2D80][0000078AB0545000 50] IOS, [0000078AB05F0FC0][0000078AB0547800 50] iPadAir2, [0000078AB05F4EC0][0000078AB054C800 50] IPadPro, [0000078AB05F5240][0000078AB054A000 50] iPadAir3, [0000078AB05F1180][0000078AA744A000 50] iPadAir4, [0000078AB05F4D00][0000078AB0580000 50] iPadMini4, [0000078AB05F08C0][0000078AB0585000 50] iPadMini5, [0000078AB05F5080][0000078AB0587800 50] iPadMini6, [0000078AB05F7E00][0000078AB0542800 50] iPhone6S, [0000078AB05F8180][0000078AB058C800 50] iPhone7, [0000078AB05F8500][0000078AB058A000 50] iPodTouch7, [0000078AB05F1F80][0000078AB0590000 50] iPhone6SPlus, [0000078AB05F7540][0000078AB0595000 50] iPhone7Plus, [0000078AB05F7C40][0000078AB0597800 50] iPhoneSE, [0000078AB05F5B00][0000078AB059A000 50] iPhone8, [0000078AB05F1500][0000078AB059C800 50] iPhone8Plus, [0000078AB05F7000][0000078AB0582800 50] iPhoneX, [0000078AB05F3480][0000078AB05A0000 50] iPhoneXS, [0000078AB05F0000][0000078AB05A5000 50] iPhoneXSMax, [0000078AB05F1880][0000078AB05A7800 50] iPhoneXR, [0000078AB05F6900][0000078AB05AA000 50] iPhone11, [0000078AB05F40C0][0000078AB05AC800 50] iPhone11Pro, [0000078AB05F0E00][0000078AB0592800 50] iPhone11ProMax, [0000078AB05F4600][0000078AB05B0000 50] iPhoneSE2, [0000078AB05F2A00][0000078AB05B5000 50] iPhone12Mini, [0000078AB05F4980][0000078AB05B7800 50] iPhone12, [0000078AB05F5CC0][0000078AB05BA000 50] iPhone12Pro, [0000078AB05F0540][0000078AB05BC800 50] iPhone12ProMax, [0000078AB05F5E80][0000078AB05A2800 50] iPhone13Mini, [0000078AB05F63C0][0000078AB05C0000 50] iPhone13, [0000078AB05F3F00][0000078AB05C5000 50] iPhone13Pro, [0000078AB05F8880][0000078AB05C7800 50] iPhone13ProMax, [0000078AB05F5400][0000078AB05CA000 50] iPadPro105, [0000078AB05F6040][0000078AB05CC800 50] iPadPro129, [0000078AB05F24C0][0000078AB05B2800 50] iPadPro97, [0000078AB05F7FC0][0000078AB05D0000 50] iPadPro2_129, [0000078AB05F3D40][0000078AB05D5000 50] iPad5, [0000078AB05F0380][0000078AB05D7800 50] iPad6, [0000078AB05F32C0][0000078AB05DA000 50] iPad7, [0000078AB05F86C0][0000078AB05DC800 50] iPad8, [0000078AB05F6AC0][0000078AB05C2800 50] iPad9, [0000078AB05F8C00][0000078AB05E0000 50] iPadPro11, [0000078AB05F6E40][0000078AB05E5000 50] iPadPro2_11, [0000078AB05F47C0][0000078AB05E7800 50] iPadPro3_11, [0000078AB05F4280][0000078AB05EA000 50] iPadPro3_129, [0000078AB05F39C0][0000078AB05EC800 50] iPadPro4_129, [0000078AB05F3800][0000078AB05D2800 50] iPadPro5_129, [0000078AB05F1C00][0000078AB0600000 50] AppleTV, [0000078AB05F6200][0000078AB0605000 50] AppleTV4K, [0000078AB05F6740][0000078AB0607800 50] TVOS, [0000078AB05FA2C0][0000078AB060C800 50] Mac, [0000078AB05FA640][0000078AB060A000 50] MacEditor, [0000078AB05FA100][0000078AB05E2800 50] MacClient, [0000078AB05F3640][0000078AB0610000 50] MacServer, [0000078AB05FA800][0000078AB0617800 50] Linux, [0000078AB05F9D80][0000078AB0615000 50] LinuxEditor, [0000078AB05F3100][0000078AB061A000 50] LinuxArm64Editor, [0000078AB05F8A40][0000078AB061C800 50] LinuxArm64, [0000078AB05FAB80][0000078AB0602800 50] LinuxClient, [0000078AB05F9140][0000078AB0620000 50] LinuxArm64Client, [0000078AB05F9F40][0000078AB0625000 50] LinuxServer, [0000078AB05F78C0][0000078AB0627800 50] LinuxArm64Server, [0000078AB05F7380][0000078AB062A000 50] Android, [0000078AB05F4B40][0000078AB062C800 50] Android_Preview_OpenGL, [0000078AB05F0700][0000078AB0612800 50] Android_Preview_Vulkan, [0000078AB05F71C0][0000078AB0630000 50] Android_Low, [0000078AB05F3B80][0000078AB0635000 50] Android_Mid, [0000078AB05FA480][0000078AB0637800 50] Android_High, [0000078AB05F16C0][0000078AB063A000 50] Android_Default, [0000078AB05FA9C0][0000078AB063C800 50] Android_Adreno4xx, [0000078AB05F8340][0000078AB0622800 50] Android_Adreno5xx_Low, [0000078AB05F5780][0000078AB0640000 50] Android_Adreno5xx, [0000078AB05F94C0][0000078AB0645000 50] Android_Adreno6xx, [0000078AB05F7A80][0000078AB0647800 50] Android_Adreno6xx_Vulkan, [0000078AB05F1A40][0000078AB064A000 50] Android_Adreno7xx, [0000078AB05F8DC0][0000078AB064C800 50] Android_Adreno7xx_Vulkan, [0000078AB05FB600][0000078AB0632800 50] Android_Mali_T6xx, [0000078AB05F4440][0000078AB0650000 50] Android_Mali_T7xx, [0000078AB05FB7C0][0000078AB0655000 50] Android_Mali_T8xx, [0000078AB05F6C80][0000078AB0657800 50] Android_Mali_G71, [0000078AB05FAD40][0000078AB065A000 50] Android_Mali_G72, [0000078AB05F7700][0000078AB065C800 50] Android_Mali_G72_Vulkan, [0000078AB05F8F80][0000078AB0642800 50] Android_Mali_G76, [0000078AB05F1DC0][0000078AB0660000 50] Android_Mali_G76_Vulkan, [0000078AB05FAF00][0000078AB0665000 50] Android_Mali_G77, [0000078AB05FC5C0][0000078AB0667800 50] Android_Mali_G77_Vulkan, [0000078AB05F5940][0000078AB066A000 50] Android_Mali_G78, [0000078AB05FC780][0000078AB066C800 50] Android_Mali_G78_Vulkan, [0000078AB05FB440][0000078AB0652800 50] Android_Mali_G710, [0000078AB05FBD00][0000078AB0670000 50] Android_Mali_G710_Vulkan, [0000078AB05F6580][0000078AB0675000 50] Android_Xclipse_920, [0000078AB05FB280][0000078AB0677800 50] Android_Xclipse_920_Vulkan, [0000078AB05F2F40][0000078AB067A000 50] Android_Vulkan_SM5, [0000078AB05F55C0][0000078AB067C800 50] Android_PowerVR_G6xxx, [0000078AB05FD740][0000078AB0662800 50] Android_PowerVR_GT7xxx, [0000078AB05FB0C0][0000078AB0680000 50] Android_PowerVR_GE8xxx, [0000078AB05FD040][0000078AB0685000 50] Android_PowerVR_GM9xxx, [0000078AB05FDAC0][0000078AB0687800 50] Android_PowerVR_GM9xxx_Vulkan, [0000078AB05FD200][0000078AB068A000 50] Android_TegraK1, [0000078AB05F9680][0000078AB068C800 50] Android_Unknown_Vulkan, [0000078AB05FD900][0000078AB0672800 50] Oculus_Quest, [0000078AB05F9A00][0000078AB0690000 50] Oculus_Quest2, [0000078AB05FE540][0000078AB0695000 50] HoloLens, 
+LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+LogMeshReduction: No distributed automatic mesh merging module available
+LogMeshMerging: No distributed automatic mesh merging module available
+LogNetVersion: LiDAR 1.0.0, NetCL: 19505902, EngineNetVer: 23, GameNetVer: 0 (Checksum: 3870342452)
+LogSlate: Border
+LogSlate: BreadcrumbButton
+LogSlate: Default
+LogSlate: Icons.Save
+LogSlate: Icons.Toolbar.Settings
+LogSlate: ListView
+LogSlate: SoftwareCursor_CardinalCross
+LogSlate: SoftwareCursor_Grab
+LogSlate: TableView.DarkRow
+LogSlate: TableView.Row
+LogSlate: TreeView
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+LogPython: Using Python 3.9.7
+LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: E8E8966343D059CDB1BCD684DD1A26BD | Instance: EE7C075149E753A41106538BEF8C01AB (R-ALPHA-25084).
+LogOpenImageDenoise: OIDN starting up
+LogUProjectInfo: Found projects:
+LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogCollectionManager: Loaded 0 collections in 0.001245 seconds
+LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Collections/' took 0.00s
+LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/Developers/zach/Collections/' took 0.00s
+LogFileCache: Scanning file cache for directory 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/Collections/' took 0.00s
+LogUObjectArray: 30334 objects as part of root set at end of initial load.
+LogUObjectAllocator: 8989176 out of 0 bytes used by permanent object pool.
+LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+LogInit: Executing Class /Script/UnrealEd.CookCommandlet
+LogInit: Initializing Editor Engine...
+LogEngine: Initializing Engine...
+LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+LogInit: Initializing FReadOnlyCVARCache
+LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Untitled
+LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+LogInit: Texture streaming: Disabled
+LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+LogInit: Initializing Editor Engine Completed
+BlueprintLog: New page: Editor Load
+LogLevelSequenceEditor: LevelSequenceEditor subsystem initialized.
+LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
+LogCook: Display: Mobile HDR setting 1
+LogCook: Display: Creating asset registry
+LogAssetRegistry: Asset discovery search completed in 3.5124 seconds
+LogCollectionManager: Fixed up redirectors for 0 collections in 0.000003 seconds (updated 0 objects)
+LogCook: Display: Discovering localized assets for cultures: en
+LogCook: Display: Unable to read previous cook inisettings for platform Windows invalidating cook
+LogCook: Display: Clearing all cooked content for platform Windows
+LogCook: Display: Sandbox cleanup took 0.078 seconds for platforms Windows
+LogCook: Display: Checking global shaders for platform Windows
+LogShaderCompilers: Display: ================================================
+LogShaderCompilers: Display: === FShaderJobCache stats ===
+LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+LogShaderCompilers: Display: === Shader Compilation stats ===
+LogShaderCompilers: Display: Shaders Compiled: 0
+LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+LogShaderCompilers: Display: ================================================
+LogShaderLibrary: Display: 
+LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM5) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 393 (39300.00%)
+LogShaderLibrary: Display: Total Shaders: 4338, Unique Shaders: 4324 (99.68%)
+LogShaderLibrary: Display: Total Shader Size: 15.62mb, Unique Shaders Size: 15.62mb (99.97%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 365
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     4, 3, 2, 2, 2, 2, 2, 2, 2, 2
+LogShaderLibrary: Display: Textual dump saved to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Shaders/PCD3D_SM5/ShaderDebug-Global-PCD3D_SM5/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: 
+LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM6) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 393 (39300.00%)
+LogShaderLibrary: Display: Total Shaders: 4399, Unique Shaders: 4398 (99.98%)
+LogShaderLibrary: Display: Total Shader Size: 31.85mb, Unique Shaders Size: 31.84mb (99.99%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 365
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     2, 1, 1, 1, 1, 1, 1, 1, 1, 1
+LogShaderLibrary: Display: Textual dump saved to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Shaders/PCD3D_SM6/ShaderDebug-Global-PCD3D_SM6/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: 
+LogShaderLibrary: Display: Shader Library 'Global' (SF_VULKAN_SM5) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 356 (35600.00%)
+LogShaderLibrary: Display: Total Shaders: 3797, Unique Shaders: 3783 (99.63%)
+LogShaderLibrary: Display: Total Shader Size: 16.19mb, Unique Shaders Size: 16.18mb (99.95%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 365
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     5, 3, 3, 2, 2, 2, 2, 2, 2, 1
+LogShaderLibrary: Display: Textual dump saved to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Shaders/SF_VULKAN_SM5/ShaderDebug-Global-SF_VULKAN_SM5/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: 
+LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_ES31) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 102 (10200.00%)
+LogShaderLibrary: Display: Total Shaders: 706, Unique Shaders: 701 (99.29%)
+LogShaderLibrary: Display: Total Shader Size: 0.70mb, Unique Shaders Size: 0.70mb (99.80%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 73
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     3, 2, 2, 2, 1, 1, 1, 1, 1, 1
+LogShaderLibrary: Display: Textual dump saved to 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Saved/Shaders/PCD3D_ES31/ShaderDebug-Global-PCD3D_ES31/Dump.txt'
+LogShaderLibrary: Display: =================
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Bridge/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/2D/Paper2D/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/IKRig/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Developer/AnimationSharing/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/ControlRigSpline/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/ControlRig/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Enterprise/DatasmithContent/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosNiagara/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosClothEditor/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/FullBodyIK/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/GeometryMode/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GeometryFlow/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/ModelingToolsEditorMode/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/MeshLODToolset/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/MeshModelingToolsetExp/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/PythonScriptPlugin/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/FX/Niagara/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Media/MediaCompositing/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/MovieScene/SequencerScripting/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/AudioSynesthesia/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/GeometryProcessing/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/HairStrands/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/ResonanceAudio/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/Synthesis/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GPULightmass/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Compositing/OpenColorIO/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/MovieScene/MovieRenderPipeline/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/VirtualProduction/CompositePlane/Content/*.uasset'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: 'C:/Users/zach/Documents/GitHub/LiDAR/LiDAR/LiDAR/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Bridge/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/2D/Paper2D/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/IKRig/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Developer/AnimationSharing/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/ControlRigSpline/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Animation/ControlRig/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Enterprise/DatasmithContent/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosNiagara/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosClothEditor/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/FullBodyIK/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/GeometryMode/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GeometryFlow/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/ModelingToolsEditorMode/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/MeshLODToolset/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/MeshModelingToolsetExp/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/PythonScriptPlugin/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/FX/Niagara/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Media/MediaCompositing/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/MovieScene/SequencerScripting/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/AudioSynesthesia/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/GeometryProcessing/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/HairStrands/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/MeshModelingToolset/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/ResonanceAudio/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Runtime/Synthesis/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Experimental/GPULightmass/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/Compositing/OpenColorIO/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/MovieScene/MovieRenderPipeline/Content/*.umap'
+LogPackageUtilities: Searching using wildcard: '../../../Engine/Plugins/VirtualProduction/CompositePlane/Content/*.umap'
+LogCook: Display: Cooked packages 0 Packages Remain 5274 Total 5274
+LogCook: Display: Cook Diagnostics: OpenFileHandles=203, VirtualMemory=984MiB
+LogTexture: Display: Texture Encode Speed: Final (cook).
+LogPackageLocalizationCache: Processed 34 localized package path(s) for 1 prioritized culture(s) in 0.005784 seconds
+LogTexture: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+LogCook: Display: Cooked packages 96 Packages Remain 5041 Total 5137
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchCenter\Meshes\SM_Elevator_Colomn_1.uasset: Failed to load '/Game/SecretBase/Materials/M_Steel_2': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Materials/M_Steel_2'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchCenter\Meshes\SM_Cable_1.uasset: Failed to load '/Game/SecretBase/Materials/M_Metal_10': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Materials/M_Metal_10'
+LogCook: Display: Cooked packages 492 Packages Remain 4645 Total 5137
+LogCook: Display: Cooked packages 542 Packages Remain 4595 Total 5137
+LogCook: Display: Cooked packages 591 Packages Remain 4546 Total 5137
+LogCook: Display: Cooked packages 725 Packages Remain 4412 Total 5137
+LogCook: Display: Cooked packages 781 Packages Remain 4356 Total 5137
+LogCook: Display: Cooked packages 899 Packages Remain 4238 Total 5137
+LogCook: Display: Cooked packages 973 Packages Remain 4164 Total 5137
+LogTexture: Default maximum texture size for cubemaps generated from long-lat sources has been changed from 512 to unlimited. In order to preserve old behaiour for '/Game/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.HDRI_Epic_Courtyard_Daylight', its maximum texture size has been explicitly set to 512.
+LogMaterial: Display: Missing cached shadermap for Cat_Mat in PCD3D_SM5, Default, SM5 (DDC key hash: 002854AC1279265F220A08FD4F74031DEF4376BD), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\LiDAR\Materials\Cat_Mat.uasset: Failed to compile Material for platform PCD3D_SM5, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for Cat_Mat in PCD3D_SM6, Default, SM6 (DDC key hash: D6AC5B3C0BC2FB9D509FB9A0DE5C199E5DF2F8B4), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\LiDAR\Materials\Cat_Mat.uasset: Failed to compile Material for platform PCD3D_SM6, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for Cat_Mat in VULKAN_SM5, Default, SM5 (DDC key hash: DA12352B490957598D5C5B1EEA0DCDC5605B6E5F), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\LiDAR\Materials\Cat_Mat.uasset: Failed to compile Material for platform SF_VULKAN_SM5, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for Cat_Mat in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 0906CC10BD6A8F7F30E725021788899798A50F22), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\LiDAR\Materials\Cat_Mat.uasset: Failed to compile Material for platform PCD3D_ES31, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Warning: Cooking a material resource (in Cat_Mat hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in Cat_Mat hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in Cat_Mat hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in Cat_Mat hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogCook: Display: Cooked packages 1137 Packages Remain 4000 Total 5137
+LogCook: Display: Cooked packages 1164 Packages Remain 3973 Total 5137
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\FirstPersonArms\Character\Mesh\SK_Mannequin_Arms.uasset: Failed to load '/Game/FirstPersonArms/Character/Materials/M_UE4Man_Body': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/FirstPersonArms/Character/Materials/M_UE4Man_Body'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\FirstPersonArms\Character\Mesh\SK_Mannequin_Arms.uasset: Failed to load '/Game/FirstPersonArms/Character/Mesh/SK_Mannequin_Arms_PhysicsAsset': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/FirstPersonArms/Character/Mesh/SK_Mannequin_Arms_PhysicsAsset'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\FirstPersonArms\Character\Mesh\SK_Mannequin_Arms.uasset: Failed to load '/Game/FirstPersonArms/Character/Mesh/SK_Mannequin_Arms_Skeleton': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/FirstPersonArms/Character/Mesh/SK_Mannequin_Arms_Skeleton'
+LogCook: Display: Cooked packages 1234 Packages Remain 3903 Total 5137
+LogCook: Display: Cooked packages 1284 Packages Remain 3853 Total 5137
+LogCook: Display: Cooked packages 1322 Packages Remain 3815 Total 5137
+LogCook: Display: Cooked packages 1439 Packages Remain 3698 Total 5137
+LogCook: Display: Cooked packages 1489 Packages Remain 3648 Total 5137
+LogCook: Display: Cooked packages 1651 Packages Remain 3486 Total 5137
+LogCook: Display: Cook Diagnostics: OpenFileHandles=1758, VirtualMemory=1311MiB
+LogCook: Display: Cooked packages 1768 Packages Remain 3369 Total 5137
+LogCook: Display: Cooked packages 1818 Packages Remain 3319 Total 5137
+LogCook: Display: Cooked packages 1863 Packages Remain 3274 Total 5137
+LogCook: Display: Cooked packages 1931 Packages Remain 3206 Total 5137
+LogCook: Display: Cooked packages 1981 Packages Remain 3156 Total 5137
+LogCook: Display: Cooked packages 2031 Packages Remain 3106 Total 5137
+LogCook: Display: Cooked packages 2119 Packages Remain 3018 Total 5137
+LogCook: Display: Cooked packages 2149 Packages Remain 2988 Total 5137
+LogTexture: Default maximum texture size for cubemaps generated from long-lat sources has been changed from 512 to unlimited. In order to preserve old behaiour for '/Game/ResearchMegaPack/ResearchCenter/Textures/T_Hdri_1_B.T_Hdri_1_B', its maximum texture size has been explicitly set to 512.
+LogCook: Display: Cooked packages 2215 Packages Remain 2922 Total 5137
+LogCook: Display: Cooked packages 2266 Packages Remain 2871 Total 5137
+LogCook: Display: Cooked packages 2316 Packages Remain 2821 Total 5137
+LogCook: Display: Cooked packages 2356 Packages Remain 2781 Total 5137
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\Room1.uasset: Failed to load '/Game/LiDAR/Models/Room1': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/LiDAR/Models/Room1'
+LogCook: Display: Cooked packages 2587 Packages Remain 2550 Total 5137
+LogCook: Display: Cooked packages 2635 Packages Remain 2502 Total 5137
+LogCook: Display: Cooked packages 2699 Packages Remain 2438 Total 5137
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_MatPreviewMesh_02.SM_MatPreviewMesh_02 should be resaved to improve async compilation performance.
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to load '/Game/SecretBase/Textures/T_Barrel_1_N': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Textures/T_Barrel_1_N'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to load '/Game/SecretBase/Textures/T_Barrel_1_ORM': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Textures/T_Barrel_1_ORM'
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_GlassWindow.SM_GlassWindow should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Wedge_B.Shape_Wedge_B should be resaved to improve async compilation performance.
+LogCook: Display: Cooked packages 2756 Packages Remain 2381 Total 5137
+LogCook: Display: Cook Diagnostics: OpenFileHandles=2825, VirtualMemory=1383MiB
+LogMaterial: Display: Missing cached shadermap for M_Barrel_1 in PCD3D_SM5, Default, SM5 (DDC key hash: 0D64222D46BC0A1B4E6567838B4269E5A0C8A0CE), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to compile Material for platform PCD3D_SM5, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for M_Barrel_1 in PCD3D_SM6, Default, SM6 (DDC key hash: CD7917FD8E4673A5A85A98D6BC54894B5E28F462), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to compile Material for platform PCD3D_SM6, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for M_Barrel_1 in VULKAN_SM5, Default, SM5 (DDC key hash: 61D9B623381E71A5B1A448937470003B13630F15), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to compile Material for platform SF_VULKAN_SM5, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Display: Missing cached shadermap for M_Barrel_1 in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 202B29DDBCDCDFCE061167BC6D605E1B4AADFC44), compiling. 
+LogMaterial: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\M_Barrel_1.uasset: Failed to compile Material for platform PCD3D_ES31, Default Material will be used in game.
+	(Node TextureSample) Texture Sample> Missing input texture
+
+LogMaterial: Warning: Cooking a material resource (in M_Barrel_1 hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in M_Barrel_1 hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in M_Barrel_1 hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogMaterial: Warning: Cooking a material resource (in M_Barrel_1 hierarchy) that doesn't have a valid ShaderMap! Shadermap pointer is null.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Wedge_A.Shape_Wedge_A should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Tube.Shape_Tube should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Trim_90_Out.Shape_Trim_90_Out should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Trim_90_In.Shape_Trim_90_In should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Trim.Shape_Trim should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Torus.Shape_Torus should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Plane.Shape_Plane should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Pipe_90.Shape_Pipe_90 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Pipe_180.Shape_Pipe_180 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Pipe.Shape_Pipe should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Cube.Shape_Cube should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Shapes/Shape_Cone.Shape_Cone should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_Window_400x400.Wall_Window_400x400 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_Window_400x300.Wall_Window_400x300 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_Door_400x400.Wall_Door_400x400 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_Door_400x300.Wall_Door_400x300 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_500x500.Wall_500x500 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_400x400.Wall_400x400 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_400x300.Wall_400x300 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Wall_400x200.Wall_400x200 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Pillar_50x500.Pillar_50x500 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Stairs.SM_Stairs should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/Floor_400x400.Floor_400x400 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Architecture/SM_AssetPlatform.SM_AssetPlatform should be resaved to improve async compilation performance.
+LogCook: Display: Cooked packages 2856 Packages Remain 2290 Total 5146
+LogCook: Display: Cooked packages 2906 Packages Remain 2240 Total 5146
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchCenter\Materials\M_Metal_Door_2.uasset: Failed to load '/Game/ResearchUnderground/Textures/T_Metal_Door_2_R': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/ResearchUnderground/Textures/T_Metal_Door_2_R'
+LogCook: Display: Cooked packages 2971 Packages Remain 2175 Total 5146
+LogCook: Display: Cooked packages 3035 Packages Remain 2111 Total 5146
+LogCook: Display: Cooked packages 3106 Packages Remain 2040 Total 5146
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_4 has elements that reference missing vertices. MaxVertex=3, NumModelVertices=0
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_5 has elements that reference missing vertices. MaxVertex=7, NumModelVertices=0
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_5 has elements that reference missing vertices. MaxVertex=11, NumModelVertices=0
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_5 has elements that reference missing vertices. MaxVertex=19, NumModelVertices=0
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_6 has elements that reference missing vertices. MaxVertex=15, NumModelVertices=0
+LogModelComponent: Model /Engine/Maps/Entry.Entry:PersistentLevel.ModelComponent_7 has elements that reference missing vertices. MaxVertex=23, NumModelVertices=0
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Entry
+LogWorld: UWorld::CleanupWorld for Entry, bSessionEnded=true, bCleanupResources=true
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/MaterialSphere.MaterialSphere should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Blueprints/Assets/SM_Arrows.SM_Arrows should be resaved to improve async compilation performance.
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Meshes\SM_Light_2.uasset: Failed to load '/Game/ResearchUnderground/Materials/MasterMaterial/M_Table_Wheel_1': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/ResearchUnderground/Materials/MasterMaterial/M_Table_Wheel_1'
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_TableRound.SM_TableRound should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Statue.SM_Statue should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Shelf.SM_Shelf should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Lamp_Wall.SM_Lamp_Wall should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Lamp_Ceiling.SM_Lamp_Ceiling should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_WindowFrame.SM_WindowFrame should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_PillarFrame300.SM_PillarFrame300 should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_PillarFrame.SM_PillarFrame should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_DoorFrame.SM_DoorFrame should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_CornerFrame.SM_CornerFrame should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Door.SM_Door should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Couch.SM_Couch should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Chair.SM_Chair should be resaved to improve async compilation performance.
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Bush.SM_Bush should be resaved to improve async compilation performance.
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Meshes\SM_Light_6.uasset: Failed to load '/Game/SecretBase/Materials/M_Emessive_2': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Materials/M_Emessive_2'
+LogCook: Display: Cooked packages 3371 Packages Remain 1775 Total 5146
+LogCook: Display: Cooked packages 4347 Packages Remain 799 Total 5146
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchCenter\Meshes\SM_Wall_21.uasset: Failed to load '/Game/ResearchUnderground/Materials/MasterMaterial/M_Steel_3': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/ResearchUnderground/Materials/MasterMaterial/M_Steel_3'
+LogStaticMesh: StaticMesh /Game/StarterContent/Props/SM_Rock.SM_Rock should be resaved to improve async compilation performance.
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world FirstCutscene
+LogWorld: UWorld::CleanupWorld for FirstCutscene, bSessionEnded=true, bCleanupResources=true
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Blueprint\BP_Meshes_2.uasset: Failed to load '/Game/SecretBase/Meshes/SM_Detail_1': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Detail_1'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchFacility\Materials\MI_Blood_1.uasset: Failed to load '/Game/SecretBase/Textures/T_Concrete_5_N': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Textures/T_Concrete_5_N'
+LogCook: Display: Cooked packages 4747 Packages Remain 392 Total 5139
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\StarterContent\Maps\Minimal_Default.umap: Failed to load '/Game/StarterContent/Maps/Minimal_Default_BuiltData': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/StarterContent/Maps/Minimal_Default_BuiltData'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\StarterContent\Maps\StarterMap.umap: Failed to load '/Game/StarterContent/Maps/StarterMap_BuiltData': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/StarterContent/Maps/StarterMap_BuiltData'
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Minimal_Default
+LogWorld: UWorld::CleanupWorld for Minimal_Default, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world StarterMap
+LogWorld: UWorld::CleanupWorld for StarterMap, bSessionEnded=true, bCleanupResources=true
+LogCook: Display: Cooked packages 5019 Packages Remain 122 Total 5141
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Overview
+LogWorld: UWorld::CleanupWorld for Overview, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world ResearchCenter
+LogWorld: UWorld::CleanupWorld for ResearchCenter, bSessionEnded=true, bCleanupResources=true
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\StarterContent\Maps\Advanced_Lighting.umap: Failed to load '/Game/StarterContent/Maps/Advanced_Lighting_BuiltData': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/StarterContent/Maps/Advanced_Lighting_BuiltData'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Barrel_3': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Barrel_3'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Electric_Panel_1': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Electric_Panel_1'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Hand_Pallet_1': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Hand_Pallet_1'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Light_4': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Light_4'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Light_5': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Light_5'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Pipe_12': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Pipe_12'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Pipe_20': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Pipe_20'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Pipe_21': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Pipe_21'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Pipe_22': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Pipe_22'
+LogUObjectGlobals: Warning: [AssetLog] C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Content\ResearchMegaPack\ResearchUnderground\Map\Overview.umap: Failed to load '/Game/SecretBase/Meshes/SM_Pipe_23': Can't find file.
+LogLinker: Warning: VerifyImport: Failed to load package for import object 'Package /Game/SecretBase/Meshes/SM_Pipe_23'
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Overview
+LogWorld: UWorld::CleanupWorld for Overview, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world DemoMap
+LogWorld: UWorld::CleanupWorld for DemoMap, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world ResearchFacility
+LogWorld: UWorld::CleanupWorld for ResearchFacility, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Overview
+LogWorld: UWorld::CleanupWorld for Overview, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world DecalPack
+LogWorld: UWorld::CleanupWorld for DecalPack, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Advanced_Lighting
+LogWorld: UWorld::CleanupWorld for Advanced_Lighting, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world ResearchUnderground
+LogWorld: UWorld::CleanupWorld for ResearchUnderground, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Overview
+LogWorld: UWorld::CleanupWorld for Overview, bSessionEnded=true, bCleanupResources=true
+LogMaterial: Display: Missing cached shadermap for LandscapeMaterialInstanceConstant_67 in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 65C6C6C2FEE061112A22A99F9F2B764A174D71B3), compiling. 
+LogMaterial: Display: Missing cached shadermap for LandscapeMaterialInstanceConstant_151 in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 7F91006183850F4A3E6384EB264C7B23C2F000A5), compiling. 
+LogMaterial: Display: Missing cached shadermap for LandscapeMaterialInstanceConstant_19 in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 93BC66F92001B2C7513D1668A80C2B763DAA901B), compiling. 
+LogMaterial: Display: Missing cached shadermap for LandscapeMaterialInstanceConstant_213 in PCD3D_ES3_1, Default, ES3_1 (DDC key hash: 37659583E106A01CB056EF2EF73AE53F77C250BF), compiling. 
+LogShaderCompilers: Warning: Failed to compile Material /Game/ResearchMegaPack/SecretBase/Materials/Environment/M_Landscape_2.M_Landscape_2 (MI:/Game/ResearchMegaPack/SecretBase/Map/SecretBase.SecretBase:PersistentLevel.Landscape_1.LandscapeMaterialInstanceConstant_67) for platform PCD3D_ES31, Default Material will be used in game.
+/Engine/Private/LightmapCommon.ush(285,9-189):  warning X3206: implicit truncation of vector type
+/Engine/Private/Common.ush(667,33-51):  warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+/Engine/Private/VirtualTextureCommon.ush(713,2):  warning X4000: use of potentially uninitialized variable (TextureVirtualSample)
+/Engine/Generated/UniformBuffers/Material.ush(30,14-41):  err0r X4510: maximum ps_5_0 sampler register index (16) exceeded
+/Engine/Generated/UniformBuffers/Material.ush(32,14-41):  err0r X4510: maximum ps_5_0 sampler register index (16) exceeded
+/Engine/Generated/UniformBuffers/Material.ush(34,14-41):  err0r X4510: maximum ps_5_0 sampler register index (16) exceeded
+/Engine/Generated/UniformBuffers/Material.ush(28,14-41):  err0r X4510: maximum ps_5_0 sampler register index (16) exceeded
+
+LogCook: Display: Cooked packages 5125 Packages Remain 16 Total 5141
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world MainMenu
+LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+LogAIModule: Creating AISystem for world Test
+LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+LogStats: FPlatformStackWalk::StackWalkAndDump -  0.531 s
+LogOutputDevice: Error: begin: stack for UAT
+LogOutputDevice: Error: === Handled ensure: ===
+LogOutputDevice: Error: 
+LogOutputDevice: Error: Ensure condition failed: InvocationList[ CurFunctionIndex ] != InDelegate [File:G:\Program Files\Epic Games\UE_5.0\Engine\Source\Runtime\Core\Public\UObject\ScriptDelegates.h] [Line: 556]
+LogOutputDevice: Error: 
+LogOutputDevice: Error: Stack: 
+LogOutputDevice: Error: [Callstack] 0x00007ffb51d6c111 UnrealEditor-LiDAR.dll!TMulticastScriptDelegate<FWeakObjectPtr>::Add() [G:\Program Files\Epic Games\UE_5.0\Engine\Source\Runtime\Core\Public\UObject\ScriptDelegates.h:327]
+LogOutputDevice: Error: [Callstack] 0x00007ffb51d6c91b UnrealEditor-LiDAR.dll!ULEMONAnimInstance::NativeUpdateAnimation() [C:\Users\zach\Documents\GitHub\LiDAR\LiDAR\LiDAR\Source\LiDAR\LEMONAnimInstance.cpp:45]
+LogOutputDevice: Error: [Callstack] 0x00007ffb72f3523f UnrealEditor-Engine.dll!UAnimInstance::UpdateAnimation() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Animation\AnimInstance.cpp:524]
+LogOutputDevice: Error: [Callstack] 0x00007ffb733ab85c UnrealEditor-Engine.dll!USkeletalMeshComponent::TickAnimInstances() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\SkeletalMeshComponent.cpp:1211]
+LogOutputDevice: Error: [Callstack] 0x00007ffb733ac0cd UnrealEditor-Engine.dll!USkeletalMeshComponent::TickAnimation() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\SkeletalMeshComponent.cpp:1176]
+LogOutputDevice: Error: [Callstack] 0x00007ffb7338d718 UnrealEditor-Engine.dll!USkeletalMeshComponent::InitAnim() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\SkeletalMeshComponent.cpp:764]
+LogOutputDevice: Error: [Callstack] 0x00007ffb733959f7 UnrealEditor-Engine.dll!USkeletalMeshComponent::OnRegister() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\SkeletalMeshComponent.cpp:554]
+LogOutputDevice: Error: [Callstack] 0x00007ffb7329866c UnrealEditor-Engine.dll!UActorComponent::ExecuteRegisterEvents() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\ActorComponent.cpp:1628]
+LogOutputDevice: Error: [Callstack] 0x00007ffb732c4cc9 UnrealEditor-Engine.dll!UActorComponent::RegisterComponentWithWorld() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Components\ActorComponent.cpp:1283]
+LogOutputDevice: Error: [Callstack] 0x00007ffb72d92b23 UnrealEditor-Engine.dll!AActor::IncrementalRegisterComponents() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Actor.cpp:5084]
+LogOutputDevice: Error: [Callstack] 0x00007ffb73890788 UnrealEditor-Engine.dll!ULevel::IncrementalRegisterComponents() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Level.cpp:1469]
+LogOutputDevice: Error: [Callstack] 0x00007ffb73890d24 UnrealEditor-Engine.dll!ULevel::IncrementalUpdateComponents() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\Level.cpp:1406]
+LogOutputDevice: Error: [Callstack] 0x00007ffb74ad6787 UnrealEditor-Engine.dll!UWorld::UpdateWorldComponents() [D:\build\++UE5\Sync\Engine\Source\Runtime\Engine\Private\World.cpp:2268]
+LogOutputDevice: Error: [Callstack] 0x00007ffb7717b03f UnrealEditor-UnrealEd.dll!UEditorEngine::InitializePhysicsSceneForSaveIfNecessary() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\EditorEngine.cpp:4251]
+LogOutputDevice: Error: [Callstack] 0x00007ffb77189105 UnrealEditor-UnrealEd.dll!UEditorEngine::Save() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\EditorEngine.cpp:4357]
+LogOutputDevice: Error: [Callstack] 0x00007ffb76fc0355 UnrealEditor-UnrealEd.dll!UCookOnTheFlyServer::SaveCookedPackage() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\CookOnTheFlyServer.cpp:4031]
+LogOutputDevice: Error: [Callstack] 0x00007ffb76fab3bd UnrealEditor-UnrealEd.dll!UCookOnTheFlyServer::PumpSaves() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\CookOnTheFlyServer.cpp:3184]
+LogOutputDevice: Error: [Callstack] 0x00007ffb76fcf4e0 UnrealEditor-UnrealEd.dll!UCookOnTheFlyServer::TickCookOnTheSide() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\CookOnTheFlyServer.cpp:1259]
+LogOutputDevice: Error: [Callstack] 0x00007ffb76ddb1bd UnrealEditor-UnrealEd.dll!UCookCommandlet::CookByTheBook() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\Commandlets\CookCommandlet.cpp:1048]
+LogOutputDevice: Error: [Callstack] 0x00007ffb76dfcb5c UnrealEditor-UnrealEd.dll!UCookCommandlet::Main() [D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\Commandlets\CookCommandlet.cpp:685]
+LogOutputDevice: Error: [Callstack] 0x00007ff64324948e UnrealEditor-Cmd.exe!FEngineLoop::PreInitPostStartupScreen() [D:\build\++UE5\Sync\Engine\Source\Runtime\Launch\Private\LaunchEngineLoop.cpp:3659]
+LogOutputDevice: Error: [Callstack] 0x00007ff643240bbd UnrealEditor-Cmd.exe!GuardedMain() [D:\build\++UE5\Sync\Engine\Source\Runtime\Launch\Private\Launch.cpp:137]
+LogOutputDevice: Error: [Callstack] 0x00007ff643240e8a UnrealEditor-Cmd.exe!GuardedMainWrapper() [D:\build\++UE5\Sync\Engine\Source\Runtime\Launch\Private\Windows\LaunchWindows.cpp:147]
+LogOutputDevice: Error: [Callstack] 0x00007ff643243c4d UnrealEditor-Cmd.exe!LaunchWindowsStartup() [D:\build\++UE5\Sync\Engine\Source\Runtime\Launch\Private\Windows\LaunchWindows.cpp:283]
+LogOutputDevice: Error: [Callstack] 0x00007ff643255564 UnrealEditor-Cmd.exe!WinMain() [D:\build\++UE5\Sync\Engine\Source\Runtime\Launch\Private\Windows\LaunchWindows.cpp:330]
+LogOutputDevice: Error: [Callstack] 0x00007ff64325788a UnrealEditor-Cmd.exe!__scrt_common_main_seh() [d:\a01\_work\6\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288]
+LogOutputDevice: Error: [Callstack] 0x00007ffc6bf3244d KERNEL32.DLL!UnknownFunction []
+LogOutputDevice: Error: [Callstack] 0x00007ffc6df2dfb8 ntdll.dll!UnknownFunction []
+LogOutputDevice: Error: 
+LogOutputDevice: Error: end: stack for UAT

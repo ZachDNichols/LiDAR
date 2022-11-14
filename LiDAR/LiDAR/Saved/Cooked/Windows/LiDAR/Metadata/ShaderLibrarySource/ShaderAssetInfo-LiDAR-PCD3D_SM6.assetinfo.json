@@ -1,0 +1,2756 @@
+{
+	"AssetInfoVersion": 2,
+	"ShaderCodeToAssets": [
+		{
+			"ShaderMapHash": "5409E325E0CA866A3B5C1A25DAFF9BDD0D9A9C62",
+			"Assets": [
+				"/ControlRig/Controls/ControlRigGizmoMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "93E597AF8B940FF898A8827B42E95DEEAA806F27",
+			"Assets": [
+				"/Engine/EngineDebugMaterials/DebugEditorMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "4B5A9DC966C46DF7E76B082815C509A23FB7CE96",
+			"Assets": [
+				"/Engine/EngineMaterials/GizmoMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "C97C528D359C259365A580653B42A2CEDD2B4774",
+			"Assets": [
+				"/Engine/EngineDebugMaterials/DebugMeshMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "7E975A4E045E5B275024EA47C4562C3923D69F55",
+			"Assets": [
+				"/Engine/EngineMaterials/RemoveSurfaceMaterial",
+				"/Game/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Master"
+			]
+		},
+		{
+			"ShaderMapHash": "9EBAF5D43A7B38283F7612473EEB693671F6FA7F",
+			"Assets": [
+				"/MovieRenderPipeline/Materials/MoviePipeline_StencilCutout"
+			]
+		},
+		{
+			"ShaderMapHash": "33084D5CA9F2D44D205AFF1F81380EDB9E5C9508",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/PostProcess/M_PostProcess_1"
+			]
+		},
+		{
+			"ShaderMapHash": "E9C1EDD6A4B1099494DECD5E7CACF38F5FC0F862",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_White_1"
+			]
+		},
+		{
+			"ShaderMapHash": "5858458F4DDC8041B0BBBC36E85E5C2D61CD5ACE",
+			"Assets": [
+				"/HairStrands/Materials/HairMeshesDefaultMaterial",
+				"/HairStrands/Materials/HairDefaultMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "A586BB14B16C0CCE5604CAD3109E06559E6152FA",
+			"Assets": [
+				"/HairStrands/Materials/HairCardsDefaultMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "B30AEDF6C9CD56D23EE5ACEB2869395D5DF3F4B9",
+			"Assets": [
+				"/Engine/EngineDebugMaterials/M_SimpleUnlitTranslucent"
+			]
+		},
+		{
+			"ShaderMapHash": "28A36AA9393ECE8D7E3933A1D43DA3DA51D549C5",
+			"Assets": [
+				"/Engine/EditorMaterials/Camera/CineMat"
+			]
+		},
+		{
+			"ShaderMapHash": "53A5060BA7F204B8DDCD83EE00B0E03AB423BA57",
+			"Assets": [
+				"/Engine/VREditor/TransformGizmo/Xray"
+			]
+		},
+		{
+			"ShaderMapHash": "C5EF53605FD0B149353BDE0FDD043EA943D4E0F7",
+			"Assets": [
+				"/Engine/VREditor/TransformGizmo/Main"
+			]
+		},
+		{
+			"ShaderMapHash": "6D195B574C955233C8AC56E7D240D92012927FAE",
+			"Assets": [
+				"/Engine/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "79942570E9F637D8FCCB72107E042EE76D63C689",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Emessive_5"
+			]
+		},
+		{
+			"ShaderMapHash": "B69134443438EFE08E6116EF132375F57B989E14",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Emessive_2"
+			]
+		},
+		{
+			"ShaderMapHash": "ADA149186F0327BDE2B37CA237ACC9F0B9D337EA",
+			"Assets": [
+				"/Engine/EngineMaterials/DefaultLightFunctionMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "754003381DD3F8EC7C388DAF48407EFBE14C7C02",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Cable_1"
+			]
+		},
+		{
+			"ShaderMapHash": "05B285D58C68FAD3218D5FC79789439F0B84511B",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Emessive_5"
+			]
+		},
+		{
+			"ShaderMapHash": "30473AD4CFDC6F402CEFE87F5FF324B824E75DA5",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Emessive_3"
+			]
+		},
+		{
+			"ShaderMapHash": "D07C66F74D53FB7D6844CA074BFA5E4075359D71",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Emessive_1"
+			]
+		},
+		{
+			"ShaderMapHash": "38DBBD4C16DE277B5EE6D1CF6410C813DE78EBED",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Black_1"
+			]
+		},
+		{
+			"ShaderMapHash": "97CB0F7EA9CF7B51306F63949CB03B70F4707CC8",
+			"Assets": [
+				"/Game/LiDAR/Models/Material",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Red_Light_2"
+			]
+		},
+		{
+			"ShaderMapHash": "1C940749C9D4C23557DFACA7824BF345BBCD407C",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_MaterialSphere_Plain"
+			]
+		},
+		{
+			"ShaderMapHash": "CCFC099EF5D78ADC2A34278D51D47BD245347708",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_MaterialSphere"
+			]
+		},
+		{
+			"ShaderMapHash": "15D3F7A64FD13BD4A12D92436E45838B8DDEFC37",
+			"Assets": [
+				"/Game/LiDAR/Materials/M_LaserMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "8CE6076A82E4222501AEB02A5975E3CFB07FB45D",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/m_flare_01"
+			]
+		},
+		{
+			"ShaderMapHash": "A108EF380B5ADBEF00ADB90E7DE64606B2B52889",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Glass"
+			]
+		},
+		{
+			"ShaderMapHash": "BD78C490B7902FF07B88A4D0C74F88ABD99E7A2B",
+			"Assets": [
+				"/Game/LevelPrototyping/Materials/M_Solid"
+			]
+		},
+		{
+			"ShaderMapHash": "69A6B8B6176B673F07FD156F46F49FEAE3283610",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Basic_Wall"
+			]
+		},
+		{
+			"ShaderMapHash": "ABD1365667DFFE0515A055ACA5D40CA2D42D5212",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Basic_Floor"
+			]
+		},
+		{
+			"ShaderMapHash": "50B85224451D47E315AFC2DD3928C7C0CF51F2B7",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_AssetPlatform"
+			]
+		},
+		{
+			"ShaderMapHash": "2983118897E5B41EFE5AE9982FA66BFC99AAA550",
+			"Assets": [
+				"/Game/StarterContent/Blueprints/Assets/M_LightStage_Arrows"
+			]
+		},
+		{
+			"ShaderMapHash": "9CFFC759F3C8791DB41A797142C830C3CA1B76C2",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Glass_1_A"
+			]
+		},
+		{
+			"ShaderMapHash": "ECD321CD4F4FBFC74015206F2BE43D83EBC4591C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Light_3"
+			]
+		},
+		{
+			"ShaderMapHash": "F56F4AFE950958CC7415C1A5B725A6424AA2A1F8",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Light_2"
+			]
+		},
+		{
+			"ShaderMapHash": "7E03104E05EA70ED5F00D37D8211AC3F569FDE5A",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Light_1"
+			]
+		},
+		{
+			"ShaderMapHash": "EC42946D0CAAEA6C0D12BBE10AE261689A0E9A49",
+			"Assets": [
+				"/Game/EF_Edie/Shared/Coronation/Environments/PalaceInterior/glass_a_foggy_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "4A4B9CC870C077C5FDFC3DCCBB9906DBD6BC33FA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cable_1"
+			]
+		},
+		{
+			"ShaderMapHash": "82FFCF1B6A4D631B186C25676F4184567874A64C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Black_1"
+			]
+		},
+		{
+			"ShaderMapHash": "1267A71CDE166496A5FD4C86A9FEC230B7E66B1F",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Red_Light_1"
+			]
+		},
+		{
+			"ShaderMapHash": "3E0B98257B09C06D1B32FF3F217C74C5B4DD5934",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Pipe_3",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Pipe_2"
+			]
+		},
+		{
+			"ShaderMapHash": "EBD3649FAD330359E6912005EC42798B26BF67BE",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B5ED9946020BC4473337C752E17BFE6DA1F7633A",
+			"Assets": [
+				"/Game/EF_Edie/Common/Materials/Metal/brass_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "6EAE77BA635C93C06E1C7C32B43881DD93EA311B",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/MASTER_BaseColor_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "24B0A233A88423ACFFEAE83FA96C2F89A39109F3",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/CleanMetal_MasterMat"
+			]
+		},
+		{
+			"ShaderMapHash": "70EDCE3627A67D27E333B374EDD4718B57677FDA",
+			"Assets": [
+				"/Engine/BasicShapes/BasicShapeMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "5F131DA701054E9DA5214B18821030DADD346179",
+			"Assets": [
+				"/Engine/EngineDebugMaterials/BlackUnlitMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "2BCBB4BC254475CF85A3D59B1553BA27FB406207",
+			"Assets": [
+				"/Engine/EditorMeshes/ColorCalibrator/M_ChromeBall"
+			]
+		},
+		{
+			"ShaderMapHash": "ADC52C643A81F97E951958B817D75C4622B5E6FA",
+			"Assets": [
+				"/Engine/EditorMeshes/ColorCalibrator/M_ClearCoat"
+			]
+		},
+		{
+			"ShaderMapHash": "AEC93959E266F38707CBA60B58D791017449FBB5",
+			"Assets": [
+				"/Engine/EditorMeshes/ColorCalibrator/M_ClearCoatBlack"
+			]
+		},
+		{
+			"ShaderMapHash": "EA5DC0AC9CAACA3AA7BAD29E3151193A5F312E6D",
+			"Assets": [
+				"/Engine/EditorMeshes/ColorCalibrator/M_GreyBall"
+			]
+		},
+		{
+			"ShaderMapHash": "99FE535F3F3B2902CF4DCB35AB2FB42E05D6548C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Window_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_9",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_8",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_7",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_5",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_14",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_13",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_11",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_10_Window_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_10",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Vital_Monitor_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Table_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Stool_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Steel_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_Box_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_5",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_4",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Panel_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Pallet_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Othoscope_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_MRI_Bed_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_MRI_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Mouse_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_2_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Missle_Box_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Missle_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Missle_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Medical_Curtain_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Light_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Light_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Keyboard",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Infant_Warmer_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Infant_Scale_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Floor_4",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Floor_3",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Floor_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Gurney_Metal_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Gurney_Metal_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Door_Case_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Flash_Light_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Wall_5",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Colomn_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Table_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Table_Wheel_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Ceiling_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_EKG_Monitor_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Shelf_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Door_Case_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Screen_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Door_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Door_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Corridor_Wall_5",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Corridor_Wall_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Corridor_Wall_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Corridor_Floor_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Control_Panel_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Computer_Cart_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Colomn_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Chair_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Capsule_Pipe_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Capsule_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Capsule_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cabinet_5",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cabinet_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cabinet_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cabinet_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cabinet_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Button_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Board_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Biomass_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Biomass_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Mouse_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Bed_Cabinet_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Stair_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Bed_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Bed_2_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Bed_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Door_Case_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Grille_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Floor_12_Corner_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Elevator_Metal_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Wheel_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Wheel_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Door_Metal_Floor_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Transformer_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Trailer_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Trailer_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Tente_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Tank_Cover_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Chair_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Ceiling_Metal_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Button_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Box_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Box_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Missle_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Green_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_8",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Light_7",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Hand_Pallet_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Hand_Pallet_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Gas_Tube_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Tank_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Fuel_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Electric_Panel_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Electric_Panel_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Wheel_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Door_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Wheel_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Trash_Box_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Train_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Train_Metal_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Sing_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Pipe_12",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Pallet_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Colomn_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Cloth_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Chasis_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Colomn_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Chasis_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Cabinet_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Case_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Cabinet_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Case_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Cabin_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_7",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_6",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Box_7",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Box_13",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Box_12",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Boom_Barrier_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Block_15",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Block_14",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Light_6",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Barrel_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Barrel_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Fuel_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Floor_8",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Corner_3",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_Corner_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_7",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_4",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_4_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Cover_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Corner_6",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Corner_4",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Container_Door_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Container_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chassis_4",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chassis_3",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chassis_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chasis_7",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chasis_6",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chasis_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Camera_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Cabin_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_9",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_8",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_4",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Box_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Box_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Biomass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "CF90D35D2962B8651333354E4D0290EB19C67050",
+			"Assets": [
+				"/Engine/EngineMaterials/FlattenMaterial_WS_Normal_VT"
+			]
+		},
+		{
+			"ShaderMapHash": "602F5A490790D621DE8001028FC4B275F100AB1C",
+			"Assets": [
+				"/Engine/EngineMaterials/FlattenMaterial_VT"
+			]
+		},
+		{
+			"ShaderMapHash": "FA5F43A975F9C6BEE2A8EAAFCE57371CE1C23D23",
+			"Assets": [
+				"/Engine/EngineMaterials/FlattenMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "6153C5E930D916051AEFFEA7B8EC28125D2FE23E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_4",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Wall_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Wall_3_A",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Vending_Machine_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Gas_Cabin_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B22E2199D899A0B8A920A23D81029F6128550D20",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_3",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Wall_12",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Mattress_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Iv_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Light_1_",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Creature_1",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Metal_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Wheel_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Container_1"
+			]
+		},
+		{
+			"ShaderMapHash": "EF9D949B78649CE6C2040F063538CE9F2B4180B5",
+			"Assets": [
+				"/Engine/EngineMaterials/M_InvalidLightmapSettings"
+			]
+		},
+		{
+			"ShaderMapHash": "7E58B54348953BE06FF1025B6A895FDED1F3B22B",
+			"Assets": [
+				"/Engine/EngineMaterials/EmissiveMeshMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "E94618B90BEE0008D7E307179FDA1C5BD9ED408F",
+			"Assets": [
+				"/MovieRenderPipeline/Blueprints/M_MoviePipelineRenderPreview"
+			]
+		},
+		{
+			"ShaderMapHash": "BCC7B6D4D5ADD88DA9552537022550E3222FE7E6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Vital_Monitor_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Terminal_2",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Capsule_Ceiling_1_A",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Capsule_Ceilin_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Terminal_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Screen_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Detail_1"
+			]
+		},
+		{
+			"ShaderMapHash": "9B3D3EE8E1E7B15DDE0102A245C6E49AD100FEE5",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Tape_2"
+			]
+		},
+		{
+			"ShaderMapHash": "AA2FCEA8389857EDCF2C8578694EE07DACA55484",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Tape_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B1EEFCCAEC8C8433E01A382691748B6B5B8C3348",
+			"Assets": [
+				"/Engine/EngineDebugMaterials/M_VolumeRenderSphereTracePP"
+			]
+		},
+		{
+			"ShaderMapHash": "F4F9984E1C2A00D994B6757134E3FC9A39AA3E40",
+			"Assets": [
+				"/Paper2D/DefaultSpriteMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "0569AFDB410F6AB23AD6E5E965E03CF523D5DD6A",
+			"Assets": [
+				"/Engine/EngineMaterials/PhAT_JointLimitMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "FBD3CD1488F65B1FB013BEB258505C9134FDE05A",
+			"Assets": [
+				"/ControlRig/M_Manip"
+			]
+		},
+		{
+			"ShaderMapHash": "F5A6AC72E2C824FA748075DC5B34F24CD7778A51",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Rust_1"
+			]
+		},
+		{
+			"ShaderMapHash": "9B3A758F37B0E0A0A63E09C66C4AED2807F5FB10",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Overbed_Table",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Metal_Colomn_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Platform_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Elevator_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Tank_1"
+			]
+		},
+		{
+			"ShaderMapHash": "799B49D62A3A143BF33088093496E5A7096DAF12",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Sign_3",
+				"/Game/LiDAR/Materials/T_Yellow_Paint_Mat",
+				"/Game/LiDAR/Materials/sunsetintheswamp_Mat",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Stop_Sign_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Speed_Sign_1"
+			]
+		},
+		{
+			"ShaderMapHash": "362C36809D978FE68F478A1E95CE0816F4A1A025",
+			"Assets": [
+				"/Engine/VREditor/TransformGizmo/TransformGizmoMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "0DB65B5EF752C615BEE063A025A3FFE656148BC5",
+			"Assets": [
+				"/MovieRenderPipeline/Materials/MovieRenderQueue_WorldDepth"
+			]
+		},
+		{
+			"ShaderMapHash": "201098C4650F6324891F9AD0BCCF413F55727F81",
+			"Assets": [
+				"/Engine/EditorMaterials/WorldPartition/WorldPartitionSpatialHashGridPreviewMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "8C6F511D512EEA742B5BC3F607C3E406451D8040",
+			"Assets": [
+				"/HairStrands/Materials/HairDebugMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "5FDF786249C0E26DAC2628113C865EAC12964B68",
+			"Assets": [
+				"/Engine/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud"
+			]
+		},
+		{
+			"ShaderMapHash": "0816BA66C1204E3937734C571286EA57555E5976",
+			"Assets": [
+				"/MovieRenderPipeline/Materials/MovieRenderQueue_MotionVectors"
+			]
+		},
+		{
+			"ShaderMapHash": "68E9656C8103EB3F75B839BBB7C25F15EF77CABA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Metal_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "CA39659BE8E55F2FC64B0FA5D6349C55AF93D873",
+			"Assets": [
+				"/Engine/EngineMaterials/DefaultPostProcessMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "21AD8699DDD609D2A45D8C28A91AB24E4AC8F373",
+			"Assets": [
+				"/Engine/EngineMaterials/DefaultDeferredDecalMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "7C7250AD6AFB2B7CE96D8E14ED9A42B4B301FF5C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Metal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "142AB68B40351B99B7AFB3DE99D7C3B76096A904",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Glass_2"
+			]
+		},
+		{
+			"ShaderMapHash": "EDE58A94BFB6AA9DF1AAC7A9D72F0332A7BF3AA4",
+			"Assets": [
+				"/Engine/EngineMaterials/DefaultMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "B83C86D98342737EA23C0C695974E44FF6E5754C",
+			"Assets": [
+				"/Engine/EngineMaterials/WorldGridMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "444336685DDC9241DB724010036646139DD07619",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Medical_Curtain_Metal"
+			]
+		},
+		{
+			"ShaderMapHash": "DD8E14D43637AE53CC55D433BB6A3A794B4702BE",
+			"Assets": [
+				"/Engine/EngineMaterials/DefaultTextMaterialOpaque"
+			]
+		},
+		{
+			"ShaderMapHash": "B20AD99AC51837125D96036F1C1E583079413A48",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough",
+				"/Engine/EngineMaterials/Widget3DPassThrough_Translucent_OneSided"
+			]
+		},
+		{
+			"ShaderMapHash": "2FE75B66BB55A15F57597FDE93576A07667B2001",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Glass_MasterMat"
+			]
+		},
+		{
+			"ShaderMapHash": "82B9B31EBBEF198AE4898A1A0335F856BC0AF1A5",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_Heat_Distortion"
+			]
+		},
+		{
+			"ShaderMapHash": "6D0E3F606CA9F69F6AD530824BD28225A2893A6C",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_TableRound"
+			]
+		},
+		{
+			"ShaderMapHash": "C22CC59CFEED4E75F881EB31B46C4C3A21EEB604",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_StatueGlass"
+			]
+		},
+		{
+			"ShaderMapHash": "2ECD000536C394EAEB75CEFD29CD103711EB3854",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Statue"
+			]
+		},
+		{
+			"ShaderMapHash": "D6011678EB84F8D2590EBE10A3D3F528D34F5FF7",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_Spark"
+			]
+		},
+		{
+			"ShaderMapHash": "591D8A72C24919DA0174E84C0ACA3CB44820C5B4",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_smoke_subUV"
+			]
+		},
+		{
+			"ShaderMapHash": "DDB532F397A74A497B7CA1DEFA58D1E0408DF9E3",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Shelf"
+			]
+		},
+		{
+			"ShaderMapHash": "248D16C844CBF58A61A409936E27F3C7542511B8",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "4C68452DB77130EE9A41BE6B1422D456004469E5",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Door_1"
+			]
+		},
+		{
+			"ShaderMapHash": "1D1402D0039A3065F2B46F82DDC4F167607B8350",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Wood_Floor_Walnut_Polished"
+			]
+		},
+		{
+			"ShaderMapHash": "C2E7496D84B68F7A7CE8AF77E848C37E6D6D5728",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Water_Lake"
+			]
+		},
+		{
+			"ShaderMapHash": "8673A10C1A9884C69C53DEB0481F18A1F11F6EFF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_1"
+			]
+		},
+		{
+			"ShaderMapHash": "9636E50553CBBD07398E666C84FFE630D5D8D08E",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Rock_Marble_Polished"
+			]
+		},
+		{
+			"ShaderMapHash": "B26BE9F58E8B204897BAE628ACC4F35B015D5FA1",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Wood_Walnut"
+			]
+		},
+		{
+			"ShaderMapHash": "52966B55F8AD2B7E306B54B82B1E5FDEF070AB29",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Wood_Pine"
+			]
+		},
+		{
+			"ShaderMapHash": "84507D1DF65B4C3BDCB53764B5AD512C182B32F9",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Wood_Oak"
+			]
+		},
+		{
+			"ShaderMapHash": "E4B459ABF8DA7EB913B03CE7E4B1E13686B0CAAD",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Tech_Panel"
+			]
+		},
+		{
+			"ShaderMapHash": "5B9811B1C012F5786E4033C2A7EC68294FB9A3D8",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Tech_Hex_Tile_Pulse"
+			]
+		},
+		{
+			"ShaderMapHash": "D6BD06959FE1208A440C525594FF2765B797507B",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Rock_Slate"
+			]
+		},
+		{
+			"ShaderMapHash": "1445C3E910AA40A8D39EC7A4B43C2A2E347FB5C5",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Rock_Sandstone"
+			]
+		},
+		{
+			"ShaderMapHash": "E5113005CC13BF8F142DB3AB3F121D172C60335D",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Rock_Basalt"
+			]
+		},
+		{
+			"ShaderMapHash": "E24D2825D48D8277E4D6C9AC2DFE6A1B03A260C1",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Steel"
+			]
+		},
+		{
+			"ShaderMapHash": "C80E8F65999A1268BF0D545DDE85FBAD712F3E5B",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Gold"
+			]
+		},
+		{
+			"ShaderMapHash": "0F22AD948AA87B4D189404C5A54836D1922CB9F3",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Copper"
+			]
+		},
+		{
+			"ShaderMapHash": "FEF178D08363B2FA115E24A0483329E7B03F6EFB",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Chrome"
+			]
+		},
+		{
+			"ShaderMapHash": "E330E02750AAD5A511E5991381039F764E80F781",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Burnished_Steel"
+			]
+		},
+		{
+			"ShaderMapHash": "7C182733ADDA050C0FE609AC16887CA13F5639E3",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Brushed_Nickel"
+			]
+		},
+		{
+			"ShaderMapHash": "00914202EFCC32F40F7555FF94327DBD1C2D8EE7",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Lamp"
+			]
+		},
+		{
+			"ShaderMapHash": "E39261AE766D5D87D2F19F0DD73821EBC3F8F299",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Ground_Moss"
+			]
+		},
+		{
+			"ShaderMapHash": "EEDB48EF65EF4BAED4EDDAE0AC61B5FC0D0C9C3F",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Wall_1"
+			]
+		},
+		{
+			"ShaderMapHash": "993E0C1EA94AECEE5839626068A821DA4EFEE153",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Ground_Gravel"
+			]
+		},
+		{
+			"ShaderMapHash": "DC10B424A528A9D9FF66F393636DFEBC03B1AB48",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Ground_Grass"
+			]
+		},
+		{
+			"ShaderMapHash": "F74CF3E3714D9F7F10DAC03A10C787576646BD10",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Steel_4"
+			]
+		},
+		{
+			"ShaderMapHash": "5275311B374B44789D9F119F6D31F326672B8064",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Steel_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Pipe_8"
+			]
+		},
+		{
+			"ShaderMapHash": "90A9BFA428CB3D2105DB302C887D89D63068397E",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Frame"
+			]
+		},
+		{
+			"ShaderMapHash": "AC12B11919011D1512DD6491887811626ADCD95D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Steel_5"
+			]
+		},
+		{
+			"ShaderMapHash": "65AEB32739AD91F1F6B660A945FA93EAC35A9B35",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Steel_2"
+			]
+		},
+		{
+			"ShaderMapHash": "BE0F0C6A7CF52643C35EC43A5C141CEA3D0BCFD0",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_Fire_SubUV"
+			]
+		},
+		{
+			"ShaderMapHash": "2A7434462D3F61CACEDBBBB0F5BB845737877F5E",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_explosion_subUV"
+			]
+		},
+		{
+			"ShaderMapHash": "3B2708679B8E1AF445DDA794AFC49AEF4B1E2606",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_Dust_Particle"
+			]
+		},
+		{
+			"ShaderMapHash": "DA5310F32AD70B05292F4B03A0E2E46D9618C864",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Steel_1"
+			]
+		},
+		{
+			"ShaderMapHash": "AE79F8BDE0375409B9ACA9944A729628E46FCD5B",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Door"
+			]
+		},
+		{
+			"ShaderMapHash": "8B95F9A754ACD8A78B8932777DF3815E8736C4FE",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Stair_2"
+			]
+		},
+		{
+			"ShaderMapHash": "07B102E462AE9586DC39749C41D7BA9CAFD4473D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Sofa_3",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Sofa_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Sofa_1"
+			]
+		},
+		{
+			"ShaderMapHash": "D05F864B5D676C541AE81988BFA326F653290937",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Concrete_Tiles"
+			]
+		},
+		{
+			"ShaderMapHash": "95681E1FF6D9063B195D3DE609E022439BE49C77",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Concrete_Poured"
+			]
+		},
+		{
+			"ShaderMapHash": "EB3DCEA0311237338832D004C1E40D85CC471439",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Concrete_Panels"
+			]
+		},
+		{
+			"ShaderMapHash": "501A9AD7E91175353EE5E543954EB6661256E5C7",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Concrete_Grime"
+			]
+		},
+		{
+			"ShaderMapHash": "0A2662D6847F44855B7BACDC54E88D5C2B30C4DC",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_CobbleStone_Smooth"
+			]
+		},
+		{
+			"ShaderMapHash": "75CD3E1F729681A23F883AD0203EBD2526B7D722",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Sign_1"
+			]
+		},
+		{
+			"ShaderMapHash": "C26C17088AE3CB27C738E29E25CD1CE9E3E1D7BA",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_CobbleStone_Rough"
+			]
+		},
+		{
+			"ShaderMapHash": "1B4AFCD474C1FA2C2B669629ED9BB4ADA685ADBA",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_CobbleStone_Pebble"
+			]
+		},
+		{
+			"ShaderMapHash": "11FFC840CCA2C604EFBA4020AFC6A62D33D9D791",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Tech_Checker_Dot"
+			]
+		},
+		{
+			"ShaderMapHash": "E1F7C185029118B1C7A853AC9AAA33B362F1A747",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Chair"
+			]
+		},
+		{
+			"ShaderMapHash": "1C239D75E1FEFEC4C49123B46EC60B903FB0FD02",
+			"Assets": [
+				"/Game/ResearchMegaPack/DecalPack/Materials/Master_Material/MM_Wall_2"
+			]
+		},
+		{
+			"ShaderMapHash": "73F720098E2EBBF070AF97F15D13F05D36E8C7BA",
+			"Assets": [
+				"/Game/ResearchMegaPack/DecalPack/Materials/Master_Material/MM_Wall_1"
+			]
+		},
+		{
+			"ShaderMapHash": "E55D7DC207787BC9B37226C2443A98F96375F8D0",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Scaffolding_1"
+			]
+		},
+		{
+			"ShaderMapHash": "87CCC6DFFE254548BA5C9848D0EDB69C11E405D9",
+			"Assets": [
+				"/Game/LiDAR/Materials/M_Carpet"
+			]
+		},
+		{
+			"ShaderMapHash": "82D9CDA9033237C9FFA8009BF271C4AD9DA84A22",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Ceramic_Tile_Checker"
+			]
+		},
+		{
+			"ShaderMapHash": "5F936184526DDC997EE619529515AAFCA732C3A8",
+			"Assets": [
+				"/Game/LiDAR/Models/LEMON/Texture"
+			]
+		},
+		{
+			"ShaderMapHash": "5C27962F295B2F6ADE48847842B8BC14169C07DC",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Bush"
+			]
+		},
+		{
+			"ShaderMapHash": "75131E30D4CC5322C551F783863CDE2A8CE03076",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Decal_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Strip_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Text_3_B",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Text_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Text_1"
+			]
+		},
+		{
+			"ShaderMapHash": "91559D6267CEB57B47BFFCEB71386E3BF9C0B7DE",
+			"Assets": [
+				"/Game/LiDAR/Materials/LEMON_Material"
+			]
+		},
+		{
+			"ShaderMapHash": "FB657203010974975BF285FCFFE150C1F9CA8C88",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_Burst"
+			]
+		},
+		{
+			"ShaderMapHash": "7749DAA2B3857F6A7C14215DF455333F20BC3482",
+			"Assets": [
+				"/Game/LiDAR/Materials/M_LumenCube"
+			]
+		},
+		{
+			"ShaderMapHash": "351689D97F54F15F47B23DC3FAE991804707DA03",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Brick_Hewn_Stone"
+			]
+		},
+		{
+			"ShaderMapHash": "F9297917044B673370F9EBCA2739CE69E12F7EAA",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Brick_Cut_Stone"
+			]
+		},
+		{
+			"ShaderMapHash": "E64A19DC298FAC97E7658FF0DE96BEB241B17BF9",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Brick_Clay_Old"
+			]
+		},
+		{
+			"ShaderMapHash": "89A448C72080442EEE449F54128D1C45A1CB996B",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Brick_Clay_New"
+			]
+		},
+		{
+			"ShaderMapHash": "7DCF80558D549E5B26DE83E75DE5E11C1B277E79",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Brick_Clay_Beveled"
+			]
+		},
+		{
+			"ShaderMapHash": "B7F22704F80D811F46EE2E6651F8FF290DB8EC8D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Concrete_5"
+			]
+		},
+		{
+			"ShaderMapHash": "27E496581E51BFA91A37FFADA5B5E46A308431DB",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Concrete_4",
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Concrete_1"
+			]
+		},
+		{
+			"ShaderMapHash": "9B903B3D1FB081847796ECC7C3915072A9C6B302",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B0B53F45C87303CA04687D612FF69AE447810CCE",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Concrete_3"
+			]
+		},
+		{
+			"ShaderMapHash": "8F748F5086FCBD0E2635ABE423E2A30819972CD3",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cloth_1"
+			]
+		},
+		{
+			"ShaderMapHash": "A3D0F4D4006E1301CEF738F57FDFAAA33782BB11",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Platform_Colomn_1"
+			]
+		},
+		{
+			"ShaderMapHash": "13DC34A4D3BAE1C362C197FFF23F31C5D59509C9",
+			"Assets": [
+				"/Game/LiDAR/Decals/Test/Test_Decal_Material",
+				"/Game/LiDAR/Decals/Lumen_Sciences/M_LumenSciences_Concrete",
+				"/Game/LiDAR/Decals/LumenPhoto"
+			]
+		},
+		{
+			"ShaderMapHash": "5CBCB3099D9AF5AA285CA495329027082E9319EE",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Plant_1"
+			]
+		},
+		{
+			"ShaderMapHash": "DE615837BEF63CDC70BD5A81008741FFAE9F0AF3",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Button_1"
+			]
+		},
+		{
+			"ShaderMapHash": "CF81D3AEA1228D1955D736CACD9D70526FA0AD0C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Fence_4"
+			]
+		},
+		{
+			"ShaderMapHash": "724770E5F19C8A5343BA7FA795DA513162DC590D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Fence_3"
+			]
+		},
+		{
+			"ShaderMapHash": "6DF0226BDEE3EBE05BE3E44FA6304BFBECBF536B",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Door_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Door_2"
+			]
+		},
+		{
+			"ShaderMapHash": "85CB8E8001A6B99A63296A3875443C71386A12F4",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Door_2"
+			]
+		},
+		{
+			"ShaderMapHash": "8D2CED789580E306AA0C94B226429D608D2B1F7D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "762361AB3F72660410D0D3DCA6B277DE83C150CA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Research_Wall_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "3D468DB96F52112469948968C3AB899CD72B04AE",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Walkway_3",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Walkway_2"
+			]
+		},
+		{
+			"ShaderMapHash": "897A93F792DEFC40679F59A5838BB956E9BC71C7",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Walkway_1"
+			]
+		},
+		{
+			"ShaderMapHash": "2199524CFC9302C1AB01D9A31D6230E0077D0AE0",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Facade_2"
+			]
+		},
+		{
+			"ShaderMapHash": "27080068F828A2AC0D85204972B8E252F333A609",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Facade_3"
+			]
+		},
+		{
+			"ShaderMapHash": "917567980DCE7D4479ACF8C8B5ACB8658091EA48",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Facade_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F44E41EEE3EEDB015642F1FF418EB5726C656CEC",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Wood_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_Door_2"
+			]
+		},
+		{
+			"ShaderMapHash": "AE084C4FDACACA3E688B0D1B29BD3D4C398A8851",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Cover_1"
+			]
+		},
+		{
+			"ShaderMapHash": "6A285725442A550BC5BC09ECB352693B461C7213",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Strip_1"
+			]
+		},
+		{
+			"ShaderMapHash": "DD08746FF7A89AB534B430AA6E40EF5F6477115C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_Colomn_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Detail_5",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Elevator_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B3EA46E129E597A2B4F255D32DCEAECBCB452199",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Steel_3"
+			]
+		},
+		{
+			"ShaderMapHash": "E9150BF1352F6486D3E9E2D41DACE3B97C4568FA",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Steel_2"
+			]
+		},
+		{
+			"ShaderMapHash": "CE89F89CB538F0B8A5CFDB3CC0686E36ED76B701",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Steel_4"
+			]
+		},
+		{
+			"ShaderMapHash": "408EE7BBEFDE1906BAF54C48863024D00CA03351",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Sign_2"
+			]
+		},
+		{
+			"ShaderMapHash": "822C5899D3337CDD2A7050722F2B6A1E5BF12DF0",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Yellow_Glass_2"
+			]
+		},
+		{
+			"ShaderMapHash": "9DF65159B5FFD5187E416CEB1255A0FAC4B9F2F8",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Yellow_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "5FA9C86FF953274D7BF9E77F72B15A0A87276113",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Glass_2"
+			]
+		},
+		{
+			"ShaderMapHash": "336B1CFEDB7AA7C1B54B32475CCCF7210DA76076",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Roof_1"
+			]
+		},
+		{
+			"ShaderMapHash": "147A3871B8643AA7F4FDD11B2D35FAF30F929E2B",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Rock_1"
+			]
+		},
+		{
+			"ShaderMapHash": "735967E3171D0C89C6ADDC5EEB592E9ED5C0A4C6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Chair_1_A",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Chassis_2"
+			]
+		},
+		{
+			"ShaderMapHash": "80D54EE80A5EB6435E42029431853B19553EB4B4",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Road_Marking_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Patch_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Leaking_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Cover_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Roadline_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Cover_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Patch_3",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Patch_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Patch_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Leaking_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Leaking_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Grate_1"
+			]
+		},
+		{
+			"ShaderMapHash": "C10B7EDFA3F56629D711972C4F9E45CE7C322BE5",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Ceiling_Light_2"
+			]
+		},
+		{
+			"ShaderMapHash": "8A6EA1165AF170CBE48146C51F98341E7333D71A",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Ceiling_Light_1"
+			]
+		},
+		{
+			"ShaderMapHash": "4959EC200BFF0D3B0CD2CE733F971BBAEC1415B7",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_RoadLine_1"
+			]
+		},
+		{
+			"ShaderMapHash": "1AB538E0B268180EF85A0A1940C5E2B2F683D644",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Ceiling_1"
+			]
+		},
+		{
+			"ShaderMapHash": "746F571D600EDA41C7672C47E6214C58FCF2F510",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_RoadLines_4"
+			]
+		},
+		{
+			"ShaderMapHash": "FAF76C83C7E9C10097E804CC1FEF85185C1A50FA",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_RoadLines_3"
+			]
+		},
+		{
+			"ShaderMapHash": "C1C5D4CA8DC678AC7A9228B5EB54B8D277408596",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_Line_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_Line_1"
+			]
+		},
+		{
+			"ShaderMapHash": "ED33C656DDD01CD055C4267175ED030EB13F71E2",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_RoadLines_2"
+			]
+		},
+		{
+			"ShaderMapHash": "CBA435B52F48C0E141566704BCEE8269DA94918B",
+			"Assets": [
+				"/Game/ResearchMegaPack/DecalPack/Materials/Master_Material/MM_Decal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "8DE806CFFCB03249758F6F27CCEC3B78CF9FC660",
+			"Assets": [
+				"/Game/ResearchMegaPack/DecalPack/Materials/Master_Material/MM_Decal_2"
+			]
+		},
+		{
+			"ShaderMapHash": "47425F7994EFF41EB20AF89C48AFCC7BB4222082",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Radar_4"
+			]
+		},
+		{
+			"ShaderMapHash": "D90C3C8DC364474ED9AE61288604C0977A02934D",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Plant_3"
+			]
+		},
+		{
+			"ShaderMapHash": "D1A93BD52FAE2F67EB1F4034CF93FBAE3DBE14BF",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Plant_2"
+			]
+		},
+		{
+			"ShaderMapHash": "6926F1DDC330C116EB7B2225905817F1815F1D22",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Plant_1"
+			]
+		},
+		{
+			"ShaderMapHash": "916090626A046040E9D05268B62A3024C1F60AE1",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Pattern_1"
+			]
+		},
+		{
+			"ShaderMapHash": "6B393BE4C5C1E7029DA3D8A6E46748D862AEBA31",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Patch_2"
+			]
+		},
+		{
+			"ShaderMapHash": "B811D7FD13631634F8B741DFC366CFDA1C742FA9",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Barrier_1"
+			]
+		},
+		{
+			"ShaderMapHash": "1EDD99E09C403A336EA0DA0B0B2A88717ECD35F9",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_13"
+			]
+		},
+		{
+			"ShaderMapHash": "37395737FA74AF8F82B429313857B59543664C9C",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_10"
+			]
+		},
+		{
+			"ShaderMapHash": "51C91689CA2FF0A298621950B17633C056FFEBF3",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Fence_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Fence_2"
+			]
+		},
+		{
+			"ShaderMapHash": "6494F16ABA6A57FB87AEE2A1DB7326ACFFEE4C2A",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "0B367C4C5E75639234C553C798DFBF9BEE30A7DF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F2AE30FD80E0E95AF996C7365E15D321792D4CDD",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "2D957065C75A2C3842B752D4EE01079648E77014",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Fence_1"
+			]
+		},
+		{
+			"ShaderMapHash": "8486277EF51D3E60C257E16C83980F237832A248",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Door_4"
+			]
+		},
+		{
+			"ShaderMapHash": "4A106DAA7DD75BA9E46BC9C3F0BA12501F91B531",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Door_1"
+			]
+		},
+		{
+			"ShaderMapHash": "05D9540D5D7E249EA5CED715CF1138B78ECA20CC",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Number_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Number_1"
+			]
+		},
+		{
+			"ShaderMapHash": "CFB26B76BD255482E73D6D6C5118FA4C819BEAE7",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Thermometer_1"
+			]
+		},
+		{
+			"ShaderMapHash": "79C8E1E0C0A6CF0CE22A05D5BEDBFB3792A2CBF1",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "64CB5599F883A3DEFDC0B6B17246CA9E7939DDCF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Steel_4"
+			]
+		},
+		{
+			"ShaderMapHash": "42CEA0FE3AC7D7B7EE1B522E3CC52D90DA757512",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Water_Puddle_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F0945A6C3E20B6C15E0F44710B52443F38D7873B",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Water_Puddle_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B48C32408D1ED8C2F0CC6D6A6DD108CC034EE06E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Rock_Dirt_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Glass_Dirt_1"
+			]
+		},
+		{
+			"ShaderMapHash": "EB245AE387988CACFC1F06509A3AB09C4EE6DB43",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_8"
+			]
+		},
+		{
+			"ShaderMapHash": "D4C1B73486318DB4EFAB4A8530F3CBABFBC7FFD8",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_5",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_2",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Floor_1",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Block_Wall_1",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_15"
+			]
+		},
+		{
+			"ShaderMapHash": "99BAE32F30A1EC204C0CFB73484BDE2E5D94C13B",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_7"
+			]
+		},
+		{
+			"ShaderMapHash": "15427BFE230A7EA54C9058EAAB56C2B1B7F12F5C",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_6"
+			]
+		},
+		{
+			"ShaderMapHash": "6FAD8397334226EFBBA6B49E534709DDD65A129D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Detail_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F2D839C8F6799C3BC2A625BE898DD9C501B1A74E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_9"
+			]
+		},
+		{
+			"ShaderMapHash": "FB7BDFF449397854BD9622530799985E9F5A0707",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Glass_2",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F6298BEF77CBA26D1A78557AA5FEE72F81F18A7E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_5"
+			]
+		},
+		{
+			"ShaderMapHash": "9619673285BF7959101D2C52BC28C94545AF0861",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Decal_4"
+			]
+		},
+		{
+			"ShaderMapHash": "F7023E8F1A16286245DA583B72708DF76355DF1E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Decal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "7CEBD166949F8EE20418D3FC7B77605FD4D7F7FA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_4"
+			]
+		},
+		{
+			"ShaderMapHash": "982DDE64DFCD308897261B57DDECBC21369AD6E4",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "85BC2CB3D74DF6925974E5FB090816A0C828663B",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_2"
+			]
+		},
+		{
+			"ShaderMapHash": "D933835AE365BCCFC3642799E295466E69EC21A6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "52004D6C007BE3C53E8CCF55DB51B4C10C270626",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_13"
+			]
+		},
+		{
+			"ShaderMapHash": "ADA0A30808A594AD01EF4DFA44A1EC3D637FEA08",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Emessive_6"
+			]
+		},
+		{
+			"ShaderMapHash": "5A4C418581B17E635CB73EAB30DEAAC22C629610",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Emessive_4"
+			]
+		},
+		{
+			"ShaderMapHash": "DDE3CDDBEC33147198559C293F54823AC9FC711C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Barrel_3"
+			]
+		},
+		{
+			"ShaderMapHash": "78245A6E35C708574001F563CE024A1E04ACCC0A",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Grate_2"
+			]
+		},
+		{
+			"ShaderMapHash": "B918B6B5BC66AF012D3A70F224FEF8D21B935E83",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Barrel_1"
+			]
+		},
+		{
+			"ShaderMapHash": "2C0E674388727F0A631918EEE400C2B63FCF4358",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Barbed_1"
+			]
+		},
+		{
+			"ShaderMapHash": "7F42BCA35AA2B96FCEDD04750077A63B0AA210FF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Elevator_Ceiling_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B754266DDAF7C4130868BA27BE372C4FE502DDB6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Door_6"
+			]
+		},
+		{
+			"ShaderMapHash": "CDB6A6A27193F843FABB2C958723D81DFE74CF62",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_10"
+			]
+		},
+		{
+			"ShaderMapHash": "53780E51DD484FE3DEB3D1F929085956A3089D0F",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_13"
+			]
+		},
+		{
+			"ShaderMapHash": "31195AAE0DBE335D7EEE10BD01C191CB3FB58DE9",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_2"
+			]
+		},
+		{
+			"ShaderMapHash": "BDC51759C56E555681307AD4526D413495570675",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_11"
+			]
+		},
+		{
+			"ShaderMapHash": "14502A80AE6C5CEF0D77BB26BC93F9CC2CDB5A02",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Chipboard_1"
+			]
+		},
+		{
+			"ShaderMapHash": "6E573CC93A03E18CA021D0F6DDEC226BC8BA9B50",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Card_Modulate_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "D544D60B196654C11FB442F1B305CFD89B81605A",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Glass_Mat",
+				"/Game/EF_Edie/Shared/GenericPropsInterior/GasLamp/GasLampGlass_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "5EFFF054E476580566B654A6D8848A737C963F85",
+			"Assets": [
+				"/Game/EF_Edie/Common/Materials/SolidColor/BlackGloss_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "F051C9DD30ADC095E246E88D17BA53A755CA2AD7",
+			"Assets": [
+				"/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale"
+			]
+		},
+		{
+			"ShaderMapHash": "10C4474805201E1EDD7667C8DC2393A452694D6E",
+			"Assets": [
+				"/Engine/EngineMaterials/PPM_DefaultCalibrationColor"
+			]
+		},
+		{
+			"ShaderMapHash": "2672F6BF972CA9B0896C1D095612B38370AD7896",
+			"Assets": [
+				"/Engine/EditorMaterials/PreviewShadowIndicatorMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "A8F45F91F4D24E53167D8790647C9A11C3C5BFCA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_2"
+			]
+		},
+		{
+			"ShaderMapHash": "E097565FBDFB02FF14DF742760D377CD04417011",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Asphalt_1"
+			]
+		},
+		{
+			"ShaderMapHash": "A55E93B184FCD92EEFFDB494076E60B31BCB0B62",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Sandbags_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F50B9BD257FC453B950949EE07BACBF2ACB83D44",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Roof_5"
+			]
+		},
+		{
+			"ShaderMapHash": "7FC123FC21C16AD22BC87B8918B7F127F8F4FB9E",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Roof_4",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Door_3",
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Door_2"
+			]
+		},
+		{
+			"ShaderMapHash": "D097C628E1AF68ED48DC789C87187A324DEE0DD7",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Road_1"
+			]
+		},
+		{
+			"ShaderMapHash": "6D06E2AA5A259B574EB85D243BFAAEB4197CEA3C",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Roof_5"
+			]
+		},
+		{
+			"ShaderMapHash": "50ACAD6A259331C71F5F8C972D45D42F2F82D830",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Plate_3"
+			]
+		},
+		{
+			"ShaderMapHash": "7673F0E81B5E3DAF51A366C8268C9A64760099C2",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Plate_2"
+			]
+		},
+		{
+			"ShaderMapHash": "DF71200164A30A07F748DE0979B666AE51FDFFF8",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_Plate_1"
+			]
+		},
+		{
+			"ShaderMapHash": "11A58465D03690FA11C4F5A2DC295EBAE9E8F7B4",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_9"
+			]
+		},
+		{
+			"ShaderMapHash": "2EEF1A70EB7B8F82FA23F70FEB38D932C34F9B37",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Metal_14"
+			]
+		},
+		{
+			"ShaderMapHash": "50E9C1901858B296BE1BB7F9F8D70F4C876116A7",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Leaking_5"
+			]
+		},
+		{
+			"ShaderMapHash": "AA4010A8358A7E27F4B442D29047FA52103B6BD4",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Leaking_4"
+			]
+		},
+		{
+			"ShaderMapHash": "E5F165788EF693250DE67AE92CE627CF5D6ED6D3",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Landscape_1"
+			]
+		},
+		{
+			"ShaderMapHash": "0926BAC5C127D74AC9910B27A30ABD295398794F",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Glass_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F8AFAEB752F410A5B99AB33D3A8CC0D152E67EAE",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_4"
+			]
+		},
+		{
+			"ShaderMapHash": "8FD84E7B396395A69186823D6A3B314A9C36ECBF",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Concrete_21"
+			]
+		},
+		{
+			"ShaderMapHash": "553DB9F65083C086A665BB8733E85F2D8AF94F74",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Wood_1"
+			]
+		},
+		{
+			"ShaderMapHash": "CAA85B68A87381E5BC7CEAE3591549EC8572C6C4",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Brick_1"
+			]
+		},
+		{
+			"ShaderMapHash": "012C6F19A2703BA1074BB34DDD0EEBECE0A5218B",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Box_11"
+			]
+		},
+		{
+			"ShaderMapHash": "19789284E1740AF40378D4616E1F257223F57012",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Road_2"
+			]
+		},
+		{
+			"ShaderMapHash": "F4AEF07E5814D58268847EBCE49275F04AED0B3B",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Asphalt_2"
+			]
+		},
+		{
+			"ShaderMapHash": "D48E04095107A940E7897F3565E1E05768152583",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Asphalt_1"
+			]
+		},
+		{
+			"ShaderMapHash": "55DA96C3F38EB1C07273EC7F67E1B137BE4B29F4",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Road_1"
+			]
+		},
+		{
+			"ShaderMapHash": "857864DFC52494CF0CE04661F861FF7F2794C834",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_Door_1"
+			]
+		},
+		{
+			"ShaderMapHash": "20E08D27186EBB74044C92133C68656BE83D8932",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Metal_14"
+			]
+		},
+		{
+			"ShaderMapHash": "10E123CB60D113A9B8664DDF7971E3AA834550EA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Container_3"
+			]
+		},
+		{
+			"ShaderMapHash": "4918A7A1A0B793A1A61ABE586200E47EA441A004",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_9",
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_19"
+			]
+		},
+		{
+			"ShaderMapHash": "A9C54F2F36DC2C9AAE581B890516ABDF41EA226E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_8"
+			]
+		},
+		{
+			"ShaderMapHash": "7006EF04AE27A6494DBA4B1DE621BFA6A200E848",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_5"
+			]
+		},
+		{
+			"ShaderMapHash": "2D01B55DC2B7F7B62E37CEB1490D4A4B7591E918",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_18"
+			]
+		},
+		{
+			"ShaderMapHash": "9894D03AE0FBF895358EAD410D3BD5F03A456B20",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_17"
+			]
+		},
+		{
+			"ShaderMapHash": "5EA21E56039435058289D2173BDE1CE88377FDE5",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_12"
+			]
+		},
+		{
+			"ShaderMapHash": "07FCE7A14B4AD1BCAE129A35F0662177D6AB54BF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_1"
+			]
+		},
+		{
+			"ShaderMapHash": "764DB43E0A8B656D19A0A57DADEB9048C8866745",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Metal_Fence_2",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Metal_Fence_2"
+			]
+		},
+		{
+			"ShaderMapHash": "1D1FA054D0FACD9825BDC58DC76056048E117DBD",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Metal_2"
+			]
+		},
+		{
+			"ShaderMapHash": "05EC3EEB1715533B03E3EEF5734A067EC3107524",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Metal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "8052DC71C2F4131768D37AEC74031F09179A9725",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Floor_White_1"
+			]
+		},
+		{
+			"ShaderMapHash": "E0BE1C281E83D67509159259085AB2D334FA81F3",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Floor_4"
+			]
+		},
+		{
+			"ShaderMapHash": "28FAE21A3CA6CB802897B49F218E999B87504B78",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Floor_1"
+			]
+		},
+		{
+			"ShaderMapHash": "FF6C2A89217642966EFADA262D24BB284BB32095",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Fabric_1"
+			]
+		},
+		{
+			"ShaderMapHash": "FDD3A2E8E6669AA6657ABE21C7AF648041E13073",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Elevator_Wall_4"
+			]
+		},
+		{
+			"ShaderMapHash": "E7944F1EC8F1BB7E7A5A2061F20328CE10CB6D38",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Cover_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B1AAC75BF63C07FD47736EC04DF38A1E7472D114",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Concrete_2"
+			]
+		},
+		{
+			"ShaderMapHash": "38610036312A11CA379B30698B849F644E29E72C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Colomn_3"
+			]
+		},
+		{
+			"ShaderMapHash": "F8C775A7DDCF60E085D85454731C78219AD0ABF3",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Tunnel_Colomn_2"
+			]
+		},
+		{
+			"ShaderMapHash": "0FA26C557B3BE864CCC6C0DE212EC840C1FB59CB",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Rock_3",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Rock_2"
+			]
+		},
+		{
+			"ShaderMapHash": "5D8408D3076806AB2C811D9487BAE814EF3594A6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Rock_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Gravel_1"
+			]
+		},
+		{
+			"ShaderMapHash": "8A587E9CC734EFAE1F614BCE6AEB05DA9DB9C348",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Research_Wall_3"
+			]
+		},
+		{
+			"ShaderMapHash": "E5A3A4E27DC38E624D0106C6D5D36CAD26510504",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Research_Wall_2"
+			]
+		},
+		{
+			"ShaderMapHash": "A781F6CF5C486FC5FFBD6C4BD98FD24772D483B3",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Research_Wall_1"
+			]
+		},
+		{
+			"ShaderMapHash": "72F2F99B6976704DB22D6F256C1CCD9FB17622AF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Pillow_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B6C42815432B468FD58D4B5EC08F74261B4D4405",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Keyboard_1"
+			]
+		},
+		{
+			"ShaderMapHash": "D54D367A9DB65E2128279012ED2713604BE9D5F9",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Elevator_Floor_3"
+			]
+		},
+		{
+			"ShaderMapHash": "DEF1D3EDB505A64CC755934D14B49052E72EA197",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Elevator_Floor_2"
+			]
+		},
+		{
+			"ShaderMapHash": "171081110BC2C013034BE7AC03B9772DB6346D1C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_Floor_2"
+			]
+		},
+		{
+			"ShaderMapHash": "82C8B7BA1CADF0EA73C1A8729FC6518375226CF0",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_Floor_1"
+			]
+		},
+		{
+			"ShaderMapHash": "B7BEE2314F8A825AD18F441ED72E99604C33CD2F",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_Door_1"
+			]
+		},
+		{
+			"ShaderMapHash": "9167801A5595E765BBA0C9409E0A32888E16722D",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_4",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Concrete_3"
+			]
+		},
+		{
+			"ShaderMapHash": "76AB6CF066B3B8FCC1B0DB6DDDE96C2B52F2741E",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Metal_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "62C561D7428BAD2569DFADCA3B562EAF018E7508",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Steel_3"
+			]
+		},
+		{
+			"ShaderMapHash": "5715A0D44C2780B61759EFBA625FFE9BFBA1499C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Concrete_6"
+			]
+		},
+		{
+			"ShaderMapHash": "D6CB0C915D15B68C5614D54A7CA4917045D2977E",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Colomn_4"
+			]
+		},
+		{
+			"ShaderMapHash": "3E83208D086CACDEC0C9D33229CB4DBC5EE08A29",
+			"Assets": [
+				"/Game/StarterContent/Props/Materials/M_Rock"
+			]
+		},
+		{
+			"ShaderMapHash": "0F3DABEB28DA5549BFAFAAFE6286E35D690449DD",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Water_Ocean"
+			]
+		},
+		{
+			"ShaderMapHash": "6CE2BD206BE0AAC4C222FA23D7217B8289AFD08B",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Tech_Hex_Tile"
+			]
+		},
+		{
+			"ShaderMapHash": "93ACDE6B6B601E64B062E624FCA615E03B381560",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Metal_Rust"
+			]
+		},
+		{
+			"ShaderMapHash": "407F02C0095143AF4BC2CC135D2B695A98B72675",
+			"Assets": [
+				"/Engine/EngineSky/M_Sky_Panning_Clouds2"
+			]
+		},
+		{
+			"ShaderMapHash": "F9CECA27916E2F6DFD2D838E7B7E63BACA6A5788",
+			"Assets": [
+				"/Game/StarterContent/Particles/Materials/M_radial_ramp",
+				"/Game/StarterContent/Particles/Materials/M_Radial_Gradient"
+			]
+		},
+		{
+			"ShaderMapHash": "6649D2D5006282FD8EBD7CA92A0EE5752241D6A3",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_Wood_Floor_Walnut_Worn"
+			]
+		},
+		{
+			"ShaderMapHash": "9B889D331BB2C2CF5D93B59471DD529C8F9D40AE",
+			"Assets": [
+				"/Game/StarterContent/Materials/M_ColorGrid_LowSpec",
+				"/Engine/EditorMeshes/ColorCalibrator/M_ColorGrid"
+			]
+		},
+		{
+			"ShaderMapHash": "D721D59767608FDA435F65DBE282DB2166267DCA",
+			"Assets": [
+				"/Engine/EngineMaterials/AntiAliasedTextMaterialTranslucent"
+			]
+		},
+		{
+			"ShaderMapHash": "73ACDFB56F18DD2621B5A43181D8D70A850E4BC8",
+			"Assets": [
+				"/Paper2D/OpaqueUnlitSpriteMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "0C5F157D7DB1EFB60090A6B41801FF1D48288644",
+			"Assets": [
+				"/CompositePlane/M_CamProj"
+			]
+		},
+		{
+			"ShaderMapHash": "18B560ABAE412FFF8D5852166535B260604B0EA2",
+			"Assets": [
+				"/SpeedTreeImporter/SpeedTree9/SpeedTreeBillboardMaster"
+			]
+		},
+		{
+			"ShaderMapHash": "FFD089AF31ACCE51226F084E7CDECCCE803D7CB2",
+			"Assets": [
+				"/SpeedTreeImporter/SpeedTree9/SpeedTreeMaster"
+			]
+		},
+		{
+			"ShaderMapHash": "1F74692248925731AC98A548951C1E33B26144B3",
+			"Assets": [
+				"/Game/ResearchMegaPack/KiteDemo/Environments/Foliage/Grass/FieldGrass/M_FieldGrass_01",
+				"/Game/ResearchMegaPack/KiteDemo/Environments/Foliage/Grass/FieldGrass/M_FieldGrass_Inst_01_LOD1"
+			]
+		},
+		{
+			"ShaderMapHash": "EE3F1A4A79280EC9644324016693BEDFA351992E",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough_Masked"
+			]
+		},
+		{
+			"ShaderMapHash": "0FF58854224BF9AF56BFEB9458CDF70C64C661C1",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough_Opaque"
+			]
+		},
+		{
+			"ShaderMapHash": "733D07060E43B60B25889B0EB34F1855CD465EBB",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough_Translucent"
+			]
+		},
+		{
+			"ShaderMapHash": "D803CD15092C13B55ACA4F0330169A1A8B730B0E",
+			"Assets": [
+				"/Game/EF_Edie/Shared/HouseInterior/StainedGlass/StainedGlassSecretpassage_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "3A86B7ACB495AF79692828E1EE95C2CAA94E5349",
+			"Assets": [
+				"/Game/EF_Edie/Shared/Characters/ShowerCurtain/ShowerCurtain_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "BD3C398BAAA362E24EB93C4A9F4DAFA15536524E",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Opaque_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "76D7B3D7682981FEDD34E062CF62308A776D9E85",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Masked_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "7F86D0C6E97BBE7F199907E186D0832F3021307C",
+			"Assets": [
+				"/Game/EF_Edie/Shared/LivingRoom/LivingRoomWalls/LivingRoomWindow_a_mat",
+				"/Game/EF_Edie/Materials/WindowFrameGlass_a_mat"
+			]
+		},
+		{
+			"ShaderMapHash": "2084595AEE975BA5F2C727662CFDEC745C0C07D2",
+			"Assets": [
+				"/Game/EF_Edie/Shared/Bathtub/Characters/GlassDoor/GlassDoorGlass_Mat",
+				"/Game/EF_Edie/Materials/PerfumeBottle_b_Glass_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "6329B08D3865459D83B051CB47AE5A43A776750F",
+			"Assets": [
+				"/Game/EF_Edie/Materials/Pillbox_a_Glass_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "4990327E0A96BCF7B2EEB57E02C04B25EF928191",
+			"Assets": [
+				"/Game/EF_Edie/Materials/PerfumeBottle_a_Glass_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "DF556E9AAEE81AAB2C2973497395A7512B337954",
+			"Assets": [
+				"/Game/EF_Edie/Common/Materials/SolidColor/BlackUnlit_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "2D7D155B6C2BB636A96D50476C710049551D22F9",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Research_Wall_3"
+			]
+		},
+		{
+			"ShaderMapHash": "1847D10D1306C4A43BA0E8D9D387197878D631F2",
+			"Assets": [
+				"/Game/EF_Edie/Materials/WritingDeskKnob_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "5A20663370D33421DFB5235477C88879D595ED44",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Decal_4"
+			]
+		},
+		{
+			"ShaderMapHash": "63FEB5B40E02CA6C4AC4A45DD97C677EA88E03A8",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Decal_2_A"
+			]
+		},
+		{
+			"ShaderMapHash": "365E0F30DDE0931C64D675A8383C1DC587840166",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Decal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "38160ADB38C698BA6ACAF4DAA06A698E40906BF9",
+			"Assets": [
+				"/Game/StarterContent/Blueprints/Assets/M_LightStage_Skybox_HDRI"
+			]
+		},
+		{
+			"ShaderMapHash": "490A4B06EA150E5AE2A0D7AD6631EBADD2668C5D",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_WorldMaterial_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "FCBF64425C77D620FE7CF2C6425042AFE1DA3B4E",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Props_Mat",
+				"/Game/EF_Edie/Shared/GenericPropsInterior/PictureFrame/PictureFrameWood_a_Mat",
+				"/Game/EF_Edie/Materials/VeneerWood_a_Mat",
+				"/Game/EF_Edie/Materials/Armchair_a_Mat",
+				"/Game/EF_Edie/Materials/Alarmclock_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "250C32A537FB0297CF34226A29CC730F6FC14A43",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Props_Masked_Mat",
+				"/Game/EF_Edie/Materials/Lamp_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "A3B0A3BD5FAC131441FD248C88214B797E64B21A",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Props_Emmisive_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "DEB7EA53CE510768052E889415077243ACEBC636",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_DFMasked_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "A573A11414E3A98E576EB4B0F3F929717DAFF183",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Blood_1"
+			]
+		},
+		{
+			"ShaderMapHash": "61BB3D212F862F3C5D8942906B3FE270FC0A43FF",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchCenter/Materials/M_Water"
+			]
+		},
+		{
+			"ShaderMapHash": "A45B1E8EBDB32C28372C5DE2CC9278D873374B04",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/M_Asphalt_3"
+			]
+		},
+		{
+			"ShaderMapHash": "5ED8636317489FEE8497C913F26DA3842F21C1FA",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchFacility/Materials/M_Monitor_Screen_1"
+			]
+		},
+		{
+			"ShaderMapHash": "820A6C4668A7DE384EC746E4DE959ADBC69F02F1",
+			"Assets": [
+				"/Game/ResearchMegaPack/DecalPack/Materials/Master_Material/MM_Decal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "F4C251186502C0C9B90AB481FC083E0C24335B9F",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Decal_1",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_3"
+			]
+		},
+		{
+			"ShaderMapHash": "F6099825234F9EEBC155F45D8592F0530E0E24E5",
+			"Assets": [
+				"/Game/EF_Edie/Common/MasterMaterial/Master_Props_MaskedDither_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "AFA26AA89FC43C4D931154FB0E1B75ED8BE87D00",
+			"Assets": [
+				"/CompositePlane/MI_CP_Opaque"
+			]
+		},
+		{
+			"ShaderMapHash": "E0ADC9B2CF1994103EF9E7FF2921468A0A2DD86D",
+			"Assets": [
+				"/CompositePlane/MI_CP_Masked"
+			]
+		},
+		{
+			"ShaderMapHash": "1EAB13C6CC0DFD6EE4181F2AF16E40929DC94A1F",
+			"Assets": [
+				"/Engine/EditorMaterials/Thumbnails/SkySphereMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "006F294B7B07257D50F517546AC53C047BB02022",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough_Masked_OneSided"
+			]
+		},
+		{
+			"ShaderMapHash": "2546E94CEFBD08135FBA7A94F703312D78ED7831",
+			"Assets": [
+				"/Engine/EngineMaterials/Widget3DPassThrough_Opaque_OneSided"
+			]
+		},
+		{
+			"ShaderMapHash": "99BA15CEBDB76062A7D4667B533FBAFA50F24A3D",
+			"Assets": [
+				"/Game/EF_Edie/Materials/BathtubStory_mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_WoodRough_b_Yellow_mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_WoodRough_b_White_mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_WoodRough_b_Orange_mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_LacqueredBrownWood_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_LaqueredBlackWood_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_WoodRough_b_Coral2_mat",
+				"/Game/EF_Edie/Common/Materials/Wood/WM_LaqueredWhiteWood_b_Mat",
+				"/Game/EF_Edie/Common/Materials/Plastic/WM_Plastic_Gray_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Plastic/WM_Plastic_Cream_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Plaster/WM_PlasterWall_a_mat",
+				"/Game/EF_Edie/Common/Materials/Plaster/WM_PlasterWallPink_a_mat",
+				"/Game/EF_Edie/Common/Materials/Metal/WM_MetalWallPaint_c_mat",
+				"/Game/EF_Edie/Common/Materials/Metal/WM_MetalBasic_a_mat",
+				"/Game/EF_Edie/Common/Materials/Metal/WM_MetalBasicLight_a_mat",
+				"/Game/EF_Edie/Common/Materials/Metal/WM_BrassBasic_a_mat",
+				"/Game/EF_Edie/Common/Materials/Ceramic/WM_Ceramic_d_Mat",
+				"/Game/EF_Edie/Common/Materials/Ceramic/WM_CeramicTile_b_Mat",
+				"/Game/EF_Edie/Common/Materials/Ceramic/WM_CeramicTile_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Carpet/WM_Carpet_blue_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "981540243548E024F23694A8A0D1044C4A9E2185",
+			"Assets": [
+				"/Game/EF_Edie/Shared/House/Environments/GenericPropsInterior/Door/Door_a_Mat",
+				"/Game/EF_Edie/Shared/House/Environments/Foyer/Door/DoorTheresa_a_Mat",
+				"/Game/EF_Edie/Materials/Wheelchair_a_Mat",
+				"/Game/EF_Edie/Materials/VCR_a_Mat",
+				"/Game/EF_Edie/Materials/Sword_Mat",
+				"/Game/EF_Edie/Materials/SatelliteDish_a_Mat",
+				"/Game/EF_Edie/Materials/PaintTube_a_Mat",
+				"/Game/EF_Edie/Materials/OxygenTank_Mat",
+				"/Game/EF_Edie/Materials/PaintBrush_c_Mat",
+				"/Game/EF_Edie/Materials/Birdcage_b_Mat",
+				"/Game/EF_Edie/Materials/Birdcage_a_Mat",
+				"/Game/EF_Edie/Materials/BloodPressureCuff_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "EC4788C403612AC229D2905F1F78777080DB7FB0",
+			"Assets": [
+				"/Game/EF_Edie/Materials/yarn_a_06_Mat",
+				"/Game/EF_Edie/Materials/yarn_a_05_Mat",
+				"/Game/EF_Edie/Materials/yarn_a_04_Mat",
+				"/Game/EF_Edie/Materials/yarn_a_03_Mat",
+				"/Game/EF_Edie/Materials/Armchair_b_Mat",
+				"/Game/EF_Edie/Common/Materials/Metal/Brass_a_Mat",
+				"/Game/EF_Edie/Common/Materials/Cloth/Linen_a_Mat",
+				"/Game/EF_Edie/Materials/yarn_a_02_Mat",
+				"/Game/EF_Edie/Materials/ceiling_a_Mat_Inst",
+				"/Game/EF_Edie/Materials/yarn_a_01_Mat",
+				"/Game/EF_Edie/Materials/TheresaBathroomFaucet_a_Mat",
+				"/Game/EF_Edie/Materials/TheresaHat_A_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "C3C2BB4587DB08F7FD45918344BE032DCD2170FA",
+			"Assets": [
+				"/Game/EF_Edie/Materials/TheresaQuilt_a_Mat",
+				"/Game/EF_Edie/Materials/Basket_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "EC03256B7202197FCE37D482740CCBF5E825D8B2",
+			"Assets": [
+				"/Game/EF_Edie/Materials/HospitalBed_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "E390E4654087C66752081AF4D829A7E88766685E",
+			"Assets": [
+				"/Game/EF_Edie/Materials/VCR_b_Mat",
+				"/Game/EF_Edie/Materials/SewingMachine_a_Mat",
+				"/Game/EF_Edie/Materials/SewingMachineDesk_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "3B5C628D9C0ED5C56FCCEBA36BA01B55CB15A9F9",
+			"Assets": [
+				"/Game/EF_Edie/Materials/Handprint_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintWalter_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintVictor_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintMolly_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintMilton_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintLewis_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintGus_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintGregory_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintEdith_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintDawn_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintDaniel_a_Mat",
+				"/Game/EF_Edie/Materials/HandprintBarbara_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "2D68DB98F31D7E7EA51F6236650B2E412FE88DE6",
+			"Assets": [
+				"/Game/EF_Edie/Common/Materials/Metal/WM_MetalCageRusty_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "2DE5A4067F1EEEC51E8A518BA4E8B703CA89A716",
+			"Assets": [
+				"/Game/EF_Edie/Common/Materials/Cloth/DoilyTrim2_a_Mat"
+			]
+		},
+		{
+			"ShaderMapHash": "1F5D8E4350C2E6CEE57FCA97F524BD035424FC96",
+			"Assets": [
+				"/Game/LevelPrototyping/Materials/M_PrototypeGrid",
+				"/Game/LevelPrototyping/Materials/MI_PrototypeGrid_Gray_02"
+			]
+		},
+		{
+			"ShaderMapHash": "A074011AD8355F926C95ACCE76578523A71E6B75",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Rock_Plaster_1"
+			]
+		},
+		{
+			"ShaderMapHash": "EBDA0471744C7DE8A64AC44D9615ECF4CF6203E6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Height_Rock_1"
+			]
+		},
+		{
+			"ShaderMapHash": "75345039F7287C5865CD7317404A9276BDFD205C",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Concrete_Floor"
+			]
+		},
+		{
+			"ShaderMapHash": "7835766BF8913E465DB9827AD56BB15830D1A4C6",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_9",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_8",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_7",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_6",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_5",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_4",
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_1"
+			]
+		},
+		{
+			"ShaderMapHash": "40B1661B92CEF29CB255DF5F980B75A9DD98F146",
+			"Assets": [
+				"/Game/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Decal_2"
+			]
+		},
+		{
+			"ShaderMapHash": "7032C115CFCCB5FCDDFB4F44E74873E74AC86053",
+			"Assets": [
+				"/CompositePlane/MI_CP_Trans_Keyed"
+			]
+		},
+		{
+			"ShaderMapHash": "970EB88972AE3F83E42F974D7D85CF4A2FF55046",
+			"Assets": [
+				"/CompositePlane/MI_CP_Masked_Keyed"
+			]
+		},
+		{
+			"ShaderMapHash": "9A764FEDFD754D6C27A04B6EAD87590EE15D0831",
+			"Assets": [
+				"/Game/LevelPrototyping/Materials/MI_PrototypeGrid_TopDark"
+			]
+		},
+		{
+			"ShaderMapHash": "CE542946725513E0A40931240A77CC9FD78E12F0",
+			"Assets": [
+				"/Game/LevelPrototyping/Materials/MI_PrototypeGrid_Gray"
+			]
+		},
+		{
+			"ShaderMapHash": "23E08E2700F54D98A6F130825BE376D272785927",
+			"Assets": [
+				"/Game/ResearchMegaPack/KiteDemo/Environments/Foliage/Grass/FieldGrass/M_FieldGrass_Inst_01_LOD2"
+			]
+		},
+		{
+			"ShaderMapHash": "2A77337F5622AEFD7AD7F59E3D0760C9CCC5E332",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Materials/Environment/M_Landscape_2"
+			]
+		},
+		{
+			"ShaderMapHash": "F179900E22B95BFC1E77C9B78DCB6483B143F37A",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "2C0B3EAEB5F4E07ED6967B10B35FC71573B7B5B4",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "23A411F6120C8E879B58417E1E7CB8C73149A1C9",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "0B24B8C0EECF68A56A35A3549226B9DB4E8F975F",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "FE7E23BD79430592710B6D1BE06E8E402C2BC53F",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "31477F26AE605132AA3065F1B641991A1B78AB6E",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "6DDED6752F0F17E7201D3A71A35C7CEABF0E485E",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "E8972401DBE971DD2A063E3DA6663D7933835C8F",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		},
+		{
+			"ShaderMapHash": "30F53A3A7A43B98C9F8FD01FBE0BC3D01D300756",
+			"Assets": [
+				"/Game/ResearchMegaPack/SecretBase/Map/SecretBase"
+			]
+		}
+	]
+}
