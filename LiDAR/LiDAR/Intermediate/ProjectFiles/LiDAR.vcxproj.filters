@@ -118,18 +118,6 @@
     <ClInclude Include="..\..\Source\LiDAR\PressurePlate.h">
       <Filter>Source\LiDAR</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\LiDAR\Speaker.cpp">
-      <Filter>Source\LiDAR</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\LiDAR\Speaker.h">
-      <Filter>Source\LiDAR</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\LiDAR\SpeakerInterface.cpp">
-      <Filter>Source\LiDAR</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\LiDAR\SpeakerInterface.h">
-      <Filter>Source\LiDAR</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\LiDAR\SpotlightActor.cpp">
       <Filter>Source\LiDAR</Filter>
     </ClCompile>
