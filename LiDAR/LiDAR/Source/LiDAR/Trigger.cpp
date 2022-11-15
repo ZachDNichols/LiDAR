@@ -3,7 +3,7 @@
 
 #include "Trigger.h"
 #include "Kismet/GameplayStatics.h"
-#include "SpeakerInterface.h"
+#include "TimerManager.h"
 #include "InteractableInterface.h"
 
 // Sets default values
@@ -30,9 +30,8 @@ void ATrigger::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ATrigger::Interact(bool isInteracting)
+void ATrigger::Interact()
 {
-
 	TArray<AActor*> InteractableActors;
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);
 
@@ -43,26 +42,7 @@ void ATrigger::Interact(bool isInteracting)
 		{
 			if (ID == ObjectID)
 			{
-				IInteractableInterface::Execute_Interact(Actor, isInteracting);
-			}
-		}
-	}
-
-	if (Sound)
-	{
-		
-		TArray<AActor*> InteractableSpeakers;
-		UGameplayStatics::GetAllActorsWithInterface(GetWorld(), USpeakerInterface::StaticClass(), InteractableSpeakers);
-
-		for (AActor* Actor : InteractableSpeakers)
-		{
-			FName ObjectTag = ISpeakerInterface::Execute_GetObjectTag(Actor);
-			for (FName ID : TargetTags)
-			{
-				if (ObjectTag.IsEqual(ID, ENameCase::IgnoreCase))
-				{
-					ISpeakerInterface::Execute_PlaySound(Actor, Sound);
-				}
+				IInteractableInterface::Execute_Interact(Actor, TriggerCall);
 			}
 		}
 	}
@@ -71,7 +51,23 @@ void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor 
 {
 	if (!bIsDisabled && !isTriggered)
 	{
-		Interact(TriggerCall);
-		isTriggered = true;
+		if (Sound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f);
+			if (WaitForAudio)
+			{
+				GetWorld()->GetTimerManager().SetTimer(SoundTimer, this, &ThisClass::Interact, Sound->GetDuration(), false);
+			}
+			else
+			{
+				Interact();
+			}
+			isTriggered = true;
+		}
+		else
+		{
+			Interact();
+			isTriggered = true;
+		}
 	}
 }

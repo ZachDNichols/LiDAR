@@ -26,6 +26,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
 		bool TriggerCall;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
+		bool WaitForAudio;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		bool bIsDisabled;
 
@@ -49,7 +52,7 @@ public:
 
 private:
 	bool isTriggered;
-
-	void Interact(bool isInteracting);
+	FTimerHandle SoundTimer;
+	void Interact();
 
 };

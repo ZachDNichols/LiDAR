@@ -2,10 +2,8 @@
 
 
 #include "PressurePlate.h"
-
 #include "Kismet/GameplayStatics.h"
 #include "InteractableInterface.h"
-#include "SpeakerInterface.h"
 
 
 // Sets default values
@@ -55,25 +53,6 @@ void APressurePlate::Interact(bool bIsInteracting)
 				IInteractableInterface::Execute_Interact(Actor, bIsInteracting);
 			}
 		}
-	}
-
-	if (Sound && !playedSound)
-	{
-		TArray<AActor*> InteractableSpeakers;
-		UGameplayStatics::GetAllActorsWithInterface(GetWorld(), USpeakerInterface::StaticClass(), InteractableSpeakers);
-
-		for (AActor* Actor : InteractableSpeakers)
-		{
-			FName ObjectTag = ISpeakerInterface::Execute_GetObjectTag(Actor);
-			for (FName ID : TargetTags)
-			{
-				if (ID.IsEqual(ObjectTag, ENameCase::IgnoreCase))
-				{
-					ISpeakerInterface::Execute_PlaySound(Actor, Sound);
-				}
-			}
-		}
-		playedSound = true;
 	}
 }
 
