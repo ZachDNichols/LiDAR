@@ -18,8 +18,8 @@ APressurePlate::APressurePlate()
 	MoveableMesh = CreateDefaultSubobject<UMovableStaticMeshComponent>(TEXT("Movable Mesh"));
 	MoveableMesh->SetupAttachment(BaseMesh);
 
-	OverlapComponent = CreateDefaultSubobject<USphereComponent>(TEXT("Overlap Area"));
-	OverlapComponent->SetupAttachment(MoveableMesh);
+	TriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Overlap Area"));
+	TriggerBox->SetupAttachment(BaseMesh);
 }
 
 // Called when the game starts or when spawned
@@ -27,8 +27,8 @@ void APressurePlate::BeginPlay()
 {
 	Super::BeginPlay();
 
-	OverlapComponent->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
-	OverlapComponent->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnEndOverlap);
+	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
+	TriggerBox->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnEndOverlap);
 }
 
 // Called every frame

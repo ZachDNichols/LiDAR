@@ -29,7 +29,7 @@ void EmptyLinkFunctionForGeneratedCodeLiDAR_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xD8328480,
+				0xB4B7C09B,
 				0x62DA7703,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -37,5 +37,5 @@ void EmptyLinkFunctionForGeneratedCodeLiDAR_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_LiDAR.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_LiDAR(Z_Construct_UPackage__Script_LiDAR, TEXT("/Script/LiDAR"), Z_Registration_Info_UPackage__Script_LiDAR, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD8328480, 0x62DA7703));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_LiDAR(Z_Construct_UPackage__Script_LiDAR, TEXT("/Script/LiDAR"), Z_Registration_Info_UPackage__Script_LiDAR, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB4B7C09B, 0x62DA7703));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

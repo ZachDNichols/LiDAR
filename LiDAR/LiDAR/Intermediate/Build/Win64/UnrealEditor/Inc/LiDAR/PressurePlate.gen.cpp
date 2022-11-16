@@ -18,7 +18,8 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	LIDAR_API UClass* Z_Construct_UClass_UMovableStaticMeshComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(APressurePlate::execOnEndOverlap)
 	{
@@ -215,9 +216,9 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveableMesh;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_OverlapComponent_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TriggerBox_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlapComponent;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_TriggerBox;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsDisabled_MetaData[];
 #endif
@@ -233,6 +234,15 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetIDs_MetaData[];
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_TargetIDs;
+		static const UECodeGen_Private::FNamePropertyParams NewProp_TargetTags_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetTags_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_TargetTags;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Sound_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Sound;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -253,7 +263,6 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_BaseMesh_MetaData[] = {
-		{ "AllowPrivateAcess", "true" },
 		{ "Category", "Trigger" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "PressurePlate.h" },
@@ -262,7 +271,6 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_BaseMesh = { "BaseMesh", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, BaseMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_BaseMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_BaseMesh_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_MoveableMesh_MetaData[] = {
-		{ "AllowPrivateAcess", "true" },
 		{ "Category", "Trigger" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "PressurePlate.h" },
@@ -270,14 +278,13 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_MoveableMesh = { "MoveableMesh", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, MoveableMesh), Z_Construct_UClass_UMovableStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_MoveableMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_MoveableMesh_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_OverlapComponent_MetaData[] = {
-		{ "AllowPrivateAcess", "true" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_TriggerBox_MetaData[] = {
 		{ "Category", "Trigger" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "PressurePlate.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_OverlapComponent = { "OverlapComponent", nullptr, (EPropertyFlags)0x001000000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, OverlapComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_OverlapComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_OverlapComponent_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_TriggerBox = { "TriggerBox", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, TriggerBox), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_TriggerBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_TriggerBox_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_bIsDisabled_MetaData[] = {
 		{ "Category", "Trigger" },
@@ -308,14 +315,32 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetIDs = { "TargetIDs", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, TargetIDs), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetIDs_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetIDs_MetaData)) };
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags_Inner = { "TargetTags", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags_MetaData[] = {
+		{ "Category", "Trigger" },
+		{ "ModuleRelativePath", "PressurePlate.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags = { "TargetTags", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, TargetTags), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APressurePlate_Statics::NewProp_Sound_MetaData[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "PressurePlate.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APressurePlate_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APressurePlate, Sound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APressurePlate_Statics::NewProp_Sound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APressurePlate_Statics::NewProp_Sound_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APressurePlate_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_BaseMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_MoveableMesh,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_OverlapComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_TriggerBox,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_bIsDisabled,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_bResetTrigger,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetIDs_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetIDs,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_TargetTags,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APressurePlate_Statics::NewProp_Sound,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APressurePlate_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APressurePlate>::IsAbstract,
@@ -353,9 +378,9 @@ void EmptyLinkFunctionForGeneratedCodePressurePlate() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_PressurePlate_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APressurePlate, APressurePlate::StaticClass, TEXT("APressurePlate"), &Z_Registration_Info_UClass_APressurePlate, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APressurePlate), 2329534320U) },
+		{ Z_Construct_UClass_APressurePlate, APressurePlate::StaticClass, TEXT("APressurePlate"), &Z_Registration_Info_UClass_APressurePlate, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APressurePlate), 2882306212U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_PressurePlate_h_1042978769(TEXT("/Script/LiDAR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_PressurePlate_h_1904688926(TEXT("/Script/LiDAR"),
 		Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_PressurePlate_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_LiDAR_Source_LiDAR_PressurePlate_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
