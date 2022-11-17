@@ -2,10 +2,8 @@
 
 
 #include "PressurePlate.h"
-
 #include "Kismet/GameplayStatics.h"
 #include "InteractableInterface.h"
-#include "SpeakerInterface.h"
 
 
 // Sets default values
@@ -20,8 +18,8 @@ APressurePlate::APressurePlate()
 	MoveableMesh = CreateDefaultSubobject<UMovableStaticMeshComponent>(TEXT("Movable Mesh"));
 	MoveableMesh->SetupAttachment(BaseMesh);
 
-	OverlapComponent = CreateDefaultSubobject<USphereComponent>(TEXT("Overlap Area"));
-	OverlapComponent->SetupAttachment(MoveableMesh);
+	TriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Overlap Area"));
+	TriggerBox->SetupAttachment(BaseMesh);
 }
 
 // Called when the game starts or when spawned
@@ -29,8 +27,8 @@ void APressurePlate::BeginPlay()
 {
 	Super::BeginPlay();
 
-	OverlapComponent->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
-	OverlapComponent->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnEndOverlap);
+	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
+	TriggerBox->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnEndOverlap);
 }
 
 // Called every frame
@@ -55,25 +53,6 @@ void APressurePlate::Interact(bool bIsInteracting)
 				IInteractableInterface::Execute_Interact(Actor, bIsInteracting);
 			}
 		}
-	}
-
-	if (Sound && !playedSound)
-	{
-		TArray<AActor*> InteractableSpeakers;
-		UGameplayStatics::GetAllActorsWithInterface(GetWorld(), USpeakerInterface::StaticClass(), InteractableSpeakers);
-
-		for (AActor* Actor : InteractableSpeakers)
-		{
-			FName ObjectTag = ISpeakerInterface::Execute_GetObjectTag(Actor);
-			for (FName ID : TargetTags)
-			{
-				if (ID.IsEqual(ObjectTag, ENameCase::IgnoreCase))
-				{
-					ISpeakerInterface::Execute_PlaySound(Actor, Sound);
-				}
-			}
-		}
-		playedSound = true;
 	}
 }
 

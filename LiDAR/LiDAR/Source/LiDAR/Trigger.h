@@ -26,6 +26,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
 		bool TriggerCall;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
+		bool WaitForAudio;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		bool bIsDisabled;
 
@@ -34,7 +37,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audio")
 		USoundBase* Sound;
-
 
 	UFUNCTION()
 		void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -49,7 +51,7 @@ public:
 
 private:
 	bool isTriggered;
-
-	void Interact(bool isInteracting);
+	FTimerHandle SoundTimer;
+	void Interact();
 
 };

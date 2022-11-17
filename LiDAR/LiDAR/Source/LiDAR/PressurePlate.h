@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/SphereComponent.h"
+#include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "MovableStaticMeshComponent.h"
 #include "PressurePlate.generated.h"
@@ -33,14 +33,14 @@ private:
 	void Interact(bool bIsInteracting);
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAcess = "true"), Category = "Trigger")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		UStaticMeshComponent* BaseMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAcess = "true"), Category = "Trigger")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		UMovableStaticMeshComponent* MoveableMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAcess = "true"), Category = "Trigger")
-		USphereComponent* OverlapComponent;
+	UPROPERTY(EditAnywhere, Category = "Trigger")
+		UBoxComponent* TriggerBox;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		bool bIsDisabled;
