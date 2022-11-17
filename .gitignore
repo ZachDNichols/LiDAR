@@ -42,8 +42,8 @@
 *.VC.opendb
 
 # Precompiled Assets
-SourceArt/**/*.png
-SourceArt/**/*.tga
+LiDAR/LiDAR/SourceArt/**/*.png
+LiDAR/LiDAR/SourceArt/**/*.tga
 
 # Binary Files
 LiDAR/LiDAR/Binaries/*
