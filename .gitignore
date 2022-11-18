@@ -72,4 +72,5 @@ LiDAR/LiDAR/Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 LiDAR/LiDAR/DerivedDataCache/*
-.DS_Store
+*.DS_Store
+*.mov
