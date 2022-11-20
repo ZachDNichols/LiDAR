@@ -2,6 +2,7 @@
 
 
 #include "Trigger.h"
+#include "FirstPersonCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
 #include "InteractableInterface.h"
@@ -49,25 +50,28 @@ void ATrigger::Interact()
 }
 void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	if (!bIsDisabled && !isTriggered)
+	if (Cast<AFirstPersonCharacter>(OtherActor))
 	{
-		if (Sound)
+		if (!bIsDisabled && !isTriggered)
 		{
-			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f);
-			if (WaitForAudio)
+			if (Sound)
 			{
-				GetWorld()->GetTimerManager().SetTimer(SoundTimer, this, &ThisClass::Interact, Sound->GetDuration(), false);
+				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f);
+				if (WaitForAudio)
+				{
+					GetWorld()->GetTimerManager().SetTimer(SoundTimer, this, &ThisClass::Interact, Sound->GetDuration(), false);
+				}
+				else
+				{
+					Interact();
+				}
+				isTriggered = true;
 			}
 			else
 			{
 				Interact();
+				isTriggered = true;
 			}
-			isTriggered = true;
-		}
-		else
-		{
-			Interact();
-			isTriggered = true;
 		}
 	}
 }

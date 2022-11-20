@@ -69,11 +69,11 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	if (!bIsDisabled && bResetTrigger)
-	{
-		MoveableMesh->Move(false);
-		Interact(false);
+		if (!bIsDisabled && bResetTrigger)
+		{
+			MoveableMesh->Move(false);
+			Interact(false);
 
-		bIsTriggered = false;
-	}
+			bIsTriggered = false;
+		}
 }
