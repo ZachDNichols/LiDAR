@@ -15,9 +15,6 @@ ASpotlightActor::ASpotlightActor()
 
 	Spotlight = CreateDefaultSubobject<USpotLightComponent>(TEXT("Light"));
 	Spotlight->SetupAttachment(Mesh);
-
-	MeshLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("Mesh Light"));
-	MeshLight->SetupAttachment(Mesh);
 }
 
 // Called when the game starts or when spawned
@@ -25,13 +22,6 @@ void ASpotlightActor::BeginPlay()
 {
 	Super::BeginPlay();
 	Spotlight->SetIntensity(Intensity);
-}
-
-// Called every frame
-void ASpotlightActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }
 
 int ASpotlightActor::GetObjectID_Implementation()
@@ -44,12 +34,12 @@ void ASpotlightActor::Interact_Implementation(bool bInteracting)
 	if (bInteracting)
 	{
 		Spotlight->SetIntensity(Intensity);
-		MeshLight->SetIntensity(1.f);
+		Mesh->SetMaterial(MaterialIndex, Material1);
 	}
 	else if (!bInteracting)
 	{
 		Spotlight->SetIntensity(0.0f);
-		MeshLight->SetIntensity(0.f);
+		Mesh->SetMaterial(MaterialIndex, Material2);
 	}
 }
 

@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/SpotLightComponent.h"
 #include "Components/PointLightComponent.h"
+#include "Materials/MaterialInstance.h"
 #include "InteractableInterface.h"
 #include "SpotlightActor.generated.h"
 
@@ -23,8 +24,14 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Lighting")
 		USpotLightComponent* Spotlight;
 
-	UPROPERTY(VisibleAnywhere, Category = "Lighting")
-		UPointLightComponent* MeshLight;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
+		UMaterialInstance* Material1;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
+		UMaterialInstance* Material2;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
+		int MaterialIndex;
 
 	UPROPERTY(VisibleAnywhere, Category = mesh)
 		UStaticMeshComponent* Mesh;
@@ -42,10 +49,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 private:
 
