@@ -3,6 +3,9 @@ This game will be for the CS3380 final project. If you wish to contribute to thi
 
 The game will largely take inspiration from two items, the first being the *Portal* franchise created by Valve. The second being this Garry's Mod mod: https://youtu.be/ac1LXZUkn8c
 
+## Join the discord!
+Join here: https://discord.gg/9DaPzYZKnR
+
 # Summary
 ## What I hope to create
 Through the course of the semester, we hope to create a compelling game with interesting mechanics, story, and characters using Unreal Engine 5. The atmosphere will be lonely, slightly haunting, but not enough to scare the player from not playing it. The genre of the game will be a puzzle game. The proposal is to create a game with stories and characters that are intriguing and compelling. The game should be visually stunning and immersive. The game should be challenging and rewarding, with a robust and satisfying gameplay experience.The project will take inspiration from the LiDAR Garry’s Mod mod, and the Portal game franchise.
