@@ -24,6 +24,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+	//Uses similar code to Trigger or PressurePlate to create an opening scripted sequence
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
 		USoundBase* VoiceLine;
 

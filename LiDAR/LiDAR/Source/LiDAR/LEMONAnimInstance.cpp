@@ -12,6 +12,7 @@ void ULEMONAnimInstance::NativeInitializeAnimation()
 
 	TArray<AActor*> Guns;
 
+	//Gets the LEMON/Character
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ALEMON::StaticClass(), Guns);
 	if (Guns.Num() > 0)
 	{
@@ -27,6 +28,8 @@ void ULEMONAnimInstance::NativeInitializeAnimation()
 void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
+
+	//If there is a null pointer to Character, one will tried to be found every frame
 	if (Character)
 	{
 		UpdateAnimProperties();
@@ -47,12 +50,14 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		}
 	}
 }
+
+//Updates properties according to speed
 void ULEMONAnimInstance::UpdateAnimProperties()
 {
 	speed = Character->GetVelocity().Size();
 }
 
-
+//Adds the event listeners for when shooting or not
 void ULEMONAnimInstance::AssignCharacter(AFirstPersonCharacter* TargetCharacter)
 { 
 	Character = TargetCharacter;

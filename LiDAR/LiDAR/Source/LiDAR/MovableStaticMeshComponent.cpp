@@ -8,10 +8,12 @@ UMovableStaticMeshComponent::UMovableStaticMeshComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
+// Called when the game starts or when spawned
 void UMovableStaticMeshComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	//If there is a move curve, it gets set up
 	if (MoveCurve)
 	{
 		FOnTimelineFloat TimelineCallback;
@@ -25,16 +27,19 @@ void UMovableStaticMeshComponent::BeginPlay()
 	}
 }
 
+// Called every frame
 void UMovableStaticMeshComponent::TickComponent(float DeltaTime, ELevelTick Tick, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, Tick, ThisTickFunction);
 
+	//If object is moving, the timeline will be updated to move the object
 	if (bIsMoving)
 	{
 		MoveTimeline.TickTimeline(DeltaTime);
 	}
 }
 
+//Controls moving the object and playing sound
 void UMovableStaticMeshComponent::Move(bool bTriggered)
 {
 	bIsTriggered = bTriggered;
@@ -58,6 +63,7 @@ void UMovableStaticMeshComponent::Move(bool bTriggered)
 	bIsMoving = true;
 }
 
+//Adjust curves when moving
 void UMovableStaticMeshComponent::OnMove()
 {
 	const float PlaybackPosition = MoveTimeline.GetPlaybackPosition();
@@ -87,6 +93,7 @@ void UMovableStaticMeshComponent::OnMoveFinished()
 	bIsMoving = false;
 }
 
+//Updates the rotation depending which one is selected
 void UMovableStaticMeshComponent::UpdateRotation(float CurveValue)
 {
 	FRotator NewRotation = GetRelativeRotation();
@@ -110,6 +117,7 @@ void UMovableStaticMeshComponent::UpdateRotation(float CurveValue)
 }
 
 
+//Updates location based on location axis selected
 void UMovableStaticMeshComponent::UpdateLocation(float CurveValue)
 {
 	FVector NewLocation = GetRelativeLocation();

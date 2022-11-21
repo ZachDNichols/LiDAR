@@ -19,6 +19,7 @@ class LIDAR_API ULEMONAnimInstance : public UAnimInstance
 
 protected:
 
+	//Overrides for animation blueprints
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
@@ -26,18 +27,24 @@ protected:
 	virtual void UpdateAnimProperties();
 
 private:
+	//Pointers to Character and LEMON
 	AFirstPersonCharacter* Character;
 	ALEMON* Gun;
 public:
+
+	//If the gun is shooting
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
 		bool isShooting;
 
+	//Speed of player
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
 		float speed;
 
+	//First person character
 	UFUNCTION()
 	void AssignCharacter(AFirstPersonCharacter* TargetCharacter);
 
+	//Change animation state if shooting
 	UFUNCTION()
 		void Shoot();
 

@@ -109,12 +109,15 @@ public:
 	//Returns the mesh sub object
 	USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
 
+	//Used for different footsteps per material, if there were more than one sound
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
 		TArray<USoundCue*> FootStepSounds;
 
+	//Function to play footstep sounds
 	UFUNCTION(BlueprintCallable, Category = "SFX")
 		void PlayFootStepSound();
 
+	//Resets if the player is stepping
 	UFUNCTION(BlueprintCallable, Category = "SFX")
 		void ResetStep() { step = false; };
 

@@ -10,6 +10,7 @@
 /**
  * 
  */
+//DEFAULT GAME TO BE MODE USED
 UCLASS()
 class LIDAR_API ALiDARGameModeBase : public AGameModeBase
 {

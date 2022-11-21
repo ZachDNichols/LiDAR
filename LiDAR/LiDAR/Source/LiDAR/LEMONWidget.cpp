@@ -5,6 +5,7 @@
 
 void ULEMONWidget::SetRadius(float currentRadius, float maxRadius)
 {
+	//Set the progress bar for the radius
 	currentRadius -= 50.f;
 	maxRadius -= 50.f;
 	RadiusBar->SetPercent(currentRadius / maxRadius);

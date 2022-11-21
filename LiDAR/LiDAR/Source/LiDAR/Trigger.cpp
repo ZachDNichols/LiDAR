@@ -22,6 +22,7 @@ void ATrigger::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	//Event listener for overlap
 	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
 }
 
@@ -31,11 +32,14 @@ void ATrigger::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+//Function for overlapping
 void ATrigger::Interact()
 {
+	//Array of actors that use InteractableInterface
 	TArray<AActor*> InteractableActors;
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);
 
+	//Iterates through each actor and find actors that have the same IDs in the array of Target IDs
 	for (AActor* Actor : InteractableActors)
 	{
 		int ObjectID = IInteractableInterface::Execute_GetObjectID(Actor);
@@ -50,10 +54,13 @@ void ATrigger::Interact()
 }
 void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
+	//Determines if actor overlapping is a player
 	if (Cast<AFirstPersonCharacter>(OtherActor))
 	{
+		//Checks to make sure trigger is not disabled or triggered
 		if (!bIsDisabled && !isTriggered)
 		{
+			//If there is a sound, the sound will play, and then check if interact needs to wait
 			if (Sound)
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f);
@@ -67,6 +74,7 @@ void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor 
 				}
 				isTriggered = true;
 			}
+			//Otherwise, interaction is called
 			else
 			{
 				Interact();

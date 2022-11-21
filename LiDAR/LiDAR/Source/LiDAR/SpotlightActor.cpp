@@ -10,9 +10,11 @@ ASpotlightActor::ASpotlightActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
+	//Creates mesh
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	SetRootComponent(Mesh);
 
+	//Creates spotlight
 	Spotlight = CreateDefaultSubobject<USpotLightComponent>(TEXT("Light"));
 	Spotlight->SetupAttachment(Mesh);
 }
@@ -21,6 +23,7 @@ ASpotlightActor::ASpotlightActor()
 void ASpotlightActor::BeginPlay()
 {
 	Super::BeginPlay();
+	//Sets the intensity when the game starts
 	Spotlight->SetIntensity(Intensity);
 }
 
@@ -31,6 +34,7 @@ int ASpotlightActor::GetObjectID_Implementation()
 
 void ASpotlightActor::Interact_Implementation(bool bInteracting)
 {
+	//If true, the object will set to an emmissive, or "on" state, otherwise it will appear as "off"
 	if (bInteracting)
 	{
 		Spotlight->SetIntensity(Intensity);

@@ -177,6 +177,7 @@ void AFirstPersonCharacter::MoveRight(float Value)
     }
 }
 
+//If stepping and moving, a footstep sound will be played every .32 seconds. This was calculated with trial and error.
 void AFirstPersonCharacter::PlayFootStepSound()
 {
     if (GetVelocity().Size() != 0 && !GetCharacterMovement()->IsFalling())

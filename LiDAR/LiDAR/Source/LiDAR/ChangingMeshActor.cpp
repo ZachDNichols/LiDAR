@@ -32,6 +32,7 @@ int AChangingMeshActor::GetObjectID_Implementation()
 	return ObjectID;
 }
 
+//If true, object will turn "on", if not object will turn off
 void AChangingMeshActor::Interact_Implementation(bool bIsInteracting)
 {
 	if (bIsInteracting)

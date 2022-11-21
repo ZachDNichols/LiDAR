@@ -20,6 +20,8 @@ AMovingStaticMeshActor::AMovingStaticMeshActor()
 void AMovingStaticMeshActor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//If there is a move curve, it gets set up
 	if (MoveCurve)
 	{
 		FOnTimelineFloat TimelineCallback;
@@ -39,12 +41,14 @@ void AMovingStaticMeshActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//If object is moving, the timeline will be updated to move the object
 	if (bIsMoving)
 	{
 		MoveTimeline.TickTimeline(DeltaTime);
 	}
 }
 
+//Returns object ID
 int AMovingStaticMeshActor::GetObjectID_Implementation()
 {
 	return ObjectID;
@@ -52,12 +56,14 @@ int AMovingStaticMeshActor::GetObjectID_Implementation()
 
 void AMovingStaticMeshActor::Interact_Implementation(bool bInteracting)
 {
+	//If interaction is triggered and not disabled, moving will begin
 	if (!bIsDisabled)
 	{
 		Move(bInteracting);
 	}
 }
 
+//Controls moving the object and playing sound
 void AMovingStaticMeshActor::Move(bool bTriggered)
 {
 	bIsTriggered = bTriggered;
@@ -92,6 +98,7 @@ void AMovingStaticMeshActor::Move(bool bTriggered)
 	bIsMoving = true;
 }
 
+//Plays the sound effect
 void AMovingStaticMeshActor::PlaySoundEffect()
 {
 	if (SoundEffect)
@@ -108,6 +115,7 @@ void AMovingStaticMeshActor::PlaySoundEffect()
 	}
 }
 
+//Adjust curves when moving
 void AMovingStaticMeshActor::OnMove()
 {
 	const float PlaybackPosition = MoveTimeline.GetPlaybackPosition();
@@ -137,6 +145,7 @@ void AMovingStaticMeshActor::OnMoveFinished()
 	bIsMoving = false;
 }
 
+//Updates the rotation depending which one is selected
 void AMovingStaticMeshActor::UpdateRotation(float CurveValue)
 {
 	FRotator NewRotation = GetActorRotation();
@@ -159,7 +168,7 @@ void AMovingStaticMeshActor::UpdateRotation(float CurveValue)
 	SetActorRotation(NewRotation);
 }
 
-
+//Updates location based on location axis selected
 void AMovingStaticMeshActor::UpdateLocation(float CurveValue)
 {
 	FVector NewLocation = GetActorLocation();

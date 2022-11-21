@@ -22,45 +22,59 @@ public:
 	// Sets default values for this component's properties
 	ALEMON();
 
+	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
 		void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
 
+	//Function called when firing
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void Fire();
 
+	//Function called for not firing
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void EndFire();
 
+	//Function used to increase the radius
 	UFUNCTION()
 		void IncreaseRadius();
 
+	//Function used to decrease the radius
 	UFUNCTION()
 		void DecreaseRadius();
 
+	//Laser class
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ALaser> LaserBP;
 
+	//Laser that will be created
 	UPROPERTY()
 		class ALaser* LaserBeam;
 
+	//Dot class
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class ADot> DotBP;
 
+	//Dot that will be created
 	UPROPERTY()
 		class ADot* Dot;
 
+	//LemonWidget class
 	UPROPERTY(EditAnywhere, Category = "Widget")
 		TSubclassOf<class ULEMONWidget> LemonWidget_BP;
 
+	//Pointer for widget that will be created
 	UPROPERTY()
 		ULEMONWidget* LemonWidget;
 
+	//Component for LEMON to sit in
 	UPROPERTY(VisibleAnywhere)
 		UWidgetComponent* WidgetComponent;
 
+	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
 		class USkeletalMeshComponent* Mesh;
 
+	//Sphere used for pickup
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 

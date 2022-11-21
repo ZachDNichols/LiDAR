@@ -21,6 +21,8 @@ void AFirstDiagloueScriptedSequence::BeginPlay()
 	Super::BeginPlay();
 	TArray<AActor*> Characters;
 
+
+	//Gets a pointer to player
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFirstPersonCharacter::StaticClass(), Characters);
 
 	if (Characters.Num() > 0)
@@ -35,6 +37,7 @@ void AFirstDiagloueScriptedSequence::BeginPlay()
 	}
 }
 
+//If there is a player in the world, this voice line will play, then open the door
 void AFirstDiagloueScriptedSequence::PlayVoiceLine()
 {
 	if (SoundAttenuation)

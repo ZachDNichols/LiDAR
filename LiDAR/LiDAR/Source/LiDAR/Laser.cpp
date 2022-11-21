@@ -46,11 +46,13 @@ void ALaser::Tick(float DeltaTime)
     SetSize();
 }
 
+//Sets where the laser should start from
 void ALaser::SetStart()
 {
     StartLoc = Camera->GetComponentLocation() + (Camera->GetForwardVector() * 60.f) + (Camera->GetRightVector() * 20.f) - (Camera->GetUpVector() * 22.f);
 }
 
+//Sets the size of the laser, should not be more than 20,000 units
 void ALaser::SetSize()
 {
     SetDistance();
@@ -59,17 +61,20 @@ void ALaser::SetSize()
     SetActorRotation(Rotation);
 }
 
+//Sets the rotation of the laser
 void ALaser::SetRotation()
 {
 	Rotation = (((StartLoc - EndLoc) * -1).Rotation());
     Rotation.Pitch -= 90.f;
 }
 
+//Sets where the laser should end
 void ALaser::SetEnd(FVector EndLocation)
 {
     EndLoc = EndLocation;
 }
 
+//Sets the distance of the laser
 void ALaser::SetDistance()
 {
     length = FVector::Dist(EndLoc, StartLoc);

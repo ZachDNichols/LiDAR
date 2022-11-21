@@ -15,6 +15,7 @@ class LIDAR_API UWeaponPickupComponent : public USphereComponent
     GENERATED_BODY()
 
 public:
+    //Delegate for pickup
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
         FOnPickUp OnPickUp;
 
@@ -25,6 +26,7 @@ protected:
     // Called when the game starts
     virtual void BeginPlay() override;
 
+    //Sphere component the player will overlap with
     UFUNCTION()
         void OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

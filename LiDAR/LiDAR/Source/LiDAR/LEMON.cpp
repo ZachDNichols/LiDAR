@@ -37,6 +37,7 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		Character->ScrollDown.RemoveDynamic(this, &ALEMON::DecreaseRadius);
 	}
 
+	//Kills the widget
 	if (LemonWidget)
 	{
 		LemonWidget->RemoveFromParent();
@@ -135,7 +136,7 @@ void ALEMON::Fire()
 	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.01f, false);
 }
 
-
+//Stops firing
 void ALEMON::EndFire()
 {
 	GetWorld()->GetTimerManager().ClearTimer(LaserTimer);
