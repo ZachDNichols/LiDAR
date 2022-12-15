@@ -291,7 +291,9 @@ void AFirstPersonCharacter::PickupPhysicsObject()
             {
                 if (FirstPersonCamera->GetForwardVector().Z > -.6f)
                 {
-                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f), GrabRotation);
+                    FVector origin = Hit.GetActor()->GetActorLocation();
+
+                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), /*FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f)*/ origin, GrabRotation);
                     holdingObject = true;
                     PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
                     heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
