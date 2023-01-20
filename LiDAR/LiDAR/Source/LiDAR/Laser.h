@@ -16,15 +16,6 @@ class LIDAR_API ALaser : public AActor
     
     UPROPERTY(VisibleAnywhere, Category = mesh)
     UStaticMeshComponent* LaserMesh;
-
-    UPROPERTY(VisibleAnywhere, Category = "SFX")
-        UAudioComponent* Audio;
-
-    //UPROPERTY(EditAnywhere)
-    //TSubclassOf<class AFirstPersonCharacter> CharacterBP;
-
-    //UPROPERTY()
-    //class AFirstPersonCharacter* Character;
     
 	
 public:	

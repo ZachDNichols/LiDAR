@@ -89,9 +89,6 @@ void ALEMON::Fire()
 		HitRotation = (((Start - End) * -1).Rotation());
 		HitRotation.Pitch -= 90.f;
 
-		//
-
-
 		if (LaserBP)
 		{
 			FTransform SpawnTransform;
@@ -133,6 +130,7 @@ void ALEMON::Fire()
 		}
 	}
 
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
 	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.01f, false);
 }
 
@@ -163,8 +161,6 @@ void ALEMON::DecreaseRadius()
 
 void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Called"));
-
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{

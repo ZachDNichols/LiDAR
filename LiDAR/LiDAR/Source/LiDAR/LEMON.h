@@ -78,6 +78,9 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 
+	UPROPERTY(EditDefaultsOnly, Category = "SFX")
+		USoundBase* FireSound;
+
 
 	/** Ends gameplay for this component. */
 	UFUNCTION(BlueprintCallable)
