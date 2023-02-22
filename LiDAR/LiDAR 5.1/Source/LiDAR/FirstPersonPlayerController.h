@@ -31,4 +31,16 @@ public:
 
 	UPROPERTY()
 		class UInputAction* CrouchAction;
+
+	UPROPERTY()
+		class UInputAction* ShootAction;
+
+	UPROPERTY()
+		class UInputAction* IncreaseScrollAction;
+
+	UPROPERTY()
+		class UInputAction* DecreaseScrollAction;
+
+	UPROPERTY()
+		class UInputAction* GrabObjectAction;
 };

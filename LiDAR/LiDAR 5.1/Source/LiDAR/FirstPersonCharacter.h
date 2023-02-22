@@ -105,6 +105,8 @@ protected:
 
     void PauseGame();
 
+    void GrabObject(const struct FInputActionValue& ActionValue);
+
 public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;

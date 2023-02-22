@@ -95,7 +95,11 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
     EIC->BindAction(FPPC->LookAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Look);
-
+    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::BeginShoot);
+    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Completed, this, &AFirstPersonCharacter::EndShoot);
+    EIC->BindAction(FPPC->IncreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::IncreaseRadius);
+    EIC->BindAction(FPPC->DecreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::DecreaseRadius);
+    EIC->BindAction(FPPC->GrabObjectAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::GrabObject);
 
     ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
     check(LocalPlayer);
@@ -151,6 +155,19 @@ void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo&
     {
         FirstPersonCamera->GetCameraView(DeltaTime, OutResult);
         OutResult.Location += CrouchEyeOffset;
+    }
+}
+
+void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionValue)
+{
+    //UE_LOG(LogTemp, Warning, TEXT("Grab value is %s"), (ActionValue.Get<bool>() ? TEXT("true") : TEXT("false")));
+    if (ActionValue.Get<bool>() == true)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Grabbed!"));
+    }
+    else if (ActionValue.Get<bool>() == false)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Released!"));
     }
 }
 
@@ -320,7 +337,6 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                     heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
                     EndUseItem.Broadcast();
                 }
-
             }
         }
     }
