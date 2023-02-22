@@ -4,8 +4,6 @@
 #include "Camera/CameraComponent.h"
 #include "TimerManager.h"
 #include "Components/CapsuleComponent.h"
-#include "Components/InputComponent.h"
-#include "GameFramework/InputSettings.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
@@ -18,12 +16,17 @@
 #include "Math/Vector.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
+#include "FirstPersonPlayerController.h"
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
+#include "GameFramework/FloatingPawnMovement.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-    PrimaryActorTick.bCanEverTick = true;
+    PrimaryActorTick.bCanEverTick = true; 
+    GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
 
     //Set the size for the collision capsule
     GetCapsuleComponent()->InitCapsuleSize(55.5f, 96.0f);
@@ -46,6 +49,11 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
 
+    Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Movement"));
+
+    MoveScale = 1.f;
+    CrouchEyeOffset = FVector(0.f);
+    CrouchSpeed = 12.f;
 }
 
 // Called when the game starts or when spawned
@@ -66,6 +74,9 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
         SetGrabbedObject();
     }
 
+    float CrouchInterpTime = FMath::Min(1.f, CrouchSpeed * DeltaTime);
+    CrouchEyeOffset = (1.f - CrouchInterpTime) * CrouchEyeOffset;
+
 }
 
 // Called to bind functionality to input
@@ -73,36 +84,84 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-    //Camera controls for a mouse
-    PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
-    PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
+    //Enhanced Input Component
+    UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+    //First Person Player Controller
+    AFirstPersonPlayerController* FPPC = Cast<AFirstPersonPlayerController>(Controller);
+    check(EIC && FPPC);
+    EIC->BindAction(FPPC->MoveAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Move);
+    EIC->BindAction(FPPC->CrouchAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::StartCrouch);
+    EIC->BindAction(FPPC->CrouchAction, ETriggerEvent::Completed, this, &AFirstPersonCharacter::EndCrouch);
+    EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
+    EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+    EIC->BindAction(FPPC->LookAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Look);
 
-    // Bind movement events
-    PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AFirstPersonCharacter::MoveForward);
-    PlayerInputComponent->BindAxis("Move Right / Left", this, &AFirstPersonCharacter::MoveRight);
 
-    //Bind player actions
+    ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
+    check(LocalPlayer);
+    UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
+    check(Subsystem);
+    Subsystem->ClearAllMappings();
+    Subsystem->AddMappingContext(FPPC->MappingContext, 0);
+}
 
-    //Actions for player jumping
-    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFirstPersonCharacter::Jump);
-    PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFirstPersonCharacter::StopJumping);
+void AFirstPersonCharacter::Move(const struct FInputActionValue& ActionValue)
+{
+    FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
+    AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
+}
 
-    //Actions for player crouching
-    GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
-    PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFirstPersonCharacter::StartCrouch);
-    PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFirstPersonCharacter::EndCrouch);
+void AFirstPersonCharacter::Look(const struct FInputActionValue& ActionValue)
+{
+    FVector2D LookAxisVector = ActionValue.Get<FVector2D>();
 
-    //Actions for player shooting
-    PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AFirstPersonCharacter::BeginShoot);
-    PlayerInputComponent->BindAction("Shoot", IE_Released, this, &AFirstPersonCharacter::EndShoot);
+    AddControllerYawInput(LookAxisVector.X);
+    AddControllerPitchInput(-LookAxisVector.Y);
+}
 
-    //Actions for increasing and decreasing radius
-    PlayerInputComponent->BindAction("Increase Radius", IE_Pressed, this, &AFirstPersonCharacter::IncreaseRadius);
-    PlayerInputComponent->BindAction("Decrease Radius", IE_Pressed, this, &AFirstPersonCharacter::DecreaseRadius);
+void AFirstPersonCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
+{
+    if (HalfHeightAdjust == 0.f)
+    {
+        return;
+    }
 
-    PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFirstPersonCharacter::PickupPhysicsObject);
+    float StartBaseEyeHeight = BaseEyeHeight;
+    Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
+    CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
+    FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, BaseEyeHeight), false);
+}
 
-    PlayerInputComponent->BindAction("Esc", IE_Pressed, this, &AFirstPersonCharacter::PauseGame);
+void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
+{
+    if (HalfHeightAdjust == 0.f)
+    {
+        return;
+    }
+
+    float StartBaseEyeHeight = BaseEyeHeight;
+    Super::OnEndCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
+    CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
+    FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, BaseEyeHeight), false);
+}
+
+void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult)
+{
+    if (FirstPersonCamera)
+    {
+        FirstPersonCamera->GetCameraView(DeltaTime, OutResult);
+        OutResult.Location += CrouchEyeOffset;
+    }
+}
+
+void AFirstPersonCharacter::StartCrouch()
+{
+    Crouch();
+}
+
+void AFirstPersonCharacter::EndCrouch()
+{
+    UnCrouch();
 }
 
 void AFirstPersonCharacter::SetGrabbedObject()
@@ -180,33 +239,6 @@ void AFirstPersonCharacter::PauseGame()
         }
 }
 
-void AFirstPersonCharacter::MoveForward(float Value)
-{
-    if (Value != 0.0f)
-    {
-        AddMovementInput(GetActorForwardVector(), Value);
-        if (!step)
-        {
-            step = true;
-            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false, 0);
-        }
-    }
-}
-
-void AFirstPersonCharacter::MoveRight(float Value)
-{
-    if (Value != 0.0f)
-    {
-        AddMovementInput(GetActorRightVector(), Value);
-        
-        if (!step)
-        {
-            step = true;
-            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false);
-        }
-    }
-}
-
 //If stepping and moving, a footstep sound will be played every .32 seconds. This was calculated with trial and error.
 void AFirstPersonCharacter::PlayFootStepSound()
 {
@@ -220,18 +252,6 @@ void AFirstPersonCharacter::PlayFootStepSound()
         GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
         ResetStep();
     }
-}
-
-
-void AFirstPersonCharacter::StartCrouch()
-{
-    Crouch();
-}
-
-//Handles the player crouching
-void AFirstPersonCharacter::EndCrouch()
-{
-    UnCrouch();
 }
 
 void AFirstPersonCharacter::BeginShoot()

@@ -8,7 +8,9 @@ public class LiDAR : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "PhysicsCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "PhysicsCore", "EnhancedInput" });
+
+		PublicIncludePaths.AddRange(new string[] { "EnhancedInput/Public" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

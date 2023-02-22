@@ -63,18 +63,30 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
         UUserWidget* PauseMenu;
 
+    UPROPERTY(EditAnywhere)
+        class UFloatingPawnMovement* Movement;
+
+    UPROPERTY(EditAnywhere)
+        float MoveScale;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Crouch)
+        FVector CrouchEyeOffset;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Crouch)
+        float CrouchSpeed;
+
 protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
     //Handles moving forward and backwards
-    void MoveForward(float Value);
+    void Move(const struct FInputActionValue& ActionValue);
 
-    //Handles moving the player left or right
-    void MoveRight(float Value);
+    void Look(const struct FInputActionValue& ActionValue);
 
     //Handles the player crouching and un-crouching
     void StartCrouch();
+
     void EndCrouch();
 
     //Handles the player firing
@@ -99,6 +111,12 @@ public:
 
     // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+    void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+
+    void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
+
+    void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;
 
     //Returns the camera component sub object
     UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCamera; };
