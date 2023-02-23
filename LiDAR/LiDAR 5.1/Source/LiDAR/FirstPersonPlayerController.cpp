@@ -25,14 +25,12 @@ static void MapKey(UInputMappingContext* InputMappingContext, UInputAction* Inpu
 	}
 }
 
-void PressMapKey(UInputMappingContext* InputMappingContext, UInputAction* InputAction, FKey Key)
+static void PressedKey(UInputMappingContext* MappingContext, UInputAction* InputAction, FKey Key)
 {
-	FEnhancedActionKeyMapping& Mapping = InputMappingContext->MapKey(InputAction, Key);
-	UObject* Outer = InputMappingContext->GetOuter();
-
-	UInputTriggerPressed* Pressed = NewObject<UInputTriggerPressed>(Outer);
-
-	Mapping.Triggers.Add(Pressed);
+    FEnhancedActionKeyMapping& Mapping = MappingContext->MapKey(InputAction, Key);
+    UObject* Outer = MappingContext->GetOuter();
+    UInputTriggerPressed* Pressed = NewObject<UInputTriggerPressed>(Outer);
+    Mapping.Triggers.Add(Pressed);
 }
 
 void AFirstPersonPlayerController::SetupInputComponent()
@@ -52,7 +50,7 @@ void AFirstPersonPlayerController::SetupInputComponent()
 	//Sets up jumping action
 	JumpAction = NewObject<UInputAction>(this);
 	JumpAction->ValueType = EInputActionValueType::Boolean;
-	MappingContext->MapKey(JumpAction, EKeys::SpaceBar);
+    PressedKey(MappingContext, JumpAction, EKeys::SpaceBar);
 
 	//Sets up looking
 	LookAction = NewObject<UInputAction>(this);
@@ -74,8 +72,12 @@ void AFirstPersonPlayerController::SetupInputComponent()
 	DecreaseScrollAction = NewObject<UInputAction>(this);
 	DecreaseScrollAction->ValueType = EInputActionValueType::Boolean;
 	MappingContext->MapKey(DecreaseScrollAction, EKeys::MouseScrollDown);
-
+    
 	GrabObjectAction = NewObject<UInputAction>(this);
-	GrabObjectAction->ValueType = EInputActionValueType::Boolean;
-	MappingContext->MapKey(GrabObjectAction, EKeys::E);
+    GrabObjectAction->ValueType = EInputActionValueType::Boolean;
+    PressedKey(MappingContext, GrabObjectAction, EKeys::E);
+    
+    PauseGameAction = NewObject<UInputAction>(this);
+    PauseGameAction->ValueType = EInputActionValueType::Boolean;
+    PressedKey(MappingContext, PauseGameAction, EKeys::Escape);
 }

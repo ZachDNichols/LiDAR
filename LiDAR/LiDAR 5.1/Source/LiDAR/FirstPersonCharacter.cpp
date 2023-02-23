@@ -160,14 +160,13 @@ void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo&
 
 void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionValue)
 {
-    //UE_LOG(LogTemp, Warning, TEXT("Grab value is %s"), (ActionValue.Get<bool>() ? TEXT("true") : TEXT("false")));
-    if (ActionValue.Get<bool>() == true)
+    if (holdingObject)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Grabbed!"));
+        ReleaseObject();
     }
-    else if (ActionValue.Get<bool>() == false)
+    else
     {
-        UE_LOG(LogTemp, Warning, TEXT("Released!"));
+        PickupPhysicsObject();
     }
 }
 
@@ -183,13 +182,15 @@ void AFirstPersonCharacter::EndCrouch()
 
 void AFirstPersonCharacter::SetGrabbedObject()
 {
+    if(PhysicsHandle->GetGrabbedComponent() && heldObject)
+    {
         FHitResult Hit;
         FRotator Rot;
         FVector Loc;
-
+        
         //Sets the location and rotation based on what the player sees
         GetController()->GetPlayerViewPoint(Loc, Rot);
-
+        
         //Sets the vector where the line trace should start
         FVector Start = Loc;
         //Sets the vector where it should end. Random numbers added to create offsets.
@@ -203,20 +204,20 @@ void AFirstPersonCharacter::SetGrabbedObject()
         FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
         GrabRotation.Pitch = 0.f;
         GrabRotation.Roll = 0.f;
-
+        
         PhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
-
+        
         //Extent and origin of the actor being grabbed, however origin is not really used
         FVector origin;
         FVector extent;
-
+        
         heldObject->GetActorBounds(false, origin, extent);
-
+        
         float width = extent.X;
-
+        
         FCollisionShape ObjectShape = FCollisionShape::MakeBox(extent);
-
-
+        
+        
         if (GetWorld()->SweepSingleByChannel(Hit, Start, End, PhysicsHandle->GetGrabbedComponent()->GetAttachmentRootActor()->GetActorRotation().Quaternion(), ECC_Visibility, ObjectShape, TraceParams))
         {
             //If the point of where the object would be compared to the player's location is less than the size of the object, the object is released
@@ -236,6 +237,7 @@ void AFirstPersonCharacter::SetGrabbedObject()
             //If there is not a hit location, the object will go to the farthest "reach" of the player
             PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * FVector::Dist(Start, End));
         }
+    }
 }
 
 void AFirstPersonCharacter::ReleaseObject()
@@ -301,7 +303,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
     {
         ReleaseObject();
     }
-    else if (!holdingObject)
+    else if (!holdingObject && PhysicsHandle)
     {
         FHitResult Hit;
         FRotator Rot;

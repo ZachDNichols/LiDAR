@@ -43,4 +43,7 @@ public:
 
 	UPROPERTY()
 		class UInputAction* GrabObjectAction;
+    
+    UPROPERTY()
+        class UInputAction* PauseGameAction;
 };
