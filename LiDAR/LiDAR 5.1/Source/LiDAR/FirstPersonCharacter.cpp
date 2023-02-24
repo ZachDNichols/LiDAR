@@ -100,6 +100,7 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     EIC->BindAction(FPPC->IncreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::IncreaseRadius);
     EIC->BindAction(FPPC->DecreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::DecreaseRadius);
     EIC->BindAction(FPPC->GrabObjectAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::GrabObject);
+    EIC->BindAction(FPPC->PauseGameAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::PauseGame);
 
     ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
     check(LocalPlayer);
@@ -250,9 +251,9 @@ void AFirstPersonCharacter::ReleaseObject()
 
 void AFirstPersonCharacter::PauseGame()
 {
-         UGameplayStatics::SetGamePaused(GetWorld(), true);
         if (PauseMenu)
         {
+            UGameplayStatics::SetGamePaused(GetWorld(), true);
             GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
             PauseMenu->AddToViewport();
         }
