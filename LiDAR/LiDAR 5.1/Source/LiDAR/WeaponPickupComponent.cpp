@@ -25,6 +25,7 @@ void UWeaponPickupComponent::BeginPlay()
 //When player overlaps with sphere, OnPickUp will broadcast to any Actors listening, which will result in the LEMON attaching to the player
 void UWeaponPickupComponent::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+    UE_LOG(LogTemp, Warning, TEXT("Called"));
     AFirstPersonCharacter* Character = Cast<AFirstPersonCharacter>(OtherActor);
     if (Character != nullptr)
     {

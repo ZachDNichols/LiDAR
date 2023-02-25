@@ -5,13 +5,7 @@
 #include "CoreMinimal.h"
 #include "LEMONWidget.h"
 #include "GameFramework/Actor.h"
-#include "Components/WidgetComponent.h"
-#include "Animation/AnimSequence.h"
 #include "LEMON.generated.h"
-
-class AFirstPersonCharacter;
-class TimerManager;
-class UCameraComponent;
 
 UCLASS(Blueprintable, BlueprintType, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class LIDAR_API ALEMON : public AActor
@@ -21,6 +15,8 @@ class LIDAR_API ALEMON : public AActor
 public:
 	// Sets default values for this component's properties
 	ALEMON();
+
+	virtual void BeginPlay() override;
 
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
@@ -68,11 +64,11 @@ public:
 
 	//Component for LEMON to sit in
 	UPROPERTY(VisibleAnywhere)
-		UWidgetComponent* WidgetComponent;
+		class UWidgetComponent* WidgetComponent;
 
 	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
-		class USkeletalMeshComponent* Mesh;
+		class UStaticMeshComponent* Mesh;
 
 	//Sphere used for pickup
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
@@ -81,18 +77,17 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "SFX")
 		USoundBase* FireSound;
 
-
 	/** Ends gameplay for this component. */
 	UFUNCTION(BlueprintCallable)
 		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 private:
-	AFirstPersonCharacter* Character;
-	FTimerHandle LaserTimer;
-	FTimerHandle LaserSFXTimer;
+	class AFirstPersonCharacter* Character;
+	struct FTimerHandle LaserTimer;
+	struct FTimerHandle LaserSFXTimer;
 	float currentRadius = 50.f;
 	float increment = 50.f;
 	float minRadius = 50.f;
 	float maxRadius = 700.f;
-	UCameraComponent* Camera;
+	class UCameraComponent* Camera;
 };
 

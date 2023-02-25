@@ -8,8 +8,6 @@
 #include "Sound/SoundCue.h"
 #include "FirstPersonCharacter.generated.h"
 
-
-
 class UIComponent;
 class USkeletalMesh;
 class USceneComponent;
@@ -146,4 +144,6 @@ private:
     bool hasGun = false;
     bool holdingObject = false;
     AActor* heldObject;
+    float relativeX;
+    float relativeY;
 };

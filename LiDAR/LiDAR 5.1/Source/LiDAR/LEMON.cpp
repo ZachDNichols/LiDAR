@@ -11,6 +11,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "WeaponPickupComponent.h"
 #include "Components/AudioComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Animation/AnimSequence.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values for this component's properties
 ALEMON::ALEMON()
@@ -18,11 +21,17 @@ ALEMON::ALEMON()
 	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
 	SetRootComponent(PickUp);
 
-	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(PickUp);
 
 	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
-	WidgetComponent->SetupAttachment(Mesh, FName("WidgetSpot"));
+	WidgetComponent->SetupAttachment(Mesh);
+}
+
+void ALEMON::BeginPlay()
+{
+	Super::BeginPlay();
+	PickUp->OnPickUp.AddDynamic(this, &ALEMON::AttachWeapon);
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -161,6 +170,7 @@ void ALEMON::DecreaseRadius()
 
 void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Called"));
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{
@@ -173,7 +183,6 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
 		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
-		Mesh->bCastDynamicShadow = false;
 
 		if (LemonWidget_BP)
 		{

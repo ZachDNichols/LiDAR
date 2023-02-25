@@ -43,9 +43,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     PlayerMesh->SetupAttachment(FirstPersonCamera);
     PlayerMesh->bCastDynamicShadow = false;
     PlayerMesh->CastShadow = false;
-    PlayerMesh->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
-    PlayerMesh->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
-    PlayerMesh->SetVisibility(false);
+    PlayerMesh->SetVisibility(true);
 
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
 
@@ -61,6 +59,8 @@ void AFirstPersonCharacter::BeginPlay()
 {
     Super::BeginPlay();
     step = false;
+    relativeX = FirstPersonCamera->GetRelativeLocation().X;
+    relativeY = FirstPersonCamera->GetRelativeLocation().Y;
 }
 
 // Called every frame
@@ -134,7 +134,7 @@ void AFirstPersonCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHa
     float StartBaseEyeHeight = BaseEyeHeight;
     Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
     CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
-    FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, BaseEyeHeight), false);
+    FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);
 }
 
 void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
@@ -147,7 +147,7 @@ void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalf
     float StartBaseEyeHeight = BaseEyeHeight;
     Super::OnEndCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
     CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
-    FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, BaseEyeHeight), false);
+    FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);
 }
 
 void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult)
