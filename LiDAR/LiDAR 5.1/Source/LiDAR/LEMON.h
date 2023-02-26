@@ -31,32 +31,13 @@ public:
 		void EndFire();
 
 	//Function used to increase the radius
+	//Function used to increase the radius
 	UFUNCTION()
 		void IncreaseRadius();
 
 	//Function used to decrease the radius
 	UFUNCTION()
 		void DecreaseRadius();
-
-	//Laser class
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<class ALaser> LaserBP;
-
-	//Laser that will be created
-	UPROPERTY()
-		class ALaser* LaserBeam;
-
-	//Dot class
-	UPROPERTY(EditAnywhere)
-		TSubclassOf<class ADot> DotBP;
-
-	//Dot that will be created
-	UPROPERTY()
-		class ADot* Dot;
-
-	//LemonWidget class
-	UPROPERTY(EditAnywhere, Category = "Widget")
-		TSubclassOf<class ULEMONWidget> LemonWidget_BP;
 
 	//Pointer for widget that will be created
 	UPROPERTY()
@@ -68,7 +49,7 @@ public:
 
 	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
-		class UStaticMeshComponent* Mesh;
+		class USkeletalMeshComponent* Mesh;
 
 	//Sphere used for pickup
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
@@ -76,6 +57,18 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "SFX")
 		USoundBase* FireSound;
+
+	UPROPERTY(EditAnywhere)
+		UMaterial* Decal;
+
+	UPROPERTY(EditDefaultsOnly)
+		FVector DecalSize = FVector(.01f, .05f, .05f);
+
+	UPROPERTY(EditDefaultsOnly)
+		class UNiagaraSystem* Laser;
+
+	UPROPERTY(EditDefaultsOnly)
+		struct FLinearColor LaserColor = FLinearColor(188, 4, 4, 1.f);
 
 	/** Ends gameplay for this component. */
 	UFUNCTION(BlueprintCallable)

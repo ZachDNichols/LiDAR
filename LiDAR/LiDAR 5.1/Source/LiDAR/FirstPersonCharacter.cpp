@@ -36,14 +36,14 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
     FirstPersonCamera->SetRelativeLocation(FVector(-39.56f, 1.75f, 64.f));
     FirstPersonCamera->bUsePawnControlRotation = true;
-    UCameraComponent* Camera = GetFirstPersonCameraComponent();
+    FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, 74.f));
 
     //Creates mesh component for use of viewing the gun
-    PlayerMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PlayerMesh"));
+    PlayerMesh = GetMesh();
     PlayerMesh->SetupAttachment(FirstPersonCamera);
     PlayerMesh->bCastDynamicShadow = false;
     PlayerMesh->CastShadow = false;
-    PlayerMesh->SetVisibility(true);
+    PlayerMesh->SetVisibility(false);
 
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
 

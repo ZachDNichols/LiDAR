@@ -6,14 +6,17 @@
 #include "GameFramework/Actor.h"
 #include "TimerManager.h"
 #include "Camera/CameraComponent.h"
-#include "Laser.h"
-#include "Dot.h"
 #include "Kismet/GameplayStatics.h"
 #include "WeaponPickupComponent.h"
 #include "Components/AudioComponent.h"
-#include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "Animation/AnimSequence.h"
 #include "Components/WidgetComponent.h"
+#include "Engine/DecalActor.h"
+#include "Components/DecalComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
+#include "Math/Color.h"
 
 // Sets default values for this component's properties
 ALEMON::ALEMON()
@@ -21,7 +24,7 @@ ALEMON::ALEMON()
 	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
 	SetRootComponent(PickUp);
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Mesh = CreateDefaultSubobject <USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(PickUp);
 
 	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
@@ -59,6 +62,7 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ALEMON::Fire()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Bang Bang"));
 
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -98,45 +102,29 @@ void ALEMON::Fire()
 		HitRotation = (((Start - End) * -1).Rotation());
 		HitRotation.Pitch -= 90.f;
 
-		if (LaserBP)
+		if (Laser)
 		{
-			FTransform SpawnTransform;
-			SpawnTransform.SetLocation(Start);
+			FRotator Rotation = (((Start - End) * -1).Rotation());
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, Start, Rotation);
+			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
+			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
+		}
 
-			FActorSpawnParameters SpawnParams;
-
-			LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
-
-			float fDistance = Hit.Distance;
-
-			LaserBeam->SetEnd(Hit.ImpactPoint);
-
-			if (DotBP)
-			{
-				SpawnTransform.SetLocation(Hit.ImpactPoint);
-
-				Dot = GetWorld()->SpawnActor<ADot>(DotBP, SpawnTransform, SpawnParams);
-
-				Dot->AttachToComponent(Hit.GetActor()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform, NAME_None);
-			}
+		ADecalActor* Dot = GetWorld()->SpawnActor<ADecalActor>(Hit.Location, FRotator());
+		if (Dot && Decal)
+		{
+			Dot->SetDecalMaterial(Decal);
+			Dot->SetLifeSpan(0);
+			Dot->GetDecal()->DecalSize = FVector(32.0f, 64.0f, 64.0f);
+			Dot->SetActorScale3D(DecalSize);
 		}
 	}
 	else
 	{
 		HitRotation = (((Start - End) * -1).Rotation());
 		HitRotation.Pitch -= 90.f;
+		
 
-		if (LaserBP)
-		{
-			FTransform SpawnTransform;
-			SpawnTransform.SetLocation(Start);
-
-			FActorSpawnParameters SpawnParams;
-
-			LaserBeam = GetWorld()->SpawnActor<ALaser>(LaserBP, SpawnTransform, SpawnParams);
-
-			LaserBeam->SetEnd(End);
-		}
 	}
 
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
@@ -152,7 +140,7 @@ void ALEMON::EndFire()
 
 void ALEMON::IncreaseRadius()
 {
-	if (currentRadius + increment <= maxRadius)
+	if (currentRadius + increment <= maxRadius && LemonWidget)
 	{
 		currentRadius += increment;
 		LemonWidget->SetRadius(currentRadius, maxRadius);
@@ -161,7 +149,7 @@ void ALEMON::IncreaseRadius()
 
 void ALEMON::DecreaseRadius()
 {
-	if (currentRadius - increment >= minRadius)
+	if (currentRadius - increment >= minRadius && LemonWidget)
 	{
 		currentRadius -= increment;
 		LemonWidget->SetRadius(currentRadius, maxRadius);
@@ -170,7 +158,6 @@ void ALEMON::DecreaseRadius()
 
 void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Called"));
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{
@@ -184,13 +171,9 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 
-		if (LemonWidget_BP)
-		{
-			LemonWidget = CreateWidget<ULEMONWidget>(GetWorld(), LemonWidget_BP);
-			//WidgetComponent->SetWidgetClass(LemonWidget_BP);
-			WidgetComponent->SetWidget(LemonWidget);
-			LemonWidget->SetRadius(currentRadius, maxRadius);
-		}
+		LemonWidget = Cast<ULEMONWidget>(WidgetComponent->GetWidget());
+		WidgetComponent->SetWidget(LemonWidget);
+		LemonWidget->SetRadius(currentRadius, maxRadius);
 	}
 }
 

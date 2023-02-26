@@ -121,9 +121,6 @@ public:
     //Returns the camera component sub object
     UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCamera; };
 
-    //Returns the mesh sub object
-    USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
-
     //Used for different footsteps per material, if there were more than one sound
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
         TArray<USoundCue*> FootStepSounds;
