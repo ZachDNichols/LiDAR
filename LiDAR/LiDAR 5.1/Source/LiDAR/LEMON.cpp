@@ -21,7 +21,6 @@
 // Sets default values for this component's properties
 ALEMON::ALEMON()
 {
-	PrimaryActorTick.bCanEverTick = true;
 	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
 	SetRootComponent(PickUp);
 
@@ -59,30 +58,6 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	}
 
 	Super::EndPlay(EndPlayReason);
-}
-
-void ALEMON::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	AlignLasers();
-}
-
-void ALEMON::AlignLasers()
-{
-	if (Character && Laser && ActiveLasers.Num() > 0)
-	{
-		for (int i = 0; i < ActiveLasers.Num(); i++)
-		{
-			if (ActiveLasers[i])
-			{
-				ActiveLasers[i]->SetNiagaraVariableVec3(FString("LaserStart"), GetLocation());
-			}
-			else
-			{
-				ActiveLasers.RemoveAt(i);
-			}
-		}
-	}
 }
 
 FVector ALEMON::GetLocation()
@@ -138,11 +113,9 @@ void ALEMON::Fire()
 
 		if (Laser)
 		{
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, FVector(), FRotator());
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(Laser, Mesh, FName(), FVector(0.f, 2.f, 0.f), HitRotation, EAttachLocation::KeepRelativeOffset, true);
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
-			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserStart"), Start);
-			ActiveLasers.Add(NiagaraLaser);
 		}
 
 		ADecalActor* Dot = GetWorld()->SpawnActor<ADecalActor>(Hit.Location, FRotator());

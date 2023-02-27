@@ -17,8 +17,7 @@ public:
 	ALEMON();
 
 	virtual void BeginPlay() override;
-	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-	virtual void Tick(float DeltaTime) override;
+    virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
@@ -90,9 +89,6 @@ private:
 	float minRadius = 50.f;
 	float maxRadius = 700.f;
 	class UCameraComponent* Camera;
-
-	TArray<class UNiagaraComponent*> ActiveLasers;
-	void AlignLasers();
 	FVector GetLocation();
 };
 
