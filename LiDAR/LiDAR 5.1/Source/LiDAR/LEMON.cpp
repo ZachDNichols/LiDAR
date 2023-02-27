@@ -62,8 +62,6 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ALEMON::Fire()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Bang Bang"));
-
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
 	float y = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -77,7 +75,7 @@ void ALEMON::Fire()
 	Character->GetController()->GetPlayerViewPoint(Loc, Rot);
 
 	//Sets the location to look more like it is coming out of the barrel of the player gun
-	Loc = Loc + (((Camera->GetForwardVector() * 60.f) + (Camera->GetRightVector() * 20.f) - (Camera->GetUpVector() * 22.f)));
+	Loc = Loc + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
 
 	//Sets the vector where the line trace should start
 	FVector Start = Loc;
@@ -105,7 +103,7 @@ void ALEMON::Fire()
 		if (Laser)
 		{
 			FRotator Rotation = (((Start - End) * -1).Rotation());
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, Start, Rotation);
+			NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, Start, Rotation);
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
 		}
@@ -115,6 +113,7 @@ void ALEMON::Fire()
 		{
 			Dot->SetDecalMaterial(Decal);
 			Dot->SetLifeSpan(0);
+			Dot->GetDecal()->SetFadeScreenSize(0);
 			Dot->GetDecal()->DecalSize = FVector(32.0f, 64.0f, 64.0f);
 			Dot->SetActorScale3D(DecalSize);
 		}

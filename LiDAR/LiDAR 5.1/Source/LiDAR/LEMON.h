@@ -17,6 +17,7 @@ public:
 	ALEMON();
 
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
@@ -70,10 +71,17 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 		struct FLinearColor LaserColor = FLinearColor(188, 4, 4, 1.f);
 
-	/** Ends gameplay for this component. */
-	UFUNCTION(BlueprintCallable)
-		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+		float forwardLaserOffset = 80.f;
+
+	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+		float rightLaserOffset = 40.f;
+
+	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+		float upLaserOffset = 22.f;
+
 private:
+	class UNiagaraComponent* NiagaraLaser;
 	class AFirstPersonCharacter* Character;
 	struct FTimerHandle LaserTimer;
 	struct FTimerHandle LaserSFXTimer;

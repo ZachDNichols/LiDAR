@@ -34,12 +34,11 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     //Creates the camera
     FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
     FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
-    FirstPersonCamera->SetRelativeLocation(FVector(-39.56f, 1.75f, 64.f));
-    FirstPersonCamera->bUsePawnControlRotation = true;
     FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, 74.f));
+    FirstPersonCamera->bUsePawnControlRotation = true;
 
     //Creates mesh component for use of viewing the gun
-    PlayerMesh = GetMesh();
+    PlayerMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
     PlayerMesh->SetupAttachment(FirstPersonCamera);
     PlayerMesh->bCastDynamicShadow = false;
     PlayerMesh->CastShadow = false;
@@ -76,7 +75,6 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
 
     float CrouchInterpTime = FMath::Min(1.f, CrouchSpeed * DeltaTime);
     CrouchEyeOffset = (1.f - CrouchInterpTime) * CrouchEyeOffset;
-
 }
 
 // Called to bind functionality to input
@@ -152,6 +150,7 @@ void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalf
 
 void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult)
 {
+    Super::CalcCamera(DeltaTime, OutResult);
     if (FirstPersonCamera)
     {
         FirstPersonCamera->GetCameraView(DeltaTime, OutResult);
