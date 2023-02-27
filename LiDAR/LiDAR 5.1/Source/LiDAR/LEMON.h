@@ -18,6 +18,7 @@ public:
 
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	virtual void Tick(float DeltaTime) override;
 
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
@@ -81,7 +82,6 @@ public:
 		float upLaserOffset = 22.f;
 
 private:
-	class UNiagaraComponent* NiagaraLaser;
 	class AFirstPersonCharacter* Character;
 	struct FTimerHandle LaserTimer;
 	struct FTimerHandle LaserSFXTimer;
@@ -90,5 +90,9 @@ private:
 	float minRadius = 50.f;
 	float maxRadius = 700.f;
 	class UCameraComponent* Camera;
+
+	TArray<class UNiagaraComponent*> ActiveLasers;
+	void AlignLasers();
+	FVector GetLocation();
 };
 

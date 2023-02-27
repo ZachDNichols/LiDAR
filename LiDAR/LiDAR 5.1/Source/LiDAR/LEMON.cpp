@@ -21,6 +21,7 @@
 // Sets default values for this component's properties
 ALEMON::ALEMON()
 {
+	PrimaryActorTick.bCanEverTick = true;
 	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
 	SetRootComponent(PickUp);
 
@@ -60,6 +61,42 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	Super::EndPlay(EndPlayReason);
 }
 
+void ALEMON::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AlignLasers();
+}
+
+void ALEMON::AlignLasers()
+{
+	if (Character && Laser && ActiveLasers.Num() > 0)
+	{
+		for (int i = 0; i < ActiveLasers.Num(); i++)
+		{
+			if (ActiveLasers[i])
+			{
+				ActiveLasers[i]->SetNiagaraVariableVec3(FString("LaserStart"), GetLocation());
+			}
+			else
+			{
+				ActiveLasers.RemoveAt(i);
+			}
+		}
+	}
+}
+
+FVector ALEMON::GetLocation()
+{
+	if (Camera)
+	{
+		FVector Location = Camera->GetComponentLocation();
+		Location = Location + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
+		return Location;
+	}
+
+	return FVector();
+}
+
 void ALEMON::Fire()
 {
 	//Generates random numbers to add variance to where the dots land
@@ -69,16 +106,15 @@ void ALEMON::Fire()
 
 	FHitResult Hit;
 	FRotator Rot;
-	FVector Loc;
+	FVector Start;
 
 	//Sets the location and rotation based on what the player sees
-	Character->GetController()->GetPlayerViewPoint(Loc, Rot);
+	Character->GetController()->GetPlayerViewPoint(Start, Rot);
 
 	//Sets the location to look more like it is coming out of the barrel of the player gun
-	Loc = Loc + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
+	Start = Start + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
 
 	//Sets the vector where the line trace should start
-	FVector Start = Loc;
 	//Sets the vector where it shoud end. Random numbers added to create offsets.
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
@@ -102,10 +138,11 @@ void ALEMON::Fire()
 
 		if (Laser)
 		{
-			FRotator Rotation = (((Start - End) * -1).Rotation());
-			NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, Start, Rotation);
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, Laser, FVector(), FRotator());
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
+			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserStart"), Start);
+			ActiveLasers.Add(NiagaraLaser);
 		}
 
 		ADecalActor* Dot = GetWorld()->SpawnActor<ADecalActor>(Hit.Location, FRotator());
