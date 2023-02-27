@@ -98,7 +98,7 @@ void ALEMON::Fire()
 	TraceParams.AddIgnoredActor(Character);
 	TraceParams.AddIgnoredActor(this->GetOwner());
 	//FRotator for getting the rotation of the line
-	FRotator HitRotation;
+
 
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
 	{
@@ -107,9 +107,7 @@ void ALEMON::Fire()
 		//Draws debug boxes where the collision impact occure
 		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
 
-		//Finds the hit rotation, then rotates it to align correctly
-		HitRotation = (((Start - End) * -1).Rotation());
-		HitRotation.Pitch -= 90.f;
+		FRotator HitRotation = Hit.ImpactNormal.Rotation();
 
 		if (Laser)
 		{
@@ -118,22 +116,13 @@ void ALEMON::Fire()
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
 		}
 
-		ADecalActor* Dot = GetWorld()->SpawnActor<ADecalActor>(Hit.Location, FRotator());
-		if (Dot && Decal)
+		if (Decal)
 		{
-			Dot->SetDecalMaterial(Decal);
-			Dot->SetLifeSpan(0);
-			Dot->GetDecal()->SetFadeScreenSize(0);
-			Dot->GetDecal()->DecalSize = FVector(32.0f, 64.0f, 64.0f);
-			Dot->SetActorScale3D(DecalSize);
+			UDecalComponent* Dot = UGameplayStatics::SpawnDecalAttached(Decal, DecalSize, Hit.GetComponent(), NAME_None, Hit.ImpactPoint, HitRotation, EAttachLocation::KeepWorldPosition, 0.f);
+			Dot->SetFadeScreenSize(0);
 		}
-	}
-	else
-	{
-		HitRotation = (((Start - End) * -1).Rotation());
-		HitRotation.Pitch -= 90.f;
-		
 
+		
 	}
 
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);

@@ -63,7 +63,7 @@ public:
 		UMaterial* Decal;
 
 	UPROPERTY(EditDefaultsOnly)
-		FVector DecalSize = FVector(.01f, .05f, .05f);
+		FVector DecalSize = FVector(1.f, 1.f, 1.f);
 
 	UPROPERTY(EditDefaultsOnly)
 		class UNiagaraSystem* Laser;
