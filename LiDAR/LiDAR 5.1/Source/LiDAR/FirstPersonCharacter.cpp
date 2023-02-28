@@ -283,10 +283,10 @@ void AFirstPersonCharacter::SetGrabbedObject()
     FCollisionShape ObjectShape = FCollisionShape::MakeBox(extent);
 
 
-    if (GetWorld()->SweepSingleByChannel(Hit, Start, End, PhysicsHandle->GetGrabbedComponent()->GetAttachmentRootActor()->GetActorRotation().Quaternion(), ECC_Visibility, ObjectShape, TraceParams))
+    if (GetWorld()->SweepSingleByChannel(Hit, Start, End, heldObject->GetActorQuat(), ECC_Visibility, ObjectShape, TraceParams))
     {
         //If the point of where the object would be compared to the player's location is less than the size of the object, the object is released
-        if (width * 2.2f > FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit.Distance - width)))
+        if (width * 4.2f > FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit.Distance - width)))
         {
             ReleaseObject();
         }
