@@ -288,7 +288,10 @@ void AFirstPersonCharacter::SetGrabbedObject()
         //If the point of where the object would be compared to the player's location is less than the size of the object, the object is released
         if (width * 4.2f > FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit.Distance - width)))
         {
-            ReleaseObject();
+            FVector NewHoldSpot = FirstPersonCamera->GetComponentLocation();
+            NewHoldSpot.Z -= 70.f;
+            NewHoldSpot = NewHoldSpot + (GetActorForwardVector() * 150.f);
+            PhysicsHandle->SetTargetLocation(NewHoldSpot);
         }
         else
         {
