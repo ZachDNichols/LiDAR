@@ -105,6 +105,51 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     PlayerInputComponent->BindAction("Esc", IE_Pressed, this, &AFirstPersonCharacter::PauseGame);
 }
 
+void AFirstPersonCharacter::PickupPhysicsObject()
+{
+    if (holdingObject)
+    {
+        ReleaseObject();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Grab"));
+        FHitResult Hit;
+        FRotator Rot;
+        FVector Loc;
+
+        GetController()->GetPlayerViewPoint(Loc, Rot);
+
+        FVector Start = Loc;
+        FVector End = Start + (Rot.Vector() * 300.f);
+        FCollisionQueryParams TraceParams;
+        TraceParams.AddIgnoredActor(this);
+
+        FRotator HitRotation;
+        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
+        GrabRotation.Pitch = 0.f;
+        GrabRotation.Roll = 0.f;
+
+        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+        {
+            if (Hit.GetComponent()->IsSimulatingPhysics())
+            {
+                //if (FirstPersonCamera->GetForwardVector().Z > -.6f)
+                //{
+                FVector origin = Hit.GetActor()->GetActorLocation();
+
+                PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), /*FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f)*/ origin, GrabRotation);
+                holdingObject = true;
+                PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
+                heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
+                EndUseItem.Broadcast();
+                //}
+
+            }
+        }
+    }
+}
+
 void AFirstPersonCharacter::SetGrabbedObject()
 {
         FHitResult Hit;
@@ -143,6 +188,8 @@ void AFirstPersonCharacter::SetGrabbedObject()
 
         if (GetWorld()->SweepSingleByChannel(Hit, Start, End, PhysicsHandle->GetGrabbedComponent()->GetAttachmentRootActor()->GetActorRotation().Quaternion(), ECC_Visibility, ObjectShape, TraceParams))
         {
+            UE_LOG(LogTemp, Warning, TEXT("SettingObject"));
+
             //If the point of where the object would be compared to the player's location is less than the size of the object, the object is released
             if (width*2.2f > FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit.Distance - width)))
             {
@@ -157,6 +204,7 @@ void AFirstPersonCharacter::SetGrabbedObject()
         }
         else
         {
+            UE_LOG(LogTemp, Warning, TEXT("SettingObject"));
             //If there is not a hit location, the object will go to the farthest "reach" of the player
             PhysicsHandle->SetTargetLocation(FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * FVector::Dist(Start, End));
         }
@@ -164,6 +212,8 @@ void AFirstPersonCharacter::SetGrabbedObject()
 
 void AFirstPersonCharacter::ReleaseObject()
 {
+    UE_LOG(LogTemp, Warning, TEXT("Release"));
+    
     PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel2);
     PhysicsHandle->ReleaseComponent();
     holdingObject = false;
@@ -256,52 +306,4 @@ void AFirstPersonCharacter::IncreaseRadius()
 void AFirstPersonCharacter::DecreaseRadius()
 {
     ScrollDown.Broadcast();
-}
-
-void AFirstPersonCharacter::PickupPhysicsObject()
-{
-    if (holdingObject)
-    {
-        ReleaseObject();
-    }
-    else if (!holdingObject)
-    {
-        FHitResult Hit;
-        FRotator Rot;
-        FVector Loc;
-
-        //Sets the location and rotation based on what the player sees
-        GetController()->GetPlayerViewPoint(Loc, Rot);
-
-        //Sets the vector where the line trace should start
-        FVector Start = Loc;
-        //Sets the vector where it should end. Random numbers added to create offsets.
-        FVector End = Start + (Rot.Vector() * 300.f);
-        //Parameters for what should be ignored. We ignore the player collision.
-        FCollisionQueryParams TraceParams;
-        TraceParams.AddIgnoredActor(this);
-        //FRotator for getting the rotation of the line
-        FRotator HitRotation;
-        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
-        GrabRotation.Pitch = 0.f;
-        GrabRotation.Roll = 0.f;
-
-        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
-        {
-            if (Hit.GetComponent()->IsSimulatingPhysics())
-            {
-                if (FirstPersonCamera->GetForwardVector().Z > -.6f)
-                {
-                    FVector origin = Hit.GetActor()->GetActorLocation();
-
-                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), FName(TEXT("ObjectGrabPoint")), /*FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 300.f)*/ origin, GrabRotation);
-                    holdingObject = true;
-                    PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
-                    heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
-                    EndUseItem.Broadcast();
-                }
-
-            }
-        }
-    }
 }
