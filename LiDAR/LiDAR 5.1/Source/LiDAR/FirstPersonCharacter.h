@@ -138,6 +138,9 @@ public:
 private:
     void ReleaseObject();
     void SetGrabbedObject();
+    float DistanceInFrontOfPlayer();
+    AActor* GetFloorActor();
+
     FTimerHandle FootStepTimer;
     bool step;
     bool hasGun = false;
