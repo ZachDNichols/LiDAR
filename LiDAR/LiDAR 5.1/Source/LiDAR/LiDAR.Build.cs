@@ -10,8 +10,6 @@ public class LiDAR : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "PhysicsCore", "EnhancedInput", "Niagara" });
 
-		PublicIncludePaths.AddRange(new string[] { "EnhancedInput/Public" });
-
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		// Uncomment if you are using Slate UI

@@ -99,3 +99,8 @@ LiDAR/LiDAR 5.1/DerivedDataCache/*
 
 # Excluded for the purpose of not exceeding Github's LFS limits
 *.mov
+
+# Rider project files
+LiDAR/LiDAR 5.1/.idea/*
+LiDAR/LiDAR 5.1/cmake-build-release/*
+LiDAR/LiDAR 5.1/cmake-build-debug/*
