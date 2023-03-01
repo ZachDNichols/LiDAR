@@ -121,7 +121,7 @@ public:
 
     void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;
 
-    USkeletalMeshComponent* GetMesh() const { return PlayerMesh; };
+    USkeletalMeshComponent* GetPlayerMesh() const { return PlayerMesh; };
 
     //Returns the camera component sub object
     UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCamera; };

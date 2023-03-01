@@ -50,7 +50,6 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     MoveScale = 1.f;
     CrouchEyeOffset = FVector(0.f);
     CrouchSpeed = 12.f;
-
 }
 
 // Called when the game starts or when spawned
@@ -118,13 +117,13 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 
 void AFirstPersonCharacter::Move(const struct FInputActionValue& ActionValue)
 {
-    FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
+    const FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
     AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
 }
 
 void AFirstPersonCharacter::Look(const struct FInputActionValue& ActionValue)
 {
-    FVector2D LookAxisVector = ActionValue.Get<FVector2D>();
+    const FVector2D LookAxisVector = ActionValue.Get<FVector2D>();
 
     AddControllerYawInput(LookAxisVector.X);
     AddControllerPitchInput(-LookAxisVector.Y);
@@ -137,7 +136,7 @@ void AFirstPersonCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHa
         return;
     }
 
-    float StartBaseEyeHeight = BaseEyeHeight;
+    const float StartBaseEyeHeight = BaseEyeHeight;
     Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
     CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
     FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);
@@ -150,7 +149,7 @@ void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalf
         return;
     }
 
-    float StartBaseEyeHeight = BaseEyeHeight;
+    const float StartBaseEyeHeight = BaseEyeHeight;
     Super::OnEndCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
     CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
     FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);

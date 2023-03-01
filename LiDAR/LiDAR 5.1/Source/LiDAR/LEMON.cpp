@@ -160,7 +160,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 	if (Character != nullptr)
 	{
 		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
-		AttachToComponent(Character->GetMesh(), AttachmentRules, FName(TEXT("GripPoint")));
+		AttachToComponent(Character->GetPlayerMesh(), AttachmentRules, FName(TEXT("GripPoint")));
 		Camera = Character->GetFirstPersonCameraComponent();
 
 		// Register so that Fire is called every time the character tries to use the item being held
