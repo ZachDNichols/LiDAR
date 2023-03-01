@@ -138,10 +138,14 @@ public:
     UFUNCTION(BlueprintCallable, Category = "SFX")
         void ResetStep() { step = false; };
 
+    UPROPERTY(EditDefaultsOnly)
+        float grabDistance = 250.f;
+
 private:
     void ReleaseObject();
     void SetGrabbedObject();
     float DistanceInFrontOfPlayer();
+    AActor* ActorBehindPlayer();
     AActor* GetFloorActor();
 
     FTimerHandle FootStepTimer;
@@ -151,4 +155,5 @@ private:
     AActor* heldObject;
     float relativeX;
     float relativeY;
+    FRotator objectRotation = FRotator();
 };

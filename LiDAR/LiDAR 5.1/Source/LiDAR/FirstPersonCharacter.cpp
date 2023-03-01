@@ -119,6 +119,12 @@ void AFirstPersonCharacter::Move(const struct FInputActionValue& ActionValue)
 {
     const FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
     AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
+
+    if (!step)
+    {
+        step = true;
+        GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false, 0);
+    }
 }
 
 void AFirstPersonCharacter::Look(const struct FInputActionValue& ActionValue)
@@ -202,7 +208,6 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         FVector End = Start + (Rot.Vector() * 200.f);
         FCollisionQueryParams TraceParams;
         TraceParams.AddIgnoredActor(this);
-        FRotator GrabRotation = FirstPersonCamera->GetComponentRotation();
 
         if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
         {
@@ -219,12 +224,18 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                 Hit.GetActor()->GetActorBounds(false, origin, extent);
                 float width = extent.X;
 
+                Hit.GetActor()->SetActorRotation(FirstPersonCamera->GetComponentRotation());
+                
+                objectRotation = Hit.GetActor()->GetActorRotation();
+                objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
+                Hit.GetActor()->SetActorRotation(GetActorRotation());
+                
                 if (GetWorld()->SweepSingleByChannel(Hit2, Start, End, Hit.GetActor()->GetActorRotation().Quaternion(), ECC_Visibility, ObjectShape, TraceParams))
                 {
                     if (width < FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit2.Distance - width)))
                     {
                         FVector HoldLocation = FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit2.Distance - width);
-                        PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, HoldLocation, GrabRotation);
+                        PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, HoldLocation, objectRotation);
                         holdingObject = true;
                         heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
                         PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
@@ -233,7 +244,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                 }
                 else
                 {
-                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, origin, GrabRotation);
+                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, origin, objectRotation);
                     holdingObject = true;
                     heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
                     PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
@@ -255,21 +266,21 @@ void AFirstPersonCharacter::SetGrabbedObject()
     TArray<AActor*> IgnoredActors;
     IgnoredActors.Add(this);
     IgnoredActors.Add(heldObject);
+    IgnoredActors.Add(ActorBehindPlayer());
 
-    FVector End = Start + (Rot.Vector() * 300.f);
+    FVector End = Start + (Rot.Vector() * grabDistance);
 
     heldObject->GetActorBounds(false, origin, extent);
 
     float width = extent.X * 2.2f;
 
-    FCollisionShape ObjectShape = FCollisionShape::MakeBox(extent);
-
     PhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
 
 
-    if (!UKismetSystemLibrary::BoxTraceSingle(this, Start, End, extent, Rot, TraceTypeQuery1, true, IgnoredActors, EDrawDebugTrace::ForOneFrame, Hit, true, FLinearColor::Red, FLinearColor::Green, 5.f))
+    if (!UKismetSystemLibrary::BoxTraceSingle(this, Start, End, extent, Rot, TraceTypeQuery1, true, IgnoredActors, EDrawDebugTrace::None, Hit, true, FLinearColor::Red, FLinearColor::Green, 5.f))
     {
-        PhysicsHandle->SetTargetLocationAndRotation(End, Rot);
+        objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
+        PhysicsHandle->SetTargetLocationAndRotation(End, objectRotation);
         return;
     }
 
@@ -287,30 +298,31 @@ void AFirstPersonCharacter::SetGrabbedObject()
 
         NewHoldLocation = FirstPersonCamera->GetComponentLocation();
 
-        if (FVector::Dist(GetActorLocation(), Hit.ImpactPoint) > 150.f)
+        if (FVector::Dist(GetActorLocation(), Hit.ImpactPoint) > grabDistance / 2)
         {
             NewHoldLocation += GetActorForwardVector() * Hit.Distance;
         }
         else
         {
-            NewHoldLocation += GetActorForwardVector() * 150.f;
+            NewHoldLocation += GetActorForwardVector() * (grabDistance / 2);
         }
 
         NewHoldLocation.Z = Hit.ImpactPoint.Z + 70.f;
 
-        PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, Rot);
+        objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
+        PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, objectRotation);
         return;
     }
 
     if (width > Hit.Distance)
     {
-        ReleaseObject();
         return;
     }
 
     NewHoldLocation = FirstPersonCamera->GetComponentLocation();
     NewHoldLocation += FirstPersonCamera->GetForwardVector() * Hit.Distance;
-    PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, Rot);
+    objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
+    PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, objectRotation);
 
 }
 
@@ -336,7 +348,7 @@ AActor* AFirstPersonCharacter::GetFloorActor()
 {
     FHitResult Hit;
     FVector Start = GetActorLocation();
-    FVector End = Start + (GetActorUpVector() * -300.f);
+    FVector End = Start + (GetActorUpVector() * -5000.f);
     FCollisionQueryParams TraceParams;
     TraceParams.AddIgnoredActor(this);
 
@@ -350,7 +362,7 @@ float AFirstPersonCharacter::DistanceInFrontOfPlayer()
 {
     FHitResult Hit;
     FVector Start = GetActorLocation();
-    FVector End = Start + (GetActorForwardVector() * 300.f);
+    FVector End = Start + (GetActorForwardVector() * grabDistance);
     FCollisionQueryParams TraceParams;
     TraceParams.AddIgnoredActor(this);
     TraceParams.AddIgnoredActor(heldObject);
@@ -360,19 +372,38 @@ float AFirstPersonCharacter::DistanceInFrontOfPlayer()
     return FVector::Dist(Start, Hit.ImpactPoint);
 }
 
+AActor* AFirstPersonCharacter::ActorBehindPlayer()
+{
+    FHitResult Hit;
+    FVector Start = GetActorLocation();
+    FVector End = Start + (GetActorForwardVector() * -5000.f);
+    FCollisionQueryParams TraceParams;
+    TraceParams.AddIgnoredActor(this);
+    TraceParams.AddIgnoredActor(heldObject);
+
+    GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
+
+    return Hit.GetActor();
+}
+
+
 //If stepping and moving, a footstep sound will be played every .32 seconds. This was calculated with trial and error. I am a broken man.
 void AFirstPersonCharacter::PlayFootStepSound()
 {
-    if (GetVelocity().Size() != 0 && !GetCharacterMovement()->IsFalling())
+    if (FootStepSounds.Num() > 0)
     {
-        UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
-        GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
+        if (GetVelocity().Size() != 0 && !GetCharacterMovement()->IsFalling())
+        {
+            UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
+            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
+        }
+        else
+        {
+            GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
+            ResetStep();
+        }
     }
-    else
-    {
-        GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
-        ResetStep();
-    }
+
 }
 
 void AFirstPersonCharacter::BeginShoot()
