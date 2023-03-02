@@ -202,59 +202,35 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         FVector Start;
 
         //Sets the location and rotation based on what the player sees
-        Start = FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector() * 30.f);
+        Start = FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector());
         Rot = FirstPersonCamera->GetComponentRotation();
 
-        FVector End = Start + (Rot.Vector() * 200.f);
+        FVector End = Start + (Rot.Vector() * grabDistance);
         FCollisionQueryParams TraceParams;
         TraceParams.AddIgnoredActor(this);
 
         if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
         {
-            //DrawDebugLine(GetWorld(), Start, End, FColor::Red, true); 
-            //DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, true);
-
             if (Hit.GetComponent()->IsSimulatingPhysics())
             {
-                FHitResult Hit2;
-                FVector origin;
-                FVector extent;
-                FCollisionShape ObjectShape = FCollisionShape::MakeBox(extent);
-                TraceParams.AddIgnoredActor(Hit.GetActor());
-                Hit.GetActor()->GetActorBounds(false, origin, extent);
-                float width = extent.X;
-
-                Hit.GetActor()->SetActorRotation(FirstPersonCamera->GetComponentRotation());
-                
-                objectRotation = Hit.GetActor()->GetActorRotation();
-                objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
                 Hit.GetActor()->SetActorRotation(GetActorRotation());
                 
-                if (GetWorld()->SweepSingleByChannel(Hit2, Start, End, Hit.GetActor()->GetActorRotation().Quaternion(), ECC_Visibility, ObjectShape, TraceParams))
-                {
-                    if (width < FVector::Dist(FirstPersonCamera->GetComponentLocation(), FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit2.Distance - width)))
-                    {
-                        FVector HoldLocation = FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * (Hit2.Distance - width);
-                        PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, HoldLocation, objectRotation);
-                        holdingObject = true;
-                        heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
-                        PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
-                        EndUseItem.Broadcast();
-                    }
-                }
-                else
-                {
-                    PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, origin, objectRotation);
-                    holdingObject = true;
-                    heldObject = PhysicsHandle->GetGrabbedComponent()->GetOwner();
-                    PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel3);
-                    EndUseItem.Broadcast();
-                }
+                FRotator GrabRotation = GetActorRotation();
+                GrabRotation.Yaw = 0.f;
+                
+                PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, Hit.GetActor()->GetActorLocation(), GrabRotation);
+                heldObject = Hit.GetActor();
+                holdingObject = true;
+                EndUseItem.Broadcast();
+                SetGrabbedObject();
             }
         }
+
+
     }
 }
 
+//This elegant dumpster fire somehow updates the object in the best way I could find
 void AFirstPersonCharacter::SetGrabbedObject()
 {
     FHitResult Hit;
