@@ -213,6 +213,11 @@ void AFirstPersonCharacter::PickupPhysicsObject()
         {
             if (Hit.GetComponent()->IsSimulatingPhysics())
             {
+                if(Hit.GetActor() == GetFloorActor())
+                {
+                    return;
+                }
+                
                 Hit.GetActor()->SetActorRotation(GetActorRotation());
                 
                 FRotator GrabRotation = GetActorRotation();
