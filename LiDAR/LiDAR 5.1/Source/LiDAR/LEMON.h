@@ -6,8 +6,6 @@
 #include "GameFramework/Actor.h"
 #include "LEMON.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FNotFired);
-
 UCLASS(Blueprintable, BlueprintType, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 
 class LIDAR_API ALEMON : public AActor
@@ -42,9 +40,6 @@ public:
 	//Pointer for widget that will be created
 	UPROPERTY()
 		class ULEMONWidget* LemonWidget;
-
-	UPROPERTY(BlueprintAssignable, Category = "Interaction")
-		FNotFired NotFired;
 
 	//Component for LEMON to sit in
 	UPROPERTY(VisibleAnywhere)

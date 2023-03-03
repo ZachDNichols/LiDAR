@@ -101,7 +101,8 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
     EIC->BindAction(FPPC->LookAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Look);
-    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Shoot);
+    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::UseItem);
+    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Completed, this, &AFirstPersonCharacter::EndUseItem);
     EIC->BindAction(FPPC->IncreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::IncreaseRadius);
     EIC->BindAction(FPPC->DecreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::DecreaseRadius);
     EIC->BindAction(FPPC->GrabObjectAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::GrabObject);
@@ -384,7 +385,7 @@ void AFirstPersonCharacter::PlayFootStepSound()
 
 }
 
-void AFirstPersonCharacter::Shoot()
+void AFirstPersonCharacter::UseItem()
 {
     if (!holdingObject)
     {
@@ -392,6 +393,10 @@ void AFirstPersonCharacter::Shoot()
     }
 }
 
+void AFirstPersonCharacter::EndUseItem()
+{
+    OnEndUseItem.Broadcast();
+}
 
 void AFirstPersonCharacter::IncreaseRadius()
 {

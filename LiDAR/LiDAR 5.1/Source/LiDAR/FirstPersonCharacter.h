@@ -17,6 +17,7 @@ class USceneComponent;
 class UPhysicsHandleComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEndUseItem);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollUp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollDown);
 
@@ -43,6 +44,9 @@ public:
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
         FOnUseItem OnUseItem;
 
+    UPROPERTY(BlueprintAssignable, Category = "Interaction")
+        FOnEndUseItem OnEndUseItem;
+    
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
         FScrollUp ScrollUp;
 
@@ -79,7 +83,9 @@ protected:
     void EndCrouch();
 
     //Handles the player firing
-    void Shoot();
+    void UseItem();
+
+    void EndUseItem();
 
     //Handles increasing the radius
     void IncreaseRadius();

@@ -113,7 +113,14 @@ void ALEMON::Fire()
 	}
 	else
 	{
-		NotFired.Broadcast();
+		if (Laser)
+		{
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(Laser, Mesh, FName(), FVector(0.f, 2.f, 0.f), Rot, EAttachLocation::KeepRelativeOffset, true);
+			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
+			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), End);
+		}
+
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
 	}
 }
 
