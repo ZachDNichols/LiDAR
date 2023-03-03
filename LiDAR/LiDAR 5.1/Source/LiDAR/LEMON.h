@@ -3,11 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "LEMONWidget.h"
 #include "GameFramework/Actor.h"
 #include "LEMON.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FNotFired);
+
 UCLASS(Blueprintable, BlueprintType, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+
 class LIDAR_API ALEMON : public AActor
 {
 	GENERATED_BODY()
@@ -19,6 +21,8 @@ public:
 	virtual void BeginPlay() override;
     virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
+	float GetFireTime() { return FireTime; };
+
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
 		void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
@@ -26,12 +30,7 @@ public:
 	//Function called when firing
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 		void Fire();
-
-	//Function called for not firing
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void EndFire();
-
-	//Function used to increase the radius
+	
 	//Function used to increase the radius
 	UFUNCTION()
 		void IncreaseRadius();
@@ -42,7 +41,10 @@ public:
 
 	//Pointer for widget that will be created
 	UPROPERTY()
-		ULEMONWidget* LemonWidget;
+		class ULEMONWidget* LemonWidget;
+
+	UPROPERTY(BlueprintAssignable, Category = "Interaction")
+		FNotFired NotFired;
 
 	//Component for LEMON to sit in
 	UPROPERTY(VisibleAnywhere)
@@ -50,45 +52,46 @@ public:
 
 	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
-		class USkeletalMeshComponent* Mesh;
+		USkeletalMeshComponent* Mesh;
 
 	//Sphere used for pickup
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
 		class UWeaponPickupComponent* PickUp;
 
-	UPROPERTY(EditDefaultsOnly, Category = "SFX")
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 		USoundBase* FireSound;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Laser")
 		UMaterial* Decal;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 		FVector DecalSize = FVector(1.f, 1.f, 1.f);
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 		class UNiagaraSystem* Laser;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 		struct FLinearColor LaserColor = FLinearColor(188, 4, 4, 1.f);
 
-	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+	UPROPERTY(EditAnywhere, Category = "Laser")
 		float forwardLaserOffset = 80.f;
 
-	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+	UPROPERTY(EditAnywhere, Category = "Laser")
 		float rightLaserOffset = 40.f;
 
-	UPROPERTY(EditAnywhere, Category = "LaserOffset")
+	UPROPERTY(EditAnywhere, Category = "Laser")
 		float upLaserOffset = 22.f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
+		float FireTime = 0.2f;
 
 private:
 	class AFirstPersonCharacter* Character;
-	struct FTimerHandle LaserTimer;
-	struct FTimerHandle LaserSFXTimer;
 	float currentRadius = 50.f;
 	float increment = 50.f;
 	float minRadius = 50.f;
 	float maxRadius = 700.f;
 	class UCameraComponent* Camera;
-	FVector GetLocation();
+	float timeFromFire;
 };
 

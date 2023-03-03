@@ -2,10 +2,8 @@
 
 #pragma once
 
-#include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Sound/SoundCue.h"
 #include "FirstPersonCharacter.generated.h"
 
 class UIComponent;
@@ -18,13 +16,9 @@ class UStaticMeshComponent;
 class USceneComponent;
 class UPhysicsHandleComponent;
 
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEndUseItem);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollUp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScrollDown);
-
-
 
 UCLASS()
 class LIDAR_API AFirstPersonCharacter : public ACharacter
@@ -48,9 +42,6 @@ public:
 
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
         FOnUseItem OnUseItem;
-
-    UPROPERTY(BlueprintAssignable, Category = "Interaction")
-        FOnEndUseItem EndUseItem;
 
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
         FScrollUp ScrollUp;
@@ -88,10 +79,7 @@ protected:
     void EndCrouch();
 
     //Handles the player firing
-    void BeginShoot();
-
-    //Handles the player stop shooting
-    void EndShoot();
+    void Shoot();
 
     //Handles increasing the radius
     void IncreaseRadius();
@@ -128,7 +116,7 @@ public:
 
     //Used for different footsteps per material, if there were more than one sound
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "SFX")
-        TArray<USoundCue*> FootStepSounds;
+        TArray<class USoundCue*> FootStepSounds;
 
     //Function to play footstep sounds
     UFUNCTION(BlueprintCallable, Category = "SFX")

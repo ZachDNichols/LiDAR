@@ -18,6 +18,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "Sound/SoundCue.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -100,14 +101,13 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
     EIC->BindAction(FPPC->JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
     EIC->BindAction(FPPC->LookAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Look);
-    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::BeginShoot);
-    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Completed, this, &AFirstPersonCharacter::EndShoot);
+    EIC->BindAction(FPPC->ShootAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::Shoot);
     EIC->BindAction(FPPC->IncreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::IncreaseRadius);
     EIC->BindAction(FPPC->DecreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::DecreaseRadius);
     EIC->BindAction(FPPC->GrabObjectAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::GrabObject);
     EIC->BindAction(FPPC->PauseGameAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::PauseGame);
 
-    ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
+    const ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
     check(LocalPlayer);
     UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
     check(Subsystem);
@@ -226,12 +226,9 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                 PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, Hit.GetActor()->GetActorLocation(), GrabRotation);
                 heldObject = Hit.GetActor();
                 holdingObject = true;
-                EndUseItem.Broadcast();
                 SetGrabbedObject();
             }
         }
-
-
     }
 }
 
@@ -387,17 +384,12 @@ void AFirstPersonCharacter::PlayFootStepSound()
 
 }
 
-void AFirstPersonCharacter::BeginShoot()
+void AFirstPersonCharacter::Shoot()
 {
     if (!holdingObject)
     {
         OnUseItem.Broadcast();
     }
-}
-
-void AFirstPersonCharacter::EndShoot()
-{
-    EndUseItem.Broadcast();
 }
 
 

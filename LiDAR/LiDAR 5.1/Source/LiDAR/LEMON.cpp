@@ -4,19 +4,14 @@
 #include "LEMON.h"
 #include "FirstPersonCharacter.h"
 #include "GameFramework/Actor.h"
-#include "TimerManager.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "WeaponPickupComponent.h"
-#include "Components/AudioComponent.h"
-#include "Components/SkeletalMeshComponent.h"
-#include "Animation/AnimSequence.h"
 #include "Components/WidgetComponent.h"
-#include "Engine/DecalActor.h"
 #include "Components/DecalComponent.h"
+#include "LEMONWidget.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
-#include "Math/Color.h"
 
 // Sets default values for this component's properties
 ALEMON::ALEMON()
@@ -28,7 +23,7 @@ ALEMON::ALEMON()
 	Mesh->SetupAttachment(PickUp);
 
 	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
-	WidgetComponent->SetupAttachment(Mesh);
+	WidgetComponent->SetupAttachment(Mesh, FName("WidgetSpot"));
 }
 
 void ALEMON::BeginPlay()
@@ -43,8 +38,6 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	{
 		// Unregister from the OnUseItem Event
 		Character->OnUseItem.RemoveDynamic(this, &ALEMON::Fire);
-		Character->EndUseItem.RemoveDynamic(this, &ALEMON::EndFire);
-		Character->EndUseItem.RemoveDynamic(this, &ALEMON::EndFire);
 		Character->ScrollUp.RemoveDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.RemoveDynamic(this, &ALEMON::DecreaseRadius);
 	}
@@ -60,20 +53,17 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	Super::EndPlay(EndPlayReason);
 }
 
-FVector ALEMON::GetLocation()
-{
-	if (Camera)
-	{
-		FVector Location = Camera->GetComponentLocation();
-		Location = Location + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
-		return Location;
-	}
-
-	return FVector();
-}
-
 void ALEMON::Fire()
 {
+	//Prevents the gun from firing too fast
+	timeFromFire -= GetWorld()->UWorld::GetDeltaSeconds();
+	if (timeFromFire > 0.f)
+	{
+		return;
+	}
+	
+	timeFromFire = FireTime;
+	
 	//Generates random numbers to add variance to where the dots land
 	float x = FMath::RandRange(currentRadius * -1, currentRadius);
 	float y = FMath::RandRange(currentRadius * -1, currentRadius);
@@ -82,29 +72,26 @@ void ALEMON::Fire()
 	FHitResult Hit;
 	FRotator Rot;
 	FVector Start;
-
-	//Sets the location and rotation based on what the player sees
+	
 	Character->GetController()->GetPlayerViewPoint(Start, Rot);
 
 	//Sets the location to look more like it is coming out of the barrel of the player gun
 	Start = Start + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
-
-	//Sets the vector where the line trace should start
-	//Sets the vector where it shoud end. Random numbers added to create offsets.
+	
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
-	//Parameters for what should be ignored. We ignore the player collision.
+	
 	FCollisionQueryParams TraceParams;
 	TraceParams.AddIgnoredActor(Character);
 	TraceParams.AddIgnoredActor(this->GetOwner());
-	//FRotator for getting the rotation of the line
+	TraceParams.AddIgnoredActor(this);
 
 
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
 	{
 		//Draws debug lines for the traces
 		//DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, .2f);
-		//Draws debug boxes where the collision impact occure
+		//Draws debug boxes where the collision impact occur
 		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
 
 		FRotator HitRotation = Hit.ImpactNormal.Rotation();
@@ -121,19 +108,13 @@ void ALEMON::Fire()
 			UDecalComponent* Dot = UGameplayStatics::SpawnDecalAttached(Decal, DecalSize, Hit.GetComponent(), NAME_None, Hit.ImpactPoint, HitRotation, EAttachLocation::KeepWorldPosition, 0.f);
 			Dot->SetFadeScreenSize(0);
 		}
-
 		
+	    UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
 	}
-
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
-	GetWorld()->GetTimerManager().SetTimer(LaserTimer, this, &ALEMON::Fire, 0.01f, false);
-}
-
-//Stops firing
-void ALEMON::EndFire()
-{
-	GetWorld()->GetTimerManager().ClearTimer(LaserTimer);
-	GetWorld()->GetTimerManager().ClearTimer(LaserSFXTimer);
+	else
+	{
+		NotFired.Broadcast();
+	}
 }
 
 void ALEMON::IncreaseRadius()
@@ -159,13 +140,12 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 	Character = TargetCharacter;
 	if (Character != nullptr)
 	{
-		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+		const FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 		AttachToComponent(Character->GetPlayerMesh(), AttachmentRules, FName(TEXT("GripPoint")));
 		Camera = Character->GetFirstPersonCameraComponent();
 
 		// Register so that Fire is called every time the character tries to use the item being held
 		Character->OnUseItem.AddDynamic(this, &ALEMON::Fire);
-		Character->EndUseItem.AddDynamic(this, &ALEMON::EndFire);
 		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 

@@ -21,6 +21,12 @@ void ULEMONAnimInstance::NativeInitializeAnimation()
 			UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
 
 			WeaponPickup->OnPickUp.AddUniqueDynamic(this, &ULEMONAnimInstance::AssignCharacter);
+			
+			if (ALEMON* Lemon = Cast<ALEMON>(Guns[0]))
+			{
+				FireTime = Lemon->GetFireTime();
+				Lemon->NotFired.AddDynamic(this, &ULEMONAnimInstance::EndShoot);
+			}
 		}
 	}
 }
@@ -44,8 +50,14 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			if (Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass())))
 			{
 				UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
-
+				
 				WeaponPickup->OnPickUp.AddUniqueDynamic(this, &ULEMONAnimInstance::AssignCharacter);
+				
+				if (ALEMON* Lemon = Cast<ALEMON>(Guns[0]))
+				{
+					FireTime = Lemon->GetFireTime();
+					Lemon->NotFired.AddDynamic(this, &ULEMONAnimInstance::EndShoot);
+				}
 			}
 		}
 	}
@@ -55,6 +67,12 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 void ULEMONAnimInstance::UpdateAnimProperties()
 {
 	speed = Character->GetVelocity().Size();
+	
+	timeFromFire -= GetWorld()->UWorld::GetDeltaSeconds();
+	if (timeFromFire < 0.f)
+	{
+		EndShoot();
+	}
 }
 
 //Adds the event listeners for when shooting or not
@@ -62,15 +80,16 @@ void ULEMONAnimInstance::AssignCharacter(AFirstPersonCharacter* TargetCharacter)
 {
 	Character = TargetCharacter;
 	Character->OnUseItem.AddDynamic(this, &ThisClass::Shoot);
-	Character->EndUseItem.AddDynamic(this, &ThisClass::EndShoot);
 }
 
 void ULEMONAnimInstance::Shoot()
 {
+	timeFromFire = FireTime;
 	isShooting = true;
 }
 
 void ULEMONAnimInstance::EndShoot()
 {
+	timeFromFire = 0;
 	isShooting = false;
 }

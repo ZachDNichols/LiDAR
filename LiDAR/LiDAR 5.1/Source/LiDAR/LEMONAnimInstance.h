@@ -30,6 +30,8 @@ private:
 	//Pointers to Character and LEMON
 	AFirstPersonCharacter* Character;
 	ALEMON* Gun;
+	float FireTime;
+	float timeFromFire;
 public:
 
 	//If the gun is shooting
