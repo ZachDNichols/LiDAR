@@ -57,9 +57,6 @@ public:
         UUserWidget* PauseMenu;
 
     UPROPERTY(EditAnywhere)
-        class UFloatingPawnMovement* Movement;
-
-    UPROPERTY(EditAnywhere)
         float MoveScale;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Crouch)

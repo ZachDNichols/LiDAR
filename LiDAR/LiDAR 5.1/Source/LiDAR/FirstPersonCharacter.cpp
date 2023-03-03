@@ -46,8 +46,6 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 
     PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
 
-    Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Movement"));
-
     MoveScale = 1.f;
     CrouchEyeOffset = FVector(0.f);
     CrouchSpeed = 12.f;
