@@ -25,8 +25,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
-    GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
-
+    
     //Set the size for the collision capsule
     GetCapsuleComponent()->InitCapsuleSize(55.5f, 96.0f);
     GetCapsuleComponent()->OnComponentHit.AddDynamic(this, &AFirstPersonCharacter::OnCollision);
@@ -48,7 +47,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 
     MoveScale = 1.f;
     CrouchEyeOffset = FVector(0.f);
-    CrouchSpeed = 12.f;
+    CrouchSpeed = 250.f;
 }
 
 // Called when the game starts or when spawned
@@ -71,8 +70,10 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
         SetGrabbedObject();
     }
 
-    float CrouchInterpTime = FMath::Min(1.f, CrouchSpeed * DeltaTime);
-    CrouchEyeOffset = (1.f - CrouchInterpTime) * CrouchEyeOffset;
+    if (bisCrouching)
+    {
+        UpdateCrouch(DeltaTime);
+    }
 }
 
 void AFirstPersonCharacter::OnCollision(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -134,42 +135,6 @@ void AFirstPersonCharacter::Look(const struct FInputActionValue& ActionValue)
     AddControllerPitchInput(-LookAxisVector.Y);
 }
 
-void AFirstPersonCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
-{
-    if (HalfHeightAdjust == 0.f)
-    {
-        return;
-    }
-
-    const float StartBaseEyeHeight = BaseEyeHeight;
-    Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
-    CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight + HalfHeightAdjust;
-    FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);
-}
-
-void AFirstPersonCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
-{
-    if (HalfHeightAdjust == 0.f)
-    {
-        return;
-    }
-
-    const float StartBaseEyeHeight = BaseEyeHeight;
-    Super::OnEndCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
-    CrouchEyeOffset.Z += StartBaseEyeHeight - BaseEyeHeight - HalfHeightAdjust;
-    FirstPersonCamera->SetRelativeLocation(FVector(relativeX, relativeY, BaseEyeHeight), false);
-}
-
-void AFirstPersonCharacter::CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult)
-{
-    Super::CalcCamera(DeltaTime, OutResult);
-    if (FirstPersonCamera)
-    {
-        FirstPersonCamera->GetCameraView(DeltaTime, OutResult);
-        OutResult.Location += CrouchEyeOffset;
-    }
-}
-
 void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionValue)
 {
     if (holdingObject)
@@ -184,12 +149,22 @@ void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionVal
 
 void AFirstPersonCharacter::StartCrouch()
 {
-    Crouch();
+    if (!bCrouchState)
+    {
+        MoveScale = MoveScale / 2;
+        bCrouchState = true;
+        bisCrouching = true;
+    }
 }
 
 void AFirstPersonCharacter::EndCrouch()
 {
-    UnCrouch();
+    if (bCrouchState)
+    {
+        MoveScale = MoveScale * 2;
+        bCrouchState = false;
+        bisCrouching = true;
+    }
 }
 
 void AFirstPersonCharacter::PickupPhysicsObject()
@@ -332,6 +307,38 @@ AActor* AFirstPersonCharacter::GetFloorActor()
     GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
 
     return Hit.GetActor();
+}
+
+void AFirstPersonCharacter::UpdateCrouch(float DeltaTime)
+{
+    const float newHalfHeight = CrouchSpeed * DeltaTime;
+    const float currentHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+
+    //Player needs to go down.
+    if (bCrouchState)
+    {
+        if (currentHalfHeight - newHalfHeight < 52)
+        {
+            GetCapsuleComponent()->SetCapsuleHalfHeight(52.f);
+            bisCrouching = false;
+        }
+        else
+        {
+            GetCapsuleComponent()->SetCapsuleHalfHeight(currentHalfHeight - newHalfHeight);
+        }
+    }
+    else
+    {
+        if (currentHalfHeight + newHalfHeight > 96.f)
+        {
+            GetCapsuleComponent()->SetCapsuleHalfHeight(96.f);
+            bisCrouching = false;
+        }
+        else
+        {
+            GetCapsuleComponent()->SetCapsuleHalfHeight(currentHalfHeight + newHalfHeight);
+        }
+    }
 }
 
 

@@ -106,12 +106,6 @@ public:
     // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-    void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
-
-    void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust) override;
-
-    void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;
-
     USkeletalMeshComponent* GetPlayerMesh() const { return PlayerMesh; };
 
     //Returns the camera component sub object
@@ -147,4 +141,7 @@ private:
     float relativeX;
     float relativeY;
     FRotator objectRotation = FRotator();
+    bool bCrouchState;
+    bool bisCrouching;
+    void UpdateCrouch(float DeltaTime);
 };
