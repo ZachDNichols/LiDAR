@@ -9,7 +9,6 @@
 #include "WeaponPickupComponent.h"
 #include "Components/WidgetComponent.h"
 #include "Components/DecalComponent.h"
-#include "LEMONWidget.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
 
@@ -21,15 +20,16 @@ ALEMON::ALEMON()
 
 	Mesh = CreateDefaultSubobject <USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(PickUp);
-
-	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Radius"));
-	WidgetComponent->SetupAttachment(Mesh, FName("WidgetSpot"));
 }
 
 void ALEMON::BeginPlay()
 {
 	Super::BeginPlay();
 	PickUp->OnPickUp.AddDynamic(this, &ALEMON::AttachWeapon);
+
+	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(0), this);
+	Mesh->SetMaterial(0, DynamicMaterial);
+	DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 0.f);
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -40,14 +40,6 @@ void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		Character->OnUseItem.RemoveDynamic(this, &ALEMON::Fire);
 		Character->ScrollUp.RemoveDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.RemoveDynamic(this, &ALEMON::DecreaseRadius);
-	}
-
-	//Kills the widget
-	if (LemonWidget)
-	{
-		LemonWidget->RemoveFromParent();
-		WidgetComponent->SetWidget(nullptr);
-		LemonWidget = nullptr;
 	}
 
 	Super::EndPlay(EndPlayReason);
@@ -126,19 +118,19 @@ void ALEMON::Fire()
 
 void ALEMON::IncreaseRadius()
 {
-	if (currentRadius + increment <= maxRadius && LemonWidget)
+	if (currentRadius + increment <= maxRadius && DynamicMaterial)
 	{
 		currentRadius += increment;
-		LemonWidget->SetRadius(currentRadius, maxRadius);
+		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
 	}
 }
 
 void ALEMON::DecreaseRadius()
 {
-	if (currentRadius - increment >= minRadius && LemonWidget)
+	if (currentRadius - increment >= minRadius && DynamicMaterial)
 	{
 		currentRadius -= increment;
-		LemonWidget->SetRadius(currentRadius, maxRadius);
+		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
 	}
 }
 
@@ -156,9 +148,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 
-		LemonWidget = Cast<ULEMONWidget>(WidgetComponent->GetWidget());
-		WidgetComponent->SetWidget(LemonWidget);
-		LemonWidget->SetRadius(currentRadius, maxRadius);
+		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
 	}
 }
 

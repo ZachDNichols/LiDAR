@@ -128,7 +128,7 @@ public:
 
 private:
     void ReleaseObject();
-    void SetGrabbedObject();
+    void UpdateGrabbedObject();
     float DistanceInFrontOfPlayer();
     AActor* ActorBehindPlayer();
     AActor* GetFloorActor();
@@ -144,4 +144,5 @@ private:
     bool bCrouchState;
     bool bisCrouching;
     void UpdateCrouch(float DeltaTime);
+    FVector ObjectDirection;
 };

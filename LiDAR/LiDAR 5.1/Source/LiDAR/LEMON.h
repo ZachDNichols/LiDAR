@@ -37,14 +37,6 @@ public:
 	UFUNCTION()
 		void DecreaseRadius();
 
-	//Pointer for widget that will be created
-	UPROPERTY()
-		class ULEMONWidget* LemonWidget;
-
-	//Component for LEMON to sit in
-	UPROPERTY(VisibleAnywhere)
-		class UWidgetComponent* WidgetComponent;
-
 	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
 		USkeletalMeshComponent* Mesh;
@@ -81,6 +73,7 @@ public:
 		float FireTime = 0.2f;
 
 private:
+	UMaterialInstanceDynamic* DynamicMaterial;
 	class AFirstPersonCharacter* Character;
 	float currentRadius = 50.f;
 	float increment = 50.f;

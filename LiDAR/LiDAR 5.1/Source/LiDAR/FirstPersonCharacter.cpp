@@ -18,6 +18,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "Sound/SoundCue.h"
 
 // Sets default values
@@ -67,7 +68,7 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
 
     if (holdingObject)
     {
-        SetGrabbedObject();
+        UpdateGrabbedObject();
     }
 
     if (bisCrouching)
@@ -200,14 +201,14 @@ void AFirstPersonCharacter::PickupPhysicsObject()
                 PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, Hit.GetActor()->GetActorLocation(), GrabRotation);
                 heldObject = Hit.GetActor();
                 holdingObject = true;
-                SetGrabbedObject();
+                UpdateGrabbedObject();
             }
         }
     }
 }
 
 //This elegant dumpster fire somehow updates the object in the best way I could find
-void AFirstPersonCharacter::SetGrabbedObject()
+void AFirstPersonCharacter::UpdateGrabbedObject()
 {
     FHitResult Hit;
     FRotator Rot = FirstPersonCamera->GetComponentRotation();
@@ -228,8 +229,29 @@ void AFirstPersonCharacter::SetGrabbedObject()
 
     PhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
 
+    if (FVector::Dist(GetActorLocation(), heldObject->GetActorLocation()) > grabDistance + 80.f)
+    {
+        ReleaseObject();
+    }
 
-    if (!UKismetSystemLibrary::BoxTraceSingle(this, Start, End, extent, Rot, TraceTypeQuery1, true, IgnoredActors, EDrawDebugTrace::None, Hit, true, FLinearColor::Red, FLinearColor::Green, 5.f))
+    //If the player is not looking at the an object close
+    if (
+        !UKismetSystemLibrary::BoxTraceSingle(
+            this,
+            Start,
+            End,
+            extent,
+            Rot,
+            TraceTypeQuery1,
+            true,
+            IgnoredActors,
+            EDrawDebugTrace::None,
+            Hit,
+            true,
+            FLinearColor::Red,
+            FLinearColor::Green,
+            5.f)
+        )
     {
         objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
         PhysicsHandle->SetTargetLocationAndRotation(End, objectRotation);
@@ -239,9 +261,11 @@ void AFirstPersonCharacter::SetGrabbedObject()
     AActor* Floor = GetFloorActor();
     FVector NewHoldLocation;
 
+    //Determines if player is looking at the floor
     if (Floor == Hit.GetActor())
     {
 
+        //This releases the object if the width of the held object is greater than the player while looking at the floor
         if (width > DistanceInFrontOfPlayer())
         {
             ReleaseObject();
@@ -250,6 +274,7 @@ void AFirstPersonCharacter::SetGrabbedObject()
 
         NewHoldLocation = FirstPersonCamera->GetComponentLocation();
 
+        //Changes where the object is placed depending on how close player is
         if (FVector::Dist(GetActorLocation(), Hit.ImpactPoint) > grabDistance / 2)
         {
             NewHoldLocation += GetActorForwardVector() * Hit.Distance;
@@ -266,6 +291,7 @@ void AFirstPersonCharacter::SetGrabbedObject()
         return;
     }
 
+    //If player gets too close to wall
     if (width > Hit.Distance)
     {
         return;
