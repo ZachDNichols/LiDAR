@@ -306,7 +306,40 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
 
 void AFirstPersonCharacter::ReleaseObject()
 {
-    PhysicsHandle->GetGrabbedComponent()->SetCollisionObjectType(ECC_GameTraceChannel2);
+    FVector Velocity = PhysicsHandle->GetGrabbedComponent()->GetComponentVelocity();
+    FVector MaxVelocity = FVector(200.f, 200.f, 200.f);
+
+    if (Velocity.X > MaxVelocity.X)
+    {
+        Velocity.X = MaxVelocity.X;
+    }
+    else if (Velocity.X < MaxVelocity.X * -1)
+    {
+        Velocity.X = MaxVelocity.X * -1;
+    }
+
+    if (Velocity.Y > MaxVelocity.Y)
+    {
+        Velocity.Y = MaxVelocity.Y;
+    }
+    else if (Velocity.Y < MaxVelocity.Y * -1)
+    {
+        Velocity.Y = MaxVelocity.Y * -1;
+    }
+
+    if (Velocity.Z > MaxVelocity.Z)
+    {
+        Velocity.Z = MaxVelocity.Z;
+    }
+    else if (Velocity.Z < MaxVelocity.Z * -1)
+    {
+        Velocity.Z = MaxVelocity.Z * -1;
+    }
+
+    PhysicsHandle->GetGrabbedComponent()->ComponentVelocity = Velocity;
+
+    UE_LOG(LogTemp, Warning, TEXT("%s"), *Velocity.ToString());
+    
     PhysicsHandle->ReleaseComponent();
     holdingObject = false;
     heldObject = nullptr;
