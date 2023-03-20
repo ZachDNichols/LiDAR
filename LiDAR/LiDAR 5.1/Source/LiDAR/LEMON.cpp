@@ -15,6 +15,8 @@
 // Sets default values for this component's properties
 ALEMON::ALEMON()
 {
+	PrimaryActorTick.bCanEverTick = false;
+	
 	PickUp = CreateDefaultSubobject<UWeaponPickupComponent>(TEXT("Pickup"));
 	SetRootComponent(PickUp);
 

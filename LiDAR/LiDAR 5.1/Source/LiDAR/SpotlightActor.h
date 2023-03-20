@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/SpotLightComponent.h"
-#include "Components/PointLightComponent.h"
-#include "Materials/MaterialInstance.h"
 #include "InteractableInterface.h"
 #include "SpotlightActor.generated.h"
 
@@ -59,8 +57,5 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-private:
-
 
 };
