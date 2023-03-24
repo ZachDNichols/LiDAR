@@ -20,7 +20,6 @@ public:
 	virtual int GetObjectID_Implementation();
 	virtual void Interact_Implementation(bool bInteracting) override;
 
-
 	//Unique ID used for interaction
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Innteraction")
 		int ObjectID;
@@ -33,20 +32,11 @@ public:
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* Mesh;
 
-	//First material to be used, should be the on material
-	UPROPERTY(EditDefaultsOnly)
-		UMaterialInstance* Material1;
-
-	//Second material, should be the off one
-	UPROPERTY(EditDefaultsOnly)
-		UMaterialInstance* Material2;
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
+	UMaterialInstanceDynamic* DynamicMaterial;
 
 };

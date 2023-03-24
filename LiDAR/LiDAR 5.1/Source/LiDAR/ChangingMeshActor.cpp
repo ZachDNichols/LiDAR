@@ -13,20 +13,6 @@ AChangingMeshActor::AChangingMeshActor()
 	SetRootComponent(Mesh);
 }
 
-// Called when the game starts or when spawned
-void AChangingMeshActor::BeginPlay()
-{
-	Super::BeginPlay();
-
-}
-
-// Called every frame
-void AChangingMeshActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
 int AChangingMeshActor::GetObjectID_Implementation()
 {
 	return ObjectID;
@@ -37,11 +23,20 @@ void AChangingMeshActor::Interact_Implementation(bool bIsInteracting)
 {
 	if (bIsInteracting)
 	{
-		Mesh->SetMaterial(MaterialIndex, Material1);
+		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 0.f);
 	}
-	else if (!bIsInteracting)
+	else
 	{
-		Mesh->SetMaterial(MaterialIndex, Material2);
+		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 5.f);
 	}
+}
+
+void AChangingMeshActor::BeginPlay()
+{
+	Super::BeginPlay();
+
+	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(MaterialIndex), this);
+	Mesh->SetMaterial(MaterialIndex, DynamicMaterial);
+	DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 5.f);
 }
 
