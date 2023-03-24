@@ -28,16 +28,13 @@ void ABoxTrigger::TriggerInteraction()
 	
 	if (TargetObject.bJustSound)
 	{
-		if (SoundAttenuation)
+		if (Sound)
 		{
-			if (Sound)
+			if (SoundAttenuation)
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation);
 			}
-		}
-		else
-		{
-			if (Sound)
+			else
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f, 0.f);
 			}
@@ -49,16 +46,13 @@ void ABoxTrigger::TriggerInteraction()
 		{
 			const float SoundDuration = Sound->GetDuration();
 
-			if (SoundAttenuation)
+			if (Sound)
 			{
-				if (Sound)
+				if (SoundAttenuation)
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation);
 				}
-			}
-			else
-			{
-				if (Sound)
+				else
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f, 0.f);
 				}
@@ -104,17 +98,14 @@ void ABoxTrigger::TriggerInteraction(int InteractionIndex)
 	if (TargetObjects[InteractionIndex].bJustSound)
 	{
 		const float SoundDuration = Sound->GetDuration();
-		
-		if (SoundAttenuation)
+
+		if (Sound)
 		{
-			if (Sound)
+			if (SoundAttenuation)
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation);
 			}
-		}
-		else
-		{
-			if (Sound)
+			else
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f, 0.f);
 			}
@@ -132,16 +123,13 @@ void ABoxTrigger::TriggerInteraction(int InteractionIndex)
 		{
 			const float SoundDuration = Sound->GetDuration();
 
-			if (SoundAttenuation)
+			if (Sound)
 			{
-				if (Sound)
+				if (SoundAttenuation)
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation);
 				}
-			}
-			else
-			{
-				if (Sound)
+				else
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f, 0.f);
 				}
@@ -163,16 +151,13 @@ void ABoxTrigger::TriggerInteraction(int InteractionIndex)
 		{
 			const float SoundDuration = Sound->GetDuration();
 
-			if (SoundAttenuation)
+			if (Sound)
 			{
-				if (Sound)
+				if (SoundAttenuation)
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation);
 				}
-			}
-			else
-			{
-				if (Sound)
+				else
 				{
 					UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.f, 1.f, 0.f);
 				}
@@ -189,7 +174,7 @@ void ABoxTrigger::TriggerInteraction(int InteractionIndex)
 	}
 }
 
-void ABoxTrigger::Interaction(int InteractionID, bool bInteractCall)
+void ABoxTrigger::Interaction(const int InteractionID, const bool bInteractCall)
 {
 	//Gets array of every actor that has the InteractableInterface
 	TArray<AActor*> InteractableActors;
@@ -198,8 +183,7 @@ void ABoxTrigger::Interaction(int InteractionID, bool bInteractCall)
 	//Iterates through each actor and determines if it shares the same IDs that are supposed to be interacted with
 	for (AActor* Actor : InteractableActors)
 	{
-		int ObjectID = IInteractableInterface::Execute_GetObjectID(Actor);
-			if (InteractionID == ObjectID)
+			if (InteractionID == IInteractableInterface::Execute_GetObjectID(Actor))
 			{
 				IInteractableInterface::Execute_Interact(Actor, bInteractCall);
 			}

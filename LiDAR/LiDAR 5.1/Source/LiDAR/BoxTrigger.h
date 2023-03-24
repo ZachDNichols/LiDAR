@@ -62,7 +62,7 @@ private:
 	//Boolean to be used if the object is triggered
 	bool isTriggered;
 	void TriggerInteraction();
-	void TriggerInteraction(int InteractionIndex);
-	void Interaction(int InteractionID, bool bInteractCall);
+	void TriggerInteraction(const int InteractionIndex);
+	void Interaction(const int InteractionID, const bool bInteractCall);
 };
 
