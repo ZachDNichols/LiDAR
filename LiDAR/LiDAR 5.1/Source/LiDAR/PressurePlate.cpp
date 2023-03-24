@@ -3,7 +3,7 @@
 
 #include "PressurePlate.h"
 #include "Kismet/GameplayStatics.h"
-#include "InteractableInterface.h"
+#include "Interaction/InteractableInterface.h"
 
 
 // Sets default values
@@ -64,8 +64,6 @@ void APressurePlate::Interact(bool bIsInteracting)
 
 void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Overlap begin."));
-	
 	//Tells the mesh to move down and calls the interact
 	if (!bIsDisabled && !bIsTriggered)
 	{
@@ -78,8 +76,6 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Overlap end."));
-
 	//Tells the mesh to move back up and calls interact with false
 	if (!bIsDisabled && bResetTrigger)
 	{

@@ -3,7 +3,7 @@
 
 #include "LEMONAnimInstance.h"
 #include "Kismet/GameplayStatics.h"
-#include "WeaponPickupComponent.h"
+#include "Components/WeaponPickupComponent.h"
 #include "LEMON.h"
 
 void ULEMONAnimInstance::NativeInitializeAnimation()

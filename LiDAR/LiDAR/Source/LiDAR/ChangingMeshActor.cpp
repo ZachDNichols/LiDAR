@@ -6,8 +6,8 @@
 // Sets default values
 AChangingMeshActor::AChangingMeshActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = false;
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	SetRootComponent(Mesh);
@@ -17,7 +17,7 @@ AChangingMeshActor::AChangingMeshActor()
 void AChangingMeshActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -36,7 +36,7 @@ int AChangingMeshActor::GetObjectID_Implementation()
 void AChangingMeshActor::Interact_Implementation(bool bIsInteracting)
 {
 	if (bIsInteracting)
-	{	
+	{
 		Mesh->SetMaterial(MaterialIndex, Material1);
 	}
 	else if (!bIsInteracting)

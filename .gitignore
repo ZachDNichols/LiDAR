@@ -99,3 +99,7 @@ LiDAR/LiDAR 5.1/DerivedDataCache/*
 
 # Excluded for the purpose of not exceeding Github's LFS limits
 *.mov
+LiDAR/LiDAR/.vsconfig
+LiDAR/LiDAR 5.1/.vsconfig
+LiDAR/LiDAR 5.1/.vsconfig
+LiDAR/LiDAR/.vsconfig

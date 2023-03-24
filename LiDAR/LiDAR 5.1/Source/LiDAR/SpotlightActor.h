@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/SpotLightComponent.h"
-#include "InteractableInterface.h"
+#include "Interaction/InteractableInterface.h"
 #include "SpotlightActor.generated.h"
 
 

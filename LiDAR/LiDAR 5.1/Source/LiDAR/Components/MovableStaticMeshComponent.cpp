@@ -2,6 +2,7 @@
 
 
 #include "MovableStaticMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 UMovableStaticMeshComponent::UMovableStaticMeshComponent()
 {

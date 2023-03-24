@@ -5,7 +5,7 @@
 #include "FirstPersonCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
-#include "InteractableInterface.h"
+#include "Interaction/InteractableInterface.h"
 
 // Sets default values
 ATrigger::ATrigger()

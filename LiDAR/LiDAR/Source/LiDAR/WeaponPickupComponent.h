@@ -17,7 +17,7 @@ class LIDAR_API UWeaponPickupComponent : public USphereComponent
 public:
     //Delegate for pickup
     UPROPERTY(BlueprintAssignable, Category = "Interaction")
-        FOnPickUp OnPickUp;
+    FOnPickUp OnPickUp;
 
     // Sets default values for this component's properties
     UWeaponPickupComponent();

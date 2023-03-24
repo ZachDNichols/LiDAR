@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "InteractableInterface.h"
-#include "Materials/MaterialInstance.h"
+#include "Interaction/InteractableInterface.h"
 #include "ChangingMeshActor.generated.h"
 
 UCLASS()

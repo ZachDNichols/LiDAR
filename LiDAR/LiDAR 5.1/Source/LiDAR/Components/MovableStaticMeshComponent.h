@@ -40,7 +40,7 @@ public:
 
 	// Sets default values for this actor's properties
 	UMovableStaticMeshComponent();
-
+	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	// Called when the game starts or when spawned
@@ -60,8 +60,7 @@ public:
 
 	bool IsMoving() const { return bIsMoving; }
 	bool IsTriggered() const { return bIsTriggered; }
-
-public:
+	
 	//Curve for how face to move/rotate
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Movement")
 		UCurveFloat* MoveCurve;
@@ -83,13 +82,12 @@ public:
 		bool bIsReversed;
 
 private:
+	//Functions used for updating the rotation/location
 	void UpdateRotation(float CurveValue);
 	void UpdateLocation(float CurveValue);
-
-private:
+	//Used to determine if object is moving
 	bool bIsMoving;
 	FTimeline MoveTimeline;
-
 	bool bIsTriggered;
 	float PreviousTimelineValue;
 };

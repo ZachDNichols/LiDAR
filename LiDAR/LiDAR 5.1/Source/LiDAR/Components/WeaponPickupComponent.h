@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/SphereComponent.h"
-#include "FirstPersonCharacter.h"
+#include "../FirstPersonCharacter.h"
 #include "WeaponPickupComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPickUp, AFirstPersonCharacter*, PickUpCharacter);

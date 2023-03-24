@@ -1,22 +1,14 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "FirstDiagloueScriptedSequence.h"
+#include "FirstLevelSequence.h"
 #include "Kismet/GameplayStatics.h"
-#include "InteractableInterface.h"
+#include "Interaction/InteractableInterface.h"
 #include "TimerManager.h"
 #include "FirstPersonCharacter.h"
 
-// Sets default values
-AFirstDiagloueScriptedSequence::AFirstDiagloueScriptedSequence()
-{
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
-
-}
-
 // Called when the game starts or when spawned
-void AFirstDiagloueScriptedSequence::BeginPlay()
+void AFirstLevelSequence::BeginPlay()
 {
 	Super::BeginPlay();
 	TArray<AActor*> Characters;
@@ -33,12 +25,12 @@ void AFirstDiagloueScriptedSequence::BeginPlay()
 	if (Character && !bIsDisabled)
 	{
 		bIsTriggered = true;
-		GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstDiagloueScriptedSequence::PlayVoiceLine, 2.f, false);
+		GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstLevelSequence::PlayVoiceLine, 2.f, false);
 	}
 }
 
 //If there is a player in the world, this voice line will play, then open the door
-void AFirstDiagloueScriptedSequence::PlayVoiceLine()
+void AFirstLevelSequence::PlayVoiceLine()
 {
 	if (SoundAttenuation)
 	{
@@ -48,10 +40,10 @@ void AFirstDiagloueScriptedSequence::PlayVoiceLine()
 	{
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f);
 	}
-	GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstDiagloueScriptedSequence::Interact, 22.591f, false);
+	GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstLevelSequence::Interact, 22.591f, false);
 }
 
-void AFirstDiagloueScriptedSequence::Interact()
+void AFirstLevelSequence::Interact()
 {
 	TArray<AActor*> InteractableActors;
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);
@@ -70,7 +62,7 @@ void AFirstDiagloueScriptedSequence::Interact()
 }
 
 // Called every frame
-void AFirstDiagloueScriptedSequence::Tick(float DeltaTime)
+void AFirstLevelSequence::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 

@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "WeaponPickupComponent.h"
+#include "Components/WeaponPickupComponent.h"
 #include "Components/WidgetComponent.h"
 #include "Components/DecalComponent.h"
 #include "NiagaraFunctionLibrary.h"

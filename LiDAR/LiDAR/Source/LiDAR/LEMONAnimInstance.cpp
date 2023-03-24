@@ -34,7 +34,7 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		UpdateAnimProperties();
 	}
-	else 
+	else
 	{
 		TArray<AActor*> Guns;
 
@@ -44,7 +44,7 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			if (Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass())))
 			{
 				UWeaponPickupComponent* WeaponPickup = Cast<UWeaponPickupComponent>(Guns[0]->GetComponentByClass(UWeaponPickupComponent::StaticClass()));
-
+				
 				WeaponPickup->OnPickUp.AddUniqueDynamic(this, &ULEMONAnimInstance::AssignCharacter);
 			}
 		}
@@ -59,10 +59,10 @@ void ULEMONAnimInstance::UpdateAnimProperties()
 
 //Adds the event listeners for when shooting or not
 void ULEMONAnimInstance::AssignCharacter(AFirstPersonCharacter* TargetCharacter)
-{ 
+{
 	Character = TargetCharacter;
 	Character->OnUseItem.AddDynamic(this, &ThisClass::Shoot);
-	Character->EndUseItem.AddDynamic(this, &ThisClass::EndShoot);
+	Character->OnEndUseItem.AddDynamic(this, &ThisClass::EndShoot);
 }
 
 void ULEMONAnimInstance::Shoot()
