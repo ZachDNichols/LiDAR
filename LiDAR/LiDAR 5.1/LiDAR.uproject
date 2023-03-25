@@ -27,10 +27,6 @@
 		{
 			"Name": "EnhancedInput",
 			"Enabled": true
-		},
-		{
-			"Name": "GPULightmass",
-			"Enabled": true
 		}
 	]
 }
