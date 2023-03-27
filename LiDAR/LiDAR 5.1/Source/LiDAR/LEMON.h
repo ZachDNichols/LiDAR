@@ -72,6 +72,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 		float FireTime = 0.2f;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
+		USoundConcurrency* SoundConcurrency;
+
 private:
 	UMaterialInstanceDynamic* DynamicMaterial;
 	class AFirstPersonCharacter* Character;

@@ -168,6 +168,7 @@ void AFirstPersonCharacter::EndCrouch()
     }
 }
 
+//TODO: Switch this system to be one that functions on getting components rather than actors
 void AFirstPersonCharacter::PickupPhysicsObject()
 {
     if (PhysicsHandle)
@@ -207,6 +208,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
     }
 }
 
+//TODO: Switch this system to be one that functions on getting componennts rather than actors
 //This elegant dumpster fire somehow updates the object in the best way I could find
 void AFirstPersonCharacter::UpdateGrabbedObject()
 {
@@ -257,6 +259,8 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
         PhysicsHandle->SetTargetLocationAndRotation(End, objectRotation);
         return;
     }
+
+    UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *Hit.GetActor()->GetName());
 
     AActor* Floor = GetFloorActor();
     FVector NewHoldLocation;
@@ -355,6 +359,7 @@ void AFirstPersonCharacter::PauseGame()
     }
 }
 
+//TODO: Return component instead of actor
 AActor* AFirstPersonCharacter::GetFloorActor()
 {
     FHitResult Hit;
@@ -364,7 +369,8 @@ AActor* AFirstPersonCharacter::GetFloorActor()
     TraceParams.AddIgnoredActor(this);
 
     GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
-
+    UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *Hit.GetActor()->GetName());
+    
     return Hit.GetActor();
 }
 
@@ -411,10 +417,10 @@ float AFirstPersonCharacter::DistanceInFrontOfPlayer()
     TraceParams.AddIgnoredActor(heldObject);
 
     GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
-
     return FVector::Dist(Start, Hit.ImpactPoint);
 }
 
+//TODO: Return component instead of actor
 AActor* AFirstPersonCharacter::ActorBehindPlayer()
 {
     FHitResult Hit;

@@ -55,6 +55,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
 		USoundAttenuation* SoundAttenuation;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
+		USoundConcurrency* SoundConcurrency;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger Properties")
+		bool bTriggerOnce = true;
+
 	//Function for the overlap
 	UFUNCTION()
 		void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);

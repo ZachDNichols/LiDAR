@@ -102,8 +102,6 @@ void ALEMON::Fire()
 			UDecalComponent* Dot = UGameplayStatics::SpawnDecalAttached(Decal, DecalSize, Hit.GetComponent(), NAME_None, Hit.ImpactPoint, HitRotation, EAttachLocation::KeepWorldPosition, 0.f);
 			Dot->SetFadeScreenSize(0);
 		}
-		
-	    UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
 	}
 	else
 	{
@@ -113,9 +111,9 @@ void ALEMON::Fire()
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), End);
 		}
-
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f);
 	}
+
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f, nullptr, SoundConcurrency);
 }
 
 void ALEMON::IncreaseRadius()
