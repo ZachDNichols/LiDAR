@@ -22,8 +22,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 	//Called when overlap begins
 	UFUNCTION()
 		void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -59,12 +57,17 @@ public:
 	//Array used to determine which objects to interact with
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
 		TArray<int> TargetIDs;
-
-	//Sound played when interacting with object
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audio")
-		USoundBase* Sound;
+		USoundBase* VoiceLine;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
+		USoundBase* PressurePlateSound;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
+		USoundConcurrency* VicSoundConcurrency;
 
 private:
 	bool bIsTriggered;
-	bool playedSound = false;
+	bool bPlayedVoiceLine = false;
 };

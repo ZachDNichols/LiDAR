@@ -32,14 +32,7 @@ void AFirstLevelSequence::BeginPlay()
 //If there is a player in the world, this voice line will play, then open the door
 void AFirstLevelSequence::PlayVoiceLine()
 {
-	if (SoundAttenuation)
-	{
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f, 0.f, SoundAttenuation);
-	}
-	else
-	{
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f);
-	}
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), 1.f, 1.f, 0.f, SoundAttenuation, VicSoundConcurrency);
 	GetWorld()->GetTimerManager().SetTimer(VoiceLineTimer, this, &AFirstLevelSequence::Interact, 22.591f, false);
 }
 

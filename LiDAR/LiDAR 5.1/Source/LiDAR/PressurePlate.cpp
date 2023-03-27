@@ -35,13 +35,6 @@ void APressurePlate::BeginPlay()
 	TriggerBox->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnEndOverlap);
 }
 
-// Called every frame
-void APressurePlate::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
-
 void APressurePlate::Interact(bool bIsInteracting)
 {
 	//Gets array of every actor that has the InteractableInterface
@@ -71,6 +64,20 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 		Interact(true);
 
 		bIsTriggered = true;
+
+		if (!bPlayedVoiceLine)
+		{
+			if (VoiceLine)
+			{
+				UGameplayStatics::SpawnSoundAtLocation(GetWorld(), VoiceLine, GetActorLocation(), FRotator(), 1.0f, 1.0f, 0.f, nullptr, VicSoundConcurrency, true);
+				bPlayedVoiceLine = true;
+			}
+		}
+
+		if (PressurePlateSound)
+		{
+			UGameplayStatics::SpawnSoundAtLocation(GetWorld(), PressurePlateSound, GetActorLocation(), FRotator(), 1.0f, 1.0f, 0.f, nullptr, nullptr, true);
+		}
 	}
 }
 
@@ -83,5 +90,10 @@ void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 		Interact(false);
 
 		bIsTriggered = false;
+	}
+
+	if (PressurePlateSound)
+	{
+		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), PressurePlateSound, GetActorLocation(), FRotator(), 1.0f, 0.0f, 0.f, nullptr, nullptr, true);
 	}
 }

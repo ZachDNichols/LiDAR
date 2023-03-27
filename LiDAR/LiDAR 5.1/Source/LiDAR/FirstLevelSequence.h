@@ -42,6 +42,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadonly, Category = "Audio")
 	USoundAttenuation* SoundAttenuation;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
+		USoundConcurrency* VicSoundConcurrency;
+
 private:
 	class AFirstPersonCharacter* Character;
 	bool bIsTriggered;

@@ -26,6 +26,9 @@ struct FTargetObject
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio", meta = (EditCondition = "!bJustSound"))
 	bool bHaveActionWait = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
+		bool bIsVoiceLine = false;
 };
 
 UCLASS()
@@ -56,7 +59,10 @@ public:
 		USoundAttenuation* SoundAttenuation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
-		USoundConcurrency* SoundConcurrency;
+		USoundConcurrency* VictorSoundConcurrency;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
+		USoundConcurrency* TriggerSoundConcurrency;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger Properties")
 		bool bTriggerOnce = true;
