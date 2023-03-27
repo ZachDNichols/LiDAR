@@ -168,7 +168,6 @@ void AFirstPersonCharacter::EndCrouch()
     }
 }
 
-//TODO: Switch this system to be one that functions on getting components rather than actors
 void AFirstPersonCharacter::PickupPhysicsObject()
 {
     if (PhysicsHandle)
@@ -208,7 +207,7 @@ void AFirstPersonCharacter::PickupPhysicsObject()
     }
 }
 
-//TODO: Switch this system to be one that functions on getting componennts rather than actors
+//TODO: Switch this system to be one that functions on getting components rather than actors - at this time, this appears to not be possible
 //This elegant dumpster fire somehow updates the object in the best way I could find
 void AFirstPersonCharacter::UpdateGrabbedObject()
 {
@@ -359,7 +358,6 @@ void AFirstPersonCharacter::PauseGame()
     }
 }
 
-//TODO: Return component instead of actor
 AActor* AFirstPersonCharacter::GetFloorActor()
 {
     FHitResult Hit;
@@ -420,7 +418,6 @@ float AFirstPersonCharacter::DistanceInFrontOfPlayer()
     return FVector::Dist(Start, Hit.ImpactPoint);
 }
 
-//TODO: Return component instead of actor
 AActor* AFirstPersonCharacter::ActorBehindPlayer()
 {
     FHitResult Hit;

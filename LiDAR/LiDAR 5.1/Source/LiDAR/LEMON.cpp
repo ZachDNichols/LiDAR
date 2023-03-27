@@ -32,6 +32,7 @@ void ALEMON::BeginPlay()
 	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(0), this);
 	Mesh->SetMaterial(0, DynamicMaterial);
 	DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 0.f);
+	DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 1.f);
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -149,6 +150,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 
 		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
+		DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 0.1f);
 	}
 }
 
