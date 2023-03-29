@@ -2,6 +2,8 @@
 
 
 #include "FlickeringLight.h"
+
+#include "Components/RectLightComponent.h"
 #include "Components/SpotLightComponent.h"
 
 // Sets default values
@@ -10,8 +12,27 @@ AFlickeringLight::AFlickeringLight()
 	LightMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	SetRootComponent(LightMesh);
 
-	SpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("Light"));
-	SpotLight->SetupAttachment(LightMesh);
+	switch (LightType)
+	{
+	case ELightType::PointLight :
+		{
+			PointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("Light"));
+			PointLight->SetupAttachment(LightMesh);
+			break;
+		}
+	case ELightType::RectLight :
+		{
+			RectLight = CreateDefaultSubobject<URectLightComponent>(TEXT("Light"));
+			RectLight->SetupAttachment(LightMesh);
+			break;
+		}
+	case ELightType::SpotLight :
+		{
+			SpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("Light"));
+			SpotLight->SetupAttachment(LightMesh);
+			break;
+		}
+	}
 }
 
 // Called when the game starts or when spawned

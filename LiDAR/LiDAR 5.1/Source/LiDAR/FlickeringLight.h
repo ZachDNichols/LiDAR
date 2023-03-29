@@ -6,6 +6,12 @@
 #include "GameFramework/Actor.h"
 #include "FlickeringLight.generated.h"
 
+UENUM(BlueprintType)
+enum class ELightType: uint8
+{
+	SpotLight, PointLight, RectLight
+};
+
 UCLASS()
 class LIDAR_API AFlickeringLight : public AActor
 {
@@ -15,11 +21,20 @@ public:
 	// Sets default values for this actor's properties
 	AFlickeringLight();
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditDefaultsOnly)
+		ELightType LightType;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Light")
 		UStaticMeshComponent* LightMesh;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Light", meta = (EditCondition = "LightType == ELightType::SpotLight"))
 		class USpotLightComponent* SpotLight;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Light", meta = (EditCondition = "LightType == ELightType::PointLight"))
+		class UPointLightComponent* PointLight;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Light", meta = (EditCondition = "LightType == ELightType::RectLight"))
+		class URectLightComponent* RectLight;
 
 	UPROPERTY(EditDefaultsOnly)
 		float Intensity = 20000.f;
