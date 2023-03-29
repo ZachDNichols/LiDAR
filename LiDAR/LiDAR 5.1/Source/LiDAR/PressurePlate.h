@@ -1,6 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//Copyright 2023 Zach Nichols, All Rights Reserved
 
 #pragma once
+//TODO: Upgrade this with the functionality of BoxTrigger
 
 #include "CoreMinimal.h"
 #include "Components/BoxComponent.h"

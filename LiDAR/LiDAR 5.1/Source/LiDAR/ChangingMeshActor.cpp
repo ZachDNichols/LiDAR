@@ -1,4 +1,4 @@
-// Copyright Zach Nichols
+//Copyright 2023 Zach Nichols, All Rights Reserved
 
 
 #include "ChangingMeshActor.h"
@@ -13,6 +13,13 @@ AChangingMeshActor::AChangingMeshActor()
 	SetRootComponent(Mesh);
 }
 
+void AChangingMeshActor::BeginPlay()
+{
+	Super::BeginPlay();
+	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(MaterialIndex), this);
+	Mesh->SetMaterial(MaterialIndex, DynamicMaterial);
+}
+
 int AChangingMeshActor::GetObjectID_Implementation()
 {
 	return ObjectID;
@@ -21,22 +28,33 @@ int AChangingMeshActor::GetObjectID_Implementation()
 //If true, object will turn "on", if not object will turn off
 void AChangingMeshActor::Interact_Implementation(bool bIsInteracting)
 {
-	if (bIsInteracting)
+	//TODO: Implement fucntionalities for other types of material parameters
+	for (const FMeshProperties MeshProperty : MeshProperties)
 	{
-		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 0.f);
+		//On state
+		if (bIsInteracting)
+		{
+			switch (MeshProperty.MaterialParameter)
+			{
+			case EMeshMaterialParameterType::Scalar :
+				DynamicMaterial->SetScalarParameterValue(MeshProperty.ParameterName, MeshProperty.OnScalar);
+				break;
+			default:
+				return;
+			}
+		}
+		//Off state
+		else
+		{
+			switch (MeshProperty.MaterialParameter)
+			{
+			case EMeshMaterialParameterType::Scalar :
+				DynamicMaterial->SetScalarParameterValue(MeshProperty.ParameterName, MeshProperty.OffScalar);
+				break;
+			default:
+				return;
+			}
+		}
 	}
-	else
-	{
-		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 5.f);
-	}
-}
-
-void AChangingMeshActor::BeginPlay()
-{
-	Super::BeginPlay();
-
-	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(MaterialIndex), this);
-	Mesh->SetMaterial(MaterialIndex, DynamicMaterial);
-	DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 5.f);
 }
 

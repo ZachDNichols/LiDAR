@@ -28,5 +28,10 @@
 			"Name": "EnhancedInput",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Mac",
+		"Win32",
+		"Win64"
 	]
 }

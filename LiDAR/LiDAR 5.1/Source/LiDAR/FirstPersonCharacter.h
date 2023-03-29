@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2023 Zach Nichols, All Rights Reserved
 
 #pragma once
 
@@ -66,9 +66,6 @@ public:
         float CrouchSpeed;
 
 protected:
-    // Called when the game starts or when spawned
-    virtual void BeginPlay() override;
-
     //Handles moving forward and backwards
     void Move(const struct FInputActionValue& ActionValue);
 
@@ -130,16 +127,13 @@ private:
     void ReleaseObject();
     void UpdateGrabbedObject();
     float DistanceInFrontOfPlayer();
-    AActor* ActorBehindPlayer();
-    AActor* GetFloorActor();
+    UPrimitiveComponent* GetFloorActor();
 
     FTimerHandle FootStepTimer;
-    bool step;
+    bool step = false;
     bool hasGun = false;
     bool holdingObject = false;
     AActor* heldObject;
-    float relativeX;
-    float relativeY;
     FRotator objectRotation = FRotator();
     bool bCrouchState;
     bool bisCrouching;
