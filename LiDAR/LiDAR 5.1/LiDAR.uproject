@@ -32,6 +32,7 @@
 	"TargetPlatforms": [
 		"Mac",
 		"Win32",
-		"Win64"
+		"Win64",
+		"Windows"
 	]
 }
