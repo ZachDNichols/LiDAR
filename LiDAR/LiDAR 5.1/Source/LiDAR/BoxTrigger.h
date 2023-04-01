@@ -73,8 +73,11 @@ public:
 private:
 	//Boolean to be used if the object is triggered
 	bool isTriggered;
-	void TriggerInteraction();
-	void TriggerInteraction(const int InteractionIndex);
-	void Interaction(const int InteractionID, const bool bInteractCall);
+	UFUNCTION()
+		void BoxTriggerInteraction();
+	UFUNCTION()
+		void BoxTriggerInteractions(const int InteractionIndex);
+	UFUNCTION()
+		void BoxTriggerInteract(const int InteractionID, const bool bInteractCall);
 };
 

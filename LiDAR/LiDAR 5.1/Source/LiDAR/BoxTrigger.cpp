@@ -18,16 +18,16 @@ void ABoxTrigger::OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor)
 	{
 		if (bMultipleIDs && TargetObjects.Num() > 0)
 		{
-			TriggerInteraction(0);
+			BoxTriggerInteractions(0);
 		}
 		else
 		{
-			TriggerInteraction();
+			BoxTriggerInteraction();
 		}
 	}
 }
 
-void ABoxTrigger::TriggerInteraction()
+void ABoxTrigger::BoxTriggerInteraction()
 {
 	USoundBase* Sound = TargetObject.Sound;
 	USoundConcurrency* SoundConcurrency;
@@ -61,7 +61,7 @@ void ABoxTrigger::TriggerInteraction()
 
 			FTimerHandle InteractionTimer;
 			FTimerDelegate InteractionDel;
-			InteractionDel.BindUFunction(this, FName("Interaction"), TargetObject.ObjectID, TargetObject.bInteractCall);
+			InteractionDel.BindUFunction(this, FName("BoxTriggerInteract"), TargetObject.ObjectID, TargetObject.bInteractCall);
 			GetWorldTimerManager().SetTimer(InteractionTimer, InteractionDel, SoundDuration, false);
 		}
 		else
@@ -70,7 +70,7 @@ void ABoxTrigger::TriggerInteraction()
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation, SoundConcurrency);
 			}
-			Interaction(TargetObject.ObjectID, TargetObject.bInteractCall);
+			BoxTriggerInteract(TargetObject.ObjectID, TargetObject.bInteractCall);
 		}
 	}
 
@@ -80,8 +80,10 @@ void ABoxTrigger::TriggerInteraction()
 	}
 }
 
-void ABoxTrigger::TriggerInteraction(int InteractionIndex)
+void ABoxTrigger::BoxTriggerInteractions(int InteractionIndex)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Interaction Index: %d"), InteractionIndex);
+	
 	if (TargetObjects.Num() <= InteractionIndex)
 	{
 		if (bTriggerOnce)
@@ -108,64 +110,68 @@ void ABoxTrigger::TriggerInteraction(int InteractionIndex)
 
 	if (TargetObjects[InteractionIndex].bJustSound)
 	{
-		const float SoundDuration = Sound->GetDuration();
-		
+		float SoundDuration = 0.01f;
+
 		if (Sound)
 		{
-			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation, SoundConcurrency);
+			UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation, TriggerSoundConcurrency);
+			SoundDuration = Sound->GetDuration();
 		}
 
 		FTimerHandle NextFunctionCallTimer;
 		FTimerDelegate NextFunctionCallDel;
-		NextFunctionCallDel.BindUFunction(this, FName("TriggerInteraction"), InteractionIndex + 1);
+		NextFunctionCallDel.BindUFunction(this, FName("BoxTriggerInteractions"), InteractionIndex + 1);
 
-		GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration, false);	
+		GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration, false);
 	}
 	else
 	{
 		if (TargetObjects[InteractionIndex].bHaveActionWait)
 		{
-			const float SoundDuration = Sound->GetDuration();
+			float SoundDuration = 0.01f;
 
 			if (Sound)
 			{
-				UGameplayStatics::SpawnSoundAtLocation(GetWorld(), Sound, GetActorLocation(), FRotator(), 1.0f, 1.0f, 0.0f, SoundAttenuation, SoundConcurrency);
+				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation, TriggerSoundConcurrency);
+				SoundDuration = Sound->GetDuration();
 			}
 
 			FTimerHandle InteractionTimer, NextFunctionCallTimer;
 		
 			FTimerDelegate ActionTimerDel;
-			ActionTimerDel.BindUFunction(this, FName("Interaction"), ObjectID, bInteractCall);
+			ActionTimerDel.BindUFunction(this, FName("BoxTriggerInteract"), ObjectID, bInteractCall);
 		
 			GetWorldTimerManager().SetTimer(InteractionTimer, ActionTimerDel, SoundDuration, false);
 
 			FTimerDelegate NextFunctionCallDel;
-			NextFunctionCallDel.BindUFunction(this, FName("TriggerInteraction"), InteractionIndex + 1);
+			NextFunctionCallDel.BindUFunction(this, FName("BoxTriggerInteractions"), InteractionIndex + 1);
 
 			GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration + 0.1f, false);
 		}
 		else
 		{
-			const float SoundDuration = Sound->GetDuration();
+			float SoundDuration = 0.01f;
 
 			if (Sound)
 			{
 				UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), 1.0f, 1.0f, 0.0f, SoundAttenuation, TriggerSoundConcurrency);
+				SoundDuration = Sound->GetDuration();
 			}
 
-			Interaction(ObjectID, bInteractCall);
+			BoxTriggerInteract(ObjectID, bInteractCall);
 
 			FTimerHandle NextFunctionCallTimer;
 			FTimerDelegate NextFunctionCallDel;
-
-			NextFunctionCallDel.BindUFunction(this, FName("TriggerInteraction"), InteractionIndex + 1);
+			NextFunctionCallDel.BindUFunction(this, FName("BoxTriggerInteractions"), InteractionIndex + 1);
 			GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration, false);
 		}
 	}
 }
 
-void ABoxTrigger::Interaction(const int InteractionID, const bool bInteractCall)
+void ABoxTrigger::BoxTriggerInteract(const int InteractionID, const bool bInteractCall)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Object ID: %d"), InteractionID);
+	
 	//Gets array of every actor that has the InteractableInterface
 	TArray<AActor*> InteractableActors;
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);

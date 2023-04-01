@@ -17,7 +17,7 @@
 #include "FirstPersonPlayerController.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "GameFramework/FloatingPawnMovement.h"
+#include "LandscapeRender.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Sound/SoundCue.h"
 
@@ -224,6 +224,7 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
     if (FVector::Dist(GetActorLocation(), heldObject->GetActorLocation()) > grabDistance + 90.f)
     {
         ReleaseObject();
+        return;
     }
     
     //If the player is not looking at the an object close
@@ -242,18 +243,15 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
             true,
             FLinearColor::Red,
             FLinearColor::Green,
-            5.f)
+            1.f)
         )
     {
-        objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
-        PhysicsHandle->SetTargetLocationAndRotation(End, objectRotation);
+        PhysicsHandle->SetTargetLocationAndRotation(End, FirstPersonCamera->GetForwardVector().Rotation());
         return;
     }
-
-    UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *Hit.GetActor()->GetName());
-
+    
     UPrimitiveComponent* Floor = GetFloorActor();
-    FVector NewHoldLocation;
+    FVector NewHoldLocation = FVector();
 
     //Determines if player is looking at the floor
     if (Floor == Hit.GetComponent())
@@ -280,8 +278,7 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
 
         NewHoldLocation.Z = Hit.ImpactPoint.Z + 70.f;
 
-        objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
-        PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, objectRotation);
+        PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, FirstPersonCamera->GetForwardVector().Rotation());
         return;
     }
     
@@ -294,9 +291,7 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
 
     NewHoldLocation = FirstPersonCamera->GetComponentLocation();
     NewHoldLocation += FirstPersonCamera->GetForwardVector() * Hit.Distance;
-    objectRotation.Yaw = FirstPersonCamera->GetComponentRotation().Yaw;
-    PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, objectRotation);
-
+    PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, FirstPersonCamera->GetForwardVector().Rotation());
 }
 
 void AFirstPersonCharacter::ReleaseObject()
@@ -332,8 +327,6 @@ void AFirstPersonCharacter::ReleaseObject()
     }
 
     PhysicsHandle->GetGrabbedComponent()->ComponentVelocity = Velocity;
-
-    UE_LOG(LogTemp, Warning, TEXT("%s"), *Velocity.ToString());
     
     PhysicsHandle->ReleaseComponent();
     holdingObject = false;
@@ -359,7 +352,6 @@ UPrimitiveComponent* AFirstPersonCharacter::GetFloorActor()
     TraceParams.AddIgnoredActor(this);
 
     GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
-    UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), *Hit.GetActor()->GetName());
     
     return Hit.GetComponent();
 }
