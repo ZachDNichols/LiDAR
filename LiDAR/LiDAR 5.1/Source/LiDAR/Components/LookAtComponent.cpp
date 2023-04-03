@@ -60,6 +60,7 @@ bool ULookAtComponent::LookAt()
 		float DotProduct = FVector::DotProduct(LookAtRotation.Vector(), PlayerCamera->GetForwardVector());
 		DotProduct *= -1.f;
 		UE_LOG(LogTemp, Display, TEXT("%f"), DotProduct);
+
 		if (DotProduct > MinLookAtAngle && DotProduct < MaxLookAtAngle)
 		{
 			return true;
@@ -69,19 +70,24 @@ bool ULookAtComponent::LookAt()
 	return false;
 }
 
-
 // Called every frame
 void ULookAtComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	if (!Player || !PlayerCamera)
+	if (!Player)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Player or camera could not be found, trying again..."));
 		Player = Cast<AFirstPersonCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
 		PlayerCamera = Player->GetFirstPersonCameraComponent();
 	}
-	else if (Player && PlayerCamera)
+
+	if (!PlayerCamera)
+	{
+		PlayerCamera = Player->GetFirstPersonCameraComponent();
+	}
+
+	if (Player && PlayerCamera)
 	{
 		PrimaryComponentTick.bCanEverTick = false;
 	}

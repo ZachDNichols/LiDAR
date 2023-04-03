@@ -23,7 +23,7 @@ public:
 	float MinLookAtAngle = -1.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Look At")
-	float MaxLookAtAngle = -8.f;
+	float MaxLookAtAngle = -.8f;
 
 protected:
 	// Called when the game starts
