@@ -7,19 +7,19 @@
 #include "BoxTrigger.generated.h"
 
 USTRUCT(BlueprintType)
-struct FTargetObject
+struct FBoxTriggerTargetObject
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Object")
-		bool bJustSound = false;
+	bool bJustSound = false;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Object", meta = (EditCondition = "!bJustSound"))
-		int ObjectID;
+	int ObjectID;
 
 	//Used for determining what the interaction will be called with
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Object", meta = (EditCondition = "!bJustSound"))
-		bool bInteractCall = false;
+	bool bInteractCall = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
 	USoundBase* Sound;
@@ -28,7 +28,10 @@ struct FTargetObject
 	bool bHaveActionWait = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-		bool bIsVoiceLine = false;
+	USoundAttenuation* SoundAttenuation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
+	USoundConcurrency* SoundConcurrency;
 };
 
 UCLASS()
@@ -46,23 +49,14 @@ public:
 	
 	//Target IDs that can be interacted with
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties", meta = (EditCondition = "bMultipleIDs"))
-		TArray<FTargetObject> TargetObjects;
+		TArray<FBoxTriggerTargetObject> TargetObjects;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties", meta = (EditCondition = "!bMultipleIDs"))
-		FTargetObject TargetObject;
+		FBoxTriggerTargetObject TargetObject;
 
 	//Boolean that controls if the trigger is disabled
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
 		bool bIsDisabled;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
-		USoundAttenuation* SoundAttenuation;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
-		USoundConcurrency* VictorSoundConcurrency;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger Properties")
-		USoundConcurrency* TriggerSoundConcurrency;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger Properties")
 		bool bTriggerOnce = true;
@@ -71,8 +65,6 @@ public:
 	UFUNCTION()
 		void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
 private:
-	//Boolean to be used if the object is triggered
-	bool isTriggered;
 	UFUNCTION()
 		void BoxTriggerInteraction();
 	UFUNCTION()
