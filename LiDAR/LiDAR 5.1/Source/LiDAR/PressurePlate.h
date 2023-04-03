@@ -27,9 +27,6 @@ struct FPlateObject
 	bool bHaveActionWait = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-	bool bIsVoiceLine = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
 	bool bTriggerOnce;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")

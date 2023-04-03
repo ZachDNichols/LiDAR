@@ -149,8 +149,6 @@ void ABoxTrigger::BoxTriggerInteractions(int InteractionIndex)
 
 void ABoxTrigger::BoxTriggerInteract(const int InteractionID, const bool bInteractCall)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Object ID: %d"), InteractionID);
-	
 	//Gets array of every actor that has the InteractableInterface
 	TArray<AActor*> InteractableActors;
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);

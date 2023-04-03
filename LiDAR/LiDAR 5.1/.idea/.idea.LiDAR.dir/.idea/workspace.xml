@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee8760b-069c-473d-89d3-827f44b90a66" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/SoundAttenuation/SA_ObjectAttenuation.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_Door.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_Door.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_PressurePlate.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_PressurePlate.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LiDAR/PressurePlate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/PressurePlate.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LiDAR/PressurePlate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/PressurePlate.h" afterDir="false" />
     </list>
@@ -21,27 +23,31 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NkhqXdWMveQvhEgJjeBMgZ0um6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.64054054&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.64054054",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/zachnichols/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/zachnichols/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/zachnichols/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/zachnichols/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/zachnichols/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/zachnichols/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="LiDAR" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/LiDAR.uproject" />
@@ -117,6 +123,7 @@
       <workItem from="1680358648813" duration="173000" />
       <workItem from="1680358852172" duration="11763000" />
       <workItem from="1680530475337" duration="2627000" />
+      <workItem from="1680540974723" duration="1588000" />
     </task>
     <servers />
   </component>
@@ -125,6 +132,7 @@
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

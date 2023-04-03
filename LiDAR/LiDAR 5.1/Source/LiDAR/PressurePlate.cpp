@@ -33,6 +33,9 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 {
 	if (!bIsDisabled && !bIsTriggered)
 	{
+		MoveableMesh->Move(true);
+		bIsTriggered = true;
+		
 		if (bMultipleIDs && TargetObjects.Num() > 0)
 		{
 			PlateTriggerInteractions(true, 0);
@@ -48,6 +51,9 @@ void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 {
 	if (!bIsDisabled && bResetTrigger)
 	{
+		MoveableMesh->Move(false);
+		bIsTriggered = false;
+		
 		if (bMultipleIDs && TargetObjects.Num() > 0)
 		{
 			PlateTriggerInteractions(false, 0);
@@ -132,12 +138,42 @@ void APressurePlate::PlateTriggerInteractions(const bool bInteractCall, const in
 		FTimerDelegate InteractionDel, NextFunctionCallDel;
 
 		InteractionDel.BindUFunction(this, FName("PlateTriggerInteract"), bInteractCall, TargetObjects[InteractionIndex].ObjectID);
-		//LAST OFF HERE
+		NextFunctionCallDel.BindUFunction(this, FName("PlateTriggerInteractions"), bInteractCall, InteractionIndex + 1);
+
+		GetWorldTimerManager().SetTimer(InteractionTimer, InteractionDel, SoundDuration, false);
+		GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration + 0.1f, false);
+	}
+	else
+	{
+		float SoundDuration = 0.01f;
+
+		if (Sound)
+		{
+			PlaySound(Sound, TargetObjects[InteractionIndex].SoundAttenuation, TargetObjects[InteractionIndex].SoundConcurrency);
+			SoundDuration = Sound->GetDuration();
+		}
+
+		PlateTriggerInteract(bInteractCall, TargetObjects[InteractionIndex].ObjectID);
+
+		FTimerHandle NextFunctionCallTimer;
+		FTimerDelegate NextFunctionCallDel;
+		NextFunctionCallDel.BindUFunction(this, FName("PlateTriggerInteractions"), bInteractCall, InteractionIndex + 1);
+		GetWorldTimerManager().SetTimer(NextFunctionCallTimer, NextFunctionCallDel, SoundDuration, false);
 	}
 }
 
 void APressurePlate::PlateTriggerInteract(const bool bInteractCall, const int ObjectID)
 {
+	TArray<AActor*> InteractableActors;
+	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), UInteractableInterface::StaticClass(), InteractableActors);
+
+	for (AActor* Actor : InteractableActors)
+	{
+		if (ObjectID == IInteractableInterface::Execute_GetObjectID(Actor))
+		{
+			IInteractableInterface::Execute_Interact(Actor, bInteractCall);
+		}
+	}
 }
 
 void APressurePlate::PlaySound(USoundBase* Sound, USoundAttenuation* SoundAttenuation, USoundConcurrency* SoundConcurrency)
