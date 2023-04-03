@@ -2,7 +2,6 @@
 
 
 #include "BoxTrigger.h"
-
 #include "FirstPersonCharacter.h"
 #include "Interaction/InteractableInterface.h"
 #include "Kismet/GameplayStatics.h"
