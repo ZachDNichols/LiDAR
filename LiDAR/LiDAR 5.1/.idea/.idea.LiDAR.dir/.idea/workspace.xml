@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee8760b-069c-473d-89d3-827f44b90a66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LookAtDecal.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_AdjustableHallwayLight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_AdjustableHallwayLight.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Misc/LEMONAttenuation.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Misc/WorldSoundAttenuation.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +125,9 @@
       <workItem from="1680540974723" duration="1588000" />
       <workItem from="1680543034606" duration="239000" />
       <workItem from="1680545389597" duration="6218000" />
+      <workItem from="1680613677290" duration="1646000" />
+      <workItem from="1680617264203" duration="1225000" />
+      <workItem from="1680630423278" duration="629000" />
     </task>
     <servers />
   </component>

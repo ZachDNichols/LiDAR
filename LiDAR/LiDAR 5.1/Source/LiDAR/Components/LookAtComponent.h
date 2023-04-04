@@ -25,6 +25,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Look At")
 	float MaxLookAtAngle = -.8f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Look At")
+	bool bIgnoreOverlap = false;;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -14,8 +14,15 @@ ULookAtComponent::ULookAtComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	OnComponentBeginOverlap.AddDynamic(this, &ULookAtComponent::OnSphereBeginOverlap);
-	OnComponentEndOverlap.AddDynamic(this, &ULookAtComponent::OnSphereEndOverlap);
+	if (!bIgnoreOverlap)
+	{
+		OnComponentBeginOverlap.AddDynamic(this, &ULookAtComponent::OnSphereBeginOverlap);
+		OnComponentEndOverlap.AddDynamic(this, &ULookAtComponent::OnSphereEndOverlap);
+	}
+	else
+	{
+		bInRange = true;
+	}
 }
 
 
