@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee8760b-069c-473d-89d3-827f44b90a66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Assets/Logos/AnyConv.com__LiDAR Icon.icns" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,29 +33,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.64054054",
-    "git-widget-placeholder": "5.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.64054054&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;5.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/zachnichols/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
-      "/Users/zachnichols/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache",
-      "/Users/zachnichols/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/zachnichols/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/zachnichols/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/zachnichols/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="LiDAR" type="Uproject" factoryName="rider.uproject">
       <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/LiDAR.uproject" />
@@ -144,6 +142,7 @@
       <workItem from="1681178076842" duration="724000" />
       <workItem from="1681492640642" duration="88000" />
       <workItem from="1681492832435" duration="1071000" />
+      <workItem from="1681751226084" duration="1321000" />
     </task>
     <servers />
   </component>
