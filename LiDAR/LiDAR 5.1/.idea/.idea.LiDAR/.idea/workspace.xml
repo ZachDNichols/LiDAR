@@ -10,9 +10,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LookAtDecal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LookAtDecal.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/Components/LookAtComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +19,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="5t8l9838" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NvFhz1nAXD1ZAqfVgUUnLAAXHv" />
   <component name="ProjectViewState">
@@ -34,7 +35,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -170,7 +171,15 @@
       <workItem from="1680536775906" duration="313000" />
       <workItem from="1680537102910" duration="135000" />
       <workItem from="1680553162909" duration="41000" />
-      <workItem from="1680555857755" duration="600000" />
+      <workItem from="1680555857755" duration="1298000" />
+      <workItem from="1680660727381" duration="730000" />
+      <workItem from="1680661558417" duration="666000" />
+      <workItem from="1680811813090" duration="991000" />
+      <workItem from="1681140194254" duration="316000" />
+      <workItem from="1681145255565" duration="266000" />
+      <workItem from="1681173989012" duration="951000" />
+      <workItem from="1681184002648" duration="744000" />
+      <workItem from="1681701882083" duration="793000" />
     </task>
     <servers />
   </component>
@@ -180,5 +189,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
