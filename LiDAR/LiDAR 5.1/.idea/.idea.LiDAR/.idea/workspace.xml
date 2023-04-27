@@ -9,27 +9,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenFloor_2.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenWall.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_Concrete_2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/MI_Painted_Concrete_Wall_ulxedaag_4K.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_PaintedConcreteWall_ulxedaag_4K_ORDp.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_Painted_Concrete_Wall_ulxedaag_4K_D.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_Painted_Concrete_Wall_ulxedaag_4K_N.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/MI_Smooth_Concrete_Wall_uiymfjlo_4K.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_SmoothConcreteWall_uiymfjlo_4K_ORDp.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_Smooth_Concrete_Wall_uiymfjlo_4K_D.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_Smooth_Concrete_Wall_uiymfjlo_4K_N.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/TEST.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LaserMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LaserMaterial.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Concrete_Floor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Concrete_Floor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Concrete_Floor_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Concrete_Floor_2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MSPresets/M_MS_Surface_Material/M_MS_Surface_Material.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MSPresets/M_MS_Surface_Material/M_MS_Surface_Material.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_vdxibet/MI_Painted_Concrete_Wall_vdxibet_4K.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_vdxibet/MI_Painted_Concrete_Wall_vdxibet_4K.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
