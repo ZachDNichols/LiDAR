@@ -9,13 +9,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenFloor_2.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenWall.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_Concrete_2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberDoorway.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/2032x976 Chamber/ChamberWall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/Taller Chamber/ChamberDoorway.fbx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LaserMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LaserMaterial.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Concrete_Floor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MasterMaterial/M_Master_Concrete_Floor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Concrete_Floor_2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchUnderground/Materials/MaterialInstance/MI_Concrete_Floor_2.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="5t8l9838" />
@@ -24,28 +46,38 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NvFhz1nAXD1ZAqfVgUUnLAAXHv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "5.1",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.updates",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\zachd\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\zachd\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\zachd\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\zachd\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\zachd\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\zachd\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.LiDAR">
     <configuration name="LiDAR" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -180,6 +212,9 @@
       <workItem from="1681173989012" duration="951000" />
       <workItem from="1681184002648" duration="744000" />
       <workItem from="1681701882083" duration="793000" />
+      <workItem from="1682559458314" duration="195000" />
+      <workItem from="1682559687694" duration="62000" />
+      <workItem from="1682559858031" duration="1212000" />
     </task>
     <servers />
   </component>
@@ -187,7 +222,19 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
