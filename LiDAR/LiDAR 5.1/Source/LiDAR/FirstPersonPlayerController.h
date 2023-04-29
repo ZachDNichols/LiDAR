@@ -46,4 +46,7 @@ public:
     
     UPROPERTY()
         class UInputAction* PauseGameAction;
+
+	UPROPERTY()
+		class UInputAction* SprintAction;
 };

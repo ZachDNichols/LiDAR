@@ -56,14 +56,8 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
         UUserWidget* PauseMenu;
 
-    UPROPERTY(EditAnywhere)
-        float MoveScale;
-
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Crouch)
         FVector CrouchEyeOffset;
-
-    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Crouch)
-        float CrouchSpeed;
 
 protected:
     //Handles moving forward and backwards
@@ -92,6 +86,10 @@ protected:
     void PauseGame();
 
     void GrabObject(const struct FInputActionValue& ActionValue);
+
+    void StartSprint();
+
+    void EndSprint();
 
 public:
     // Called every frame
@@ -123,16 +121,26 @@ public:
     UPROPERTY(EditDefaultsOnly)
         float ThrowForce = 500.f;
 
+    UPROPERTY(EditDefaultsOnly)
+        float RegularWalkSpeed = 375.f;
+
+    UPROPERTY(EditDefaultsOnly)
+        float SprintSpeed = 750.f;
+
+    UPROPERTY(EditDefaultsOnly)
+        float CrouchSpeed = 187.5f;
+
 private:
     void ReleaseObject(bool bThrow);
     void UpdateGrabbedObject();
-    FTimerHandle FootStepTimer;
+    void UpdateCrouch(float DeltaTime);
     bool bStep = false;
     bool bHasGun = false;
     bool bHoldingObject = false;
-    UPROPERTY()
-    UPrimitiveComponent* HeldObject;
     bool bCrouchState;
     bool bIsCrouching;
-    void UpdateCrouch(float DeltaTime);
+    float FootStepRate = .32f;
+    UPROPERTY()
+    UPrimitiveComponent* HeldObject;
+    FTimerHandle FootStepTimer;
 };

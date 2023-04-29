@@ -10,13 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonPlayerController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +203,7 @@
       <workItem from="1682559858031" duration="1212000" />
       <workItem from="1682722257910" duration="838000" />
       <workItem from="1682723742903" duration="7142000" />
+      <workItem from="1682737464867" duration="3387000" />
     </task>
     <servers />
   </component>

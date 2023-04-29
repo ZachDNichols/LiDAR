@@ -40,8 +40,7 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     PlayerMesh->bCastDynamicShadow = false;
     PlayerMesh->CastShadow = false;
     PlayerMesh->SetVisibility(false);
-
-    MoveScale = 1.f;
+    
     CrouchEyeOffset = FVector(0.f);
     CrouchSpeed = 250.f;
 
@@ -63,6 +62,8 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
     {
         UpdateCrouch(DeltaTime);
     }
+
+    UE_LOG(LogTemp, Display, TEXT("%f"), FootStepRate);
 }
     
 // Called to bind functionality to input
@@ -87,6 +88,8 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
     EIC->BindAction(FPPC->DecreaseScrollAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::DecreaseRadius);
     EIC->BindAction(FPPC->GrabObjectAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::GrabObject);
     EIC->BindAction(FPPC->PauseGameAction, ETriggerEvent::Triggered, this, &AFirstPersonCharacter::PauseGame);
+    EIC->BindAction(FPPC->SprintAction, ETriggerEvent::Started, this, &AFirstPersonCharacter::StartSprint);
+    EIC->BindAction(FPPC->SprintAction, ETriggerEvent::Completed, this, &AFirstPersonCharacter::EndSprint);
 
     const ULocalPlayer* LocalPlayer = FPPC->GetLocalPlayer();
     check(LocalPlayer);
@@ -99,12 +102,12 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 void AFirstPersonCharacter::Move(const struct FInputActionValue& ActionValue)
 {
     const FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
-    AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
+    AddMovementInput(GetActorRotation().RotateVector(Input), 1.f);
 
     if (!bStep)
     {
         bStep = true;
-        GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false, 0);
+        GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, FootStepRate, false, 0);
     }
 }
 
@@ -128,13 +131,32 @@ void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionVal
     }
 }
 
+void AFirstPersonCharacter::StartSprint()
+{
+    if (!bCrouchState)
+    {
+        GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
+        FootStepRate = FootStepRate / 2;
+    }
+}
+
+void AFirstPersonCharacter::EndSprint()
+{
+    if (!bCrouchState)
+    {
+        GetCharacterMovement()->MaxWalkSpeed = RegularWalkSpeed;
+        FootStepRate = FootStepRate * 2;
+    }
+}
+
 void AFirstPersonCharacter::StartCrouch()
 {
     if (!bCrouchState)
     {
-        MoveScale = MoveScale / 2;
+        GetCharacterMovement()->MaxWalkSpeed = CrouchSpeed;
         bCrouchState = true;
         bIsCrouching = true;
+        FootStepRate = FootStepRate * 2;
     }
 }
 
@@ -142,9 +164,10 @@ void AFirstPersonCharacter::EndCrouch()
 {
     if (bCrouchState)
     {
-        MoveScale = MoveScale * 2;
+        GetCharacterMovement()->MaxWalkSpeed = RegularWalkSpeed;
         bCrouchState = false;
         bIsCrouching = true;
+        FootStepRate = FootStepRate / 2;
     }
 }
 
@@ -164,7 +187,8 @@ void AFirstPersonCharacter::PickupPhysicsObject()
             {
                 HeldObject = Prim;
                 FVector Center = HeldObject->GetCenterOfMass();
-                PhysicsHandle->GrabComponentAtLocationWithRotation(HeldObject, NAME_None, Center, Hit.Normal.Rotation());
+                PhysicsHandle->GrabComponentAtLocationWithRotation(HeldObject, NAME_None, Center, FirstPersonCamera->GetForwardVector().Rotation());
+                HeldObject->SetWorldRotation(FirstPersonCamera->GetForwardVector().Rotation());
                 PhysicsHandle->bRotationConstrained = true;
                 HeldObject->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
                 bHoldingObject = true;
@@ -191,7 +215,7 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
         UE_LOG(LogTemp, Display, TEXT("%s"), *Hit.GetActor()->GetName());
     }
      
-    PhysicsHandle->SetTargetLocation(NewLocation);
+    PhysicsHandle->SetTargetLocationAndRotation(NewLocation, FirstPersonCamera->GetForwardVector().Rotation());
 }
 
 void AFirstPersonCharacter::ReleaseObject(bool bThrow)
@@ -259,7 +283,7 @@ void AFirstPersonCharacter::PlayFootStepSound()
         if (GetVelocity().Size() != 0 && !GetCharacterMovement()->IsFalling())
         {
             UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSounds[0], GetActorLocation(), 1.f, 1.f);
-            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, 0.32f, false);
+            GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::ResetStep, FootStepRate, false);
         }
         else
         {

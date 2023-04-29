@@ -80,4 +80,8 @@ void AFirstPersonPlayerController::SetupInputComponent()
     PauseGameAction = NewObject<UInputAction>(this);
     PauseGameAction->ValueType = EInputActionValueType::Boolean;
     PressedKey(MappingContext, PauseGameAction, EKeys::Escape);
+
+	SprintAction = NewObject<UInputAction>(this);
+	SprintAction->ValueType = EInputActionValueType::Boolean;
+	MapKey(MappingContext, SprintAction, EKeys::LeftShift);
 }
