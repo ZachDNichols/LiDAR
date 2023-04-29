@@ -9,20 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/MI_Painted_Concrete_Wall_ulxedaag_4K.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_PaintedConcreteWall_ulxedaag_4K_ORDp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_Painted_Concrete_Wall_ulxedaag_4K_D.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_ulxedaag/T_Painted_Concrete_Wall_ulxedaag_4K_N.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/MI_Smooth_Concrete_Wall_uiymfjlo_4K.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_SmoothConcreteWall_uiymfjlo_4K_ORDp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_Smooth_Concrete_Wall_uiymfjlo_4K_D.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Smooth_Concrete_Wall_uiymfjlo/T_Smooth_Concrete_Wall_uiymfjlo_4K_N.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/TEST.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LumenCube.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MSPresets/M_MS_Surface_Material/M_MS_Surface_Material.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MSPresets/M_MS_Surface_Material/M_MS_Surface_Material.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_vdxibet/MI_Painted_Concrete_Wall_vdxibet_4K.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Painted_Concrete_Wall_vdxibet/MI_Painted_Concrete_Wall_vdxibet_4K.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +202,8 @@
       <workItem from="1682559458314" duration="195000" />
       <workItem from="1682559687694" duration="62000" />
       <workItem from="1682559858031" duration="1212000" />
+      <workItem from="1682722257910" duration="838000" />
+      <workItem from="1682723742903" duration="7142000" />
     </task>
     <servers />
   </component>

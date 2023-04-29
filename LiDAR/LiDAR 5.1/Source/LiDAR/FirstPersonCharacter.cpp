@@ -17,8 +17,6 @@
 #include "FirstPersonPlayerController.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "LandscapeRender.h"
-#include "Kismet/KismetMathLibrary.h"
 #include "Sound/SoundCue.h"
 
 // Sets default values
@@ -29,7 +27,6 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     
     //Set the size for the collision capsule
     GetCapsuleComponent()->InitCapsuleSize(55.5f, 96.0f);
-    GetCapsuleComponent()->OnComponentHit.AddDynamic(this, &AFirstPersonCharacter::OnCollision);
 
     //Creates the camera
     FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
@@ -44,11 +41,11 @@ AFirstPersonCharacter::AFirstPersonCharacter()
     PlayerMesh->CastShadow = false;
     PlayerMesh->SetVisibility(false);
 
-    PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>(TEXT("PhysicsHandle"));
-
     MoveScale = 1.f;
     CrouchEyeOffset = FVector(0.f);
     CrouchSpeed = 250.f;
+
+    PhysicsHandle = CreateDefaultSubobject<UPhysicsHandleComponent>("PhysicsHandle");
 }
 
 // Called every frame
@@ -57,22 +54,14 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
 
-    if (holdingObject)
+    if (bHoldingObject)
     {
         UpdateGrabbedObject();
     }
 
-    if (bisCrouching)
+    if (bIsCrouching)
     {
         UpdateCrouch(DeltaTime);
-    }
-}
-
-void AFirstPersonCharacter::OnCollision(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-    if (OtherActor == heldObject)
-    {
-        ReleaseObject();
     }
 }
     
@@ -112,9 +101,9 @@ void AFirstPersonCharacter::Move(const struct FInputActionValue& ActionValue)
     const FVector Input = ActionValue.Get<FInputActionValue::Axis3D>();
     AddMovementInput(GetActorRotation().RotateVector(Input), MoveScale);
 
-    if (!step)
+    if (!bStep)
     {
-        step = true;
+        bStep = true;
         GetWorld()->GetTimerManager().SetTimer(FootStepTimer, this, &AFirstPersonCharacter::PlayFootStepSound, 0.32f, false, 0);
     }
 }
@@ -129,9 +118,9 @@ void AFirstPersonCharacter::Look(const struct FInputActionValue& ActionValue)
 
 void AFirstPersonCharacter::GrabObject(const struct FInputActionValue& ActionValue)
 {
-    if (holdingObject)
+    if (bHoldingObject)
     {
-        ReleaseObject();
+        ReleaseObject(false);
     }
     else
     {
@@ -145,7 +134,7 @@ void AFirstPersonCharacter::StartCrouch()
     {
         MoveScale = MoveScale / 2;
         bCrouchState = true;
-        bisCrouching = true;
+        bIsCrouching = true;
     }
 }
 
@@ -155,182 +144,69 @@ void AFirstPersonCharacter::EndCrouch()
     {
         MoveScale = MoveScale * 2;
         bCrouchState = false;
-        bisCrouching = true;
+        bIsCrouching = true;
     }
 }
 
 void AFirstPersonCharacter::PickupPhysicsObject()
 {
-    if (PhysicsHandle)
+    const FVector Start = FirstPersonCamera->GetComponentLocation();
+    const FVector End = Start + FirstPersonCamera->GetForwardVector() * GrabDistance;
+    FHitResult Hit;
+
+    if (UKismetSystemLibrary::LineTraceSingle(GetWorld(), Start, End, TraceTypeQuery1, true, TArray<AActor*>(),
+                                              EDrawDebugTrace::None, Hit, true, FLinearColor::Red,
+                                              FLinearColor::Green, 5.f))
     {
-        FHitResult Hit;
-        FRotator Rot;
-        FVector Start;
-
-        //Sets the location and rotation based on what the player sees
-        Start = FirstPersonCamera->GetComponentLocation() + (FirstPersonCamera->GetForwardVector());
-        Rot = FirstPersonCamera->GetComponentRotation();
-
-        FVector End = Start + (Rot.Vector() * grabDistance);
-        FCollisionQueryParams TraceParams;
-        TraceParams.AddIgnoredActor(this);
-
-        if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams))
+        if (UPrimitiveComponent* Prim = Hit.GetComponent())
         {
             if (Hit.GetComponent()->IsSimulatingPhysics())
             {
-                if(Hit.GetComponent() == GetFloorActor())
-                {
-                    return;
-                }
-                
-                Hit.GetActor()->SetActorRotation(GetActorRotation());
-                
-                FRotator GrabRotation = GetActorRotation();
-                GrabRotation.Yaw = 0.f;
-                
-                PhysicsHandle->GrabComponentAtLocationWithRotation(Hit.GetComponent(), NAME_None, Hit.GetActor()->GetActorLocation(), GrabRotation);
-                heldObject = Hit.GetActor();
-                holdingObject = true;
-                UpdateGrabbedObject();
+                HeldObject = Prim;
+                FVector Center = HeldObject->GetCenterOfMass();
+                PhysicsHandle->GrabComponentAtLocationWithRotation(HeldObject, NAME_None, Center, Hit.Normal.Rotation());
+                PhysicsHandle->bRotationConstrained = true;
+                HeldObject->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
+                bHoldingObject = true;
+
             }
         }
     }
+        
 }
 
 //This elegant dumpster fire somehow updates the object in the best way I could find
+//This will have to work until Epic gets their shit together and makes a game engine that works
 void AFirstPersonCharacter::UpdateGrabbedObject()
 {
+    const FVector Start = FirstPersonCamera->GetComponentLocation();
+    FVector NewLocation = FirstPersonCamera->GetComponentLocation() + FirstPersonCamera->GetForwardVector() * GrabDistance;
     FHitResult Hit;
-    FRotator Rot = FirstPersonCamera->GetComponentRotation();
-    FVector Start = FirstPersonCamera->GetComponentLocation();
-    Start += GetCapsuleComponent()->GetForwardVector() * GetCapsuleComponent()->GetUnscaledCapsuleRadius() * 1.1f;
-    FVector origin;
-    FVector extent;
-
-    TArray<AActor*> IgnoredActors;
-    IgnoredActors.Add(this);
-    IgnoredActors.Add(heldObject);
-
-    FVector End = Start + (Rot.Vector() * grabDistance);
-    End -= GetCapsuleComponent()->GetForwardVector() * GetCapsuleComponent()->GetUnscaledCapsuleRadius() * 1.1f;
-
-    heldObject->GetActorBounds(false, origin, extent);
-
-    float width = extent.X * 2.2f;
-
-    PhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
-
-    if (FVector::Dist(GetActorLocation(), heldObject->GetActorLocation()) > grabDistance + 90.f)
+    TArray<AActor*> IgnoredActors = {HeldObject->GetOwner(), this};
+    if (UKismetSystemLibrary::LineTraceSingle(GetWorld(), Start, NewLocation, TraceTypeQuery1, true, IgnoredActors,
+                                          EDrawDebugTrace::None, Hit, true, FLinearColor::Red,
+                                          FLinearColor::Green, 5.f))
     {
-        ReleaseObject();
-        return;
+        NewLocation = Hit.ImpactPoint;
+        UE_LOG(LogTemp, Display, TEXT("%s"), *Hit.GetActor()->GetName());
     }
-    
-    //If the player is not looking at the an object close
-    if (
-        !UKismetSystemLibrary::BoxTraceSingle(
-            this,
-            Start,
-            End,
-            extent,
-            Rot,
-            TraceTypeQuery1,
-            true,
-            IgnoredActors,
-            EDrawDebugTrace::None,
-            Hit,
-            true,
-            FLinearColor::Red,
-            FLinearColor::Green,
-            1.f)
-        )
-    {
-        PhysicsHandle->SetTargetLocationAndRotation(End, FirstPersonCamera->GetForwardVector().Rotation());
-        return;
-    }
-    
-    UPrimitiveComponent* Floor = GetFloorActor();
-    FVector NewHoldLocation = FVector();
-
-    //Determines if player is looking at the floor
-    if (Floor == Hit.GetComponent())
-    {
-
-        //This releases the object if the width of the held object is greater than the player while looking at the floor
-        if (width > DistanceInFrontOfPlayer())
-        {
-            ReleaseObject();
-            return;
-        }
-
-        NewHoldLocation = FirstPersonCamera->GetComponentLocation();
-
-        //Changes where the object is placed depending on how close player is
-        if (FVector::Dist(GetActorLocation(), Hit.ImpactPoint) > grabDistance / 1.2)
-        {
-            NewHoldLocation += GetActorForwardVector() * Hit.Distance;
-        }
-        else
-        {
-            NewHoldLocation += GetActorForwardVector() * (grabDistance / 1.2);
-        }
-
-        NewHoldLocation.Z = Hit.ImpactPoint.Z + 70.f;
-
-        PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, FirstPersonCamera->GetForwardVector().Rotation());
-        return;
-    }
-    
-    //If player gets too close to wall.
-    //TODO: This should update as the player moves - currently just sticks object in place. Currently there is not a method I can think of to do this.
-    if (width > Hit.Distance)
-    {
-        return;
-    }
-
-    NewHoldLocation = FirstPersonCamera->GetComponentLocation();
-    NewHoldLocation += FirstPersonCamera->GetForwardVector() * Hit.Distance;
-    PhysicsHandle->SetTargetLocationAndRotation(NewHoldLocation, FirstPersonCamera->GetForwardVector().Rotation());
+     
+    PhysicsHandle->SetTargetLocation(NewLocation);
 }
 
-void AFirstPersonCharacter::ReleaseObject()
+void AFirstPersonCharacter::ReleaseObject(bool bThrow)
 {
-    FVector Velocity = PhysicsHandle->GetGrabbedComponent()->GetComponentVelocity();
-    FVector MaxVelocity = FVector(200.f, 200.f, 200.f);
-
-    if (Velocity.X > MaxVelocity.X)
-    {
-        Velocity.X = MaxVelocity.X;
-    }
-    else if (Velocity.X < MaxVelocity.X * -1)
-    {
-        Velocity.X = MaxVelocity.X * -1;
-    }
-
-    if (Velocity.Y > MaxVelocity.Y)
-    {
-        Velocity.Y = MaxVelocity.Y;
-    }
-    else if (Velocity.Y < MaxVelocity.Y * -1)
-    {
-        Velocity.Y = MaxVelocity.Y * -1;
-    }
-
-    if (Velocity.Z > MaxVelocity.Z)
-    {
-        Velocity.Z = MaxVelocity.Z;
-    }
-    else if (Velocity.Z < MaxVelocity.Z * -1)
-    {
-        Velocity.Z = MaxVelocity.Z * -1;
-    }
-
-    PhysicsHandle->GetGrabbedComponent()->ComponentVelocity = Velocity;
-    
+    bHoldingObject = false;
     PhysicsHandle->ReleaseComponent();
-    holdingObject = false;
-    heldObject = nullptr;
+    PhysicsHandle->bRotationConstrained = false;
+    HeldObject->SetCollisionResponseToChannel(ECC_Pawn, ECR_Block);
+    HeldObject->SetPhysicsLinearVelocity(FVector::ZeroVector);
+    if (bThrow)
+    {
+        const FVector ShootVelocity = FirstPersonCamera->GetForwardVector() * ThrowForce;
+        HeldObject->AddImpulse(ShootVelocity, NAME_None, true);
+        HeldObject = nullptr;
+    }
 }
 
 void AFirstPersonCharacter::PauseGame()
@@ -341,19 +217,6 @@ void AFirstPersonCharacter::PauseGame()
         GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
         PauseMenu->AddToViewport();
     }
-}
-
-UPrimitiveComponent* AFirstPersonCharacter::GetFloorActor()
-{
-    FHitResult Hit;
-    FVector Start = GetActorLocation();
-    FVector End = Start + (GetActorUpVector() * -5000.f);
-    FCollisionQueryParams TraceParams;
-    TraceParams.AddIgnoredActor(this);
-
-    GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
-    
-    return Hit.GetComponent();
 }
 
 void AFirstPersonCharacter::UpdateCrouch(float DeltaTime)
@@ -367,7 +230,7 @@ void AFirstPersonCharacter::UpdateCrouch(float DeltaTime)
         if (currentHalfHeight - newHalfHeight < 52)
         {
             GetCapsuleComponent()->SetCapsuleHalfHeight(52.f);
-            bisCrouching = false;
+            bIsCrouching = false;
         }
         else
         {
@@ -379,7 +242,7 @@ void AFirstPersonCharacter::UpdateCrouch(float DeltaTime)
         if (currentHalfHeight + newHalfHeight > 96.f)
         {
             GetCapsuleComponent()->SetCapsuleHalfHeight(96.f);
-            bisCrouching = false;
+            bIsCrouching = false;
         }
         else
         {
@@ -387,21 +250,6 @@ void AFirstPersonCharacter::UpdateCrouch(float DeltaTime)
         }
     }
 }
-
-
-float AFirstPersonCharacter::DistanceInFrontOfPlayer()
-{
-    FHitResult Hit;
-    FVector Start = GetActorLocation();
-    FVector End = Start + (GetActorForwardVector() * grabDistance);
-    FCollisionQueryParams TraceParams;
-    TraceParams.AddIgnoredActor(this);
-    TraceParams.AddIgnoredActor(heldObject);
-
-    GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
-    return FVector::Dist(Start, Hit.ImpactPoint);
-}
-
 
 //If stepping and moving, a footstep sound will be played every .32 seconds. This was calculated with trial and error. I am a broken man.
 void AFirstPersonCharacter::PlayFootStepSound()
@@ -424,9 +272,13 @@ void AFirstPersonCharacter::PlayFootStepSound()
 
 void AFirstPersonCharacter::UseItem()
 {
-    if (!holdingObject)
+    if (!bHoldingObject)
     {
         OnUseItem.Broadcast();
+    }
+    else
+    {
+        ReleaseObject(true);
     }
 }
 

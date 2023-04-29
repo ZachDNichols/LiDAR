@@ -26,9 +26,6 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
 {
     GENERATED_BODY()
 
-    UPROPERTY(VisibleAnywhere, Category = "Holding")
-        UPhysicsHandleComponent* PhysicsHandle;
-
     //First person camera
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
         UCameraComponent* FirstPersonCamera;
@@ -36,6 +33,9 @@ class LIDAR_API AFirstPersonCharacter : public ACharacter
     //Mesh for the first person (i.e. the gun used by the player
     UPROPERTY(VisibleAnywhere, Category = Mesh)
         USkeletalMeshComponent* PlayerMesh;
+
+    UPROPERTY(VisibleAnywhere)
+        UPhysicsHandleComponent* PhysicsHandle;
 
 public:
     // Sets default values for this character's properties
@@ -93,9 +93,6 @@ protected:
 
     void GrabObject(const struct FInputActionValue& ActionValue);
 
-    UFUNCTION()
-        void OnCollision(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
 public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;
@@ -118,25 +115,24 @@ public:
 
     //Resets if the player is stepping
     UFUNCTION(BlueprintCallable, Category = "SFX")
-        void ResetStep() { step = false; };
+        void ResetStep() { bStep = false; };
 
     UPROPERTY(EditDefaultsOnly)
-        float grabDistance = 250.f;
+        float GrabDistance = 250.f;
+
+    UPROPERTY(EditDefaultsOnly)
+        float ThrowForce = 500.f;
 
 private:
-    void ReleaseObject();
+    void ReleaseObject(bool bThrow);
     void UpdateGrabbedObject();
-    float DistanceInFrontOfPlayer();
-    UPrimitiveComponent* GetFloorActor();
-
     FTimerHandle FootStepTimer;
-    bool step = false;
-    bool hasGun = false;
-    bool holdingObject = false;
-    AActor* heldObject;
-    FRotator objectRotation = FRotator();
+    bool bStep = false;
+    bool bHasGun = false;
+    bool bHoldingObject = false;
+    UPROPERTY()
+    UPrimitiveComponent* HeldObject;
     bool bCrouchState;
-    bool bisCrouching;
+    bool bIsCrouching;
     void UpdateCrouch(float DeltaTime);
-    FVector ObjectDirection;
 };
