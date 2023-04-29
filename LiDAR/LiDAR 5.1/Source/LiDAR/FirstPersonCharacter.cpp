@@ -62,8 +62,6 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
     {
         UpdateCrouch(DeltaTime);
     }
-
-    UE_LOG(LogTemp, Display, TEXT("%f"), FootStepRate);
 }
     
 // Called to bind functionality to input
@@ -212,7 +210,6 @@ void AFirstPersonCharacter::UpdateGrabbedObject()
                                           FLinearColor::Green, 5.f))
     {
         NewLocation = Hit.ImpactPoint;
-        UE_LOG(LogTemp, Display, TEXT("%s"), *Hit.GetActor()->GetName());
     }
      
     PhysicsHandle->SetTargetLocationAndRotation(NewLocation, FirstPersonCamera->GetForwardVector().Rotation());

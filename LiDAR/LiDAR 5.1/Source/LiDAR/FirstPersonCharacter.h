@@ -122,13 +122,13 @@ public:
         float ThrowForce = 500.f;
 
     UPROPERTY(EditDefaultsOnly)
-        float RegularWalkSpeed = 375.f;
+        float RegularWalkSpeed = 600.f;
 
     UPROPERTY(EditDefaultsOnly)
-        float SprintSpeed = 750.f;
+        float SprintSpeed = 800.f;
 
     UPROPERTY(EditDefaultsOnly)
-        float CrouchSpeed = 187.5f;
+        float CrouchSpeed = 300.f;
 
 private:
     void ReleaseObject(bool bThrow);

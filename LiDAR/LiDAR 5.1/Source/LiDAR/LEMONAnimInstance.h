@@ -39,7 +39,13 @@ public:
 
 	//Speed of player
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
-		float speed;
+		float Speed;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
+		float CrouchPlayRate = .8f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
+		float SprintPlayRate = 1.5f;
 
 	//First person character
 	UFUNCTION()

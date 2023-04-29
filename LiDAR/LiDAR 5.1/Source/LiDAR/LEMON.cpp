@@ -150,7 +150,7 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 
 		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
-		DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 0.1f);
+		DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 0.6f);
 	}
 }
 

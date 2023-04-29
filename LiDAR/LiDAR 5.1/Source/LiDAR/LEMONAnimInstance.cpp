@@ -5,6 +5,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Components/WeaponPickupComponent.h"
 #include "LEMON.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 void ULEMONAnimInstance::NativeInitializeAnimation()
 {
@@ -51,10 +52,30 @@ void ULEMONAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	}
 }
 
-//Updates properties according to speed
+//Updates properties according to Speed
 void ULEMONAnimInstance::UpdateAnimProperties()
 {
-	speed = Character->GetVelocity().Size();
+	float Velocity = Character->GetVelocity().Size();
+	
+	if (Velocity > 0.f)
+	{
+		Speed = CrouchPlayRate;
+	}
+	if (Velocity > Character->CrouchSpeed)
+	{
+		Speed = 1.f;
+	}
+	if (Velocity > Character->RegularWalkSpeed)
+	{
+		Speed = SprintPlayRate;
+	}
+	if (Velocity == 0.f)
+	{
+		Speed = 0.f;
+	}
+	
+	UE_LOG(LogTemp, Display, TEXT("Velocity: %f"), Character->GetVelocity().Size());
+	UE_LOG(LogTemp, Display, TEXT("Speed: %f"), Speed);
 }
 
 //Adds the event listeners for when shooting or not
