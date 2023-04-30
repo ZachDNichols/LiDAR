@@ -7,11 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee8760b-069c-473d-89d3-827f44b90a66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchCenter/Meshes/SM_Wall_4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchCenter/Meshes/SM_Wall_4.uasset" afterDir="false" />
-    </list>
+    <list default="true" id="bee8760b-069c-473d-89d3-827f44b90a66" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,6 +143,7 @@
       <workItem from="1681751226084" duration="1321000" />
       <workItem from="1682430210527" duration="3000" />
       <workItem from="1682430580033" duration="693000" />
+      <workItem from="1682825563746" duration="267000" />
     </task>
     <servers />
   </component>
