@@ -9,28 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Stucco_Facade_wi5hccujw/MI_Stucco_Facade_wi5hccujw_4K.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Stucco_Facade_wi5hccujw/T_StuccoFacade_wi5hccujw_4K_ORDp.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Stucco_Facade_wi5hccujw/T_Stucco_Facade_wi5hccujw_4K_D.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Stucco_Facade_wi5hccujw/T_Stucco_Facade_wi5hccujw_4K_N.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animations/LEMON/AB_LEMON.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animations/LEMON/AB_LEMON.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LumenWall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/M_Concrete_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LEMON.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LEMON.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberDoorway.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/Chamber/ChamberFloor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberDoorway.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/TallerChamber/ChamberWall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchCenter/Meshes/SM_wall_47.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/ResearchCenter/Meshes/SM_wall_47.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/FirstPersonCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMON.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMON.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/main.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/texture.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +208,9 @@
       <workItem from="1682807640985" duration="530000" />
       <workItem from="1682808193642" duration="700000" />
       <workItem from="1682808957589" duration="1680000" />
+      <workItem from="1682835324865" duration="440000" />
+      <workItem from="1683516191698" duration="691000" />
+      <workItem from="1683517929117" duration="807000" />
     </task>
     <servers />
   </component>
