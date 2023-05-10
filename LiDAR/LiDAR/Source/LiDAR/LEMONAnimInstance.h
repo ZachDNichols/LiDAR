@@ -24,25 +24,26 @@ protected:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Animation")
-	virtual void UpdateAnimProperties();
+		virtual void UpdateAnimProperties();
 
 private:
 	//Pointers to Character and LEMON
 	AFirstPersonCharacter* Character;
 	ALEMON* Gun;
+	
 public:
 
 	//If the gun is shooting
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
-		bool isShooting;
+	bool isShooting;
 
 	//Speed of player
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Animation Property")
-		float speed;
+	float speed;
 
 	//First person character
 	UFUNCTION()
-	void AssignCharacter(AFirstPersonCharacter* TargetCharacter);
+		void AssignCharacter(AFirstPersonCharacter* TargetCharacter);
 
 	//Change animation state if shooting
 	UFUNCTION()

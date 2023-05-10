@@ -26,6 +26,9 @@ Target Audience: While it may be a bit cheeky, we want to go for the same target
 **Genre**: Sci-fi, puzzle, first person shooter<br/>
 **Game Flow**: The player will use either buttons or joystick to navigate through the world. The player will be able to jump, walk, and hold down a button to use the device they are equipped with to reveal key puzzle objects. Depending on engine/hardware limitations, there may be also a button to reset the count of dots in a given area. The player may also contain the ability to crouch if found necessary. <br/>
 **Look and feel**: Taking inspiration from Valve’s Portal, environments will look a couple of ways. The game will start out in the first section looking bland and white, with the player discovering objects that are not visible at a glance (without using the device to reveal it first). The game will then progress into darker areas, requiring the player to use the device as their “eyes” more or less. This section of the game will build tension and put the player on edge. The final section of the game will contain the player exploring the areas not intended for them. Rusted rooms in disrepair, forcing the player to take a different approach to their problem-solving. The game needs to fill dystopian and lonely, but with the feeling that the player is always being observed by something they cannot see or fully understand the purpose of until later.<br/>
+
+<img src="Assets\Art\Hall.gif">
+
 # Gameplay<br/>
 **Objectives**: The objective of the game will be to navigate your way through the different areas presented by the game. <br/>
 **Progression**: The player won’t necessarily need to “level up”, just advance through levels. New mechanics may be revealed as they progress to keep things interesting.<br/>

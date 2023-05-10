@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/SpotLightComponent.h"
-#include "Components/PointLightComponent.h"
-#include "Materials/MaterialInstance.h"
 #include "InteractableInterface.h"
 #include "SpotlightActor.generated.h"
 
@@ -17,38 +15,38 @@ UCLASS()
 class LIDAR_API ASpotlightActor : public AActor, public IInteractableInterface
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ASpotlightActor();
 
 	//Mesh used for the light
 	UPROPERTY(VisibleAnywhere, Category = "Lighting")
-		USpotLightComponent* Spotlight;
+	USpotLightComponent* Spotlight;
 
 	//Default, emmissive material
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
-		UMaterialInstance* Material1;
+	UMaterialInstance* Material1;
 
 	//Non emmsive, secondary material
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
-		UMaterialInstance* Material2;
+	UMaterialInstance* Material2;
 
 	//Int used to determine which material index to change
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Material")
-		int MaterialIndex;
+	int MaterialIndex;
 
 	//Mesh used for the light
 	UPROPERTY(VisibleAnywhere, Category = mesh)
-		UStaticMeshComponent* Mesh;
+	UStaticMeshComponent* Mesh;
 
 	//Object ID used for interaction
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Interaction")
-		int ObjectID;
+	int ObjectID;
 
 	//Float for intensity of light
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Lighting")
-		float Intensity;
+	float Intensity;
 
 	//Used to return to value of the object ID
 	virtual int GetObjectID_Implementation();
@@ -59,8 +57,5 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-private:
-
 
 };

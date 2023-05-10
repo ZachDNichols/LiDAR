@@ -7,6 +7,7 @@
 #include "Sound/SoundAttenuation.h"
 #include "FirstDiagloueScriptedSequence.generated.h"
 
+
 UCLASS()
 class LIDAR_API AFirstDiagloueScriptedSequence : public AActor
 {

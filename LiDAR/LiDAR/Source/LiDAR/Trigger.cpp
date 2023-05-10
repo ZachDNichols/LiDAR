@@ -10,8 +10,8 @@
 // Sets default values
 ATrigger::ATrigger()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = false;
 
 	TriggerBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger Box"));
 	SetRootComponent(TriggerBox);
@@ -21,7 +21,7 @@ ATrigger::ATrigger()
 void ATrigger::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	//Event listener for overlap
 	TriggerBox->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnBeginOverlap);
 }
@@ -52,7 +52,7 @@ void ATrigger::Interact()
 		}
 	}
 }
-void ATrigger::OnBeginOverlap(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+void ATrigger::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//Determines if actor overlapping is a player
 	if (Cast<AFirstPersonCharacter>(OtherActor))

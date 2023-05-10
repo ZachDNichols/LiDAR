@@ -10,7 +10,7 @@
 APressurePlate::APressurePlate()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	//Sets base mesh
 	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Base Mesh"));
@@ -39,7 +39,6 @@ void APressurePlate::BeginPlay()
 void APressurePlate::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 
@@ -65,6 +64,8 @@ void APressurePlate::Interact(bool bIsInteracting)
 
 void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Overlap begin."));
+	
 	//Tells the mesh to move down and calls the interact
 	if (!bIsDisabled && !bIsTriggered)
 	{
@@ -77,6 +78,8 @@ void APressurePlate::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 void APressurePlate::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Overlap end."));
+
 	//Tells the mesh to move back up and calls interact with false
 	if (!bIsDisabled && bResetTrigger)
 	{

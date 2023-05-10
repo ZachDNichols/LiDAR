@@ -12,33 +12,33 @@ UCLASS()
 class LIDAR_API ATrigger : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ATrigger();
 
 	//Array of Target IDs to be interacted with
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
-		TArray<int> TargetIDs;
-	
+	TArray<int> TargetIDs;
+
 	//Box used for overlap
 	UPROPERTY(EditAnywhere, Category = "Trigger")
-		UBoxComponent* TriggerBox;
+	UBoxComponent* TriggerBox;
 
 	//Boolean that determines if the Interact() function should call with a true or false argument
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
-		bool TriggerCall;
+	bool TriggerCall;
 
 	//Boolean that tells the trigger to wait for audio to play until after the voice line is finished
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger")
-		bool WaitForAudio;
+	bool WaitForAudio;
 
 	//Boolean that controls if the trigger is disabled
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Trigger")
-		bool bIsDisabled;
+	bool bIsDisabled;
 	//The sound that can optionally be played by the trigger
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audio")
-		USoundBase* Sound;
+	USoundBase* Sound;
 
 	//Function for the overlap
 	UFUNCTION()
@@ -48,7 +48,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
