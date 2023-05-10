@@ -9,13 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Barrel.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Dots.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_EnergySource.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_GlassBall.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Grip.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Rubber.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Stock.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Models/LEMON.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Barrel_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Barrel_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Dots_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Dots_Emissive.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Dots_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Energy_Source_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Energy_Source_Emission.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Energy_Source_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Glass_Ball_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Glass_Ball_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Grip_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Grip_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Grip_Roughness.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Stock_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Stock_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Wires_Color.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Wires_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Textures/LEMON2/Wires_Roughness.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/LEMON/Second Rendition/LEMON.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/LEMON/Second Rendition/LEMON.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Models/LEMON/Second Rendition/LEMON.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Models/LEMON/Second Rendition/LEMON.blend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon_PhysicsAsset.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/Brednon_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/main.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/texture.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +234,9 @@
       <workItem from="1682835324865" duration="440000" />
       <workItem from="1683516191698" duration="691000" />
       <workItem from="1683517929117" duration="807000" />
+      <workItem from="1683652805349" duration="693000" />
+      <workItem from="1683670080143" duration="752000" />
+      <workItem from="1683687808414" duration="1080000" />
     </task>
     <servers />
   </component>
