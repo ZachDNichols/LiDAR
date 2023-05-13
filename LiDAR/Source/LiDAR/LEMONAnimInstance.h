@@ -8,10 +8,6 @@
 #include "Animation/AnimInstance.h"
 #include "LEMONAnimInstance.generated.h"
 
-
-/**
- *
- */
 UCLASS()
 class LIDAR_API ULEMONAnimInstance : public UAnimInstance
 {
@@ -42,10 +38,16 @@ public:
 		float Speed;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
-		float CrouchPlayRate = .8f;
+		float CrouchPlayRate = .5f;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
 		float SprintPlayRate = 1.5f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
+		float WalkPlayRate = 1.f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Animation Property")
+		float IdlePlayRate = .7f;
 
 	//First person character
 	UFUNCTION()

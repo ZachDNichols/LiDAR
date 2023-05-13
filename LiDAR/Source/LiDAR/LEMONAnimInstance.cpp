@@ -63,7 +63,7 @@ void ULEMONAnimInstance::UpdateAnimProperties()
 	}
 	if (Velocity > Character->CrouchSpeed)
 	{
-		Speed = 1.f;
+		Speed = WalkPlayRate;
 	}
 	if (Velocity > Character->RegularWalkSpeed)
 	{
@@ -71,11 +71,8 @@ void ULEMONAnimInstance::UpdateAnimProperties()
 	}
 	if (Velocity == 0.f)
 	{
-		Speed = 0.f;
+		Speed = IdlePlayRate;
 	}
-	
-	UE_LOG(LogTemp, Display, TEXT("Velocity: %f"), Character->GetVelocity().Size());
-	UE_LOG(LogTemp, Display, TEXT("Speed: %f"), Speed);
 }
 
 //Adds the event listeners for when shooting or not

@@ -7,10 +7,10 @@
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/WeaponPickupComponent.h"
-#include "Components/WidgetComponent.h"
 #include "Components/DecalComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
+#include "LEMONAnimInstance.h"
 
 // Sets default values for this component's properties
 ALEMON::ALEMON()
@@ -28,11 +28,19 @@ void ALEMON::BeginPlay()
 {
 	Super::BeginPlay();
 	PickUp->OnPickUp.AddDynamic(this, &ALEMON::AttachWeapon);
+	
+	for (int i = 0; i < Mesh->GetMaterials().Num(); i++)
+	{
+		UMaterialInstanceDynamic* DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(i), this);
+		Mesh->SetMaterial(i, DynamicMaterial);
+		InstancedDynamicMaterials.Add(DynamicMaterial);
+	}
 
-	DynamicMaterial = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(0), this);
-	Mesh->SetMaterial(0, DynamicMaterial);
-	DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), 0.f);
-	DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 1.f);
+	for (UMaterialInstanceDynamic* DynamicMaterial : InstancedDynamicMaterials)
+	{
+		DynamicMaterial->SetScalarParameterValue("Emissive", 0.f);
+		DynamicMaterial->SetScalarParameterValue("DepthScale", 1.f);
+	}
 }
 
 void ALEMON::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -52,7 +60,7 @@ void ALEMON::Fire()
 {
 	//Prevents the gun from firing too fast
 	timeFromFire -= GetWorld()->UWorld::GetDeltaSeconds();
-	if (timeFromFire > 0.f)
+	if (timeFromFire > 0.f || !bIsFiring)
 	{
 		return;
 	}
@@ -66,12 +74,10 @@ void ALEMON::Fire()
 
 	FHitResult Hit;
 	FRotator Rot;
-	FVector Start;
+	
+	FVector Start = Mesh->GetComponentLocation() + (Mesh->GetForwardVector() * 34.f);
 	
 	Character->GetController()->GetPlayerViewPoint(Start, Rot);
-
-	//Sets the location to look more like it is coming out of the barrel of the player gun
-	Start = Start + (((Camera->GetForwardVector() * forwardLaserOffset) + (Camera->GetRightVector() * rightLaserOffset) - (Camera->GetUpVector() * upLaserOffset)));
 	
 	FVector End = Start + (Rot.Vector() * 2000);
 	End = FVector(End.X + x, End.Y + y, End.Z + z);
@@ -89,11 +95,19 @@ void ALEMON::Fire()
 		//Draws debug boxes where the collision impact occur
 		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
 
+		if (Hit.Distance < 5.f)
+		{
+			return;
+		}
+
 		FRotator HitRotation = Hit.ImpactNormal.Rotation();
 
 		if (Laser)
 		{
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(Laser, Mesh, FName(), FVector(0.f, 2.f, 0.f), HitRotation, EAttachLocation::KeepRelativeOffset, true);
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(
+				Laser, Mesh, FName(),
+				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f), 0.f + FMath::RandRange(3.f, 8.f)), HitRotation,
+				EAttachLocation::KeepRelativeOffset, true);
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
 		}
@@ -108,7 +122,11 @@ void ALEMON::Fire()
 	{
 		if (Laser)
 		{
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(Laser, Mesh, FName(), FVector(0.f, 2.f, 0.f), Rot, EAttachLocation::KeepRelativeOffset, true);
+			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(
+				Laser, Mesh, FName(),
+				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f),
+				        0.f + FMath::RandRange(3.f, 8.f)), Rot,
+				EAttachLocation::KeepRelativeOffset, true);
 			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
 			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), End);
 		}
@@ -119,19 +137,25 @@ void ALEMON::Fire()
 
 void ALEMON::IncreaseRadius()
 {
-	if (currentRadius + increment <= maxRadius && DynamicMaterial)
+	if (currentRadius + increment <= maxRadius && EmissiveMaterialIndexes.Num() > 0)
 	{
 		currentRadius += increment;
-		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
+		for (UMaterialInstanceDynamic* DynamicMaterial : InstancedDynamicMaterials)
+		{
+			DynamicMaterial->SetScalarParameterValue("Emissive", currentRadius);
+		}
 	}
 }
 
 void ALEMON::DecreaseRadius()
 {
-	if (currentRadius - increment >= minRadius && DynamicMaterial)
+	if (currentRadius - increment >= minRadius && EmissiveMaterialIndexes.Num() > 0)
 	{
 		currentRadius -= increment;
-		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
+		for (UMaterialInstanceDynamic* DynamicMaterial : InstancedDynamicMaterials)
+		{
+			DynamicMaterial->SetScalarParameterValue("Emissive", currentRadius);
+		}
 	}
 }
 
@@ -149,8 +173,11 @@ void ALEMON::AttachWeapon(AFirstPersonCharacter* TargetCharacter)
 		Character->ScrollUp.AddDynamic(this, &ALEMON::IncreaseRadius);
 		Character->ScrollDown.AddDynamic(this, &ALEMON::DecreaseRadius);
 
-		DynamicMaterial->SetScalarParameterValue(TEXT("Emissive"), currentRadius);
-		DynamicMaterial->SetScalarParameterValue(TEXT("DepthScale"), 0.6f);
+		for (UMaterialInstanceDynamic* DynamicMaterial : InstancedDynamicMaterials)
+		{
+			DynamicMaterial->SetScalarParameterValue("Emissive", currentRadius);
+			DynamicMaterial->SetScalarParameterValue("DepthScale", .3f);
+		}
 	}
 }
 

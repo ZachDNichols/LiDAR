@@ -17,72 +17,73 @@ public:
 	ALEMON();
 
 	virtual void BeginPlay() override;
-    virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	float GetFireTime() { return FireTime; };
 
 	//Function for attaching LEMON to player
 	UFUNCTION(BlueprintCallable)
-		void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
+	void AttachWeapon(AFirstPersonCharacter* TargetCharacter);
 
 	//Function called when firing
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
-		void Fire();
+	void Fire();
 	
 	//Function used to increase the radius
 	UFUNCTION()
-		void IncreaseRadius();
+	void IncreaseRadius();
 
 	//Function used to decrease the radius
 	UFUNCTION()
-		void DecreaseRadius();
+	void DecreaseRadius();
 
+	UPROPERTY()
+	bool bIsFiring = false;
+	
 	//Mesh of LEMON
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
-		USkeletalMeshComponent* Mesh;
+	USkeletalMeshComponent* Mesh;
 
 	//Sphere used for pickup
 	UPROPERTY(VisibleAnywhere, Category = "PickUp")
-		class UWeaponPickupComponent* PickUp;
+	class UWeaponPickupComponent* PickUp;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		USoundBase* FireSound;
+	USoundBase* FireSound;
 
 	UPROPERTY(EditAnywhere, Category = "Laser")
-		UMaterial* Decal;
+	UMaterial* Decal;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		FVector DecalSize = FVector(1.f, 1.f, 1.f);
+	FVector DecalSize = FVector(1.f, 1.f, 1.f);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		class UNiagaraSystem* Laser;
+	class UNiagaraSystem* Laser;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		struct FLinearColor LaserColor = FLinearColor(188, 4, 4, 1.f);
-
-	UPROPERTY(EditAnywhere, Category = "Laser")
-		float forwardLaserOffset = 80.f;
-
-	UPROPERTY(EditAnywhere, Category = "Laser")
-		float rightLaserOffset = 40.f;
-
-	UPROPERTY(EditAnywhere, Category = "Laser")
-		float upLaserOffset = 22.f;
+	struct FLinearColor LaserColor = FLinearColor(188, 4, 4, 1.f);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		float FireTime = 0.2f;
+	float FireTime = 0.2f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
-		USoundConcurrency* SoundConcurrency;
+	USoundConcurrency* SoundConcurrency;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Material")
+		TArray<int> EmissiveMaterialIndexes = {1, 4};
+	
 private:
-	UMaterialInstanceDynamic* DynamicMaterial;
-	class AFirstPersonCharacter* Character;
+	UPROPERTY()
+		TArray<UMaterialInstanceDynamic*> InstancedDynamicMaterials;
+	UPROPERTY()
+		class AFirstPersonCharacter* Character;
+	UPROPERTY()
+		class UCameraComponent* Camera;
+	
 	float currentRadius = 50.f;
 	float increment = 50.f;
 	float minRadius = 50.f;
 	float maxRadius = 700.f;
-	class UCameraComponent* Camera;
 	float timeFromFire;
 };
 
