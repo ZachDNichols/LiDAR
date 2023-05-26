@@ -9,41 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_LEMON.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_Barrel.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_Dots.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_EnergySource_.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_GlassBall.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_Grip.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_Rubber.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_Lemon_Stock.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/EndFireNotify.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/EndFireNotify.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/FireAnimNotify.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/FireAnimNotify.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/LiDAR/LidarTriggerBaseClass.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/LiDAR/LidarTriggerBaseClass.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animation/AB_LEMON.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animation/AB_LEMON.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_End_Fire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_End_Fire.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Fire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Fire.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Idle_Walk.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Idle_Walk.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Into_Fire.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Animation/LEMON_Anim_Barrel_Into_Fire.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Maps/One.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Material_Instances/MI_LEMON.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Barrel.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Barrel.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Dots.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Dots.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_EnergySource.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_EnergySource.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_GlassBall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_GlassBall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Grip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Grip.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Rubber.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Rubber.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Stock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/LEMON/M_Lemon_Stock.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LumenCube.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Materials/M_LumenCube.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/LiDAR/Models/LEMON/LEMON.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/LiDAR/Models/LEMON/LEMON.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ResearchMegaPack/SecretBase/Materials/M_Asphalt_1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ResearchMegaPack/SecretBase/Materials/M_Asphalt_1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMON.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMON.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMON.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMON.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/LEMONAnimInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +20,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MacroExpansionManager">
@@ -78,7 +52,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;move-trigger-structs-to-inherit-from-a-base-class&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -254,6 +228,16 @@
       <workItem from="1683929923248" duration="1478000" />
       <workItem from="1683935797657" duration="3611000" />
       <workItem from="1683939930791" duration="5510000" />
+      <workItem from="1684859898170" duration="27000" />
+      <workItem from="1684860024899" duration="377000" />
+      <workItem from="1684860564122" duration="43000" />
+      <workItem from="1684868489778" duration="197000" />
+      <workItem from="1684870064227" duration="14000" />
+      <workItem from="1684871518839" duration="6000" />
+      <workItem from="1684965209404" duration="356000" />
+      <workItem from="1685020496428" duration="1162000" />
+      <workItem from="1685024703692" duration="100000" />
+      <workItem from="1685040702304" duration="239000" />
     </task>
     <servers />
   </component>
@@ -266,7 +250,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/move-trigger-structs-to-inherit-from-a-base-class" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
