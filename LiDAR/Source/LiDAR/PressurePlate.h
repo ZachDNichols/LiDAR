@@ -7,34 +7,9 @@
 #include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "Components/MovableStaticMeshComponent.h"
+#include "LidarTriggerBaseClass.h"
 #include "PressurePlate.generated.h"
 
-USTRUCT(BlueprintType)
-struct FPlateObject
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Object")
-	bool bJustSound = false;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Object", meta = (EditCondition = "!bJustSound"))
-	int ObjectID;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-	USoundBase* Sound;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio", meta = (EditCondition = "!bJustSound"))
-	bool bHaveActionWait = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-	bool bTriggerOnce;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-	USoundAttenuation* SoundAttenuation;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Triggered Audio")
-	USoundConcurrency* SoundConcurrency;
-};
 
 UCLASS()
 class LIDAR_API APressurePlate : public AActor
@@ -77,10 +52,10 @@ public:
 
 	//Array used to determine which objects to interact with
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger", meta = (EditCondition = "bMultipleIDs"))
-	TArray<FPlateObject> TargetObjects;
+	TArray<FBaseTriggerStruct> TargetObjects;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Trigger", meta = (EditCondition = "!bMultipleIDs"))
-	FPlateObject TargetObject;
+	FBaseTriggerStruct TargetObject;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
 	USoundBase* PressurePlateSound;

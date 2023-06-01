@@ -8,12 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/LidarTriggerBaseClass.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LiDAR/LidarTriggerBaseClass.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LiDAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LiDAR/BoxTrigger.h" afterDir="false" />
-    </list>
+    <list default="true" id="2c910879-4694-4214-969f-958940d53468" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +22,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://G:/GitHub/LiDAR/LiDAR/Source/LiDAR/BoxTrigger.h" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="5t8l9838" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -238,12 +237,22 @@
       <workItem from="1685020496428" duration="1162000" />
       <workItem from="1685024703692" duration="100000" />
       <workItem from="1685040702304" duration="239000" />
+      <workItem from="1685069330505" duration="170000" />
     </task>
+    <task id="LOCAL-00001" summary="Added base class for things like triggers, this way other classes don't have to use multiple FStructs">
+      <created>1685069465480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685069465480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -274,6 +283,8 @@
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added base class for things like triggers, this way other classes don't have to use multiple FStructs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added base class for things like triggers, this way other classes don't have to use multiple FStructs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
