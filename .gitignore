@@ -77,4 +77,4 @@ LiDAR/DerivedDataCache/*
 *.xml
 
 #JetBrains
-LiDAR/.idea/
+LiDAR/.idea
