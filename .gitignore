@@ -74,3 +74,4 @@ LiDAR/DerivedDataCache/*
 
 # Stupid Mac file
 *.DS_Store
+*.xml
