@@ -75,3 +75,6 @@ LiDAR/DerivedDataCache/*
 # Stupid Mac file
 *.DS_Store
 *.xml
+LiDAR/.idea/.idea.LiDAR.dir/.idea/.name
+LiDAR/.idea/.idea.LiDAR.dir/.idea/vcs.xml
+LiDAR/.idea/.idea.LiDAR.dir/.idea/workspace.xml
