@@ -108,8 +108,8 @@ void ALEMON::Fire()
 				Laser, Mesh, FName(),
 				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f), 0.f + FMath::RandRange(3.f, 8.f)), HitRotation,
 				EAttachLocation::KeepRelativeOffset, true);
-			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
-			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), Hit.Location);
+			NiagaraLaser->SetVariableLinearColor(FName("Color"), LaserColor);
+			NiagaraLaser->SetVariableVec3(FName("LaserEnd"), Hit.Location);
 		}
 
 		if (Decal)
@@ -127,8 +127,8 @@ void ALEMON::Fire()
 				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f),
 				        0.f + FMath::RandRange(3.f, 8.f)), Rot,
 				EAttachLocation::KeepRelativeOffset, true);
-			NiagaraLaser->SetNiagaraVariableLinearColor(FString("Color"), LaserColor);
-			NiagaraLaser->SetNiagaraVariableVec3(FString("LaserEnd"), End);
+			NiagaraLaser->SetVariableLinearColor(FName("Color"), LaserColor);
+			NiagaraLaser->SetVariableVec3(FName("LaserEnd"), End);
 		}
 	}
 
