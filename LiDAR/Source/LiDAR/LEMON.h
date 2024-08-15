@@ -51,8 +51,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 	USoundBase* FireSound;
 
-	UPROPERTY(EditAnywhere, Category = "Laser")
-	UMaterial* Decal;
+	UPROPERTY(EditDefaultsOnly, Category = "Laser")
+	TSubclassOf<AActor> ADot;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Laser")
 	FVector DecalSize = FVector(1.f, 1.f, 1.f);
@@ -79,6 +79,12 @@ private:
 		class AFirstPersonCharacter* Character;
 	UPROPERTY()
 		class UCameraComponent* Camera;
+	UPROPERTY()
+	    TArray<AActor*> SpawnedDots;
+
+	void SpawnLaser(const FHitResult& Hit, const FRotator& Rotation) const;
+
+	void SpawnDot(const FHitResult& Hit);
 	
 	float currentRadius = 50.f;
 	float increment = 50.f;

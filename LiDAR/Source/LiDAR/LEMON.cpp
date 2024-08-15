@@ -94,7 +94,7 @@ void ALEMON::Fire()
 		//DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, .2f);
 		//Draws debug boxes where the collision impact occur
 		//DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(5, 5, 5), FColor::Orange, false, .2f);
-
+		
 		if (Hit.Distance < 5.f)
 		{
 			return;
@@ -102,37 +102,49 @@ void ALEMON::Fire()
 
 		FRotator HitRotation = Hit.ImpactNormal.Rotation();
 
-		if (Laser)
-		{
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(
-				Laser, Mesh, FName(),
-				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f), 0.f + FMath::RandRange(3.f, 8.f)), HitRotation,
-				EAttachLocation::KeepRelativeOffset, true);
-			NiagaraLaser->SetVariableLinearColor(FName("Color"), LaserColor);
-			NiagaraLaser->SetVariableVec3(FName("LaserEnd"), Hit.Location);
-		}
-
-		if (Decal)
-		{
-			UDecalComponent* Dot = UGameplayStatics::SpawnDecalAttached(Decal, DecalSize, Hit.GetComponent(), NAME_None, Hit.ImpactPoint, HitRotation, EAttachLocation::KeepWorldPosition, 0.f);
-			Dot->SetFadeScreenSize(0);
-		}
+		//Laser hits something
+		SpawnLaser(Hit, HitRotation);
+		SpawnDot(Hit);
 	}
+	//Laser does not hit anything
 	else
 	{
-		if (Laser)
-		{
-			UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(
-				Laser, Mesh, FName(),
-				FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f),
-				        0.f + FMath::RandRange(3.f, 8.f)), Rot,
-				EAttachLocation::KeepRelativeOffset, true);
-			NiagaraLaser->SetVariableLinearColor(FName("Color"), LaserColor);
-			NiagaraLaser->SetVariableVec3(FName("LaserEnd"), End);
-		}
+		SpawnLaser(Hit, Rot);
 	}
 
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FireSound, GetActorLocation(), 1.f, FMath::RandRange(0.0f, 1.0f), 0.f, nullptr, SoundConcurrency);
+}
+
+void ALEMON::SpawnDot(const FHitResult& Hit)
+{
+	if (ADot)
+	{
+		FVector Location = Hit.ImpactPoint;
+		FRotator Rotation = Hit.ImpactNormal.Rotation();
+		UE_LOG(LogTemp, Display, TEXT("Normal Rotation: %s"), *Rotation.ToString());
+		UE_LOG(LogTemp, Display, TEXT("Component Rotation: %s"), *Hit.ImpactNormal.Rotation().ToString());
+		AActor* SpawnedDot = GetWorld()->SpawnActor<AActor>(ADot, Location, Rotation);
+
+		if (SpawnedDot)
+		{
+			SpawnedDot->AttachToComponent(Hit.GetComponent(), FAttachmentTransformRules::KeepWorldTransform);
+			SpawnedDots.Add(SpawnedDot);
+			UE_LOG(LogTemp, Display, TEXT("Spawned and Attached Dot"));
+		}
+	}
+}
+
+void ALEMON::SpawnLaser(const FHitResult& Hit, const FRotator& Rotation) const
+{
+	if (Laser)
+	{
+		UNiagaraComponent* NiagaraLaser = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			Laser, Mesh, FName(),
+			FVector(34.f, 0.f + FMath::RandRange(-5.f, 5.f), 0.f + FMath::RandRange(3.f, 8.f)), Rotation,
+			EAttachLocation::KeepRelativeOffset, true);
+		NiagaraLaser->SetVariableLinearColor(FName("Color"), LaserColor);
+		NiagaraLaser->SetVariableVec3(FName("LaserEnd"), Hit.Location);
+	}
 }
 
 void ALEMON::IncreaseRadius()
