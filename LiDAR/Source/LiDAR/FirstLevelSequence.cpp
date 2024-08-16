@@ -44,9 +44,9 @@ void AFirstLevelSequence::Interact()
 	for (AActor* Actor : InteractableActors)
 	{
 		int ObjectID = IInteractableInterface::Execute_GetObjectID(Actor);
-		for (int ID : TargetIDs)
+		for (int IdToUse : TargetIDs)
 		{
-			if (ID == ObjectID)
+			if (IdToUse == ObjectID)
 			{
 				IInteractableInterface::Execute_Interact(Actor, true);
 			}

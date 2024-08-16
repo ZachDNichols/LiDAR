@@ -12,7 +12,6 @@ void UFireAnimNotify::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase
 		if (ALEMON* Gun = Cast<ALEMON>(MeshComp->GetOwner()))
 		{
 			Gun->bIsFiring = true;
-			UE_LOG(LogTemp, Display, TEXT("Firing"));
 		}
 	}
 }
